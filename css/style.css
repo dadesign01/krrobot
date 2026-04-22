@@ -467,71 +467,57 @@ address {
   margin-bottom: 80px;
 }
 
-/* Swiper */
-.product-swiper {
-  width: 100%;
-  overflow: hidden;
-}
-
-.car-slide {
-  width: min(920px, calc(100vw - 360px));
+.product-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
   display: flex;
   align-items: center;
-  gap: 0;
-  transition: gap 0.45s ease;
-}
-.car-slide.is-active {
-  gap: 48px;
+  gap: 60px;
 }
 
-.car-img-wrap {
+/* 이미지 슬라이더 */
+.product-swiper {
   flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+.product-swiper .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/* 좌우 슬라이드 — 이미지를 보이는 쪽 가장자리로 밀기 */
-.swiper-slide-prev .car-img-wrap {
-  justify-content: flex-end;
-}
-.swiper-slide-next .car-img-wrap {
-  justify-content: flex-start;
-}
-
-.car-img-wrap img {
-  height: 280px;
+.product-swiper .swiper-slide img {
+  height: 480px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  opacity: 0.35;
-  transition: height 0.45s ease, opacity 0.45s ease;
-}
-.car-slide.is-active .car-img-wrap img {
-  height: 480px;
-  opacity: 1;
 }
 
-.car-info {
-  flex: 0 0 0;
-  min-height: 0;
-  padding: 0;
-  overflow: hidden;
+/* 고정 설명 패널 */
+.product-panels {
+  flex-shrink: 0;
+  width: 443px;
+  min-height: 402px;
+  position: relative;
+}
+.product-panel {
   border-radius: 30px;
   background: #F7F7F7;
+  padding: 44px 40px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  inset: 0;
   opacity: 0;
   pointer-events: none;
-  transition: flex-basis 0.45s ease, opacity 0.35s ease;
+  transition: opacity 0.4s ease;
 }
-.car-slide.is-active .car-info {
-  flex: 0 0 443px;
-  min-height: 402px;
-  padding: 44px 40px;
+.product-panel.active {
   opacity: 1;
   pointer-events: auto;
 }
-.car-info h3 {
+.product-panel h3 {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 28px;
   font-weight: 800;
@@ -549,11 +535,11 @@ address {
   line-height: 1.55;
   margin-bottom: 20px;
 }
-.car-info ul {
+.product-panel ul {
   margin-bottom: 28px;
   flex: 1;
 }
-.car-info ul li {
+.product-panel ul li {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -563,7 +549,7 @@ address {
   position: relative;
   line-height: 1.5;
 }
-.car-info ul li::before {
+.product-panel ul li::before {
   content: '·';
   position: absolute;
   left: 0;
@@ -583,7 +569,7 @@ address {
 }
 .more-view:hover { opacity: 0.7; }
 
-/* Bottom nav: arrow · dots · arrow */
+/* Bottom nav */
 .car-nav {
   display: flex;
   align-items: center;
@@ -591,7 +577,6 @@ address {
   gap: 20px;
   margin-top: 48px;
 }
-
 .car-arrow {
   display: flex;
   align-items: center;
@@ -605,7 +590,6 @@ address {
   width: 12px;
   height: 24px;
 }
-
 .car-dots {
   display: flex;
   align-items: center;

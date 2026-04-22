@@ -7,37 +7,24 @@ hamburger.addEventListener('click', () => {
 });
 
 // ── Product Carousel (Swiper) ─────────────────────────────────────
-const dots = Array.from(document.querySelectorAll('#carDots .c-dot'));
+const dots   = Array.from(document.querySelectorAll('#carDots .c-dot'));
+const panels = Array.from(document.querySelectorAll('.product-panel'));
 
-function updateDots(realIndex) {
-  dots.forEach((d, i) => d.classList.toggle('active', i === realIndex));
-}
-
-function updateActiveSlide(s) {
-  document.querySelectorAll('.car-slide').forEach(el =>
-    el.classList.remove('is-active', 'is-prev', 'is-next')
-  );
-  const active = s.slides[s.activeIndex];
-  const prev   = s.slides[s.activeIndex - 1];
-  const next   = s.slides[s.activeIndex + 1];
-  active?.classList.add('is-active');
-  prev?.classList.add('is-prev');
-  next?.classList.add('is-next');
-}
+function updateDots(i)   { dots.forEach((d, j)   => d.classList.toggle('active', j === i)); }
+function updatePanel(i)  { panels.forEach((p, j)  => p.classList.toggle('active', j === i)); }
 
 const productSwiper = new Swiper('.product-swiper', {
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  spaceBetween: 48,
+  slidesPerView: 1,
   loop: true,
+  speed: 500,
   navigation: {
     prevEl: '#carPrev',
     nextEl: '#carNext',
     disabledClass: 'car-arrow--disabled',
   },
   on: {
-    init(s)        { updateDots(s.realIndex); updateActiveSlide(s); },
-    slideChange(s) { updateDots(s.realIndex); updateActiveSlide(s); },
+    init(s)        { updateDots(s.realIndex); updatePanel(s.realIndex); },
+    slideChange(s) { updateDots(s.realIndex); updatePanel(s.realIndex); },
   },
 });
 
