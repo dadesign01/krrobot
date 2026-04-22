@@ -7,25 +7,29 @@ hamburger.addEventListener('click', () => {
 });
 
 // ── Product Carousel (Swiper) ─────────────────────────────────────
-new Swiper('.product-swiper', {
+const dots = Array.from(document.querySelectorAll('#carDots .c-dot'));
+
+function updateDots(realIndex) {
+  dots.forEach((d, i) => d.classList.toggle('active', i === realIndex));
+}
+
+const productSwiper = new Swiper('.product-swiper', {
   centeredSlides: true,
   slidesPerView: 'auto',
   spaceBetween: 48,
   loop: true,
-  watchOverflow: false,
   navigation: {
     prevEl: '#carPrev',
     nextEl: '#carNext',
     disabledClass: 'car-arrow--disabled',
   },
-  pagination: {
-    el: '#carDots',
-    bulletClass: 'c-dot',
-    bulletActiveClass: 'active',
-    clickable: true,
-    renderBullet: (index, className) => `<button class="${className}"></button>`,
+  on: {
+    init(s) { updateDots(s.realIndex); },
+    slideChange(s) { updateDots(s.realIndex); },
   },
 });
+
+dots.forEach((d, i) => d.addEventListener('click', () => productSwiper.slideToLoop(i)));
 
 // ── Contact form ─────────────────────────────────────────────────
 document.getElementById('contactForm')?.addEventListener('submit', e => {

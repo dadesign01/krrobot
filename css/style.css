@@ -596,8 +596,6 @@ address {
   display: flex;
   align-items: center;
   gap: 8px;
-  position: static !important;
-  width: auto !important;
 }
 .c-dot {
   width: 8px;
