@@ -11,10 +11,12 @@ new Swiper('.product-swiper', {
   centeredSlides: true,
   slidesPerView: 'auto',
   spaceBetween: 48,
-  loop: false,
+  loop: true,
+  watchOverflow: false,
   navigation: {
     prevEl: '#carPrev',
     nextEl: '#carNext',
+    disabledClass: 'car-arrow--disabled',
   },
   pagination: {
     el: '#carDots',
