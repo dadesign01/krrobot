@@ -4,7 +4,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111;
   background: #fff;
   overflow-x: hidden;
@@ -63,7 +63,7 @@ address { font-style: normal; }
 
 .gnb-link {
   color: #fff;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.06em;
@@ -116,7 +116,7 @@ address { font-style: normal; }
 }
 .mega-heading {
   color: #d4005a;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -205,7 +205,7 @@ address { font-style: normal; }
   display: block;
   padding: 14px 32px;
   color: #fff;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.06em;
@@ -270,7 +270,7 @@ address { font-style: normal; }
 }
 
 .hero-title {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: clamp(34px, 4.5vw, 62px);
   color: #fff;
@@ -354,7 +354,7 @@ address { font-style: normal; }
   margin-bottom: 8px;
 }
 .ph-model {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: rgba(255,255,255,0.45);
@@ -371,7 +371,7 @@ address { font-style: normal; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -398,7 +398,7 @@ address { font-style: normal; }
 }
 .ph-watermark {
   position: absolute;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: clamp(80px, 10vw, 140px);
   color: rgba(255,255,255,0.04);
@@ -424,7 +424,7 @@ address { font-style: normal; }
 }
 
 .section-title {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 44px;
   letter-spacing: 0.04em;
@@ -528,7 +528,7 @@ address { font-style: normal; }
 }
 
 .more-view {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -612,7 +612,7 @@ address { font-style: normal; }
   );
 }
 .card-body h3 {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 26px;
   letter-spacing: 0.04em;
@@ -625,7 +625,7 @@ address { font-style: normal; }
   margin-bottom: 18px;
 }
 .card-more {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -661,7 +661,7 @@ address { font-style: normal; }
   padding: 14px 16px;
   border: 1px solid #d8d8d8;
   background: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   color: #333;
   outline: none;
@@ -724,7 +724,7 @@ address { font-style: normal; }
 .submit-btn {
   background: #d4005a;
   color: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   font-size: 14px;
   padding: 15px 52px;
@@ -789,7 +789,7 @@ address { font-style: normal; }
   margin-bottom: 6px;
 }
 .partner-name {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: rgba(255,255,255,0.25);
