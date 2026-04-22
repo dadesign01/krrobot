@@ -477,6 +477,10 @@ address {
   width: min(1100px, calc(100vw - 280px));
   display: flex;
   align-items: center;
+  gap: 0;
+  transition: gap 0.45s ease;
+}
+.car-slide.is-active {
   gap: 48px;
 }
 
@@ -491,29 +495,32 @@ address {
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  transform: scale(0.82);
-  opacity: 0.35;
+  transform: scale(0.58);
+  opacity: 0.25;
   transition: transform 0.45s ease, opacity 0.45s ease;
 }
-.swiper-slide-active .car-img-wrap img {
+.car-slide.is-active .car-img-wrap img {
   transform: scale(1);
   opacity: 1;
 }
 
 .car-info {
-  flex-shrink: 0;
-  width: 443px;
-  min-height: 402px;
+  flex: 0 0 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
   border-radius: 30px;
   background: #F7F7F7;
-  padding: 44px 40px;
   display: flex;
   flex-direction: column;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.45s ease;
+  transition: flex-basis 0.45s ease, padding 0.45s ease, min-height 0.45s ease, opacity 0.35s ease;
 }
-.swiper-slide-active .car-info {
+.car-slide.is-active .car-info {
+  flex: 0 0 443px;
+  min-height: 402px;
+  padding: 44px 40px;
   opacity: 1;
   pointer-events: auto;
 }

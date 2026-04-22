@@ -13,6 +13,11 @@ function updateDots(realIndex) {
   dots.forEach((d, i) => d.classList.toggle('active', i === realIndex));
 }
 
+function updateActiveSlide(s) {
+  document.querySelectorAll('.car-slide').forEach(el => el.classList.remove('is-active'));
+  s.slides[s.activeIndex]?.classList.add('is-active');
+}
+
 const productSwiper = new Swiper('.product-swiper', {
   centeredSlides: true,
   slidesPerView: 'auto',
@@ -24,8 +29,8 @@ const productSwiper = new Swiper('.product-swiper', {
     disabledClass: 'car-arrow--disabled',
   },
   on: {
-    init(s) { updateDots(s.realIndex); },
-    slideChange(s) { updateDots(s.realIndex); },
+    init(s)        { updateDots(s.realIndex); updateActiveSlide(s); },
+    slideChange(s) { updateDots(s.realIndex); updateActiveSlide(s); },
   },
 });
 
