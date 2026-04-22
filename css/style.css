@@ -139,6 +139,9 @@ address { font-style: normal; }
 .mega-col ul li a:hover { color: #fff; }
 
 /* Dropdown */
+.has-drop {
+  position: relative;
+}
 .drop-menu {
   position: absolute;
   top: 100%;
