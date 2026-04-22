@@ -6,44 +6,23 @@ hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('open');
 });
 
-// ── Product Carousel ─────────────────────────────────────────────
-const track = document.getElementById('carTrack');
-const slides = track ? track.querySelectorAll('.car-slide') : [];
-const dotsEl = document.querySelectorAll('#carDots .c-dot');
-let current = 0;
-const total = slides.length;
-let autoTimer;
-
-function goTo(index) {
-  current = (index + total) % total;
-  const slideWidth = slides[0] ? slides[0].offsetWidth : 0;
-  const gap = 48;
-  const viewportWidth = document.getElementById('carViewport').offsetWidth;
-  const offset = (viewportWidth - slideWidth) / 2 - current * (slideWidth + gap);
-  track.style.transform = `translateX(${offset}px)`;
-  dotsEl.forEach((d, i) => d.classList.toggle('active', i === current));
-}
-
-function startAuto() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(() => goTo(current + 1), 5000);
-}
-
-document.getElementById('carNext')?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
-document.getElementById('carPrev')?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
-dotsEl.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
-
-startAuto();
-
-window.addEventListener('load', () => goTo(0));
-window.addEventListener('resize', () => goTo(current));
-
-// Touch / swipe support for carousel
-let touchStartX = 0;
-track?.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-track?.addEventListener('touchend', e => {
-  const delta = touchStartX - e.changedTouches[0].clientX;
-  if (Math.abs(delta) > 50) { goTo(delta > 0 ? current + 1 : current - 1); startAuto(); }
+// ── Product Carousel (Swiper) ─────────────────────────────────────
+new Swiper('.product-swiper', {
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  spaceBetween: 48,
+  loop: false,
+  navigation: {
+    prevEl: '#carPrev',
+    nextEl: '#carNext',
+  },
+  pagination: {
+    el: '#carDots',
+    bulletClass: 'c-dot',
+    bulletActiveClass: 'active',
+    clickable: true,
+    renderBullet: (index, className) => `<button class="${className}"></button>`,
+  },
 });
 
 // ── Contact form ─────────────────────────────────────────────────

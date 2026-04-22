@@ -9,7 +9,24 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<!-- 기본 -->
+		<link rel="icon" href="./img/main/favicon.ico" sizes="any" />
+
+		<!-- PNG -->
+		<link rel="icon" type="image/png" sizes="16x16" href="./img/main/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./img/main/favicon-32x32.png" />
+
+		<!-- Android -->
+		<link rel="icon" type="image/png" sizes="192x192" href="./img/main/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="512x512" href="./img/main/android-chrome-512x512.png" />
+
+		<!-- iOS -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./img/main/apple-touch-icon.png" />
+
+		<!-- manifest -->
+		<link rel="manifest" href="./img/main/site.webmanifest" />
 	</head>
 	<body>
 		<!-- ===================== HEADER ===================== -->
@@ -144,11 +161,10 @@
 			<section class="product-section">
 				<h2 class="section-title">PRODUCT</h2>
 
-				<div class="carousel-viewport" id="carViewport">
-					<div class="carousel-track" id="carTrack">
-
+				<div class="swiper product-swiper">
+					<div class="swiper-wrapper">
 						<!-- Slide 1 -->
-						<div class="car-slide">
+						<div class="swiper-slide car-slide">
 							<div class="car-img-wrap">
 								<img src="img/main/p_01.png" alt="원격방수총 사족보행로봇" />
 							</div>
@@ -165,7 +181,7 @@
 						</div>
 
 						<!-- Slide 2 -->
-						<div class="car-slide">
+						<div class="swiper-slide car-slide">
 							<div class="car-img-wrap">
 								<img src="img/main/p_02.png" alt="소방 트랙 로봇" />
 							</div>
@@ -182,7 +198,7 @@
 						</div>
 
 						<!-- Slide 3 -->
-						<div class="car-slide">
+						<div class="swiper-slide car-slide">
 							<div class="car-img-wrap">
 								<img src="img/main/p_04.png" alt="원격 방수총 FN40TM" />
 							</div>
@@ -199,7 +215,7 @@
 						</div>
 
 						<!-- Slide 4 -->
-						<div class="car-slide">
+						<div class="swiper-slide car-slide">
 							<div class="car-img-wrap">
 								<img src="img/main/p_05.png" alt="협소 공간 탐지 로봇" />
 							</div>
@@ -216,7 +232,7 @@
 						</div>
 
 						<!-- Slide 5 -->
-						<div class="car-slide">
+						<div class="swiper-slide car-slide">
 							<div class="car-img-wrap">
 								<img src="img/main/p_06.png" alt="UWB 인명 탐지레이더 센서" />
 							</div>
@@ -231,27 +247,16 @@
 								<a href="#" class="more-view">MORE VIEW →</a>
 							</div>
 						</div>
-
 					</div>
 				</div>
 
 				<div class="car-nav">
 					<button class="car-arrow" id="carPrev" aria-label="이전">
-						<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M10 2L2 12L10 22" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
+						<img src="img/main/weui_arrow-outlined_left.svg" alt="" />
 					</button>
-					<div class="car-dots" id="carDots">
-						<button class="c-dot active"></button>
-						<button class="c-dot"></button>
-						<button class="c-dot"></button>
-						<button class="c-dot"></button>
-						<button class="c-dot"></button>
-					</div>
+					<div class="car-dots" id="carDots"></div>
 					<button class="car-arrow" id="carNext" aria-label="다음">
-						<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M2 2L10 12L2 22" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
+						<img src="img/main/weui_arrow-outlined.svg" alt="" />
 					</button>
 				</div>
 			</section>
@@ -373,6 +378,7 @@
 			</div>
 		</footer>
 
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

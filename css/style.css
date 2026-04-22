@@ -455,7 +455,6 @@ address {
   margin-top: 190px;
   padding-bottom: 100px;
   background: #fff;
-  overflow: hidden;
 }
 
 .section-title {
@@ -468,20 +467,13 @@ address {
   margin-bottom: 120px;
 }
 
-/* Peek carousel */
-.carousel-viewport {
+/* Swiper */
+.product-swiper {
   width: 100%;
   overflow: hidden;
 }
-.carousel-track {
-  display: flex;
-  gap: 48px;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
 
 .car-slide {
-  flex-shrink: 0;
   width: min(1100px, calc(100vw - 280px));
   display: flex;
   align-items: center;
@@ -499,6 +491,13 @@ address {
   width: auto;
   max-width: 100%;
   object-fit: contain;
+  transform: scale(0.82);
+  opacity: 0.35;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+.swiper-slide-active .car-img-wrap img {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .car-info {
@@ -510,6 +509,13 @@ address {
   padding: 44px 40px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.swiper-slide-active .car-info {
+  opacity: 1;
+  pointer-events: auto;
 }
 .car-info h3 {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -517,7 +523,7 @@ address {
   font-weight: 800;
   color: #121212;
   letter-spacing: -1.12px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 16px;
 }
 .car-sub {
@@ -557,7 +563,7 @@ address {
   font-weight: 400;
   color: #D60057;
   letter-spacing: -0.72px;
-  text-align: center;
+  text-align: left;
   display: block;
   transition: opacity 0.2s;
 }
@@ -581,6 +587,10 @@ address {
   transition: opacity 0.2s;
 }
 .car-arrow:hover { opacity: 1; }
+.car-arrow img {
+  width: 12px;
+  height: 24px;
+}
 
 .car-dots {
   display: flex;
