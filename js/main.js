@@ -14,7 +14,9 @@ function updateDots(i)   { dots.forEach((d, j)   => d.classList.toggle('active',
 function updatePanel(i)  { panels.forEach((p, j)  => p.classList.toggle('active', j === i)); }
 
 const productSwiper = new Swiper('.product-swiper', {
-  slidesPerView: 1,
+  centeredSlides: true,
+  slidesPerView: 1.4,
+  spaceBetween: 24,
   loop: true,
   speed: 500,
   navigation: {

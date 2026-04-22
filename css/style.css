@@ -486,6 +486,11 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
+}
+.product-swiper .swiper-slide-active {
+  opacity: 1;
 }
 .product-swiper .swiper-slide img {
   height: 480px;
