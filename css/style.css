@@ -254,8 +254,8 @@ address {
    ============================================= */
 .hero-section {
 	background: #fff;
-	padding: 24px 40px 150px;
-	height: calc(100vh - 72px);
+	padding: 50px 40px 150px;
+	height: 100vh;
 	box-sizing: border-box;
 }
 
@@ -452,167 +452,200 @@ address {
    PRODUCT CAROUSEL
    ============================================= */
 .product-section {
-  margin-top: 120px;
-  padding-bottom: 80px;
-  background: #fff;
+	margin-top: 120px;
+	padding-bottom: 80px;
+	background: #fff;
+	overflow: hidden;
+	position: relative;
 }
 
 .section-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 60px;
-  letter-spacing: -2.4px;
-  text-align: center;
-  color: #121212;
-  margin-bottom: 80px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 60px;
+	letter-spacing: -2.4px;
+	text-align: center;
+	color: #121212;
+	margin-bottom: 80px;
 }
 
 .product-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 80px;
-  display: flex;
-  align-items: center;
-  gap: 60px;
+	position: relative;
+	/* 패널(443) + 우측여백(80) + 갭(37) = 560px → 활성 이미지+패널 합산 중앙 = 화면 정중앙 */
+	/* padding-right: 560px; */
 }
 
-/* 이미지 슬라이더 */
+/* 이미지 슬라이더 — 전체 너비, 좌우 블리드 */
 .product-swiper {
-  flex: 1;
-  overflow: hidden;
-  min-width: 0;
+	overflow: visible;
+	width: 100%;
 }
 .product-swiper .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.35;
-  transition: opacity 0.4s ease;
+	width: auto;
+	padding: 0 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.15;
+	/* width: 300px !important; */
+	transform: scale(0.5);
+	transform-origin: center;
+	transition:
+		opacity 0.4s ease,
+		transform 0.4s ease;
 }
 .product-swiper .swiper-slide-active {
-  opacity: 1;
+	opacity: 1;
+	transform: scale(1);
+	padding-right: 600px;
+	padding-left: 100px;
+	max-width: 1200px;
+	width: 100%;
 }
 .product-swiper .swiper-slide img {
-  height: 480px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
+	height: 500px;
+	width: auto;
+	max-width: none;
+	display: block;
 }
 
-/* 고정 설명 패널 */
+/* 설명 패널 — 우측 560px 공간 안에 절대 고정 */
 .product-panels {
-  flex-shrink: 0;
-  width: 443px;
-  min-height: 402px;
-  position: relative;
+	position: absolute;
+	top: 50%;
+	left: 60%;
+	transform: translateY(-50%);
+	width: 443px;
+	min-height: 402px;
+	z-index: 10;
 }
 .product-panel {
-  border-radius: 30px;
-  background: #F7F7F7;
-  padding: 44px 40px;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+	border-radius: 30px;
+	background: #f7f7f7;
+	padding: 44px 40px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.4s ease;
 }
 .product-panel.active {
-  opacity: 1;
-  pointer-events: auto;
+	opacity: 1;
+	pointer-events: auto;
 }
 .product-panel h3 {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: #121212;
-  letter-spacing: -1.12px;
-  text-align: left;
-  margin-bottom: 16px;
+	font-family:
+		'Pretendard',
+		-apple-system,
+		BlinkMacSystemFont,
+		sans-serif;
+	font-size: 28px;
+	font-weight: 800;
+	color: #121212;
+	letter-spacing: -1.12px;
+	text-align: left;
+	margin-bottom: 16px;
 }
 .car-sub {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: #3B3B3B;
-  letter-spacing: -0.8px;
-  line-height: 1.55;
-  margin-bottom: 20px;
+	font-family:
+		'Pretendard',
+		-apple-system,
+		BlinkMacSystemFont,
+		sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	color: #3b3b3b;
+	letter-spacing: -0.8px;
+	line-height: 1.55;
+	margin-bottom: 20px;
 }
 .product-panel ul {
-  margin-bottom: 28px;
-  flex: 1;
+	margin-bottom: 28px;
+	flex: 1;
 }
 .product-panel ul li {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #464646;
-  letter-spacing: -0.64px;
-  padding: 6px 0 6px 16px;
-  position: relative;
-  line-height: 1.5;
+	font-family:
+		'Pretendard',
+		-apple-system,
+		BlinkMacSystemFont,
+		sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #464646;
+	letter-spacing: -0.64px;
+	padding: 6px 0 6px 16px;
+	position: relative;
+	line-height: 1.5;
 }
 .product-panel ul li::before {
-  content: '·';
-  position: absolute;
-  left: 0;
-  color: #D60057;
-  font-weight: 700;
+	content: '·';
+	position: absolute;
+	left: 0;
+	color: #d60057;
+	font-weight: 700;
 }
 
 .more-view {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #D60057;
-  letter-spacing: -0.72px;
-  text-align: left;
-  display: block;
-  transition: opacity 0.2s;
+	font-family:
+		'Pretendard',
+		-apple-system,
+		BlinkMacSystemFont,
+		sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: #d60057;
+	letter-spacing: -0.72px;
+	text-align: left;
+	display: block;
+	transition: opacity 0.2s;
 }
-.more-view:hover { opacity: 0.7; }
+.more-view:hover {
+	opacity: 0.7;
+}
 
 /* Bottom nav */
 .car-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 48px;
 }
 .car-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  opacity: 0.5;
-  transition: opacity 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px;
+	opacity: 0.5;
+	transition: opacity 0.2s;
 }
-.car-arrow:hover { opacity: 1; }
+.car-arrow:hover {
+	opacity: 1;
+}
 .car-arrow img {
-  width: 12px;
-  height: 24px;
+	width: 12px;
+	height: 24px;
 }
 .car-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 .c-dot {
-  width: 8px;
-  height: 8px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background: #D9D9D9;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.3s;
+	width: 8px;
+	height: 8px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background: #d9d9d9;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	transition: background 0.3s;
 }
 .c-dot.active {
-  background: #D60057;
+	background: #d60057;
 }
 
 /* =============================================
