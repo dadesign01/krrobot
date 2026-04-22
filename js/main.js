@@ -14,8 +14,15 @@ function updateDots(realIndex) {
 }
 
 function updateActiveSlide(s) {
-  document.querySelectorAll('.car-slide').forEach(el => el.classList.remove('is-active'));
-  s.slides[s.activeIndex]?.classList.add('is-active');
+  document.querySelectorAll('.car-slide').forEach(el =>
+    el.classList.remove('is-active', 'is-prev', 'is-next')
+  );
+  const active = s.slides[s.activeIndex];
+  const prev   = s.slides[s.activeIndex - 1];
+  const next   = s.slides[s.activeIndex + 1];
+  active?.classList.add('is-active');
+  prev?.classList.add('is-prev');
+  next?.classList.add('is-next');
 }
 
 const productSwiper = new Swiper('.product-swiper', {
