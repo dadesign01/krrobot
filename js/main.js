@@ -16,7 +16,11 @@ let autoTimer;
 
 function goTo(index) {
   current = (index + total) % total;
-  track.style.transform = `translateX(-${current * 100}%)`;
+  const slideWidth = slides[0] ? slides[0].offsetWidth : 0;
+  const gap = 48;
+  const viewportWidth = document.getElementById('carViewport').offsetWidth;
+  const offset = (viewportWidth - slideWidth) / 2 - current * (slideWidth + gap);
+  track.style.transform = `translateX(${offset}px)`;
   dotsEl.forEach((d, i) => d.classList.toggle('active', i === current));
 }
 
@@ -30,6 +34,9 @@ document.getElementById('carPrev')?.addEventListener('click', () => { goTo(curre
 dotsEl.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
 
 startAuto();
+
+window.addEventListener('load', () => goTo(0));
+window.addEventListener('resize', () => goTo(current));
 
 // Touch / swipe support for carousel
 let touchStartX = 0;
