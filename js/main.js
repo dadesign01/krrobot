@@ -1,9 +1,3 @@
-// ── Header scroll effect ──────────────────────────────────────────
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
-
 // ── Mobile hamburger ─────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
