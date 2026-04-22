@@ -66,20 +66,8 @@ address { font-style: normal; }
   position: relative;
   transition: color 0.2s;
 }
-.gnb-link::after {
-  content: '';
-  position: absolute;
-  bottom: 18px;
-  left: 0; right: 0;
-  height: 2px;
-  background: #d4005a;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
 .gnb-item:hover .gnb-link,
 .gnb-item.active .gnb-link { color: #d4005a; }
-.gnb-item:hover .gnb-link::after { transform: scaleX(1); }
 
 /* Mega Menu */
 .mega-menu {
