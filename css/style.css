@@ -690,7 +690,7 @@ address {
 .car-dots {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 22px;
 }
 .c-dot {
 	width: 8px;
@@ -914,7 +914,8 @@ address {
 
 /* ── Right: contact form ── */
 .contact-form-wrap {
-	width: 1068px;
+	max-width: 1068px;
+	width: 100%;
 	flex-shrink: 0;
 }
 
@@ -1025,7 +1026,7 @@ address {
 	font-family: 'Wanted Sans', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
-	line-height: 36px;
+	line-height: 160%;
 	letter-spacing: -0.56px;
 }
 .privacy-more {
@@ -1115,6 +1116,30 @@ address {
 	.product-panel.active {
 		display: flex;
 	}
+
+	.contact-footer-inner {
+		align-items: flex-start;
+		flex-direction: column;
+		max-width: 100%;
+		padding: 0 24px;
+	}
+	.form-field {
+		padding: 10px;
+	}
+
+	.footer-partner {
+		margin-top: 30px;
+	}
+	.form-field input,
+	.form-field textarea {
+		font-size: 16px;
+		word-break: keep-all;
+	}
+	.form-privacy-row {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	}
 }
 
 @media (max-width: 1100px) {
@@ -1147,6 +1172,7 @@ address {
 	}
 	.hero-section {
 		padding: 16px 20px 0;
+		height: auto;
 	}
 	.hero-card {
 		height: 520px;
@@ -1166,6 +1192,7 @@ address {
 	}
 	.hero-desc {
 		font-size: 16px;
+		line-height: 160%;
 	}
 	.car-slide {
 		flex-direction: column;
@@ -1207,6 +1234,11 @@ address {
 		height: 440px;
 		border-radius: 20px;
 	}
+
+	.hero-card::before {
+		background: linear-gradient(to right, rgba(17, 17, 17, 2) 10%, rgba(17, 17, 17, 0.2) 1%, rgba(17, 17, 17, 0.1) 30%, rgba(17, 17, 17, 0) 50%);
+	}
+
 	.hero-title {
 		font-size: 36px;
 		letter-spacing: -1.5px;
@@ -1223,12 +1255,43 @@ address {
 	.hero-desc {
 		font-size: 14px;
 	}
+	.product-section {
+		margin-top: 60px;
+		padding-bottom: 70px;
+	}
+
 	.cards-grid {
 		grid-template-columns: 1fr;
+		max-width: 100%;
+		padding: 24px;
+		gap: 20px;
 	}
 	.card {
 		height: 420px;
+		width: 100%;
 	}
+
+	/* Cards scroll-in stagger */
+	.cards-grid.animated .card:nth-child(1) {
+		opacity: 1;
+		transform: unset;
+		transition-delay: 0ms;
+	}
+	.cards-grid.animated .card:nth-child(2) {
+		opacity: 1;
+		transform: unset;
+		transition-delay: 150ms;
+	}
+	.cards-grid.animated .card:nth-child(3) {
+		opacity: 1;
+		transform: unset;
+		transition-delay: 300ms;
+	}
+
+	.contact-footer {
+		padding-top: 100px;
+	}
+
 	.footer-inner {
 		flex-direction: column;
 		padding: 44px 24px 36px;
