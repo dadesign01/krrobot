@@ -890,7 +890,7 @@ address {
 	color: #303030;
 	font-family: 'Wanted Sans', sans-serif;
 	font-size: 13px;
-	font-weight: 700;
+	font-weight: 700 !important;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	margin-bottom: 8px;
@@ -899,7 +899,7 @@ address {
 	color: #303030;
 	font-family: 'Wanted Sans', sans-serif;
 	font-size: 15px;
-	font-weight: 400;
+	font-weight: 600;
 	line-height: 22px;
 	letter-spacing: -0.3px;
 	display: flex;
@@ -1381,7 +1381,7 @@ address {
 	}
 
 	.product-section {
-		overflow: hidden;
+		/* overflow: hidden; */
 	}
 
 	.product-inner {
@@ -1634,7 +1634,7 @@ address {
 	}
 	.ph-desc {
 		font-size: 14px;
-		padding: 0 40px 0 0;
+		padding: 0 74px 0 0;
 	}
 	.ph-img {
 		height: 340px;
@@ -1670,5 +1670,6 @@ address {
 	}
 	.footer-addr p {
 		font-size: 12px;
+		padding-right: 50px;
 	}
 }
