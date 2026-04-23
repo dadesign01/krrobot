@@ -120,6 +120,41 @@ hamburger.addEventListener('click', () => {
 		calcSizes();
 		place(false);
 	});
+
+	// ── Touch & Mouse drag ───────────────────────────────────────
+	const sliderWrap = track.closest('.product-slider-wrap') || track.parentElement;
+	const THRESHOLD = 50; // px — 이 이상 드래그해야 슬라이드 전환
+	let dragStartX = 0;
+	let isDragging = false;
+
+	function onDragStart(x) {
+		if (animating) return;
+		dragStartX = x;
+		isDragging = true;
+	}
+	function onDragEnd(x) {
+		if (!isDragging) return;
+		isDragging = false;
+		const diff = dragStartX - x;
+		if (diff > THRESHOLD) next();
+		else if (diff < -THRESHOLD) prev();
+	}
+
+	// Touch
+	sliderWrap.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+	sliderWrap.addEventListener('touchend', e => onDragEnd(e.changedTouches[0].clientX), { passive: true });
+
+	// Mouse
+	sliderWrap.addEventListener('mousedown', e => {
+		onDragStart(e.clientX);
+		sliderWrap.style.cursor = 'grabbing';
+	});
+	window.addEventListener('mouseup', e => {
+		onDragEnd(e.clientX);
+		sliderWrap.style.cursor = '';
+	});
+	// 드래그 중 링크 클릭 방지
+	sliderWrap.addEventListener('dragstart', e => e.preventDefault());
 })();
 
 // ── Contact form ─────────────────────────────────────────────────

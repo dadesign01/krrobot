@@ -523,6 +523,11 @@ address {
 	width: 100%;
 	height: 560px;
 	transform: translateZ(0);
+	cursor: grab;
+	user-select: none;
+}
+.product-slider-wrap:active {
+	cursor: grabbing;
 }
 .product-track {
 	position: relative;
