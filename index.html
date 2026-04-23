@@ -9,7 +9,6 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<!-- 기본 -->
 		<link rel="icon" href="./img/main/favicon.ico" sizes="any" />
@@ -163,13 +162,13 @@
 
 				<div class="product-inner">
 					<!-- 이미지만 슬라이드 -->
-					<div class="swiper product-swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide"><img src="img/main/p_01.png" alt="원격방수총 사족보행로봇" /></div>
-							<div class="swiper-slide"><img src="img/main/p_02.png" alt="소방 트랙 로봇" /></div>
-							<div class="swiper-slide"><img src="img/main/p_04.png" alt="원격 방수총 FN40TM" /></div>
-							<div class="swiper-slide"><img src="img/main/p_05.png" alt="협소 공간 탐지 로봇" /></div>
-							<div class="swiper-slide"><img src="img/main/p_06.png" alt="UWB 인명 탐지레이더 센서" /></div>
+					<div class="product-slider-wrap">
+						<div class="product-track" id="productTrack">
+							<div class="product-slide"><img src="img/main/p_01.png" alt="원격방수총 사족보행로봇" /></div>
+							<div class="product-slide"><img src="img/main/p_02.png" alt="소방 트랙 로봇" /></div>
+							<div class="product-slide"><img src="img/main/p_04.png" alt="원격 방수총 FN40TM" /></div>
+							<div class="product-slide"><img src="img/main/p_05.png" alt="협소 공간 탐지 로봇" /></div>
+							<div class="product-slide"><img src="img/main/p_06.png" alt="UWB 인명 탐지레이더 센서" /></div>
 						</div>
 					</div>
 
@@ -277,92 +276,97 @@
 				</div>
 			</section>
 
-			<!-- ===================== CONTACT ===================== -->
-			<section class="contact-section" id="contact">
-				<div class="contact-inner">
-					<form class="contact-form" id="contactForm" novalidate>
-						<div class="form-row">
-							<div class="form-col">
-								<input type="text" name="name" placeholder="이름*" required />
-							</div>
-							<div class="form-col">
-								<input type="text" name="org" placeholder="소속   기관/소속부문" />
-							</div>
-						</div>
-
-						<div class="form-row">
-							<div class="form-col">
-								<input type="tel" name="tel" placeholder="연락처   010-1234-5678" />
-							</div>
-							<div class="form-col">
-								<input type="email" name="email" placeholder="이메일   gildong1234@krrobot.co.kr" />
-							</div>
-						</div>
-
-						<div class="form-row">
-							<div class="form-col full">
-								<input type="text" name="type" placeholder="문의 유형   제품 구매 및 문의, 기술 협업, 시연 요청, 언론 문의 등" />
-							</div>
-						</div>
-
-						<div class="form-row">
-							<div class="form-col full">
-								<textarea name="content" rows="6" placeholder="문의 내용   케이대응로봇에 대한 문의사항을 작성 해 주세요."></textarea>
-							</div>
-						</div>
-
-						<div class="form-row form-file-row">
-							<label class="file-label">정부 파일</label>
-							<div class="file-zone">
-								<span class="file-hint">파일을 선택하거나 끌어다 놓으세요</span>
-								<label class="file-agree">
-									<input type="checkbox" name="agree" />
-									개인정보 수집·이용 동의
-								</label>
-							</div>
-						</div>
-
-						<div class="form-submit">
-							<button type="submit" class="submit-btn">문의하기</button>
-						</div>
-					</form>
-				</div>
-			</section>
 		</main>
 
-		<!-- ===================== FOOTER ===================== -->
-		<footer class="footer">
-			<div class="footer-inner">
-				<div class="footer-left">
+		<!-- ===================== CONTACT + FOOTER ===================== -->
+		<footer class="contact-footer" id="contact">
+			<div class="contact-footer-inner">
+
+				<!-- Left: company info -->
+				<div class="footer-info">
 					<a href="#" class="footer-logo">
 						<img src="img/main/logo.png" alt="KRR 케이대응로봇" />
 					</a>
+					<p class="footer-company-name">주식회사 케이대응로봇</p>
 					<address class="footer-addr">
-						<p><strong>주식회사 케이대응로봇</strong></p>
-						<p>CEO 구현&ensp;|&ensp;ADDRESS 대전 유성구 가정로 144(과학로) 10동 100호</p>
-						<p>TEL 042-713-9119&ensp;|&ensp;E-MAIL gmgu@krrobot.co.kr</p>
+						<p>
+							<span class="addr-label">CEO</span> <span class="addr-val">구광민</span>
+							&ensp;&ensp;
+							<span class="addr-label">ADDRESS</span> <span class="addr-val">대전 유성구 계롱로 144(봉명동), 10층 1007호</span>
+						</p>
+						<p>
+							<span class="addr-label">TEL</span> <span class="addr-val">042-713-9119</span>
+							&ensp;&ensp;
+							<span class="addr-label">E-MAIL</span> <span class="addr-val">gmgu@krrobot.co.kr</span>
+						</p>
 					</address>
+					<p class="footer-partner">협력사 FiNO</p>
 					<nav class="footer-policy">
 						<a href="#">개인정보처리방침</a>
-						<span>|</span>
 						<a href="#">이용약관</a>
 					</nav>
 				</div>
 
-				<div class="footer-right">
-					<p class="partner-label">협력사</p>
-					<p class="partner-name">FINO</p>
+				<!-- Right: contact form -->
+				<div class="contact-form-wrap">
+					<form class="contact-form" id="contactForm" novalidate>
+						<div class="form-row">
+							<div class="form-field">
+								<span class="field-label">이름<span class="req">*</span></span>
+								<input type="text" name="name" placeholder="홍길동" required />
+							</div>
+							<div class="form-field">
+								<span class="field-label">소속<span class="req">*</span></span>
+								<input type="text" name="org" placeholder="가나다소방무역" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field">
+								<span class="field-label">연락처<span class="req">*</span></span>
+								<input type="tel" name="tel" placeholder="010-1234-5678" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">이메일<span class="req">*</span></span>
+								<input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field full">
+								<span class="field-label">문의 유형<span class="req">*</span></span>
+								<input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field full textarea-field">
+								<span class="field-label">문의 내용<span class="req">*</span></span>
+								<textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field full">
+								<span class="field-label">첨부 파일</span>
+								<input type="text" name="file" placeholder="첨부 파일있으신 경우 첨부해주세요." readonly />
+							</div>
+						</div>
+						<div class="form-privacy-row">
+							<label class="privacy-check">
+								<input type="checkbox" name="agree" />
+								<span class="privacy-text">개인정보 수집 및 이용에 동의합니다.</span>
+							</label>
+							<a href="#" class="privacy-more">자세히 보기 &gt;</a>
+							<button type="submit" class="submit-btn">문의하기</button>
+						</div>
+					</form>
 				</div>
+
 			</div>
 
+			<!-- Copyright -->
 			<div class="footer-copy">
-				<div class="footer-copy-inner">
-					<p>Copyright ©2024 주식회사 케이대응로봇. All rights reserved.</p>
-				</div>
+				<p>Copyright 주식회사 케이대응로봇. All rights reserved.</p>
 			</div>
 		</footer>
 
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
