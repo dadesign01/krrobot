@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>보도자료 편집</title>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<script src="supabase-config.js"></script>
+		<link rel="stylesheet" href="css/editor.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel="icon" href="../img/main/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/main/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/main/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="../img/main/apple-touch-icon.png" />
+		<link href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
+		<style>
+			.ql-toolbar { background: #1c1c1c; border: 1px solid #232323 !important; border-radius: 10px 10px 0 0; }
+			.ql-toolbar .ql-stroke { stroke: #888; }
+			.ql-toolbar .ql-fill { fill: #888; }
+			.ql-toolbar .ql-picker { color: #888; }
+			.ql-toolbar button:hover .ql-stroke, .ql-toolbar .ql-active .ql-stroke { stroke: #e8193c; }
+			.ql-toolbar button:hover .ql-fill, .ql-toolbar .ql-active .ql-fill { fill: #e8193c; }
+			.ql-toolbar .ql-picker-label:hover, .ql-toolbar .ql-picker-item:hover { color: #e8193c; }
+			.ql-container { background: #141414; border: 1px solid #232323 !important; border-top: none !important; border-radius: 0 0 10px 10px; }
+			.ql-editor { color: #f0f0f0; font-family: 'Noto Sans KR', sans-serif; font-size: 14px; line-height: 1.75; }
+			.ql-editor.ql-blank::before { color: #5a5a5a; font-style: normal; }
+			#content-editor .ql-editor { min-height: 300px; }
+			#summary-editor .ql-editor { min-height: 80px; }
+			.ql-picker-options { background: #1c1c1c !important; border: 1px solid #232323 !important; }
+			.ql-picker-item { color: #888 !important; }
+		</style>
+	</head>
+	<body data-page="press">
+		<aside class="sidebar">
+			<div class="sb-logo">
+				<img src="../img/main/logo-wh.png" alt="KRR" style="height: 24px; width: auto; max-width: 160px; display: block; margin-bottom: 6px" />
+				<span class="sub">ADMIN PANEL</span>
+			</div>
+			<nav class="sb-nav">
+				<a class="nav-item" href="dashboard.html">← 게시판 목록으로</a>
+			</nav>
+		</aside>
+
+		<main class="main">
+			<div class="topbar">
+				<div class="topbar-left">
+					<a href="dashboard.html" class="btn-back">← 목록</a>
+					<div class="topbar-title" id="page-title">보도자료 작성</div>
+				</div>
+				<div class="topbar-acts">
+					<button class="btn-secondary" onclick="save(false)">비공개 저장</button>
+					<button class="btn-save" id="btn-save" onclick="save(true)">공개 저장</button>
+				</div>
+			</div>
+
+			<div class="layout">
+				<div class="editor-main">
+					<div class="field">
+						<label>제목</label>
+						<input type="text" class="inp inp-title" id="title" placeholder="보도자료 제목" />
+					</div>
+					<div class="field">
+						<label>요약 (목록에 표시)</label>
+						<div id="summary-editor"></div>
+					<input type="hidden" id="summary" />
+					</div>
+					<div class="field">
+						<label>본문</label>
+						<div id="content-editor"></div>
+					<input type="hidden" id="content" />
+					</div>
+				</div>
+				<div class="side-panel">
+					<div class="side-card">
+						<div class="side-card-title">게시 설정</div>
+						<div class="field">
+							<label>구분</label>
+							<select class="inp" id="type" onchange="onTypeChange(this)">
+								<option value="press">보도자료</option>
+								<option value="media">미디어</option>
+							</select>
+						</div>
+						<div class="toggle-row" style="margin-top: 14px">
+							<span style="font-size: 13px">공개 여부</span>
+							<label class="toggle"><input type="checkbox" id="is-published" checked /><span class="toggle-track"></span></label>
+						</div>
+					</div>
+					<div class="side-card" id="video-card" style="display:none">
+						<div class="side-card-title">동영상 URL</div>
+						<input type="text" class="inp" id="video-url" placeholder="YouTube / Vimeo URL" style="margin-bottom: 8px" />
+						<div class="hint">YouTube embed URL 권장<br />예: https://www.youtube.com/embed/xxxxx</div>
+					</div>
+					<div class="side-card">
+						<div class="side-card-title">대표 이미지</div>
+						<div class="img-drop" id="drop-area">
+							<input type="file" id="img-file" accept="image/*" onchange="onFileSelect(this)" />
+							<div class="img-drop-icon"><i class="fa-solid fa-image"></i></div>
+							<div class="img-drop-text">클릭하여 업로드<br /><span>JPG · PNG · WEBP</span></div>
+						</div>
+						<div class="img-preview" id="preview"><img id="preview-img" src="" alt="" /></div>
+						<div class="upload-prog" id="upload-prog">업로드 중...</div>
+						<button class="btn-img-remove" id="btn-remove" onclick="removeImg()">이미지 제거</button>
+						<input type="hidden" id="image-url" />
+					</div>
+					<div class="side-card">
+						<div class="side-card-title">첨부파일</div>
+						<div class="attach-drop">
+							<input type="file" id="attach-file" multiple onchange="onAttachSelect(this)" />
+							<div class="attach-drop-icon"><i class="fa-solid fa-paperclip"></i></div>
+							<div class="attach-drop-text">클릭하여 파일 첨부<br /><span>PDF · DOC · XLS · 이미지 등</span></div>
+						</div>
+						<ul class="attach-list" id="attach-list"></ul>
+						<div class="upload-prog" id="attach-prog">업로드 중...</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div class="toast" id="toast"></div>
+		<script src="js/editor-attach.js"></script>
+		<script src="js/editor-press.js"></script>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Technology R&D 상세 | KRR 케이대응로봇</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/sub.css" />
+  <link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
+    <nav class="gnb" id="gnb">
+      <ul class="gnb-list">
+        <li class="gnb-item has-mega">
+          <a href="../product/index.html" class="gnb-link">Product</a>
+          <div class="mega-menu"><div class="mega-inner">
+            <div class="mega-col"><h4 class="mega-heading">로봇 제품</h4><ul><li><a href="#">소방 로봇</a></li><li><a href="#">사족보행로봇</a></li><li><a href="#">원격 방수총</a></li></ul></div>
+            <div class="mega-col"><h4 class="mega-heading">센서·운용·S/W 기술</h4><ul><li><a href="#">협소 공간 탐지 로봇</a></li><li><a href="#">농연 가시화 센서</a></li><li><a href="#">환경지도 생성 및 자율주행</a></li><li><a href="#">소형 다중센서 통합 모듈</a></li><li><a href="#">유해 기체 탐지 센서</a></li><li><a href="#">UWB 인명 탐지레이더 센서</a></li></ul></div>
+          </div></div>
+        </li>
+        <li class="gnb-item has-drop">
+          <a href="future.html" class="gnb-link">R&amp;D</a>
+          <ul class="drop-menu"><li><a href="future.html">Future Technology R&amp;D</a></li><li><a href="cert.html">특허 및 인증</a></li></ul>
+        </li>
+        <li class="gnb-item has-drop">
+          <a href="../brand/about.html" class="gnb-link">Brand</a>
+          <ul class="drop-menu"><li><a href="../brand/about.html">회사 소개</a></li></ul>
+        </li>
+        <li class="gnb-item has-drop">
+          <a href="../news/ir.html" class="gnb-link">News</a>
+          <ul class="drop-menu"><li><a href="../news/ir.html">IR 공시정보</a></li><li><a href="../news/jobs.html">채용</a></li><li><a href="../news/press.html">PRESS</a></li></ul>
+        </li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="../product/index.html">Product</a></li>
+      <li><a href="future.html">R&amp;D</a></li>
+      <li><a href="../brand/about.html">Brand</a></li>
+      <li><a href="../news/ir.html">News</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="sub-content">
+  <div class="sub-container">
+    <a class="detail-back" href="future.html">
+      <i class="fa-solid fa-chevron-left"></i> 목록으로
+    </a>
+
+    <div id="detail-wrap">
+      <p class="loading-msg">불러오는 중...</p>
+    </div>
+  </div>
+</main>
+
+<footer class="contact-footer" id="contact">
+  <div class="contact-footer-inner">
+    <div class="footer-info">
+      <a href="../../index.html" class="footer-logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
+      <p class="footer-company-name">주식회사 케이대응로봇</p>
+      <address class="footer-addr">
+        <p class="addr-section-label">ADDRESS</p>
+        <p><span class="addr-label">본사</span><span class="addr-val">대전 유성구 계롱로 144(봉명동), BYC유성빌딩 1007호</span></p>
+        <p><span class="addr-label">포항지사</span><span class="addr-val">경상북도 포항시 남구 지곡로 394 제1벤처동 311호</span></p>
+        <p><span class="addr-label">생산센터</span><span class="addr-val">대전광역시 대덕구 생산5길 29</span></p>
+        <p class="addr-contact-row"><span class="addr-label">TEL</span><span class="addr-val">042-713-9119</span><span class="addr-divider">|</span><span class="addr-label">Fax</span><span class="addr-val">0507-1790-2675</span><span class="addr-divider">|</span><span class="addr-label">E-MAIL</span><span class="addr-val">krr@krrobot.co.kr</span></p>
+      </address>
+      <nav class="footer-policy"><a href="#">개인정보처리방침</a><a href="#">이용약관</a></nav>
+    </div>
+    <div class="contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row"><div class="form-field"><span class="field-label">이름<span class="req">*</span></span><input type="text" name="name" placeholder="홍길동" /></div><div class="form-field"><span class="field-label">소속<span class="req">*</span></span><input type="text" name="org" placeholder="가나다소방무역" /></div></div>
+        <div class="form-row"><div class="form-field"><span class="field-label">연락처<span class="req">*</span></span><input type="tel" name="tel" placeholder="010-1234-5678" /></div><div class="form-field"><span class="field-label">이메일<span class="req">*</span></span><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" /></div></div>
+        <div class="form-row"><div class="form-field full"><span class="field-label">문의 유형<span class="req">*</span></span><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" /></div></div>
+        <div class="form-row"><div class="form-field full textarea-field"><span class="field-label">문의 내용<span class="req">*</span></span><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea></div></div>
+        <div class="form-row"><div class="form-field full"><span class="field-label">첨부 파일</span><input type="text" name="file" placeholder="첨부 파일있으신 경우 첨부해주세요." readonly /></div></div>
+        <div class="form-privacy-row"><label class="privacy-check"><input type="checkbox" name="agree" /><span class="privacy-text">개인정보 수집 및 이용에 동의합니다.</span></label><a href="#" class="privacy-more">자세히 보기 &gt;</a><button type="submit" class="submit-btn">문의하기</button></div>
+      </form>
+    </div>
+  </div>
+  <div class="footer-copy"><p>Copyright 주식회사 케이대응로봇. All rights reserved.</p></div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/sb.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get('id')
+
+function fmtDate(str) {
+  if (!str) return ''
+  const d = new Date(str)
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`
+}
+
+function esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+}
+
+function fileIcon(name) {
+  const ext = (name.split('.').pop() || '').toLowerCase()
+  if (ext === 'pdf') return '<i class="fa-solid fa-file-pdf"></i>'
+  if (['doc','docx','hwp','hwpx'].includes(ext)) return '<i class="fa-solid fa-file-lines"></i>'
+  if (['xls','xlsx'].includes(ext)) return '<i class="fa-solid fa-file-excel"></i>'
+  if (['ppt','pptx'].includes(ext)) return '<i class="fa-solid fa-file-powerpoint"></i>'
+  if (['zip','7z','rar'].includes(ext)) return '<i class="fa-solid fa-file-zipper"></i>'
+  if (['jpg','jpeg','png','gif','webp'].includes(ext)) return '<i class="fa-solid fa-file-image"></i>'
+  return '<i class="fa-solid fa-paperclip"></i>'
+}
+
+async function downloadFile(e, url, name) {
+  e.preventDefault()
+  try {
+    const res = await fetch(url)
+    const blob = await res.blob()
+    const a = document.createElement('a')
+    a.href = URL.createObjectURL(blob)
+    a.download = name
+    a.click()
+    URL.revokeObjectURL(a.href)
+  } catch { window.open(url, '_blank') }
+}
+
+async function loadDetail() {
+  const wrap = document.getElementById('detail-wrap')
+
+  if (!id) {
+    wrap.innerHTML = '<p class="empty-msg">잘못된 접근입니다.</p>'
+    return
+  }
+
+  const { data, error } = await sb
+    .from('rd_posts')
+    .select('*')
+    .eq('id', id)
+    .eq('is_published', true)
+    .single()
+
+  if (error || !data) {
+    wrap.innerHTML = '<p class="empty-msg">게시물을 찾을 수 없습니다.</p>'
+    return
+  }
+
+  document.title = `${data.title} | KRR 케이대응로봇`
+
+  const devBadge = data.is_developing
+    ? '<span class="rd-dev-badge" style="font-size:14px;padding:4px 14px;">개발중</span>'
+    : ''
+
+  const coverHtml = data.image_url
+    ? `<img class="detail-cover" src="${data.image_url}" alt="${esc(data.title)}" />`
+    : ''
+
+  const attachments = data.attachments || []
+  const attachHtml = attachments.length ? `
+    <div class="detail-attach-wrap">
+      <p class="detail-attach-title"><i class="fa-solid fa-paperclip"></i> 첨부 파일</p>
+      <div class="detail-attach-list">
+        ${attachments.map(a => `
+          <a class="detail-attach-link" href="${a.url}" onclick="downloadFile(event,'${a.url}','${(a.name||'').replace(/'/g,"\\'")}')">
+            ${fileIcon(a.name || '')} ${esc(a.name)}
+          </a>`).join('')}
+      </div>
+    </div>` : ''
+
+  wrap.innerHTML = `
+    <div class="detail-meta">
+      <span class="detail-cat">R&amp;D</span>
+      ${devBadge}
+      <span class="detail-date">${fmtDate(data.created_at)}</span>
+    </div>
+    <h1 class="detail-title">${esc(data.title)}</h1>
+    ${coverHtml}
+    <div class="detail-body">${data.content || ''}</div>
+    ${attachHtml}
+    <div class="detail-bottom-nav">
+      <a class="detail-list-btn" href="future.html">
+        <i class="fa-solid fa-list"></i> 목록으로
+      </a>
+    </div>`
+}
+
+loadDetail()
+</script>
+</body>
+</html>

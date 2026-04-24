@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KRR 관리자 대시보드</title>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<script src="supabase-config.js"></script>
+		<link rel="stylesheet" href="css/dashboard.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel="icon" href="../img/main/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/main/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/main/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="../img/main/apple-touch-icon.png" />
+	</head>
+	<body>
+		<!-- 사이드바 -->
+		<aside class="sidebar">
+			<div class="sb-logo">
+				<img src="../img/main/logo-wh.png" alt="KRR" style="height: 24px; width: auto; max-width: 160px; display: block; margin-bottom: 6px" />
+				<span class="sub">ADMIN PANEL</span>
+			</div>
+			<nav class="sb-nav">
+				<div class="nav-section">
+					<button class="nav-item" id="nav-home" onclick="goHome()">
+						<i class="fa-solid fa-house ni"></i> 대시보드 홈
+					</button>
+				</div>
+				<div class="nav-section">
+					<div class="nav-section-label">게시판 관리</div>
+					<button class="nav-item active" data-board="ir" onclick="switchBoard(this, 'ir')">
+						<i class="fa-solid fa-clipboard-list ni"></i> IR 공시정보
+						<span class="badge" id="cnt-ir">-</span>
+					</button>
+					<button class="nav-item" data-board="press" onclick="switchBoard(this, 'press')">
+						<i class="fa-solid fa-newspaper ni"></i> 보도자료
+						<span class="badge" id="cnt-press">-</span>
+					</button>
+					<button class="nav-item" data-board="jobs" onclick="switchBoard(this, 'jobs')">
+						<i class="fa-solid fa-briefcase ni"></i> 채용공고
+						<span class="badge" id="cnt-jobs">-</span>
+					</button>
+					<button class="nav-item" data-board="rd" onclick="switchBoard(this, 'rd')">
+						<i class="fa-solid fa-flask ni"></i> Future R&D
+						<span class="badge" id="cnt-rd">-</span>
+					</button>
+				</div>
+			</nav>
+			<div class="sb-bottom">
+				<button class="btn-logout" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> 로그아웃</button>
+			</div>
+		</aside>
+
+		<!-- 메인 -->
+		<main class="main">
+			<div class="topbar">
+				<div class="topbar-left">
+					<div class="topbar-title" id="board-title">IR 공시정보</div>
+					<span class="topbar-board" id="board-table">ir_posts</span>
+				</div>
+				<a href="#" class="btn-new" id="btn-new" onclick="goNew()">+ 새 글 작성</a>
+			</div>
+
+			<!-- 홈 대시보드 패널 -->
+			<div class="content" id="home-panel" style="display:none">
+				<div class="stat-grid">
+					<div class="stat-card" onclick="goBoard('ir')">
+						<div class="stat-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+						<div class="stat-num" id="stat-num-ir">—</div>
+						<div class="stat-label">IR 공시정보</div>
+						<div class="stat-sub" id="stat-sub-ir"></div>
+					</div>
+					<div class="stat-card" onclick="goBoard('press')">
+						<div class="stat-icon"><i class="fa-solid fa-newspaper"></i></div>
+						<div class="stat-num" id="stat-num-press">—</div>
+						<div class="stat-label">보도자료</div>
+						<div class="stat-sub" id="stat-sub-press"></div>
+					</div>
+					<div class="stat-card" onclick="goBoard('jobs')">
+						<div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+						<div class="stat-num" id="stat-num-jobs">—</div>
+						<div class="stat-label">채용공고</div>
+						<div class="stat-sub" id="stat-sub-jobs"></div>
+					</div>
+					<div class="stat-card" onclick="goBoard('rd')">
+						<div class="stat-icon"><i class="fa-solid fa-flask"></i></div>
+						<div class="stat-num" id="stat-num-rd">—</div>
+						<div class="stat-label">Future R&D</div>
+						<div class="stat-sub" id="stat-sub-rd"></div>
+					</div>
+				</div>
+				<div class="home-section-title">최근 게시물</div>
+				<ul class="recent-list" id="recent-list">
+					<li class="recent-item" style="justify-content:center;color:var(--muted);font-size:13px">불러오는 중...</li>
+				</ul>
+			</div>
+
+			<!-- 게시판 목록 패널 -->
+			<div class="content" id="board-panel">
+				<div class="toolbar">
+					<!-- IR / Press / RD 용 공개 필터 -->
+					<div class="filter-tabs" id="filter-pub">
+						<button class="tab active" data-val="all" onclick="setFilter(this, 'all')">전체</button>
+						<button class="tab" data-val="true" onclick="setFilter(this, 'true')">공개</button>
+						<button class="tab" data-val="false" onclick="setFilter(this, 'false')">비공개</button>
+					</div>
+					<!-- 채용 전용 상태 필터 -->
+					<div class="filter-tabs" id="filter-job" style="display: none">
+						<button class="tab active" data-val="all" onclick="setFilter(this, 'all')">전체</button>
+						<button class="tab" data-val="active" onclick="setFilter(this, 'active')">채용중</button>
+						<button class="tab" data-val="closed" onclick="setFilter(this, 'closed')">마감</button>
+					</div>
+					<div class="search-wrap">
+						<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+						<input type="text" id="search" placeholder="제목 검색..." oninput="onSearch()" />
+					</div>
+				</div>
+
+				<div class="tbl-wrap">
+					<table>
+						<thead id="tbl-head"></thead>
+						<tbody id="tbl-body">
+							<tr class="loading-row">
+								<td colspan="6">불러오는 중...</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="pagination">
+					<span class="pg-info" id="pg-info"></span>
+					<div class="pg-btns" id="pg-btns"></div>
+				</div>
+			</div><!-- /board-panel -->
+		</main>
+
+		<!-- 삭제 모달 -->
+		<div class="modal-bg" id="del-modal">
+			<div class="modal">
+				<h2>게시글 삭제</h2>
+				<p>삭제하면 복구할 수 없습니다.<br />정말 삭제하시겠습니까?</p>
+				<div class="modal-acts">
+					<button class="btn-cancel" onclick="closeModal()">취소</button>
+					<button class="btn-del-confirm" onclick="doDelete()">삭제</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/dashboard.js"></script>
+	</body>
+</html>

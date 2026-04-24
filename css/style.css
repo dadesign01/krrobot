@@ -11,7 +11,6 @@
 html {
 	scroll-behavior: smooth;
 	font-size: 16px;
-	overflow-x: hidden;
 }
 body {
 	font-family:
@@ -64,14 +63,17 @@ address {
 	z-index: 1000;
 	background: #fff;
 	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+	width: 100%;
+	/* display: flex; */
 }
 
 .header-inner {
 	max-width: 1680px;
 	margin: 0 auto;
-	padding: 0 80px;
+	padding: 0 40px;
 	height: 72px;
 	display: flex;
+	/* width: 100%; */
 	align-items: center;
 	justify-content: space-between;
 }
@@ -187,6 +189,15 @@ address {
 	visibility: visible;
 	transform: translateX(-50%) translateY(0);
 	pointer-events: auto;
+}
+/* 마지막 nav 아이템 드롭다운은 우측 정렬 (뷰포트 오른쪽 넘침 방지) */
+.gnb-list > li:last-child .drop-menu {
+	left: auto;
+	right: 0;
+	transform: translateX(0) translateY(-6px);
+}
+.gnb-list > li:last-child:hover .drop-menu {
+	transform: translateX(0) translateY(0);
 }
 .drop-menu li a {
 	color: rgba(255, 255, 255, 0.65);
@@ -468,10 +479,10 @@ address {
 
 .ph-img {
 	position: absolute;
-	right: 0;
+	right: -10%;
 	top: 50%;
 	transform: translateY(-50%);
-	height: 520px;
+	height: 700px;
 	width: auto;
 	object-fit: contain;
 	pointer-events: none;
@@ -866,7 +877,7 @@ address {
 .footer-info {
 	flex-shrink: 0;
 	min-width: 0;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 }
 
 .footer-logo img {
@@ -1340,7 +1351,7 @@ address {
 	}
 	.contact-footer-inner {
 		align-items: flex-start;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		max-width: 100%;
 		padding: 0;
 	}
@@ -1368,9 +1379,6 @@ address {
 }
 /* 제품 슬라이더 — 1024px 이하: 1개 표시 + 설명 하단 */
 @media (max-width: 1024px) {
-	body {
-		overflow-x: hidden;
-	}
 	.hero-bg {
 		width: 100%;
 	}
@@ -1383,10 +1391,6 @@ address {
 	}
 	.ph-img {
 		right: -20%;
-	}
-
-	.product-section {
-		/* overflow: hidden; */
 	}
 
 	.product-inner {
@@ -1447,15 +1451,15 @@ address {
 	.card-more {
 		font-size: 14px;
 	}
-}
-
-@media (max-width: 900px) {
 	.gnb {
 		display: none;
 	}
 	.hamburger {
 		display: flex;
 	}
+}
+
+@media (max-width: 900px) {
 	.hero-section {
 		padding: 16px 20px 0;
 		height: auto;
