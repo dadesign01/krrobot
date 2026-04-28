@@ -1,0 +1,220 @@
+/* ── 섹션 헤더 ── */
+.cert-section-wrap {
+	text-align: center;
+	position: relative;
+	margin-bottom: 60px;
+}
+.cert-proven-bg {
+	width: 1274px;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+.cert-proven-bg img.proven-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	user-select: none;
+}
+.cert-section-title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+	margin: 0;
+	line-height: 100px;
+}
+.cert-section-title .txt-main {
+	color: var(--MainColor, #d60057);
+	font-family: 'Pretendard', sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: 100px;
+	letter-spacing: -1.92px;
+}
+.cert-section-title .txt-normal {
+	color: #121212;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: 100px;
+	letter-spacing: -1.92px;
+}
+
+/* ── 그리드 ── */
+.cert-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 348px);
+	gap: 55px 31px;
+	justify-content: space-between;
+}
+
+/* ── 카드 ── */
+.cert-card {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cert-card-img-wrap {
+	position: relative;
+	width: 348px;
+	height: 416px;
+	border-radius: 15px;
+	background: #f8f8f8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: visible;
+	flex-shrink: 0;
+	z-index: 0;
+}
+.cert-card-img-wrap::before {
+	content: '';
+	position: absolute;
+	inset: -15px;
+	border-radius: 15px;
+	background: #f8f8f8;
+	z-index: -1;
+	transition:
+		inset 0.2s,
+		border-radius 0.2s,
+		background 0.2s;
+}
+.cert-card:hover .cert-card-img-wrap::before {
+	inset: -15px;
+	border-radius: 15px;
+	background: linear-gradient(149deg, var(--MainColor, #d60057) 67.22%, #212121 100%);
+}
+.cert-card-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	aspect-ratio: 87/104;
+	display: block;
+	border-radius: 10px;
+}
+.cert-card-title {
+	margin-top: 40px;
+	color: #121212;
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: -0.72px;
+	transition: color 0.2s;
+}
+.cert-card:hover .cert-card-title {
+	color: var(--MainColor, #d60057);
+}
+
+/* ── 페이지네이션 ── */
+.cert-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 60px;
+}
+.cert-pagination button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	color: #888;
+	line-height: 100px;
+	/* letter-spacing: 36.6px; */
+	transition: color 0.15s;
+	padding: 0;
+	text-align: center;
+	justify-content: center;
+	width: 28px;
+}
+.cert-pagination button:hover {
+	color: #121212;
+}
+.cert-pagination button.active {
+	color: var(--MainColor, #d60057);
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 100px;
+	/* letter-spacing: 36.6px; */
+}
+.cert-pagination button.arrow {
+	width: 12px;
+	height: 24px;
+	aspect-ratio: 1/2;
+	color: #121212;
+	/* font-size: 18px; */
+	letter-spacing: 0;
+	line-height: 1;
+	font-size: 36px;
+}
+.cert-pagination button.arrow:disabled {
+	color: #ccc;
+	cursor: default;
+}
+
+/* ── 모바일 ── */
+@media (max-width: 900px) {
+	.cert-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px 14px;
+		justify-content: center;
+	}
+	.cert-card-img-wrap {
+		width: 156px;
+		height: 187px;
+		aspect-ratio: 56/67;
+	}
+
+	.cert-card-title {
+		margin-top: 20px;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: -0.56px;
+		color: #121212;
+	}
+	.cert-card:hover .cert-card-title {
+		color: #121212;
+	}
+	.cert-section-title {
+		white-space: normal;
+		width: 100%;
+		padding: 0 16px;
+		box-sizing: border-box;
+	}
+	.cert-section-title .txt-main,
+	.cert-section-title .txt-normal {
+		font-size: 24px;
+		line-height: 1.4;
+		letter-spacing: -1px;
+	}
+	.cert-card-img-wrap::before {
+		inset: -10px;
+		border-radius: 10px;
+	}
+	.cert-card:hover .cert-card-img-wrap::before {
+		inset: -10px;
+		border-radius: 10px;
+	}
+}
+@media (max-width: 480px) {
+	.cert-section-title .txt-main,
+	.cert-section-title .txt-normal {
+		font-size: 22px;
+	}
+}

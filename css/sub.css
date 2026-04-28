@@ -927,22 +927,37 @@
 .pg-btn {
 	background: none;
 	border: none;
-	color: #7b7b7b;
+	color: #888;
 	font-family: 'Pretendard Variable', sans-serif;
-	font-size: 14px;
+	font-size: 20px;
 	font-weight: 400;
-	line-height: 84px;
-	letter-spacing: 8.4px;
+	line-height: 100px;
+	letter-spacing: 36.6px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 0 0 8.4px;
-	height: 84px;
+	padding: 0 0 0 36.6px;
+	height: 100px;
+	transition: color 0.15s;
+}
+
+.pg-btn:first-child,
+.pg-btn:last-child {
+	letter-spacing: 0;
+	padding: 0;
+	width: 12px;
+	height: 24px;
+	align-self: center;
 }
 
 .pg-btn.active {
-	color: #d60057;
+	color: var(--MainColor, #d60057);
+	font-weight: 600;
+}
+
+.pg-btn:hover:not(:disabled) {
+	color: #121212;
 }
 
 .pg-btn:disabled {
@@ -952,6 +967,8 @@
 
 .pg-btn svg {
 	flex-shrink: 0;
+	width: 12px;
+	height: 24px;
 }
 
 /* ── 로딩 / 빈 상태 ── */
