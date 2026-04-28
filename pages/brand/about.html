@@ -1,340 +1,494 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>회사 소개 | KRR 케이대응로봇</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/sub.css" />
-  <link rel="stylesheet" href="../../css/brand.css" />
-  <link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>회사 소개 | KRR 케이대응로봇</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/sub.css" />
+		<link rel="stylesheet" href="../../css/brand.css" />
+		<link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
+	</head>
+	<body>
+		<header class="header" id="header">
+			<div class="header-inner">
+				<a href="../../index.html" class="logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
+				<nav class="gnb" id="gnb">
+					<ul class="gnb-list">
+						<li class="gnb-item has-mega">
+							<a href="../product/index.html" class="gnb-link">Product</a>
+							<div class="mega-menu">
+								<div class="mega-inner">
+									<div class="mega-col">
+										<h4 class="mega-heading">로봇 제품</h4>
+										<ul>
+											<li><a href="#">소방 로봇</a></li>
+											<li><a href="#">사족보행로봇</a></li>
+											<li><a href="#">원격 방수총</a></li>
+										</ul>
+									</div>
+									<div class="mega-col">
+										<h4 class="mega-heading">센서·운용·S/W 기술</h4>
+										<ul>
+											<li><a href="#">협소 공간 탐지 로봇</a></li>
+											<li><a href="#">농연 가시화 센서</a></li>
+											<li><a href="#">환경지도 생성 및 자율주행</a></li>
+											<li><a href="#">소형 다중센서 통합 모듈</a></li>
+											<li><a href="#">유해 기체 탐지 센서</a></li>
+											<li><a href="#">UWB 인명 탐지레이더 센서</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="gnb-item has-drop">
+							<a href="../rd/future.html" class="gnb-link">R&amp;D</a>
+							<ul class="drop-menu">
+								<li><a href="../rd/future.html">Future Technology R&amp;D</a></li>
+								<li><a href="../rd/cert.html">특허 및 인증</a></li>
+							</ul>
+						</li>
+						<li class="gnb-item has-drop">
+							<a href="about.html" class="gnb-link">Brand</a>
+							<ul class="drop-menu">
+								<li><a href="about.html">회사 소개</a></li>
+							</ul>
+						</li>
+						<li class="gnb-item has-drop">
+							<a href="../news/ir.html" class="gnb-link">News</a>
+							<ul class="drop-menu">
+								<li><a href="../news/ir.html">IR 공시정보</a></li>
+								<li><a href="../news/jobs.html">채용</a></li>
+								<li><a href="../news/press.html">PRESS</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<button class="hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+			</div>
+			<div class="mobile-nav" id="mobileNav">
+				<ul>
+					<li><a href="../product/index.html">Product</a></li>
+					<li><a href="../rd/future.html">R&amp;D</a></li>
+					<li><a href="about.html">Brand</a></li>
+					<li><a href="../news/ir.html">News</a></li>
+				</ul>
+			</div>
+		</header>
 
-<header class="header" id="header">
-  <div class="header-inner">
-    <a href="../../index.html" class="logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
-    <nav class="gnb" id="gnb">
-      <ul class="gnb-list">
-        <li class="gnb-item has-mega">
-          <a href="../product/index.html" class="gnb-link">Product</a>
-          <div class="mega-menu"><div class="mega-inner">
-            <div class="mega-col"><h4 class="mega-heading">로봇 제품</h4><ul><li><a href="#">소방 로봇</a></li><li><a href="#">사족보행로봇</a></li><li><a href="#">원격 방수총</a></li></ul></div>
-            <div class="mega-col"><h4 class="mega-heading">센서·운용·S/W 기술</h4><ul><li><a href="#">협소 공간 탐지 로봇</a></li><li><a href="#">농연 가시화 센서</a></li><li><a href="#">환경지도 생성 및 자율주행</a></li><li><a href="#">소형 다중센서 통합 모듈</a></li><li><a href="#">유해 기체 탐지 센서</a></li><li><a href="#">UWB 인명 탐지레이더 센서</a></li></ul></div>
-          </div></div>
-        </li>
-        <li class="gnb-item has-drop">
-          <a href="../rd/future.html" class="gnb-link">R&amp;D</a>
-          <ul class="drop-menu"><li><a href="../rd/future.html">Future Technology R&amp;D</a></li><li><a href="../rd/cert.html">특허 및 인증</a></li></ul>
-        </li>
-        <li class="gnb-item has-drop">
-          <a href="about.html" class="gnb-link">Brand</a>
-          <ul class="drop-menu"><li><a href="about.html">회사 소개</a></li></ul>
-        </li>
-        <li class="gnb-item has-drop">
-          <a href="../news/ir.html" class="gnb-link">News</a>
-          <ul class="drop-menu"><li><a href="../news/ir.html">IR 공시정보</a></li><li><a href="../news/jobs.html">채용</a></li><li><a href="../news/press.html">PRESS</a></li></ul>
-        </li>
-      </ul>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
-  </div>
-  <div class="mobile-nav" id="mobileNav">
-    <ul>
-      <li><a href="../product/index.html">Product</a></li>
-      <li><a href="../rd/future.html">R&amp;D</a></li>
-      <li><a href="about.html">Brand</a></li>
-      <li><a href="../news/ir.html">News</a></li>
-    </ul>
-  </div>
-</header>
+		<section class="sub-header sub-header--brand">
+			<div class="sub-header-inner">
+				<div class="sub-header-content">
+					<span class="sub-badge">Brand</span>
+					<h1 class="sub-title">회사 소개</h1>
+					<p class="sub-desc">로봇 전문기업, 케이대응로봇을 소개합니다.</p>
+				</div>
+				<div class="sub-location">
+					<div class="sub-location-wrap">
+						<select onchange="if (this.value) location.href = this.value;">
+							<option value="about.html">회사 소개</option>
+						</select>
+						<span class="sub-location-arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212" /></svg>
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
 
-<section class="sub-header sub-header--brand">
-  <div class="sub-header-inner">
-    <div class="sub-header-content">
-      <span class="sub-badge">Brand</span>
-      <h1 class="sub-title">회사 소개</h1>
-      <p class="sub-desc">로봇 전문기업, 케이대응로봇을 소개합니다.</p>
-    </div>
-    <div class="sub-location">
-      <div class="sub-location-wrap">
-        <select onchange="if(this.value) location.href=this.value">
-          <option value="about.html">회사 소개</option>
-        </select>
-        <span class="sub-location-arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212"/></svg>
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
+		<main class="sub-content ab-page">
+			<!-- ── 1. 인트로 ── -->
+			<section class="ab-intro">
+				<div class="ab-container">
+					<div class="ab-intro-inner">
+						<div class="ab-intro-text">
+							<p class="ab-headline-black">Special Environment?</p>
+							<p class="ab-headline-red">Smart Solution!</p>
+							<div class="ab-body-group">
+								<p>Robotics·Sensor·AI 융합으로<br />복잡하고 위험한 현장을 안전하고 효율적으로 바꿉니다.</p>
+								<p>현장에서 작동하는 실질적 솔루션에 집중하며,<br />인간과 기술의 조화로 안전하고 지속가능한 미래를 만듭니다.<br />지속적인 혁신으로 신뢰받는 기술 파트너가 되겠습니다.</p>
+							</div>
+						</div>
+						<div class="ab-intro-mark">
+							<img src="../../img/sub/logo_bg.png" alt="KRR 로고 마크" />
+						</div>
+					</div>
+				</div>
+			</section>
 
-<main class="sub-content ab-page">
+			<!-- ── 2. 비전 이미지 ── -->
+			<section class="ab-vision-section">
+				<div class="ab-container">
+					<div class="ab-vision-img">
+						<h2 class="ab-vision-title">사람을 향한 기술,<br />현장을 바꾸는 로봇 솔루션</h2>
+					</div>
+				</div>
+			</section>
 
-  <!-- ── 1. 인트로 ── -->
-  <section class="ab-intro">
-    <div class="ab-container">
-      <div class="ab-intro-inner">
-        <div class="ab-intro-text">
-          <p class="ab-headline-black">Special Environment?</p>
-          <p class="ab-headline-red">Smart Solution!</p>
-          <div class="ab-body-group">
-            <p>Robotics·Sensor·AI 융합으로<br>복잡하고 위험한 현장을 안전하고 효율적으로 바꿉니다.</p>
-            <p>현장에서 작동하는 실질적 솔루션에 집중하며,<br>인간과 기술의 조화로 안전하고 지속가능한 미래를 만듭니다.<br>지속적인 혁신으로 신뢰받는 기술 파트너가 되겠습니다.</p>
-          </div>
-        </div>
-        <div class="ab-intro-mark">
-          <img src="../../img/sub/logo_bg.png" alt="KRR 로고 마크" />
-        </div>
-        <img src="../../img/sub/brand_deco.png" alt="" class="ab-intro-deco" />
-      </div>
-    </div>
-  </section>
+			<!-- ── 3. 스탯 바 ── -->
+			<section class="ab-stats-section">
+				<div class="ab-container">
+					<div class="ab-stats-bar">
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="15">0</span><span class="ab-stat-unit">건</span></div>
+							<div class="ab-stat-label">특허</div>
+						</div>
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="3">0</span><span class="ab-stat-unit">건</span></div>
+							<div class="ab-stat-label">디자인</div>
+						</div>
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="14">0</span><span class="ab-stat-unit">건</span></div>
+							<div class="ab-stat-label">기술 실시건</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-  <!-- ── 2. 비전 이미지 ── -->
-  <section class="ab-vision-section">
-    <div class="ab-container">
-      <div class="ab-vision-img">
-        <h2 class="ab-vision-title">사람을 향한 기술,<br>현장을 바꾸는 로봇 솔루션</h2>
-      </div>
-    </div>
-  </section>
+			<!-- ── 4. 연혁 ── -->
+			<section class="ab-history-section">
+				<div class="ab-container">
+					<p class="ab-history-label">KRR's History</p>
+					<div class="ab-history-grid">
+						<!-- 2024 -->
+						<div class="ab-history-col">
+							<div class="ab-history-year">2024</div>
+							<div class="ab-tl-row">
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">11.01</div>
+										<div class="ab-tl-desc">(주)FINO 자회사 인수</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">08.29</div>
+										<div class="ab-tl-desc">ETRI, KIRO 기술도입<br />(UWB, 유해기체탐지)</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">04.01</div>
+										<div class="ab-tl-desc">전문연구사업자<br />(연구개발서비스업) 등록</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-  <!-- ── 3. 스탯 바 ── -->
-  <section class="ab-stats-section">
-    <div class="ab-container">
-      <div class="ab-stats-bar">
-        <div class="ab-stat-item">
-          <div class="ab-stat-num">15<span class="ab-stat-unit">건</span></div>
-          <div class="ab-stat-label">특허</div>
-        </div>
-        <div class="ab-stat-item">
-          <div class="ab-stat-num">3<span class="ab-stat-unit">건</span></div>
-          <div class="ab-stat-label">디자인</div>
-        </div>
-        <div class="ab-stat-item">
-          <div class="ab-stat-num">14<span class="ab-stat-unit">건</span></div>
-          <div class="ab-stat-label">기술 실시건</div>
-        </div>
-      </div>
-    </div>
-  </section>
+						<!-- 2023 -->
+						<div class="ab-history-col">
+							<div class="ab-history-year">2023</div>
+							<div class="ab-tl-row">
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">09.18</div>
+										<div class="ab-tl-desc">한국로봇융합연구원<br />창업기업 등록</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">09.11</div>
+										<div class="ab-tl-desc">주식회사 케이대응로봇<br />창업</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-  <!-- ── 4. 연혁 ── -->
-  <section class="ab-history-section">
-    <div class="ab-container">
-      <p class="ab-history-label">KRR's History</p>
-      <div class="ab-history-grid">
+			<!-- ── 5. 슬라이더 ── -->
+			<section class="ab-slider-section">
+				<div class="ab-container">
+					<div class="ab-slider-outer">
+						<div class="ab-slider-inner">
+							<div class="ab-slider-title-wrap">
+								<h2>화재 특수 환경에 최적화된 로봇,<br />스마트 센서 등 AI 기반의 <span>소방 AX 로봇 솔루션을 제공</span></h2>
+								<div class="ab-slider-redbar"></div>
+								<div class="ab-slider-redbar mo_line"></div>
+							</div>
+							<div class="ab-slider-card-area">
+								<div class="ab-slides-wrapper">
+									<!-- Slide 1 -->
+									<div class="ab-slide-card active">
+										<div class="ab-slide-bg-img slider_01"></div>
+										<div class="ab-slide-content">
+											<h3 class="ab-slide-title">저반동 방수총</h3>
+											<p class="ab-slide-body">소방대원의 안전 확보와 효율적인 화재 진압을 위한<br />저반동 설계 방수 시스템</p>
+											<button class="ab-slide-btn">소방대원 안전 및 효율적 진압</button>
+										</div>
+									</div>
 
-        <!-- 2024 -->
-        <div class="ab-history-col">
-          <div class="ab-history-year">2024</div>
-          <div class="ab-tl-row">
-            <div class="ab-tl-item">
-              <div class="ab-tl-dot">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057"/>
-                  <circle cx="12" cy="12" r="6" fill="white"/>
-                </svg>
-              </div>
-              <div class="ab-tl-text">
-                <div class="ab-tl-date">11.01</div>
-                <div class="ab-tl-desc">(주)FINO 자회사 인수</div>
-              </div>
-            </div>
-            <div class="ab-tl-item">
-              <div class="ab-tl-dot">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057"/>
-                  <circle cx="12" cy="12" r="6" fill="white"/>
-                </svg>
-              </div>
-              <div class="ab-tl-text">
-                <div class="ab-tl-date">08.29</div>
-                <div class="ab-tl-desc">ETRI, KIRO 기술도입<br>(UWB, 유해기체탐지)</div>
-              </div>
-            </div>
-            <div class="ab-tl-item">
-              <div class="ab-tl-dot">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057"/>
-                  <circle cx="12" cy="12" r="6" fill="white"/>
-                </svg>
-              </div>
-              <div class="ab-tl-text">
-                <div class="ab-tl-date">04.01</div>
-                <div class="ab-tl-desc">전문연구사업자<br>(연구개발서비스업) 등록</div>
-              </div>
-            </div>
-          </div>
-        </div>
+									<!-- Slide 2 -->
+									<div class="ab-slide-card">
+										<div class="ab-slide-bg-img slider_02"></div>
+										<div class="ab-slide-content">
+											<h3 class="ab-slide-title">AI 기반 농연 가시화</h3>
+											<p class="ab-slide-body">스마트 센서 기술로 연기 속 열화상을 실시간 분석하여<br />인명 구조 효율성을 극대화</p>
+											<button class="ab-slide-btn">인명 구조 및 화재 대응 효율성</button>
+										</div>
+									</div>
 
-        <!-- 2023 -->
-        <div class="ab-history-col">
-          <div class="ab-history-year">2023</div>
-          <div class="ab-tl-row">
-            <div class="ab-tl-item">
-              <div class="ab-tl-dot">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057"/>
-                  <circle cx="12" cy="12" r="6" fill="white"/>
-                </svg>
-              </div>
-              <div class="ab-tl-text">
-                <div class="ab-tl-date">09.18</div>
-                <div class="ab-tl-desc">한국로봇융합연구원<br>창업기업 등록</div>
-              </div>
-            </div>
-            <div class="ab-tl-item">
-              <div class="ab-tl-dot">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057"/>
-                  <circle cx="12" cy="12" r="6" fill="white"/>
-                </svg>
-              </div>
-              <div class="ab-tl-text">
-                <div class="ab-tl-date">09.11</div>
-                <div class="ab-tl-desc">주식회사 케이대응로봇<br>창업</div>
-              </div>
-            </div>
-          </div>
-        </div>
+									<!-- Slide 3 -->
+									<div class="ab-slide-card">
+										<div class="ab-slide-bg-img slider_03"></div>
+										<div class="ab-slide-content">
+											<h3 class="ab-slide-title">소방 AX 로봇 솔루션</h3>
+											<p class="ab-slide-body">현장 데이터 수집부터 전략 수립,<br />실시간 임무 수행까지 AI 기반 자율 대응 체계</p>
+											<div class="ab-slide-flow ab-slide-btn">
+												<span>현장 정보 확보</span>
+												<span class="ab-arrow">→</span>
+												<span>전략적 대응 계획</span>
+												<span class="ab-arrow">→</span>
+												<span>실시간 상황 공유 및 임무 수행</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-      </div>
-    </div>
-  </section>
+						<!-- 페이지네이션 -->
+						<div class="ab-slider-dots">
+							<button class="ab-dot active" data-idx="0" aria-label="슬라이드 1"></button>
+							<button class="ab-dot" data-idx="1" aria-label="슬라이드 2"></button>
+							<button class="ab-dot" data-idx="2" aria-label="슬라이드 3"></button>
+						</div>
+					</div>
+				</div>
+			</section>
 
-  <!-- ── 5. 슬라이더 ── -->
-  <section class="ab-slider-section">
-    <div class="ab-container">
-      <div class="ab-slider-outer">
-        <div class="ab-slider-inner">
-          <div class="ab-slider-title-wrap">
-            <h2>화재 특수 환경에 최적화된 로봇,<br>스마트 센서 등 AI 기반의 소방 AX 로봇 솔루션을 제공</h2>
-          </div>
-          <div class="ab-slider-card-area">
-            <div class="ab-slider-redbar"></div>
-            <div class="ab-slides-wrapper">
+			<!-- ── 6. CTA ── -->
+			<section class="ab-cta-section">
+				<div class="ab-container">
+					<p class="ab-cta-red" style="display: inline-block">케이대응로봇</p>
+					<p class="ab-cta-black" style="display: inline-block">은 핵심 기술 융합을 통해</p>
+					<br />
+					<p class="ab-cta-black">고객의 요구에 맞는 로봇 시스템을 구축하고 있습니다</p>
+				</div>
+			</section>
+		</main>
 
-              <!-- Slide 1 -->
-              <div class="ab-slide-card active">
-                <div class="ab-slide-bg-img"></div>
-                <div class="ab-slide-content">
-                  <h3 class="ab-slide-title">저반동 방수총</h3>
-                  <p class="ab-slide-body">소방대원의 안전 확보와 효율적인 화재 진압을 위한 저반동 설계 방수 시스템</p>
-                  <button class="ab-slide-btn">소방대원 안전 및 효율적 진압</button>
-                </div>
-              </div>
+		<footer class="contact-footer" id="contact">
+			<div class="contact-footer-inner">
+				<div class="footer-info">
+					<a href="../../index.html" class="footer-logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
+					<p class="footer-company-name">주식회사 케이대응로봇</p>
+					<address class="footer-addr">
+						<p class="addr-section-label">ADDRESS</p>
+						<p><span class="addr-label">본사</span><span class="addr-val">대전 유성구 계롱로 144(봉명동), BYC유성빌딩 1007호</span></p>
+						<p><span class="addr-label">포항지사</span><span class="addr-val">경상북도 포항시 남구 지곡로 394 제1벤처동 311호</span></p>
+						<p><span class="addr-label">생산센터</span><span class="addr-val">대전광역시 대덕구 생산5길 29</span></p>
+						<p class="addr-contact-row">
+							<span class="addr-label">TEL</span><span class="addr-val">042-713-9119</span><span class="addr-divider">|</span><span class="addr-label">Fax</span
+							><span class="addr-val">0507-1790-2675</span><span class="addr-divider">|</span><span class="addr-label">E-MAIL</span><span class="addr-val">krr@krrobot.co.kr</span>
+						</p>
+					</address>
+					<nav class="footer-policy"><a href="#">개인정보처리방침</a><a href="#">이용약관</a></nav>
+				</div>
+				<div class="contact-form-wrap">
+					<form class="contact-form" id="contactForm" novalidate>
+						<div class="form-row">
+							<div class="form-field">
+								<span class="field-label">이름<span class="req">*</span></span
+								><input type="text" name="name" placeholder="홍길동" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">소속<span class="req">*</span></span
+								><input type="text" name="org" placeholder="가나다소방무역" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field">
+								<span class="field-label">연락처<span class="req">*</span></span
+								><input type="tel" name="tel" placeholder="010-1234-5678" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">이메일<span class="req">*</span></span
+								><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field full">
+								<span class="field-label">문의 유형<span class="req">*</span></span
+								><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field full textarea-field">
+								<span class="field-label">문의 내용<span class="req">*</span></span
+								><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field full"><span class="field-label">첨부 파일</span><input type="text" name="file" placeholder="첨부 파일있으신 경우 첨부해주세요." readonly /></div>
+						</div>
+						<div class="form-privacy-row">
+							<label class="privacy-check"><input type="checkbox" name="agree" /><span class="privacy-text">개인정보 수집 및 이용에 동의합니다.</span></label
+							><a href="#" class="privacy-more">자세히 보기 &gt;</a><button type="submit" class="submit-btn">문의하기</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="footer-copy"><p>Copyright 주식회사 케이대응로봇. All rights reserved.</p></div>
+		</footer>
 
-              <!-- Slide 2 -->
-              <div class="ab-slide-card">
-                <div class="ab-slide-bg-img"></div>
-                <div class="ab-slide-content">
-                  <h3 class="ab-slide-title">AI 기반 농연 가시화</h3>
-                  <p class="ab-slide-body">스마트 센서 기술로 연기 속 열화상을 실시간 분석하여 인명 구조 효율성을 극대화</p>
-                  <button class="ab-slide-btn">인명 구조 및 화재 대응 효율성</button>
-                </div>
-              </div>
+		<script src="../../js/main.js"></script>
+		<script>
+			/* ── 숫자 카운팅 애니메이션 ── */
+			(function () {
+				var counters = document.querySelectorAll('.ab-stat-count');
+				var hasAnimated = false;
 
-              <!-- Slide 3 -->
-              <div class="ab-slide-card">
-                <div class="ab-slide-bg-img"></div>
-                <div class="ab-slide-content">
-                  <h3 class="ab-slide-title">소방 AX 로봇 솔루션</h3>
-                  <p class="ab-slide-body">현장 데이터 수집부터 전략 수립, 실시간 임무 수행까지 AI 기반 자율 대응 체계</p>
-                  <div class="ab-slide-flow">
-                    <span>현장 정보 확보</span>
-                    <span class="ab-arrow">↓</span>
-                    <span>전략적 대응 계획</span>
-                    <span class="ab-arrow">↓</span>
-                    <span>실시간 상황 공유 및 임무 수행</span>
-                  </div>
-                </div>
-              </div>
+				function animateCounter(el) {
+					var target = parseInt(el.dataset.target, 10);
+					var duration = 1400;
+					var start = performance.now();
+					function step(now) {
+						var t = Math.min((now - start) / duration, 1);
+						var eased = 1 - Math.pow(1 - t, 3);
+						el.textContent = Math.round(eased * target);
+						if (t < 1) requestAnimationFrame(step);
+					}
+					requestAnimationFrame(step);
+				}
 
-            </div>
-          </div>
-        </div>
+				var observer = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting && !hasAnimated) {
+								hasAnimated = true;
+								counters.forEach(animateCounter);
+							}
+						});
+					},
+					{ threshold: 0.5 }
+				);
 
-        <!-- 페이지네이션 -->
-        <div class="ab-slider-dots">
-          <button class="ab-dot active" data-idx="0" aria-label="슬라이드 1"></button>
-          <button class="ab-dot" data-idx="1" aria-label="슬라이드 2"></button>
-          <button class="ab-dot" data-idx="2" aria-label="슬라이드 3"></button>
-        </div>
-      </div>
-    </div>
-  </section>
+				var bar = document.querySelector('.ab-stats-bar');
+				if (bar) observer.observe(bar);
+			})();
 
-  <!-- ── 6. CTA ── -->
-  <section class="ab-cta-section">
-    <div class="ab-container">
-      <p class="ab-cta-red">케이대응로봇은 핵심 기술 융합을 통해</p>
-      <p class="ab-cta-black">고객의 요구에 맞는 로봇 시스템을 구축하고 있습니다</p>
-    </div>
-  </section>
+			/* ── 연혁 마우스 드래그 스크롤 ── */
+			(function () {
+				var grid = document.querySelector('.ab-history-grid');
+				if (!grid) return;
+				var isDown = false;
+				var startX, scrollLeft;
 
-</main>
+				grid.addEventListener('mousedown', function (e) {
+					isDown = true;
+					grid.classList.add('is-dragging');
+					startX = e.pageX - grid.getBoundingClientRect().left;
+					scrollLeft = grid.scrollLeft;
+				});
+				document.addEventListener('mouseup', function () {
+					isDown = false;
+					grid.classList.remove('is-dragging');
+				});
+				grid.addEventListener('mousemove', function (e) {
+					if (!isDown) return;
+					e.preventDefault();
+					var x = e.pageX - grid.getBoundingClientRect().left;
+					grid.scrollLeft = scrollLeft - (x - startX) * 1.4;
+				});
+			})();
 
-<footer class="contact-footer" id="contact">
-  <div class="contact-footer-inner">
-    <div class="footer-info">
-      <a href="../../index.html" class="footer-logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
-      <p class="footer-company-name">주식회사 케이대응로봇</p>
-      <address class="footer-addr">
-        <p class="addr-section-label">ADDRESS</p>
-        <p><span class="addr-label">본사</span><span class="addr-val">대전 유성구 계롱로 144(봉명동), BYC유성빌딩 1007호</span></p>
-        <p><span class="addr-label">포항지사</span><span class="addr-val">경상북도 포항시 남구 지곡로 394 제1벤처동 311호</span></p>
-        <p><span class="addr-label">생산센터</span><span class="addr-val">대전광역시 대덕구 생산5길 29</span></p>
-        <p class="addr-contact-row"><span class="addr-label">TEL</span><span class="addr-val">042-713-9119</span><span class="addr-divider">|</span><span class="addr-label">Fax</span><span class="addr-val">0507-1790-2675</span><span class="addr-divider">|</span><span class="addr-label">E-MAIL</span><span class="addr-val">krr@krrobot.co.kr</span></p>
-      </address>
-      <nav class="footer-policy"><a href="#">개인정보처리방침</a><a href="#">이용약관</a></nav>
-    </div>
-    <div class="contact-form-wrap">
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="form-row"><div class="form-field"><span class="field-label">이름<span class="req">*</span></span><input type="text" name="name" placeholder="홍길동" /></div><div class="form-field"><span class="field-label">소속<span class="req">*</span></span><input type="text" name="org" placeholder="가나다소방무역" /></div></div>
-        <div class="form-row"><div class="form-field"><span class="field-label">연락처<span class="req">*</span></span><input type="tel" name="tel" placeholder="010-1234-5678" /></div><div class="form-field"><span class="field-label">이메일<span class="req">*</span></span><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" /></div></div>
-        <div class="form-row"><div class="form-field full"><span class="field-label">문의 유형<span class="req">*</span></span><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" /></div></div>
-        <div class="form-row"><div class="form-field full textarea-field"><span class="field-label">문의 내용<span class="req">*</span></span><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea></div></div>
-        <div class="form-row"><div class="form-field full"><span class="field-label">첨부 파일</span><input type="text" name="file" placeholder="첨부 파일있으신 경우 첨부해주세요." readonly /></div></div>
-        <div class="form-privacy-row"><label class="privacy-check"><input type="checkbox" name="agree" /><span class="privacy-text">개인정보 수집 및 이용에 동의합니다.</span></label><a href="#" class="privacy-more">자세히 보기 &gt;</a><button type="submit" class="submit-btn">문의하기</button></div>
-      </form>
-    </div>
-  </div>
-  <div class="footer-copy"><p>Copyright 주식회사 케이대응로봇. All rights reserved.</p></div>
-</footer>
+			/* ── 플로팅 스크롤 애니메이션 ── */
+			(function () {
+				var items = [
+					{ sel: '.ab-intro-text', delay: 0 },
+					{ sel: '.ab-intro-mark', delay: 0.18 },
+					{ sel: '.ab-vision-img', delay: 0 },
+					{ sel: '.ab-stats-bar', delay: 0 },
+					{ sel: '.ab-history-label', delay: 0 },
+					{ sel: '.ab-history-grid', delay: 0.14 },
+					{ sel: '.ab-slider-outer', delay: 0 },
+					{ sel: '.ab-cta-red', delay: 0 },
+					{ sel: '.ab-cta-black', delay: 0.18 },
+				];
 
-<script src="../../js/main.js"></script>
-<script>
-(function () {
-  var cards = document.querySelectorAll('.ab-slide-card');
-  var dots = document.querySelectorAll('.ab-dot');
-  var current = 0;
+				var io = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('is-visible');
+								io.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.12 }
+				);
 
-  function goTo(idx) {
-    cards[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = idx;
-    cards[current].classList.add('active');
-    dots[current].classList.add('active');
-  }
+				items.forEach(function (item) {
+					var el = document.querySelector(item.sel);
+					if (!el) return;
+					el.classList.add('float-in');
+					if (item.delay) el.style.transitionDelay = item.delay + 's';
+					io.observe(el);
+				});
+			})();
 
-  dots.forEach(function (dot) {
-    dot.addEventListener('click', function () {
-      goTo(parseInt(this.dataset.idx));
-    });
-  });
+			/* ── 슬라이더 ── */
+			(function () {
+				var cards = document.querySelectorAll('.ab-slide-card');
+				var dots = document.querySelectorAll('.ab-dot');
+				var current = 0;
 
-  /* 자동 슬라이드 5초 */
-  setInterval(function () {
-    goTo((current + 1) % cards.length);
-  }, 5000);
-})();
-</script>
-</body>
+				function goTo(idx) {
+					cards[current].classList.remove('active');
+					dots[current].classList.remove('active');
+					current = idx;
+					cards[current].classList.add('active');
+					dots[current].classList.add('active');
+				}
+
+				dots.forEach(function (dot) {
+					dot.addEventListener('click', function () {
+						goTo(parseInt(this.dataset.idx));
+					});
+				});
+
+				/* 자동 슬라이드 5초 */
+				setInterval(function () {
+					goTo((current + 1) % cards.length);
+				}, 5000);
+			})();
+		</script>
+	</body>
 </html>

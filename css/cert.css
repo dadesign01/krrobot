@@ -175,6 +175,13 @@
 	.cert-section-wrap {
 		margin-bottom: 48px;
 	}
+	.cert-proven-bg {
+		height: 140px;
+		border-radius: 24px;
+	}
+	.cert-proven-bg::before {
+		border-radius: 24px;
+	}
 	.cert-grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 30px 14px;

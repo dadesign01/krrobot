@@ -861,6 +861,7 @@ address {
 	height: 400px;
 	background-size: cover;
 	left: -10%;
+	z-index: -1;
 }
 
 .contact-footer-inner {
@@ -946,6 +947,7 @@ address {
 	align-items: center;
 	gap: 40px;
 	margin-top: 24px;
+	/* justify-content: flex-end; */
 }
 .footer-policy a {
 	color: #989898;
@@ -1584,6 +1586,7 @@ address {
 
 	.contact-footer {
 		padding-top: 50px;
+		padding: 50px 20px 0;
 	}
 
 	.footer-inner {
@@ -1597,9 +1600,26 @@ address {
 	.footer-copy-inner {
 		padding: 18px 24px;
 	}
-	.form-row {
+	.contact-form .form-row {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.field-label {
+		font-size: 14px;
+	}
+
+	.form-field {
+		height: 50px;
+	}
+
+	.form-field.textarea-field {
 		flex-direction: column;
 	}
+
+	.contact-form .form-row:nth-child(1) {
+		flex-direction: row;
+	}
+
 	.contact-inner {
 		padding: 0 24px;
 	}
@@ -1651,12 +1671,22 @@ address {
 	}
 	.form-field input {
 		text-overflow: ellipsis;
+		font-size: 14px;
 	}
 	.form-field input::placeholder {
 		text-overflow: ellipsis;
 	}
 	.cards-section {
 		padding: 50px 0;
+	}
+	.submit-btn {
+		width: 154px;
+		height: 52px;
+		margin: 0 auto;
+	}
+	.form-field input::placeholder,
+	.form-field textarea::placeholder {
+		font-size: 14px;
 	}
 }
 
@@ -1679,6 +1709,14 @@ address {
 	}
 	.footer-addr p {
 		font-size: 12px;
-		padding-right: 50px;
+		/* padding-right: 50px; */
+	}
+	.footer-policy {
+		justify-content: flex-end;
+		width: 100%;
+		gap: 10px;
+	}
+	.footer-policy a {
+		font-size: 12px;
 	}
 }

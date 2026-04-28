@@ -1,0 +1,296 @@
+/* ==============================================
+   채용 인트로 (jobs.html)
+   ============================================== */
+
+/* ── 페이지 전환 ── */
+#jobs-intro-wrap {
+	transition:
+		opacity 0.35s ease,
+		transform 0.35s ease;
+	margin-top: 120px;
+}
+#jobs-intro-wrap.ji-leaving {
+	opacity: 0;
+	transform: translateY(-20px);
+	pointer-events: none;
+}
+#jobs-board-wrap {
+	transition: opacity 0.4s ease;
+}
+#jobs-board-wrap.ji-board-show {
+	opacity: 1 !important;
+}
+
+/* ── 히어로 ── */
+.ji-hero {
+	text-align: center;
+	padding: 0 40px 80px;
+}
+.ji-hero-proven {
+	width: 1274px;
+	max-width: 100%;
+	display: flex;
+	margin: 0 auto;
+	position: relative;
+	align-items: flex-end;
+}
+.ji-hero-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	user-select: none;
+}
+.ji-hero-title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+	padding: 50px 0 0;
+	line-height: normal;
+	margin: 0;
+	word-break: keep-all;
+}
+.ji-title-red {
+	color: var(--MainColor, #d60057);
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 48px;
+	font-weight: 800;
+	line-height: 100px;
+	letter-spacing: -1.92px;
+}
+.ji-title-black {
+	color: #121212;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 48px;
+	font-weight: 800;
+	line-height: 100px;
+	letter-spacing: -1.92px;
+}
+.ji-hero-body {
+	margin: 40px auto 0;
+	color: #121212;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 45px;
+	letter-spacing: -1.12px;
+	word-break: keep-all;
+}
+.ji-red {
+	color: #d60057;
+}
+
+/* ── 데코 이미지 ── */
+.ji-deco-section {
+	margin-top: 90px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1760px;
+	padding: 0 40px;
+}
+.ji-deco {
+	width: 100%;
+	display: block;
+	border-radius: 45px;
+}
+
+/* ── 가치관 섹션 ── */
+.ji-values-section {
+	margin-top: 50px;
+	padding: 0 40px;
+}
+.ji-values-container {
+	max-width: 1680px;
+	height: 413px;
+	border-radius: 50px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 0 40px;
+	position: relative;
+}
+.ji-values-container::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 50px;
+	background: url('../img/sub/job_bg.png') no-repeat lightgray -70.312px -379.306px / 105.138% 321.1%;
+	z-index: -1;
+	mix-blend-mode: luminosity;
+}
+.ji-val-card {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	z-index: 0;
+	border-right: 0.5px solid #787878;
+}
+.ji-val-card:last-child {
+	border-right: none;
+}
+.ji-val-logo {
+	height: 119px;
+	width: auto;
+	display: block;
+	object-fit: contain;
+}
+.ji-val-badge {
+	margin-top: 60px;
+	height: 45px;
+	aspect-ratio: 12 / 5;
+	border-radius: 600px;
+	background: #d60057;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -0.96px;
+	white-space: nowrap;
+	padding: 0 16px;
+}
+.ji-val-desc {
+	margin-top: 20px;
+	color: #303030;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: -0.8px;
+	word-break: keep-all;
+}
+
+/* ── CTA 버튼 ── */
+.ji-cta-section {
+	padding: 60px 40px 120px;
+	display: flex;
+	justify-content: center;
+}
+.ji-cta-btn {
+	width: 392px;
+	height: 82px;
+	border-radius: 600px;
+	background: linear-gradient(87deg, #000624 20.38%, #9d0040 107.14%);
+	color: #fff;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: -0.96px;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	transition: opacity 0.2s;
+}
+.ji-cta-btn:hover {
+	opacity: 0.88;
+}
+
+/* ── 모바일 (768px) ── */
+@media (max-width: 768px) {
+	#jobs-intro-wrap {
+		margin-top: 60px;
+	}
+	.ji-hero {
+		padding: 0 20px;
+	}
+	.ji-hero-title {
+		white-space: normal;
+		width: 100%;
+		padding: 25px 16px 0;
+		box-sizing: border-box;
+	}
+	.ji-title-red,
+	.ji-title-black {
+		font-size: 24px;
+		line-height: 1.4;
+		letter-spacing: -1px;
+	}
+	.ji-hero-body {
+		font-size: 16px;
+		line-height: 30px;
+		letter-spacing: -0.72px;
+		margin-top: 30px;
+	}
+	.ji-deco-section {
+		margin-top: 45px;
+		padding: 0 20px;
+	}
+	.ji-deco {
+		border-radius: 20px;
+	}
+	.ji-values-section {
+		margin-top: 30px;
+		padding: 0 20px;
+	}
+	.ji-values-container {
+		height: auto;
+		border-radius: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 18px;
+		justify-content: center;
+	}
+	.ji-values-container::before {
+		display: none;
+	}
+	.ji-val-card {
+		flex: none;
+		width: 100%;
+		height: 267px;
+		border-radius: 20px;
+		padding: 20px 12px;
+		border-right: none;
+		justify-content: center;
+	}
+	.ji-val-card::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 20px;
+		background: url('/img/sub/job_bg_mo.png') no-repeat;
+		background-size: cover;
+		filter: grayscale(1);
+		z-index: -1;
+	}
+	.ji-val-logo {
+		height: 90px;
+	}
+	.ji-val-badge {
+		margin-top: 14px;
+		height: 25px;
+		aspect-ratio: 59 / 25;
+		font-size: 14px;
+		letter-spacing: -0.56px;
+		padding: 0 10px;
+	}
+	.ji-val-desc {
+		margin-top: 8px;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: -0.56px;
+	}
+	.ji-cta-section {
+		padding: 40px 20px 80px;
+	}
+	.ji-cta-btn {
+		width: 100%;
+		height: 40px;
+		font-size: 16px;
+		border-radius: 600px;
+	}
+}
