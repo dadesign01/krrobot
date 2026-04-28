@@ -1,0 +1,681 @@
+/* ================================================
+   Brand / 회사소개 페이지
+   ================================================ */
+
+.ab-page {
+	padding-top: 0;
+}
+.ab-container {
+	max-width: 1760px;
+	margin: 0 auto;
+	padding: 0 40px;
+	height: 100%;
+}
+
+/* ── 1. 인트로 ── */
+.ab-intro {
+	padding-top: 120px;
+	padding-bottom: 100px;
+	overflow: hidden;
+}
+.ab-intro-inner {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 60px;
+	position: relative;
+}
+.ab-intro-deco {
+	position: absolute;
+	right: -40px;
+	top: -80px;
+	width: 420px;
+	height: auto;
+	pointer-events: none;
+	z-index: 0;
+}
+.ab-intro-text {
+	position: relative;
+	z-index: 1;
+	flex: 1;
+}
+.ab-headline-black {
+	color: #121212;
+	font-family: 'Poppins', sans-serif;
+	font-size: 70px;
+	font-weight: 600;
+	line-height: 90px;
+	letter-spacing: -2.8px;
+	margin: 0;
+}
+.ab-headline-red {
+	color: var(--MainColor, #d60057);
+	font-family: 'Poppins', sans-serif;
+	font-size: 70px;
+	font-weight: 600;
+	line-height: 90px;
+	letter-spacing: -2.8px;
+	margin: 0 0 48px;
+}
+.ab-body-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.ab-body-group p {
+	margin: 0;
+	color: #121212;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 42px;
+	font-weight: 500;
+	line-height: 58px;
+	letter-spacing: -1.68px;
+}
+.ab-body-group p + p {
+	margin-top: 58px;
+}
+.ab-intro-mark {
+	flex-shrink: 0;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.ab-intro-mark img {
+	width: 340px;
+	height: auto;
+	display: block;
+}
+
+/* ── 2. 비전 이미지 ── */
+.ab-vision-section {
+	margin-top: 180px;
+}
+.ab-vision-img {
+	width: 100%;
+	max-width: 1677px;
+	aspect-ratio: 126 / 71;
+	border-radius: 55px;
+	background:
+		linear-gradient(0deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 100%),
+		url('../../img/sub/brand_bg.png') lightgray center / cover no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+.ab-vision-title {
+	color: #fff;
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 100px;
+	letter-spacing: -2.88px;
+	margin: 0;
+}
+
+/* ── 3. 스탯 바 ── */
+.ab-stats-section {
+	margin-top: 44px;
+}
+.ab-stats-bar {
+	max-width: 1680px;
+	height: 210px;
+	border-radius: 35px;
+	background: var(--MainColor, #d60057);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+.ab-stat-item {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+.ab-stat-item:last-child {
+	border-right: none;
+}
+.ab-stat-num {
+	color: #fff;
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 72px;
+	letter-spacing: -2.4px;
+}
+.ab-stat-unit {
+	color: #fff;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 72px;
+	letter-spacing: -1.12px;
+}
+.ab-stat-label {
+	color: #fff;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 72px;
+	letter-spacing: -0.96px;
+}
+
+/* ── 4. 연혁 ── */
+.ab-history-section {
+	margin-top: 140px;
+}
+.ab-history-label {
+	color: #919191;
+	text-align: left;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 72px;
+	letter-spacing: -1.04px;
+	margin: 0 0 8px;
+}
+.ab-history-grid {
+	display: flex;
+	gap: 0;
+	align-items: flex-start;
+}
+.ab-history-col {
+	flex: 1;
+}
+.ab-history-col + .ab-history-col {
+	/* border-left: 2px solid #e5e5e5; */
+	/* padding-left: 60px; */
+}
+.ab-history-year {
+	color: var(--MainColor, #d60057);
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 72px;
+	letter-spacing: -3.2px;
+	margin-bottom: 36px;
+}
+.ab-tl-row {
+	display: flex;
+	gap: 0;
+	position: relative;
+}
+.ab-tl-row::before {
+	content: '';
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	right: 12px;
+	height: 1px;
+	background: #adadad;
+	z-index: 0;
+	width: 100%;
+}
+.ab-tl-item {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-top: 0;
+}
+.ab-tl-dot {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 14px;
+	flex-shrink: 0;
+}
+.ab-tl-date {
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #121212;
+	line-height: 1.5;
+	margin-bottom: 4px;
+}
+.ab-tl-desc {
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color: #555;
+	line-height: 1.55;
+	max-width: 200px;
+}
+
+/* ── 5. 슬라이더 섹션 ── */
+.ab-slider-section {
+	margin-top: 180px;
+}
+.ab-slider-outer {
+	max-width: 1680px;
+	height: 900px;
+	border-radius: 50px;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.ab-slider-outer::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: url('../../img/sub/brand_bg_02.png') lightgray 0.33px -49.494px / 100% 124.46% no-repeat;
+	mix-blend-mode: luminosity;
+	z-index: 0;
+}
+.ab-slider-outer::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.66);
+	z-index: 1;
+}
+.ab-slider-inner {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.ab-slider-title-wrap {
+	padding-top: 80px;
+	text-align: center;
+}
+.ab-slider-title-wrap h2 {
+	color: #fff;
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 55px;
+	font-weight: 700;
+	line-height: 85px;
+	letter-spacing: -2.2px;
+	margin: 0;
+}
+.ab-slider-card-area {
+	margin-top: 100px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+.ab-slider-redbar {
+	width: 1125px;
+	max-width: calc(100% - 80px);
+	height: 93px;
+	background: var(--MainColor, #d60057);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 0;
+}
+.ab-slides-wrapper {
+	width: min(1480px, calc(100% - 80px));
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	border-radius: 52px;
+	margin-bottom: 0;
+}
+.ab-slide-card {
+	display: none;
+	background: #383838;
+	border-radius: 52px;
+	height: 421px;
+	overflow: hidden;
+	flex-direction: row;
+}
+.ab-slide-card.active {
+	display: flex;
+}
+.ab-slide-bg-img {
+	width: 768px;
+	min-width: 768px;
+	height: 421px;
+	background: url('../../img/sub/brand_ob.png') no-repeat;
+	opacity: 0.31;
+	mix-blend-mode: color-dodge;
+	flex-shrink: 0;
+}
+.ab-slide-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 48px 60px 48px 40px;
+	gap: 20px;
+}
+.ab-slide-title {
+	color: #fff;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 32px;
+	letter-spacing: -1.44px;
+	margin: 0;
+}
+.ab-slide-body {
+	color: #fff;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 32px;
+	letter-spacing: -0.88px;
+	margin: 0;
+	word-break: keep-all;
+}
+.ab-slide-btn {
+	width: 298px;
+	height: 62px;
+	border: 1.5px solid rgba(255, 255, 255, 0.5);
+	border-radius: 8px;
+	background: transparent;
+	color: #fff;
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 32px;
+	letter-spacing: -0.88px;
+	cursor: pointer;
+	flex-shrink: 0;
+	padding: 0 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ab-slide-flow {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.ab-slide-flow span {
+	color: #fff;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 28px;
+	letter-spacing: -0.8px;
+}
+.ab-slide-flow .ab-arrow {
+	color: var(--MainColor, #d60057);
+	font-size: 22px;
+	line-height: 20px;
+}
+
+/* 페이지네이션 */
+.ab-slider-dots {
+	position: absolute;
+	bottom: 32px;
+	right: 60px;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.ab-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 600px;
+	background: #c2c2c2;
+	cursor: pointer;
+	transition:
+		width 0.2s,
+		height 0.2s,
+		background 0.2s;
+	border: none;
+	padding: 0;
+}
+.ab-dot.active {
+	width: 13px;
+	height: 13px;
+	background: var(--MainColor, #d60057);
+}
+
+/* ── 6. CTA ── */
+.ab-cta-section {
+	margin-top: 180px;
+	padding-bottom: 120px;
+	text-align: center;
+}
+.ab-cta-red {
+	color: var(--MainColor, #d60057);
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 55px;
+	font-weight: 700;
+	line-height: 80px;
+	letter-spacing: -2.2px;
+	margin: 0;
+}
+.ab-cta-black {
+	color: #000;
+	text-align: center;
+	font-family: 'Pretendard Variable', sans-serif;
+	font-size: 55px;
+	font-weight: 700;
+	line-height: 80px;
+	letter-spacing: -2.2px;
+	margin: 0;
+}
+
+/* ── 모바일 (768px) ── */
+@media (max-width: 768px) {
+	.ab-container {
+		padding: 0 20px;
+	}
+
+	/* 인트로 */
+	.ab-intro {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	.ab-intro-inner {
+		flex-direction: column;
+		gap: 32px;
+	}
+	.ab-intro-mark {
+		display: none;
+	}
+	.ab-intro-deco {
+		width: 240px;
+		right: -20px;
+		top: -40px;
+		opacity: 0.4;
+	}
+	.ab-headline-black,
+	.ab-headline-red {
+		font-size: 38px;
+		line-height: 52px;
+		letter-spacing: -1.52px;
+	}
+	.ab-headline-red {
+		margin-bottom: 28px;
+	}
+	.ab-body-group p {
+		font-size: 18px;
+		line-height: 30px;
+		letter-spacing: -0.72px;
+	}
+	.ab-body-group p + p {
+		margin-top: 24px;
+	}
+
+	/* 비전 */
+	.ab-vision-section {
+		margin-top: 60px;
+	}
+	.ab-vision-title {
+		font-size: 28px;
+		line-height: 44px;
+		letter-spacing: -1.12px;
+	}
+
+	/* 스탯 */
+	.ab-stats-section {
+		margin-top: 24px;
+	}
+	.ab-stats-bar {
+		height: auto;
+		padding: 28px 0;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0;
+	}
+	.ab-stat-item {
+		flex: 0 0 33.333%;
+		border-right: 1px solid rgba(255, 255, 255, 0.3);
+		padding: 12px 0;
+	}
+	.ab-stat-item:last-child {
+		border-right: none;
+	}
+	.ab-stat-num {
+		font-size: 36px;
+		line-height: 44px;
+	}
+	.ab-stat-unit {
+		font-size: 16px;
+	}
+	.ab-stat-label {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	/* 연혁 */
+	.ab-history-section {
+		margin-top: 60px;
+	}
+	.ab-history-grid {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.ab-history-col + .ab-history-col {
+		border-left: none;
+		border-top: 2px solid #e5e5e5;
+		padding-left: 0;
+		padding-top: 40px;
+	}
+	.ab-history-year {
+		font-size: 48px;
+		line-height: 56px;
+		margin-bottom: 24px;
+	}
+	.ab-tl-row {
+		flex-direction: column;
+		gap: 0;
+	}
+	.ab-tl-row::before {
+		top: 12px;
+		left: 12px;
+		right: auto;
+		bottom: 12px;
+		width: 2px;
+		height: auto;
+	}
+	.ab-tl-item {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 16px;
+		padding-bottom: 28px;
+	}
+	.ab-tl-item:last-child {
+		padding-bottom: 0;
+	}
+	.ab-tl-dot {
+		margin-bottom: 0;
+		margin-top: 2px;
+	}
+	.ab-tl-text {
+		flex: 1;
+	}
+	.ab-tl-desc {
+		max-width: none;
+	}
+
+	/* 슬라이더 */
+	.ab-slider-section {
+		margin-top: 60px;
+	}
+	.ab-slider-outer {
+		height: auto;
+		min-height: 600px;
+		padding-bottom: 80px;
+	}
+	.ab-slider-title-wrap {
+		padding: 40px 24px 0;
+	}
+	.ab-slider-title-wrap h2 {
+		font-size: 26px;
+		line-height: 42px;
+		letter-spacing: -1.04px;
+	}
+	.ab-slider-card-area {
+		margin-top: 32px;
+		padding: 0 20px;
+	}
+	.ab-slider-redbar {
+		width: 80%;
+		height: 60px;
+	}
+	.ab-slides-wrapper {
+		width: 100%;
+		border-radius: 24px;
+	}
+	.ab-slide-card {
+		flex-direction: column;
+		height: auto;
+		border-radius: 24px;
+	}
+	.ab-slide-bg-img {
+		width: 100%;
+		min-width: unset;
+		height: 200px;
+		background-position: center;
+		background-size: cover;
+	}
+	.ab-slide-content {
+		padding: 28px 24px 32px;
+		gap: 16px;
+	}
+	.ab-slide-title {
+		font-size: 22px;
+		line-height: 28px;
+	}
+	.ab-slide-body {
+		font-size: 15px;
+		line-height: 24px;
+	}
+	.ab-slide-btn {
+		width: 100%;
+		height: 52px;
+		font-size: 16px;
+	}
+	.ab-slider-dots {
+		bottom: 24px;
+		right: 28px;
+	}
+
+	/* CTA */
+	.ab-cta-section {
+		margin-top: 60px;
+		padding-bottom: 80px;
+	}
+	.ab-cta-red,
+	.ab-cta-black {
+		font-size: 26px;
+		line-height: 44px;
+		letter-spacing: -1.04px;
+	}
+}

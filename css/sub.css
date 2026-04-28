@@ -178,7 +178,7 @@
 /* ── 본문 공통 ── */
 .sub-content {
 	padding-top: 120px;
-	padding-bottom: 120px;
+	/* padding-bottom: 120px; */
 }
 
 .sub-container {

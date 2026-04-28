@@ -2,14 +2,16 @@
 .cert-section-wrap {
 	text-align: center;
 	position: relative;
-	margin-bottom: 60px;
+	margin-bottom: 85px;
+	/* display: flex; */
 }
 .cert-proven-bg {
 	width: 1274px;
 	max-width: 100%;
-	display: block;
+	display: flex;
 	margin: 0 auto;
 	position: relative;
+	align-items: flex-end;
 }
 .cert-proven-bg img.proven-img {
 	width: 100%;
@@ -24,8 +26,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
-	margin: 0;
-	line-height: 100px;
+	padding: 50px 0 0;
+	line-height: normal;
 }
 .cert-section-title .txt-main {
 	color: var(--MainColor, #d60057);
@@ -170,6 +172,9 @@
 
 /* ── 모바일 ── */
 @media (max-width: 900px) {
+	.cert-section-wrap {
+		margin-bottom: 48px;
+	}
 	.cert-grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 30px 14px;
@@ -194,7 +199,7 @@
 	.cert-section-title {
 		white-space: normal;
 		width: 100%;
-		padding: 0 16px;
+		padding: 25px 16px 0;
 		box-sizing: border-box;
 	}
 	.cert-section-title .txt-main,
