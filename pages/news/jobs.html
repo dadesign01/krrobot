@@ -183,6 +183,33 @@
 <script src="../../js/main.js"></script>
 <script src="../../js/sb.js"></script>
 <script>
+  /* ── 플로팅 애니메이션 ── */
+  (function () {
+    var items = [
+      { sel: '.ji-hero-proven',    delay: 0 },
+      { sel: '.ji-hero-body',      delay: 0.18 },
+      { sel: '.ji-deco-section',   delay: 0 },
+      { sel: '.ji-values-container', delay: 0 },
+      { sel: '.ji-cta-section',    delay: 0 },
+    ];
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (item) {
+      var el = document.querySelector(item.sel);
+      if (!el) return;
+      el.classList.add('float-in');
+      if (item.delay) el.style.transitionDelay = item.delay + 's';
+      io.observe(el);
+    });
+  })();
+</script>
+<script>
   /* ── 인트로 ↔ 게시판 전환 ── */
   (function () {
     var board = document.getElementById('jobs-board-wrap');

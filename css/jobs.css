@@ -118,9 +118,9 @@
 	position: absolute;
 	inset: 0;
 	border-radius: 50px;
-	background: url('../img/sub/job_bg.png') no-repeat lightgray -70.312px -379.306px / 105.138% 321.1%;
+	background: url('../img/sub/job_bg.png') no-repeat;
 	z-index: -1;
-	mix-blend-mode: luminosity;
+	filter: grayscale(1);
 }
 .ji-val-card {
 	flex: 1;
@@ -199,6 +199,24 @@
 	opacity: 0.88;
 }
 
+/* ── 플로팅 애니메이션 ── */
+.float-in {
+	opacity: 0;
+	transform: translateY(52px);
+	transition:
+		opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.float-in.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+@media (max-width: 1024px) {
+	.ji-val-desc {
+		font-size: 16px;
+	}
+}
+
 /* ── 모바일 (768px) ── */
 @media (max-width: 768px) {
 	#jobs-intro-wrap {
@@ -210,7 +228,7 @@
 	.ji-hero-title {
 		white-space: normal;
 		width: 100%;
-		padding: 25px 16px 0;
+		/* padding: 25px 16px 0; */
 		box-sizing: border-box;
 	}
 	.ji-title-red,
@@ -218,12 +236,14 @@
 		font-size: 24px;
 		line-height: 1.4;
 		letter-spacing: -1px;
+		display: block;
 	}
 	.ji-hero-body {
 		font-size: 16px;
 		line-height: 30px;
 		letter-spacing: -0.72px;
 		margin-top: 30px;
+		padding-top: 30px;
 	}
 	.ji-deco-section {
 		margin-top: 45px;
