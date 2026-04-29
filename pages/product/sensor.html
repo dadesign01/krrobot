@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/product.css" />
+		<link rel="stylesheet" href="../../css/product-page.css" />
 		<link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
 	</head>
 	<body class="prod-layout">
@@ -93,44 +94,405 @@
 		<main class="prod-main">
 			<!-- 섹션 0: 농연 가시화 센서 -->
 			<section class="prod-section" id="tab1">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">SMOKE</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Sensor &amp; S/W</p>
-						<h2 class="prod-placeholder-title">농연 가시화 센서</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">농연 가시화 센서</h2>
+							<p class="sensor-hero-tagline">농연(짙은 연기) 속에서도 시야를 확보하는 가시화 센서 기술</p>
+							<p class="sensor-hero-desc-gray">우리의 농연 가시화 센서 기술은 AI와 멀티센서를 활용해<br />짙은 연기 속에서도 시야를 확보하고, 정확한 탐지 및 제어를 가능하게 하는 기술입니다.</p>
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">AI 임베디드 플랫폼</span>
+										<p class="sensor-spec-card-desc">MCU 기반 실시간 처리<br />CAN·EtherCAT·RS-232/485<br />다양한 통신 방식 지원</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">AI 객체 탐지·제어</span>
+										<p class="sensor-spec-card-desc">AI 학습 모델 정밀 탐지<br />로봇·자동화 시스템 연동<br />GPS-free 위치 추지</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">03</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">멀티센서 융합</span>
+										<p class="sensor-spec-card-desc">IR + RGB 카메라 융합<br />거리센서 통합<br />높은 정확도 객체 인식</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 Key Technology + 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left">
+									<span>Key Technology</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<div class="sensor-slide-dots" id="sensorDots01">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide01">
+								<div class="sensor-slide active">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../img/product/sen_01_01.png" alt="농연 가시화" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">농연 가시화</p>
+											<p class="sensor-slide-sub">연기 속 시야 확보 결과</p>
+										</div>
+									</div>
+								</div>
+								<div class="sensor-slide">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../img/product/sen_01_02.png" alt="주요 객체 인식" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">주요 객체 인식</p>
+											<p class="sensor-slide-sub">AI 탐지 결과 오버레이</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- 하단 이미지 2개 -->
+				<div class="sensor-img-pair">
+					<div class="sensor-img-item">
+						<img src="../../img/product/sen_01_03.png" alt="농연 가시화 - 객체 탐지" />
+					</div>
+					<div class="sensor-img-item">
+						<img src="../../img/product/sen_01_04.png" alt="농연 가시화 - 실증 장면" />
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide01');
+						var dotsWrap = document.getElementById('sensorDots01');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
 			</section>
 
 			<!-- 섹션 1: 환경지도 생성 및 자율주행 -->
 			<section class="prod-section" id="tab2">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">SLAM</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Sensor &amp; S/W</p>
-						<h2 class="prod-placeholder-title">환경지도 생성 및 자율주행</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<!-- HERO -->
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">환경지도 생성 및 자율주행</h2>
+							<p class="sensor-hero-tagline">SLAM 기반 실내외 자율주행 기술 — 4족 보행 로봇, 유해가스탐지로봇</p>
+							<p class="sensor-hero-desc-gray">주변 환경에 제약 없이 공간을 인식하고, 정밀한 탐지 및 최적 경로를 생성하는 자율주행 기술입니다.</p>
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">4족 보행 로봇 SLAM</span>
+										<p class="sensor-spec-card-desc">진동 극복 + 다중 플랫폼 지원</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">실내외 연속 SLAM</span>
+										<p class="sensor-spec-card-desc">LIDAR+IMU, 조명 없이 구동</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">03</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">천장 환경 자율주행</span>
+										<p class="sensor-spec-card-desc">장애물 인식 + 최적경로 탐색</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 Key Technology + 비디오 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left">
+									<span>Key Technology</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<div class="sensor-slide-dots" id="sensorDots02">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide02">
+								<div class="sensor-slide active">
+									<div class="sensor-video-slide" id="sensorVid02a">
+										<img class="sensor-video-thumb" src="../../img/product/sen_02_01_02.png" alt="환경지도 생성 및 자율주행 기술 보유(4족 보행 로봇)" />
+										<div class="sensor-video-play">
+											<img src="../../img/product/video_play.png" alt="재생" />
+										</div>
+										<div class="sensor-video-iframe" id="sensorIframe02a"></div>
+									</div>
+									<p class="sensor-slide-cap">환경지도 생성 및 자율주행 기술 보유(4족 보행 로봇)</p>
+								</div>
+								<div class="sensor-slide">
+									<div class="sensor-video-slide" id="sensorVid02b">
+										<img class="sensor-video-thumb" src="../../img/product/sen_02_02.png" alt="환경지도 생성 및 자율주행 기술 보유(유해가스탐지로봇)" />
+										<div class="sensor-video-play">
+											<img src="../../img/product/video_play.png" alt="재생" />
+										</div>
+										<div class="sensor-video-iframe" id="sensorIframe02b"></div>
+									</div>
+									<p class="sensor-slide-cap">환경지도 생성 및 자율주행 기술 보유(유해가스탐지로봇)</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- 대형 영상 블록 -->
+				<div class="s2-video-main" id="s2VideoMain">
+					<img class="s2-video-main-thumb" src="../../img/product/sen_02_01.png" alt="환경지도 생성 및 자율주행 기술 보유" />
+					<div class="s2-video-main-overlay"></div>
+					<div class="s2-video-main-play">
+						<img src="../../img/product/video_play.png" alt="재생" />
+					</div>
+					<div class="s2-video-main-iframe" id="s2VideoMainIframe"></div>
+				</div>
+
+				<!-- 하단 이미지 2개 -->
+				<div class="s2-img-pair">
+					<div class="s2-img-item">
+						<div class="s2-img-wrap">
+							<img src="../../img/product/sen_02_03_01.png" alt="실외 SLAM 환경지도 생성" />
+						</div>
+						<p class="s2-img-caption">실외 SLAM 환경지도 생성</p>
+					</div>
+					<div class="s2-img-item">
+						<div class="s2-img-wrap">
+							<img src="../../img/product/sen_02_03_02.png" alt="위성 지도 및 SLAM 결과물" />
+						</div>
+						<p class="s2-img-caption">위성 지도 및 SLAM 결과물</p>
+					</div>
+				</div>
+
+				<!-- 기술 보유 섹션 -->
+				<div class="s2-tech-section">
+					<div class="s2-tech-head">
+						<img src="../../img/product/table_mark.png" alt="" />
+						<span>환경지도 생성 및 자율주행 기술 보유</span>
+					</div>
+					<div class="s2-tech-grid">
+						<div class="s2-tech-card">
+							<p class="s2-tech-card-title">4족 보행 로봇</p>
+							<ul class="s2-tech-card-list">
+								<li>4족 보행 로봇을 활용한 실내외 환경지도 생성 기술</li>
+								<li>다양한 모바일 플랫폼에서 환경지도 생성 경험</li>
+							</ul>
+						</div>
+						<div class="s2-tech-card">
+							<p class="s2-tech-card-title">유해 가스 탐지 로봇</p>
+							<ul class="s2-tech-card-list">
+								<li>실내-실외 연속 SLAM을 통한 환경 지도 생성 기술</li>
+								<li>초소지도 로봇 주행, 환경지도 생성, 마커 표시 등의 임무를 쉽게 수행할 수 있음</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide02');
+						var dotsWrap = document.getElementById('sensorDots02');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						var timer = null;
+
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+
+						function startTimer() {
+							timer = setInterval(function () {
+								goTo(cur + 1);
+							}, 3000);
+						}
+
+						function stopTimer() {
+							if (timer) {
+								clearInterval(timer);
+								timer = null;
+							}
+						}
+
+						startTimer();
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+
+						function setupVideo(vidEl, iframeEl, youtubeId) {
+							vidEl.addEventListener('click', function () {
+								if (this.classList.contains('playing')) return;
+								stopTimer();
+								this.classList.add('playing');
+								iframeEl.innerHTML =
+									'<iframe src="https://www.youtube.com/embed/' +
+									youtubeId +
+									'?autoplay=1"' +
+									' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+									' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+							});
+						}
+
+						setupVideo(document.getElementById('sensorVid02a'), document.getElementById('sensorIframe02a'), 'PKhmhVU6SdM');
+						setupVideo(document.getElementById('sensorVid02b'), document.getElementById('sensorIframe02b'), 'IIvVp0GvJ5U');
+
+						var s2MainEl = document.getElementById('s2VideoMain');
+						var s2MainIframe = document.getElementById('s2VideoMainIframe');
+						if (s2MainEl) {
+							s2MainEl.addEventListener('click', function () {
+								if (this.classList.contains('playing')) return;
+								this.classList.add('playing');
+								s2MainIframe.innerHTML =
+									'<iframe src="https://www.youtube.com/embed/PKhmhVU6SdM?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+							});
+						}
+					})();
+				</script>
 			</section>
 
 			<!-- 섹션 2: 소형 다중센서 통합 모듈 -->
 			<section class="prod-section" id="tab3">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">MODULE</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Sensor &amp; S/W</p>
-						<h2 class="prod-placeholder-title">소형 다중센서 통합 모듈</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">소형 다중센서 통합 모듈</h2>
+							<p class="sensor-hero-tagline">생존자 탐지를 위한 다중 센서 통합 솔루션</p>
+							<p class="sensor-hero-desc-gray">
+								우리의 소형다중센서모듈은 협소 공간 내에 생존자 탐지를 위한<br />5종의 감지(카메라, 열화상, IMU, 가스, 마이크)와 소형 패인 프로젝터가 탑재된 다중 센서 통합 솔루션입니다.
+							</p>
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">협소 공간 주행력</span>
+										<p class="sensor-spec-card-desc">협소 공간(폭100mm)에서<br />이동 가능한 직경 64mm 설계</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">열탐지 최적 설계</span>
+										<p class="sensor-spec-card-desc">열탐지 성능 최적화를 위한<br />성능 인증화</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">03</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">다중센서 통합 모듈</span>
+										<p class="sensor-spec-card-desc">5종의 센서 탑재<br />(카메라, 열화상, IMU, 가스, 마이크)</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left"><span>Key Technology</span><img src="../../img/product/table_mark.png" alt="" /></div>
+								<div class="sensor-slide-dots" id="sensorDots03"><span class="sensor-slide-dot active"></span><span class="sensor-slide-dot"></span></div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide03">
+								<div class="sensor-slide active">
+									<div class="s3-slide-img-wrap"><img class="sensor-slide-img" src="../../img/product/sen_03_01.png" alt="센서부 구상도" /></div>
+									<p class="s3-slide-cap">센서부 구상도(소형 다중 센서 통합 모듈 탑재)</p>
+								</div>
+								<div class="sensor-slide">
+									<div class="s3-slide-img-wrap"><img class="sensor-slide-img" src="../../img/product/sen_03_02.png" alt="센서부 시작품" /></div>
+									<p class="s3-slide-cap">센서부 시작품</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<div class="s3-bottom">
+					<div class="s3-row1">
+						<div class="s3-col-stack">
+							<div class="s3-img-item">
+								<div class="s3-img-wrap"><img src="../../img/product/sen_03_03.png" alt="" /></div>
+							</div>
+							<div class="s3-img-item">
+								<div class="s3-img-wrap"><img src="../../img/product/sen_03_04.png" alt="" /></div>
+							</div>
+						</div>
+						<div class="s3-img-item s3-col-large">
+							<div class="s3-img-wrap"><img src="../../img/product/sen_03_05.png" alt="" /></div>
+						</div>
+					</div>
+					<div class="s3-img-full">
+						<div class="s3-img-wrap"><img src="../../img/product/sen_03_06.png" alt="" /></div>
+					</div>
+					<div class="s3-row3">
+						<div class="s3-img-item s3-col-large">
+							<div class="s3-img-wrap"><img src="../../img/product/sen_03_07.png" alt="" /></div>
+						</div>
+						<div class="s3-img-item">
+							<div class="s3-img-wrap"><img src="../../img/product/sen_03_08.png" alt="" /></div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide03');
+						var dotsWrap = document.getElementById('sensorDots03');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
 			</section>
 
 			<!-- 섹션 3: 유해 기체 탐지 센서 -->
@@ -182,18 +544,36 @@
 				<div class="contact-form-wrap">
 					<form class="contact-form" id="contactForm" novalidate>
 						<div class="form-row">
-							<div class="form-field"><span class="field-label">이름<span class="req">*</span></span><input type="text" name="name" placeholder="홍길동" /></div>
-							<div class="form-field"><span class="field-label">소속<span class="req">*</span></span><input type="text" name="org" placeholder="가나다소방무역" /></div>
+							<div class="form-field">
+								<span class="field-label">이름<span class="req">*</span></span
+								><input type="text" name="name" placeholder="홍길동" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">소속<span class="req">*</span></span
+								><input type="text" name="org" placeholder="가나다소방무역" />
+							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-field"><span class="field-label">연락처<span class="req">*</span></span><input type="tel" name="tel" placeholder="010-1234-5678" /></div>
-							<div class="form-field"><span class="field-label">이메일<span class="req">*</span></span><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" /></div>
+							<div class="form-field">
+								<span class="field-label">연락처<span class="req">*</span></span
+								><input type="tel" name="tel" placeholder="010-1234-5678" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">이메일<span class="req">*</span></span
+								><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" />
+							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-field full"><span class="field-label">문의 유형<span class="req">*</span></span><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" /></div>
+							<div class="form-field full">
+								<span class="field-label">문의 유형<span class="req">*</span></span
+								><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" />
+							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-field full textarea-field"><span class="field-label">문의 내용<span class="req">*</span></span><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea></div>
+							<div class="form-field full textarea-field">
+								<span class="field-label">문의 내용<span class="req">*</span></span
+								><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea>
+							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-field full"><span class="field-label">첨부 파일</span><input type="text" name="file" placeholder="첨부 파일있으신 경우 첨부해주세요." readonly /></div>

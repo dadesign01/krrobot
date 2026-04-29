@@ -759,6 +759,24 @@
    반응형
    ============================================================ */
 @media (max-width: 1200px) {
+	/* 탭바 가로 스크롤 (센서 탭 텍스트 길어서 오버플로우 방지) */
+	.prod-tab-bar {
+		padding: 0 16px;
+	}
+	.prod-tab-inner {
+		overflow-x: auto;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		justify-content: flex-start;
+	}
+	.prod-tab-inner::-webkit-scrollbar {
+		display: none;
+	}
+	.prod-tab {
+		flex: 0 0 auto;
+		white-space: nowrap;
+	}
 	.crow-hero-left {
 		flex: 0 0 580px;
 	}
@@ -946,5 +964,849 @@
 	}
 	.dtx-key-tech {
 		margin-top: 100px;
+	}
+}
+
+/* ============================================================
+   SENSOR PAGE — 농연 가시화 센서 (tab1)
+   ============================================================ */
+
+/* Hero layout */
+.sensor-hero {
+	/* padding: 80px 0; */
+}
+
+.sensor-hero-inner {
+	max-width: 1680px;
+	margin: 0 auto;
+	padding: 40px 40px 0;
+	display: flex;
+	gap: 138px;
+	align-items: flex-start;
+	box-sizing: border-box;
+}
+
+.sensor-hero-left {
+	flex: 0 0 auto;
+}
+
+.sensor-hero-right {
+	flex: 1;
+	min-width: 0;
+}
+
+.sensor-hero-title {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 42px;
+	font-weight: 700;
+	color: #121212;
+	letter-spacing: -1.68px;
+	line-height: 56px;
+	margin-bottom: 14px;
+}
+
+.sensor-hero-tagline {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+	color: #d60057;
+	letter-spacing: -0.88px;
+	line-height: 58px;
+	margin-bottom: 0;
+	word-break: keep-all;
+}
+
+.sensor-hero-desc-pink {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+	color: #d60057;
+	line-height: 58px;
+	letter-spacing: -0.88px;
+	margin-bottom: 0;
+}
+
+.sensor-hero-desc-gray {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #929292;
+	line-height: 22px;
+	letter-spacing: -0.64px;
+	margin-bottom: 40px;
+	word-break: keep-all;
+}
+
+/* Spec cards */
+.sensor-spec-grid {
+	display: flex;
+	gap: 12px;
+}
+
+.sensor-spec-card {
+	width: 222px;
+	height: 237px;
+	border-radius: 15px;
+	background: #f8f8f8;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	padding: 20px 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.sensor-spec-card:hover {
+	background: #d60057;
+}
+
+.sensor-spec-num {
+	position: absolute;
+	top: 30px;
+	left: -6px;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 58px;
+	letter-spacing: -3.2px;
+	opacity: 0.74;
+	color: #c3c3c3;
+	pointer-events: none;
+	z-index: 0;
+	transition: color 0.25s;
+	user-select: none;
+}
+
+.sensor-spec-card:hover .sensor-spec-num {
+	color: #94003c;
+}
+
+.sensor-spec-content {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+
+.sensor-spec-card-title {
+	display: block;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #121212;
+	text-align: center;
+	letter-spacing: -0.8px;
+	line-height: 58px;
+	margin-bottom: 0;
+	transition: color 0.25s;
+}
+
+.sensor-spec-card:hover .sensor-spec-card-title {
+	color: #fff;
+}
+
+.sensor-spec-card-desc {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #888;
+	text-align: center;
+	line-height: 22px;
+	letter-spacing: -0.64px;
+	transition: color 0.25s;
+	word-break: keep-all;
+}
+
+.sensor-spec-card:hover .sensor-spec-card-desc {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* Key Technology 우측 패널 */
+.sensor-key-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.sensor-key-head-left {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.sensor-key-head-left span {
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #121212;
+}
+
+/* Slide */
+.sensor-slide-dots {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.sensor-slide-dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: #d9d9d9;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.sensor-slide-dot.active {
+	background: #d60057;
+}
+
+.sensor-slide-img-wrap {
+	position: relative;
+	border-radius: 12px;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+.sensor-slide-caption {
+	position: absolute;
+	bottom: 2%;
+	right: 13%;
+	text-align: left;
+}
+
+.sensor-slide-inner {
+	position: relative;
+}
+
+.sensor-slide {
+	display: none;
+}
+
+.sensor-slide.active {
+	display: block;
+}
+
+.sensor-slide-img {
+	width: 100%;
+	border-radius: 12px;
+	display: block;
+	margin-bottom: 16px;
+}
+
+.sensor-slide-label {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #121212;
+	letter-spacing: -0.96px;
+	line-height: 28px;
+	margin-bottom: 6px;
+}
+
+.sensor-slide-sub {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	color: #121212;
+	letter-spacing: -0.72px;
+	line-height: 28px;
+}
+
+/* 하단 이미지 2개 */
+.sensor-img-pair {
+	display: flex;
+	gap: 26px;
+	max-width: 1680px;
+	margin: 240px auto 0;
+	padding: 0 40px 80px;
+	box-sizing: border-box;
+}
+
+.sensor-img-item {
+	flex: 1;
+	height: 554px;
+	border-radius: 15px;
+	overflow: hidden;
+	background: #eee;
+}
+
+.sensor-img-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sensor-img-item:hover img {
+	transform: scale(1.06);
+}
+
+/* ============================================================
+   SENSOR tab2 — 환경지도 생성 및 자율주행
+   ============================================================ */
+
+/* 비디오 슬라이드 */
+.sensor-video-slide {
+	position: relative;
+	width: 100%;
+	height: 384px;
+	overflow: hidden;
+	cursor: pointer;
+	background: #111;
+	border-radius: 12px;
+	flex-shrink: 0;
+}
+
+.sensor-video-thumb {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.sensor-video-play {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+.sensor-video-iframe {
+	display: none;
+	position: absolute;
+	inset: 0;
+}
+
+.sensor-video-iframe iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.sensor-video-slide.playing .sensor-video-thumb,
+.sensor-video-slide.playing .sensor-video-play {
+	display: none;
+}
+
+.sensor-video-slide.playing .sensor-video-iframe {
+	display: block;
+}
+
+.sensor-slide-cap {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	color: #121212;
+	text-align: center;
+	line-height: 24px;
+	letter-spacing: -0.64px;
+	margin-top: 14px;
+}
+
+/* 하단 이미지 2개 */
+.s2-img-pair {
+	display: flex;
+	gap: 22px;
+	max-width: 1680px;
+	margin: 40px auto 0;
+}
+
+.s2-img-item {
+	flex: 1;
+}
+
+.s2-img-wrap {
+	height: 394px;
+	border-radius: 15px;
+	overflow: hidden;
+	background: #eee;
+}
+
+.s2-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s2-img-item:hover .s2-img-wrap img {
+	transform: scale(1.06);
+}
+
+.s2-img-caption {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	color: #121212;
+	text-align: center;
+	line-height: 24px;
+	letter-spacing: -0.64px;
+	margin-top: 12px;
+}
+
+/* 기술 보유 섹션 */
+.s2-tech-section {
+	max-width: 1680px;
+	margin: 170px auto 80px;
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.s2-tech-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 32px;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #121212;
+	letter-spacing: -0.96px;
+	word-break: keep-all;
+}
+
+.s2-tech-head img {
+	width: 19px;
+	height: 19px;
+	flex-shrink: 0;
+}
+
+.s2-tech-grid {
+	display: flex;
+	gap: 40px;
+}
+
+.s2-tech-card {
+	flex: 1;
+	min-height: 183px;
+	border-radius: 15px;
+	background: #f8f8f8;
+	padding: 32px 40px;
+	box-sizing: border-box;
+	transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
+}
+
+.s2-tech-card:hover {
+	background: #d60057;
+}
+
+.s2-tech-card-title {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #121212;
+	text-align: left;
+	line-height: 58px;
+	letter-spacing: -0.96px;
+	transition: color 0.25s;
+	margin-bottom: 4px;
+}
+
+.s2-tech-card:hover .s2-tech-card-title {
+	color: #fff;
+}
+
+.s2-tech-card-list {
+	list-style: disc;
+	padding-left: 24px;
+	margin: 0;
+}
+
+.s2-tech-card-list li {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	line-height: 32px;
+	letter-spacing: -0.8px;
+	word-break: keep-all;
+	text-align: left;
+	transition: color 0.25s;
+}
+
+.s2-tech-card:hover .s2-tech-card-list li {
+	color: #fff;
+}
+/* s2 대형 메인 비디오 */
+.s2-video-main {
+	position: relative;
+	max-width: 1680px;
+	height: 652px;
+	margin: 240px auto 0;
+	border-radius: 15px;
+	overflow: hidden;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.78);
+	aspect-ratio: 173 / 92;
+	width: 100%;
+}
+
+.s2-video-main-thumb {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	max-width: 1226px;
+	margin: 0 auto;
+}
+
+.s2-video-main-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+	pointer-events: none;
+}
+
+.s2-video-main-play {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+.s2-video-main-iframe {
+	display: none;
+	position: absolute;
+	inset: 0;
+}
+
+.s2-video-main-iframe iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.s2-video-main.playing .s2-video-main-thumb,
+.s2-video-main.playing .s2-video-main-overlay,
+.s2-video-main.playing .s2-video-main-play {
+	display: none;
+}
+
+.s2-video-main.playing .s2-video-main-iframe {
+	display: block;
+}
+
+/* ─── Tab3: 소형 다중센서 통합 모듈 ─── */
+.s3-slide-img-wrap {
+	overflow: hidden;
+	border-radius: 12px;
+}
+.s3-slide-img-wrap img {
+	transition: transform 0.4s ease;
+}
+.s3-slide-img-wrap:hover img {
+	transform: scale(1.05);
+}
+.s3-slide-cap {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #121212;
+	line-height: 28px;
+	letter-spacing: -0.96px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+/* s3 하단 이미지 그리드 */
+.s3-bottom {
+	max-width: 1680px;
+	margin: 240px auto 0;
+	padding: 0 0 80px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+.s3-row1 {
+	display: flex;
+	gap: 22px;
+	height: 652px;
+}
+.s3-row1 > .s3-col-stack {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+.s3-row1 > .s3-col-stack > .s3-img-item {
+	flex: 1;
+}
+.s3-row1 > .s3-col-large {
+	flex: 1.5;
+}
+.s3-img-item {
+	min-width: 0;
+}
+.s3-img-wrap {
+	height: 100%;
+	border-radius: 15px;
+	overflow: hidden;
+}
+.s3-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+.s3-img-item:hover .s3-img-wrap img {
+	transform: scale(1.06);
+}
+.s3-img-full {
+	width: 100%;
+	border-radius: 15px;
+	overflow: hidden;
+	/* height: 260px; */
+}
+.s3-img-full .s3-img-wrap {
+	height: 800px;
+}
+.s3-img-full:hover .s3-img-wrap img {
+	transform: scale(1.03);
+}
+.s3-row3 {
+	display: grid;
+	gap: 22px;
+	grid-template-columns: 2fr 650px;
+	height: 652px;
+}
+.s3-row3 > .s3-img-item {
+	flex: 1;
+}
+
+.s3-row3 > .s3-col-large {
+	flex: 1.5;
+}
+
+@media (max-width: 1400px) {
+	.prod-section {
+		padding: 0 40px;
+	}
+
+	.sensor-hero-inner {
+		padding: 40px 0 0;
+	}
+
+	.sensor-slide-caption {
+		right: 2%;
+	}
+	.sensor-slide-label {
+		font-size: 18px;
+		line-height: normal;
+	}
+
+	.sensor-slide-sub {
+		font-size: 16px;
+		line-height: normal;
+	}
+
+	.s3-bottom {
+		margin: 100px auto 0;
+	}
+}
+@media (max-width: 1200px) {
+	.sensor-hero-inner {
+		gap: 40px;
+	}
+	.sensor-spec-card {
+		width: 190px;
+	}
+
+	.s3-row3 {
+		/* grid-template-columns: 1fr; */
+		display: flex;
+	}
+}
+
+@media (max-width: 1024px) {
+	.sensor-slide-caption {
+		right: 2%;
+	}
+	.sensor-slide-label {
+		font-size: 22px;
+	}
+
+	.sensor-slide-sub {
+		font-size: 18px;
+	}
+	.sensor-hero-inner {
+		flex-direction: column;
+		gap: 50px;
+		padding: 0 20px;
+	}
+	.sensor-hero-left,
+	.sensor-hero-right {
+		width: 100%;
+		flex: none;
+	}
+	.sensor-spec-grid {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.sensor-spec-card {
+		flex: 1 1 calc(33.333% - 10px);
+		width: auto;
+		min-width: 160px;
+	}
+
+	.s3-row1,
+	.s3-row3 {
+		height: 370px;
+	}
+}
+
+@media (max-width: 768px) {
+	.prod-section {
+		padding: 0 20px;
+	}
+	.sensor-hero {
+		padding: 0;
+	}
+	.sensor-hero-inner {
+		gap: 32px;
+		padding: 0;
+	}
+	.sensor-hero-title {
+		font-size: 28px;
+		line-height: 40px;
+		letter-spacing: -1px;
+	}
+	.sensor-hero-tagline {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	.sensor-hero-desc-pink {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	.sensor-hero-desc-gray {
+		font-size: 14px;
+		margin-bottom: 28px;
+	}
+	.sensor-spec-grid {
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.sensor-spec-card {
+		flex: 1 1 calc(50% - 8px);
+		width: auto;
+		height: 180px;
+	}
+	.sensor-spec-num {
+		font-size: 60px;
+		line-height: 46px;
+	}
+	.sensor-spec-card-title {
+		font-size: 16px;
+		line-height: 40px;
+	}
+	.sensor-spec-card-desc {
+		font-size: 13px;
+	}
+	.sensor-key-head-left span {
+		font-size: 16px;
+	}
+	.sensor-slide-label {
+		font-size: 15px;
+		line-height: normal;
+	}
+	.sensor-slide-sub {
+		font-size: 13px;
+		line-height: normal;
+	}
+	.sensor-slide-caption {
+		bottom: 2%;
+		right: 2%;
+	}
+	.sensor-img-pair {
+		flex-direction: column;
+		margin-top: 20px;
+		gap: 16px;
+		padding: 0 0 40px;
+	}
+	.sensor-img-item {
+		height: auto;
+	}
+
+	#tab2.prod-section {
+		padding: 20px 20px;
+	}
+	.sensor-video-slide {
+		height: 280px;
+	}
+	.s2-video-main {
+		margin: 50px auto 0;
+		max-width: 100%;
+		height: 260px;
+	}
+	.s2-video-main-thumb {
+		padding: 0 20px;
+	}
+
+	.sensor-video-play img {
+		width: 100px;
+		height: 100px;
+	}
+	.s2-img-pair {
+		flex-direction: column;
+	}
+
+	.s2-img-wrap {
+		height: 260px;
+	}
+
+	.s2-tech-section {
+		margin: 50px auto;
+	}
+	.s2-tech-grid {
+		flex-direction: column;
+		gap: 16px;
+	}
+	.s2-tech-head,
+	.s2-tech-card-title,
+	.s3-slide-cap {
+		font-size: 22px;
+	}
+
+	.s2-tech-card-list li {
+		font-size: 16px;
+	}
+	.s3-row1,
+	.s3-row3 {
+		flex-direction: column;
+		/* height:260px; */
+		height: auto;
+	}
+
+	.s3-row1 > .s3-col-stack {
+		width: 100%;
+	}
+
+	.s3-row1 > .s3-col-large {
+		flex: unset;
+	}
+
+	.s3-img-full .s3-img-wrap {
+		height: 260px;
+	}
+
+	.s3-bottom {
+		/* height:auto; */
+		margin: 50px auto 0;
 	}
 }
