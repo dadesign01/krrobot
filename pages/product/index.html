@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/product.css" />
+		<link rel="stylesheet" href="../../css/product-page.css" />
 		<link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
 	</head>
 	<body class="prod-layout">
@@ -81,6 +82,7 @@
 		<!-- 탭 바 -->
 		<div class="prod-tab-bar" id="prodTabBar" role="navigation" aria-label="로봇 제품 분류">
 			<div class="prod-tab-inner">
+				<div class="prod-tab-indicator"></div>
 				<button class="prod-tab active" data-idx="0" aria-selected="true">원격 방수총</button>
 				<button class="prod-tab" data-idx="1" aria-selected="false">4족 보행 로봇</button>
 				<button class="prod-tab" data-idx="2" aria-selected="false">협소 공간 탐지 로봇</button>
@@ -90,16 +92,324 @@
 		<main class="prod-main">
 			<!-- 섹션 0: 원격 방수총 -->
 			<section class="prod-section" id="tab1">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">CROW</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Robot Product</p>
-						<h2 class="prod-placeholder-title">원격 방수총</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">원격 방수총</h2>
+							<p class="crow-hero-tagline">고위험 화재 현장을 위한 원거리 무선 스마트 방수 솔루션</p>
+							<p class="crow-hero-desc">우리의 스마트 원격 방수총은 반복적이고 위험한 방수 작업을<br />무선 원격 조작으로 제어할 수 있도록 설계된 전동식 방수 장비입니다.</p>
+							<div class="crow-spec-grid">
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">정밀 PAN/TILT 조준</span>
+									<span class="crow-spec-card-sub">좌우 340° / 상하 90°<br />무선 컨트롤 패드 조작</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">오실레이션 자동 왕복</span>
+									<span class="crow-spec-card-sub">구간 설정 후 자동 왕복, 반복 방수<br />면(Area) 단위 냉각 대응</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">통신·안전제어로직</span>
+									<span class="crow-spec-card-sub">오실레이션 동작 중 통신 끊겨도 동작 유지<br />비상 시 자동 차단 중단</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">40A/65A 라인업</span>
+									<span class="crow-spec-card-sub">최대 1,000 / 2,000 LPM 방수 성능<br />차량 탑재형 이동식 운용 가능</span>
+								</div>
+							</div>
+							<button
+								class="crow-view-btn"
+								onclick="
+									var d = document.getElementById('crowDetail');
+									d.style.display = 'block';
+									setTimeout(function () {
+										var y = d.getBoundingClientRect().top + window.scrollY - 80;
+										window.scrollTo({ top: y, behavior: 'smooth' });
+									}, 0);
+								"
+							>
+								View Detail &nbsp;→
+							</button>
+						</div>
+						<div class="crow-hero-img-wrap">
+							<img src="../../img/product/pro_01_01.png" alt="원격 방수총" />
+						</div>
 					</div>
 				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="crowDetail">
+					<!-- 서브탭 -->
+					<div class="crow-sub-tabs">
+						<button class="crow-sub-tab active" onclick="crowSwitch('crowM40', this)">CROW-M40</button>
+						<button class="crow-sub-tab" onclick="crowSwitch('crowM65', this)">CROW-M65</button>
+					</div>
+
+					<!-- ── CROW-M40 ── -->
+					<div class="crow-model-panel active" id="crowM40">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">CROW-M40</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../img/product/pro_01_02.png" alt="CROW-M40" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">CROW-M40</h3>
+									<p class="crow-model-tagline">고위험 화재 현장을 위한 원거리 무선 스마트 방수 솔루션<br />접합부 직경 40mm / 최대 방수량 1,000LPM</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>CROW-M40</td>
+										</tr>
+										<tr>
+											<th>접합부 직경(mm)</th>
+											<td class="col-gap"></td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<th>적정 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>최대 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.5</td>
+										</tr>
+										<tr>
+											<th>최대 방수량(LPM)</th>
+											<td class="col-gap"></td>
+											<td>1,000</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>21</td>
+										</tr>
+										<tr>
+											<th rowspan="2">가동 범위</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">상하(TILT)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">좌우(PAN)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>동작전압(V)</th>
+											<td class="col-gap"></td>
+											<td>24V</td>
+										</tr>
+										<tr>
+											<th>상하모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/99, Encoder 미포함)</td>
+										</tr>
+										<tr>
+											<th>좌우모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/704, Encoder 포함)</td>
+										</tr>
+										<tr>
+											<th>노즐모터 사양</th>
+											<td class="col-gap"></td>
+											<td>LM2038A 24V Stroke:30mm</td>
+										</tr>
+										<tr>
+											<th>밸브모터 사양</th>
+											<td class="col-gap"></td>
+											<td>YH-525 24V Stroke:20mm</td>
+										</tr>
+										<tr>
+											<th>무선 통신 규격</th>
+											<td class="col-gap"></td>
+											<td>900MHz RF</td>
+										</tr>
+										<tr>
+											<th>리모컨 배터리 사양</th>
+											<td class="col-gap"></td>
+											<td>Samsung SDI 18650(3,500mAh, 충전식) 또는 동일 규격 제품 호환</td>
+										</tr>
+										<tr>
+											<th>설치했을 때 재관(mm)</th>
+											<td class="col-gap"></td>
+											<td>300×240×300</td>
+										</tr>
+										<tr>
+											<th>재질</th>
+											<td class="col-gap"></td>
+											<td>AA601</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="crow-gallery">
+							<div class="crow-gallery-left">
+								<div class="crow-gal-wrap"><img src="../../img/product/pro_01_03.png" alt="CROW-M40" /></div>
+								<div class="crow-gal-wrap"><img src="../../img/product/pro_01_04.png" alt="CROW-M40" /></div>
+							</div>
+							<div class="crow-gallery-right">
+								<div class="crow-gal-wrap"><img src="../../img/product/pro_01_05.png" alt="CROW-M40" /></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── CROW-M65 ── -->
+					<div class="crow-model-panel" id="crowM65">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">CROW-M65</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../img/product/pro_01_06.png" alt="CROW-M65" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">CROW-M65</h3>
+									<p class="crow-model-tagline">고위험 화재 현장을 위한 원거리 무선 스마트 방수 솔루션<br />접합부 직경 65mm / 최대 방수량 2,000LPM</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>CROW-M65</td>
+										</tr>
+										<tr>
+											<th>접합부 직경(mm)</th>
+											<td class="col-gap"></td>
+											<td>65</td>
+										</tr>
+										<tr>
+											<th>적정 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>최대 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.5</td>
+										</tr>
+										<tr>
+											<th>최대 방수량(LPM)</th>
+											<td class="col-gap"></td>
+											<td>2,000</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>23</td>
+										</tr>
+										<tr>
+											<th rowspan="2">가동 범위</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">상하(TILT)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">좌우(PAN)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>동작시간</th>
+											<td class="col-gap"></td>
+											<td>8시간 이상</td>
+										</tr>
+										<tr>
+											<th>동작전압(V)</th>
+											<td class="col-gap"></td>
+											<td>24V</td>
+										</tr>
+										<tr>
+											<th>상하모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/240, Encoder 미포함)</td>
+										</tr>
+										<tr>
+											<th>좌우모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/704, Encoder 포함)</td>
+										</tr>
+										<tr>
+											<th>노즐모터 사양</th>
+											<td class="col-gap"></td>
+											<td>SLA01 24V Stroke:30mm</td>
+										</tr>
+										<tr>
+											<th>밸브모터 사양</th>
+											<td class="col-gap"></td>
+											<td>YH-525 24V Stroke:20mm</td>
+										</tr>
+										<tr>
+											<th>방수총 배터리 사양</th>
+											<td class="col-gap"></td>
+											<td>Greenworks 24V Li-ion 배터리 (65Ah / 156Wh) 또는 동일 규격 제품 호환</td>
+										</tr>
+										<tr>
+											<th>리모컨 배터리 사양</th>
+											<td class="col-gap"></td>
+											<td>Samsung SDI 18650(3,500mAh, 충전식) 또는 동일 규격 제품 호환</td>
+										</tr>
+										<tr>
+											<th>설치했을 때 재관(mm)</th>
+											<td class="col-gap"></td>
+											<td>700×250×300</td>
+										</tr>
+										<tr>
+											<th>재질</th>
+											<td class="col-gap"></td>
+											<td>AA6061</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="crow-gallery">
+							<div class="crow-gallery-left">
+								<div class="crow-gal-wrap"><img src="../../img/product/pro_01_07.png" alt="CROW-M65" /></div>
+								<div class="crow-gal-wrap"><img src="../../img/product/pro_01_08.png" alt="CROW-M65" /></div>
+							</div>
+							<div class="crow-gallery-right">
+								<div class="crow-gal-wrap"><img src="../../img/product/pro_01_09.png" alt="CROW-M65" /></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /crow-detail -->
+
+				<script>
+					/* 서브탭 클릭 → 해당 패널만 표시 (exclusive tab) */
+					function crowSwitch(id, btn) {
+						document.querySelectorAll('#tab1 .crow-model-panel').forEach(function (p) {
+							p.classList.remove('active');
+						});
+						document.querySelectorAll('#tab1 .crow-sub-tab').forEach(function (t) {
+							t.classList.remove('active');
+						});
+						document.getElementById(id).classList.add('active');
+						btn.classList.add('active');
+						var detail = document.getElementById('crowDetail');
+						if (detail) {
+							var y = detail.getBoundingClientRect().top + window.scrollY - 80;
+							window.scrollTo({ top: y, behavior: 'smooth' });
+						}
+					}
+				</script>
 			</section>
 
 			<!-- 섹션 1: 4족 보행 로봇 -->
@@ -151,18 +461,36 @@
 				<div class="contact-form-wrap">
 					<form class="contact-form" id="contactForm" novalidate>
 						<div class="form-row">
-							<div class="form-field"><span class="field-label">이름<span class="req">*</span></span><input type="text" name="name" placeholder="홍길동" /></div>
-							<div class="form-field"><span class="field-label">소속<span class="req">*</span></span><input type="text" name="org" placeholder="가나다소방무역" /></div>
+							<div class="form-field">
+								<span class="field-label">이름<span class="req">*</span></span
+								><input type="text" name="name" placeholder="홍길동" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">소속<span class="req">*</span></span
+								><input type="text" name="org" placeholder="가나다소방무역" />
+							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-field"><span class="field-label">연락처<span class="req">*</span></span><input type="tel" name="tel" placeholder="010-1234-5678" /></div>
-							<div class="form-field"><span class="field-label">이메일<span class="req">*</span></span><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" /></div>
+							<div class="form-field">
+								<span class="field-label">연락처<span class="req">*</span></span
+								><input type="tel" name="tel" placeholder="010-1234-5678" />
+							</div>
+							<div class="form-field">
+								<span class="field-label">이메일<span class="req">*</span></span
+								><input type="email" name="email" placeholder="gildong1234@krrobot.co.kr" />
+							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-field full"><span class="field-label">문의 유형<span class="req">*</span></span><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" /></div>
+							<div class="form-field full">
+								<span class="field-label">문의 유형<span class="req">*</span></span
+								><input type="text" name="type" placeholder="제품 구매 및 견적, 기술 협력, 시연 요청, 언론 홍보 등" />
+							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-field full textarea-field"><span class="field-label">문의 내용<span class="req">*</span></span><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea></div>
+							<div class="form-field full textarea-field">
+								<span class="field-label">문의 내용<span class="req">*</span></span
+								><textarea name="content" placeholder="케이대응로봇에 대해 궁금하신 점을 남겨주세요."></textarea>
+							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-field full"><span class="field-label">첨부 파일</span><input type="text" name="file" placeholder="첨부 파일있으신 경우 첨부해주세요." readonly /></div>
@@ -178,144 +506,6 @@
 		</footer>
 
 		<script src="../../js/main.js"></script>
-		<script>
-			(function () {
-				var header = document.getElementById('header');
-				var tabBar = document.getElementById('prodTabBar');
-				var sections = Array.from(document.querySelectorAll('.prod-section'));
-				var tabs = Array.from(document.querySelectorAll('.prod-tab'));
-				var prodMain = document.querySelector('.prod-main');
-
-				var HEADER_H = 72;
-				var TAB_H = 64;
-				var lastY = -1;
-				var headerHidden = false;
-				var advancing = false;
-
-				function init() {
-					HEADER_H = header.offsetHeight;
-					TAB_H = tabBar.offsetHeight;
-					tabBar.style.top = HEADER_H + 'px';
-					prodMain.style.paddingTop = HEADER_H + TAB_H + 'px';
-				}
-
-				function getOffset() {
-					return headerHidden ? TAB_H : HEADER_H + TAB_H;
-				}
-
-				function hideHeader() {
-					if (headerHidden) return;
-					header.classList.add('scroll-hide');
-					tabBar.style.top = '0';
-					headerHidden = true;
-				}
-
-				function showHeader() {
-					if (!headerHidden) return;
-					header.classList.remove('scroll-hide');
-					tabBar.style.top = HEADER_H + 'px';
-					headerHidden = false;
-				}
-
-				function setActiveTab(idx) {
-					tabs.forEach(function (t, i) {
-						t.classList.toggle('active', i === idx);
-						t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
-					});
-				}
-
-				function updateActiveTab() {
-					var checkY = window.innerHeight * 0.35;
-					sections.forEach(function (s, i) {
-						var r = s.getBoundingClientRect();
-						if (r.top <= checkY && r.bottom > checkY) setActiveTab(i);
-					});
-				}
-
-				function scrollToSection(idx) {
-					var r = sections[idx].getBoundingClientRect();
-					var targetY = window.pageYOffset + r.top - getOffset();
-					window.scrollTo({ top: targetY, behavior: 'smooth' });
-				}
-
-				function checkAutoAdvance() {
-					if (advancing) return;
-					sections.forEach(function (s, i) {
-						if (i >= sections.length - 1) return;
-						var dist = window.innerHeight - s.getBoundingClientRect().bottom;
-						if (dist >= -30 && dist <= 60) {
-							advancing = true;
-							setTimeout(function () {
-								scrollToSection(i + 1);
-								setTimeout(function () { advancing = false; }, 1400);
-							}, 350);
-						}
-					});
-				}
-
-				window.addEventListener('scroll', function () {
-					var y = window.scrollY;
-					if (y <= 5) {
-						showHeader();
-					} else if (y > lastY + 2 && y > HEADER_H) {
-						hideHeader();
-					} else if (y < lastY - 2) {
-						showHeader();
-					}
-					updateActiveTab();
-					checkAutoAdvance();
-					lastY = y;
-				}, { passive: true });
-
-				/* 탭 클릭 */
-				tabs.forEach(function (tab, i) {
-					tab.addEventListener('click', function () { scrollToSection(i); });
-				});
-
-				/* 메가메뉴 같은 페이지 해시 링크 */
-				document.querySelectorAll('.mega-menu a').forEach(function (link) {
-					link.addEventListener('click', function (e) {
-						var href = link.getAttribute('href') || '';
-						var hi = href.indexOf('#');
-						if (hi === -1) return;
-						var pagePart = href.substring(0, hi).split('/').pop();
-						var hash = href.substring(hi);
-						var curPage = location.pathname.split('/').pop() || 'index.html';
-						if (!pagePart || pagePart === curPage) {
-							e.preventDefault();
-							var t = document.querySelector(hash);
-							if (t) {
-								var r = t.getBoundingClientRect();
-								window.scrollTo({ top: window.pageYOffset + r.top - getOffset(), behavior: 'smooth' });
-							}
-						}
-					});
-				});
-
-				/* hashchange 대응 */
-				window.addEventListener('hashchange', function () {
-					var t = location.hash && document.querySelector(location.hash);
-					if (t) {
-						var r = t.getBoundingClientRect();
-						window.scrollTo({ top: window.pageYOffset + r.top - getOffset(), behavior: 'smooth' });
-					}
-				});
-
-				window.addEventListener('resize', init);
-				init();
-				updateActiveTab();
-
-				/* 해시 초기 스크롤 */
-				if (location.hash) {
-					var target = document.querySelector(location.hash);
-					if (target) {
-						setTimeout(function () {
-							var r = target.getBoundingClientRect();
-							window.scrollTo({ top: window.pageYOffset + r.top - getOffset(), behavior: 'smooth' });
-						}, 150);
-					}
-				}
-			})();
-		</script>
+		<script src="../../js/product.js"></script>
 	</body>
 </html>

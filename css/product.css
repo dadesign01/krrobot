@@ -20,61 +20,65 @@
 	right: 0;
 	z-index: 990;
 	background: #fff;
-	border-bottom: 1px solid #e8e8e8;
-	height: 64px;
-	top: 72px; /* JS가 실제 헤더 높이로 덮어씀 */
+	height: 75px;
+	top: 72px;
 	transition: top 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.prod-tab-bar.header-hidden {
-	/* top은 JS inline style로 관리 */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 40px;
 }
 
 .prod-tab-inner {
+	width: 100%;
 	max-width: 1680px;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0 40px;
+	height: 59px;
+	background: #F8F8F8;
+	border-radius: 600px;
+	position: relative;
 	display: flex;
-	align-items: stretch;
-	overflow-x: auto;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
+	align-items: center;
+	padding: 7px;
+	box-sizing: border-box;
 }
 
-.prod-tab-inner::-webkit-scrollbar {
-	display: none;
+.prod-tab-indicator {
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	height: 45px;
+	border-radius: 600px;
+	background: #D60057;
+	pointer-events: none;
+	z-index: 0;
+	width: 0;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), width 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .prod-tab {
 	flex: 1;
-	min-width: 120px;
+	height: 45px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0 16px;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 17px;
+	font-size: 20px;
 	font-weight: 500;
-	color: #888;
+	color: #2C2C2C;
 	background: none;
 	border: none;
-	border-bottom: 3px solid transparent;
+	border-radius: 600px;
 	cursor: pointer;
-	transition:
-		color 0.2s,
-		border-color 0.2s;
-	letter-spacing: -0.5px;
 	white-space: nowrap;
-}
-
-.prod-tab:hover {
-	color: #333;
+	transition: color 0.25s;
+	position: relative;
+	z-index: 1;
+	min-width: 0;
 }
 
 .prod-tab.active {
-	color: #d60057;
-	border-bottom-color: #d60057;
+	color: #fff;
 	font-weight: 700;
 }
 
@@ -84,10 +88,19 @@
 	padding-top: 136px;
 }
 
+@keyframes tabFadeIn {
+	from { opacity: 0; transform: translateY(14px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
 .prod-section {
 	position: relative;
 	display: flex;
 	flex-direction: column;
+}
+
+.prod-section.tab-enter {
+	animation: tabFadeIn 0.38s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .prod-section:nth-child(even) .prod-placeholder {
@@ -163,11 +176,22 @@
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
 	.prod-tab-bar {
-		height: 52px;
+		height: 62px;
+		padding: 0 16px;
+	}
+	.prod-tab-inner {
+		height: 48px;
+		padding: 5px;
+	}
+	.prod-tab-indicator {
+		height: 38px;
+		top: 5px;
+		left: 5px;
 	}
 	.prod-tab {
 		font-size: 13px;
 		min-width: 90px;
+		height: 38px;
 		padding: 0 10px;
 	}
 	.prod-placeholder-title {
