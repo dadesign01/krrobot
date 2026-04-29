@@ -883,6 +883,7 @@
 	justify-content: center;
 	position: relative;
 	padding: 0 50px;
+	z-index: -1;
 	transition: background 0.3s;
 }
 
@@ -899,6 +900,7 @@
 	letter-spacing: -0.72px;
 	text-align: center;
 	transition: color 0.3s;
+	word-break: keep-all;
 }
 
 .rd-card:hover .rd-card-title {
@@ -910,6 +912,7 @@
 	position: absolute;
 	right: 20px;
 	top: 50%;
+	z-index: -1;
 	transform: translateY(-50%);
 }
 .rd-card:hover .rd-card-arrow {
