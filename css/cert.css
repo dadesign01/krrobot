@@ -93,13 +93,22 @@
 	border-radius: 15px;
 	background: linear-gradient(149deg, var(--MainColor, #d60057) 67.22%, #212121 100%);
 }
+.cert-img-inner {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+}
 .cert-card-img-wrap img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	aspect-ratio: 87/104;
 	display: block;
-	border-radius: 10px;
+	transition: transform 0.35s ease;
+}
+.cert-card:hover .cert-card-img-wrap img {
+	transform: scale(1.05);
 }
 .cert-card-title {
 	margin-top: 40px;

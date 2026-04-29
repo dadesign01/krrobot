@@ -118,7 +118,9 @@
 			<section class="hero-section" id="hero">
 				<div class="hero-card">
 					<div class="hero-bg">
-						<img src="img/main/main.png" alt="" class="hero-img" aria-hidden="true" />
+						<video class="hero-video" id="heroSeqVideo" autoplay muted playsinline>
+							<source src="video/video_01.mp4" type="video/mp4" />
+						</video>
 					</div>
 					<div class="hero-content">
 						<h1 class="hero-title">
@@ -387,5 +389,17 @@
 		</footer>
 
 		<script src="js/main.js"></script>
-	</body>
+		<script>
+		var _hvSrcs = ['video/video_01.mp4', 'video/video_02.mp4'];
+		var _hvIdx = 0;
+		var _hvEl = document.getElementById('heroSeqVideo');
+		if (_hvEl) {
+			_hvEl.addEventListener('ended', function () {
+				_hvIdx = (_hvIdx + 1) % _hvSrcs.length;
+				_hvEl.src = _hvSrcs[_hvIdx];
+				_hvEl.play();
+			});
+		}
+	</script>
+</body>
 </html>
