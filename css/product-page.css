@@ -284,7 +284,7 @@
 
 .crow-model-left img {
 	width: 100%;
-	height: auto;
+	height: 660px;
 	object-fit: contain;
 	display: block;
 }
@@ -492,6 +492,269 @@
 	transform: scale(1.06);
 }
 
+/* ── tab3 Detail 기본 숨김 ── */
+#dtxDetail {
+	scroll-margin-top: 80px;
+	display: none;
+}
+
+/* ── Confined Space 두 줄 배경 텍스트 ── */
+.dtx-bg-wrap {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 20px;
+}
+
+.dtx-bg-text-line {
+	color: #000;
+	font-family: 'Poppins', sans-serif;
+	font-size: 200px;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -8px;
+	opacity: 0.05;
+	pointer-events: none;
+	white-space: nowrap;
+	user-select: none;
+}
+
+/* ── tab3 Key Technology 섹션 ── */
+.dtx-key-tech {
+	margin-top: 300px;
+	padding-bottom: 80px;
+}
+
+.dtx-key-tech-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	max-width: 1680px;
+	margin: 0 auto 24px;
+	padding: 0 40px;
+	color: #121212;
+	font-family: 'Poppins', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 58px;
+	letter-spacing: -0.96px;
+}
+
+.dtx-key-tech-head img {
+	width: 19px;
+	height: 19px;
+	flex-shrink: 0;
+	margin: 0 0 20px 0;
+}
+
+/* ── 영상 블록 ── */
+.dtx-video-wrap {
+	position: relative;
+	max-width: 1680px;
+	margin: 0 auto;
+	height: 652px;
+	overflow: hidden;
+	cursor: pointer;
+	background: #111;
+}
+
+.dtx-video-thumb {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: opacity 0.3s;
+}
+
+.dtx-play-overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dtx-play-overlay img {
+	width: 80px;
+	height: 80px;
+	pointer-events: none;
+}
+
+.dtx-iframe-wrap {
+	display: none;
+	position: absolute;
+	inset: 0;
+}
+
+.dtx-iframe-wrap iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.dtx-video-wrap.playing .dtx-video-thumb,
+.dtx-video-wrap.playing .dtx-play-overlay {
+	display: none;
+}
+
+.dtx-video-wrap.playing .dtx-iframe-wrap {
+	display: block;
+}
+
+/* ── 4-image 그리드 ── */
+.dtx-img-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 60px;
+	max-width: 1680px;
+	margin: 150px auto 0;
+	padding: 0 40px;
+}
+
+.dtx-img-wrap {
+	overflow: hidden;
+	border-radius: 15px;
+	height: 394px;
+	background: #eee;
+}
+
+.dtx-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dtx-img-item:hover .dtx-img-wrap img {
+	transform: scale(1.06);
+}
+
+.dtx-img-caption {
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 15px;
+	color: #555;
+	margin-top: 12px;
+	letter-spacing: -0.5px;
+}
+
+/* ── tab2 Detail 기본 숨김 ── */
+#b2Detail {
+	scroll-margin-top: 80px;
+	display: none;
+}
+
+/* ── 히어로 슬라이드쇼 ── */
+.b2-slider-wrap {
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 16px;
+}
+
+.b2-slider {
+	width: 100%;
+	position: relative;
+}
+
+.b2-slider .b2-slide-img {
+	display: none;
+	width: 100%;
+	max-width: 800px;
+	height: 500px;
+	object-fit: contain;
+}
+
+.b2-slider .b2-slide-img.active {
+	display: block;
+}
+
+.b2-slider-dots {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	width: 100%;
+	max-width: 800px;
+}
+
+.b2-slide-dot {
+	width: 12px;
+	height: 12px;
+	aspect-ratio: 1 / 1;
+	border-radius: 12px;
+	background: #d9d9d9;
+	cursor: pointer;
+	transition: background 0.2s;
+	flex-shrink: 0;
+}
+
+.b2-slide-dot.active {
+	background: #d60057;
+}
+
+/* ── Key Technology ── */
+.b2-key-tech {
+	max-width: 1680px;
+	margin: 150px auto 80px;
+	padding: 0 40px;
+}
+
+.b2-key-tech-title {
+	color: #121212;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 58px;
+	letter-spacing: -0.8px;
+	margin: 0 0 32px;
+}
+
+.b2-key-tech-grid {
+	display: flex;
+	gap: 15px;
+}
+
+.b2-key-tech-item {
+	flex: 1;
+}
+
+.b2-key-tech-img {
+	width: 100%;
+	height: 394px;
+	border-radius: 15px;
+	border: 1px solid #d3d3d3;
+	overflow: hidden;
+}
+
+.b2-key-tech-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.b2-key-tech-item:hover .b2-key-tech-img img {
+	transform: scale(1.06);
+}
+
+.b2-key-tech-caption {
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 15px;
+	color: #555;
+	margin-top: 12px;
+	letter-spacing: -0.5px;
+}
+
 /* ============================================================
    반응형
    ============================================================ */
@@ -599,6 +862,10 @@
 	.crow-model-name {
 		font-size: 28px;
 	}
+	.crow-model-left img {
+		height: 350px;
+	}
+
 	.crow-model-bg-text {
 		font-size: 80px;
 	}
@@ -623,7 +890,9 @@
 		font-size: 13px;
 		flex: 0 0 70px;
 	}
-
+	.crow-model-panel {
+		padding-bottom: 0;
+	}
 	.crow-gallery {
 		flex-direction: column;
 		margin: 80px auto 0;
@@ -645,5 +914,37 @@
 	.crow-gallery-left .crow-gal-wrap {
 		height: auto;
 		max-height: 260px;
+	}
+
+	.b2-key-tech {
+		margin-top: 80px;
+		padding: 0 20px;
+	}
+	.b2-key-tech-grid {
+		flex-direction: column;
+	}
+	.b2-key-tech-img {
+		height: 220px;
+	}
+	.b2-slider-dots {
+		max-width: 100%;
+	}
+	.dtx-bg-text-line {
+		font-size: 60px;
+		letter-spacing: -2.4px;
+	}
+	.dtx-video-wrap {
+		height: 240px;
+	}
+	.dtx-img-grid {
+		grid-template-columns: 1fr;
+		margin-top: 60px;
+		padding: 0 20px;
+	}
+	.dtx-img-wrap {
+		height: 220px;
+	}
+	.dtx-key-tech {
+		margin-top: 100px;
 	}
 }

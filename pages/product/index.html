@@ -414,30 +414,507 @@
 
 			<!-- 섹션 1: 4족 보행 로봇 -->
 			<section class="prod-section" id="tab2">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">4-LEGRB</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Robot Product</p>
-						<h2 class="prod-placeholder-title">4족 보행 로봇</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">4족 보행 로봇</h2>
+							<p class="crow-hero-tagline">재난 환경을 인식하고 대응하는 지능형 스마트 사족보행 로봇</p>
+							<p class="crow-hero-desc">우리의 4족 보행 로봇은 불규칙 지형과 위험 요소를 스스로 판단해<br />탐지·이동·대응까지 수행하는 지능형 사족 보행 로봇입니다.</p>
+							<div class="crow-spec-grid">
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">험지 주행성</span>
+									<span class="crow-spec-card-sub">불규칙 지형과 잔해 속에서도<br />안정적인 이동 가능</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">계단 대응력</span>
+									<span class="crow-spec-card-sub">계단 승월 및 하강이 가능한<br />뛰어난 기동성</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">스마트 탐지</span>
+									<span class="crow-spec-card-sub">유해가스·인명·화점<br />자동 인식 및 탐지</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">자율 매핑</span>
+									<span class="crow-spec-card-sub">SLAM 기반 실시간 환경<br />지도 생성 및 분석</span>
+								</div>
+							</div>
+							<button
+								class="crow-view-btn"
+								onclick="
+									var d = document.getElementById('b2Detail');
+									d.style.display = 'block';
+									setTimeout(function () {
+										var y = d.getBoundingClientRect().top + window.scrollY - 80;
+										window.scrollTo({ top: y, behavior: 'smooth' });
+									}, 0);
+								"
+							>
+								View Detail &nbsp;→
+							</button>
+						</div>
+						<div class="crow-hero-img-wrap b2-slider-wrap" id="b2HeroSlider">
+							<div class="b2-slider">
+								<img class="b2-slide-img active" src="../../img/product/pro_02_01.png" alt="4족 보행 로봇" />
+								<img class="b2-slide-img" src="../../img/product/pro_02_01_02.png" alt="4족 보행 로봇" />
+								<img class="b2-slide-img" src="../../img/product/pro_02_01_03.png" alt="4족 보행 로봇" />
+							</div>
+							<div class="b2-slider-dots">
+								<span class="b2-slide-dot active"></span>
+								<span class="b2-slide-dot"></span>
+								<span class="b2-slide-dot"></span>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="b2Detail">
+					<div class="crow-sub-tabs">
+						<button class="crow-sub-tab active" onclick="b2Switch('b2UnitreePanel', this)">Unitree B2</button>
+						<button class="crow-sub-tab" onclick="b2Switch('b2RBQ10Panel', this)">RBQ10</button>
+					</div>
+
+					<!-- ── Unitree B2 ── -->
+					<div class="crow-model-panel active" id="b2UnitreePanel">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">Unitree B2</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../img/product/pro_02_02.png" alt="Unitree B2" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">Unitree B2</h3>
+									<p class="crow-model-tagline">고강도 재난 현장을 위한 원격 사족보행 로봇<br />최대 탑재 하중 100kg / 운용 시간 4시간</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>Unitree B2 - 4족 보행 로봇</td>
+										</tr>
+										<tr>
+											<th>접합부 직경(mm)</th>
+											<td class="col-gap"></td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<th>적정 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>최대 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.5</td>
+										</tr>
+										<tr>
+											<th>최대 방수량(LPM)</th>
+											<td class="col-gap"></td>
+											<td>1,000</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>80</td>
+										</tr>
+										<tr>
+											<th rowspan="2">가동 범위</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">상하(TILT)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">좌우(PAN)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>운용시간</th>
+											<td class="col-gap"></td>
+											<td>4시간</td>
+										</tr>
+										<tr>
+											<th>원격 운용 거리(m)</th>
+											<td class="col-gap"></td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th>이동 속도(m/min)</th>
+											<td class="col-gap"></td>
+											<td>20</td>
+										</tr>
+										<tr>
+											<th>방수 방진</th>
+											<td class="col-gap"></td>
+											<td>IP66</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── RBQ10 ── -->
+					<div class="crow-model-panel" id="b2RBQ10Panel">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">RBQ10</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../img/product/pro_02_03.png" alt="RBQ10" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">RBQ10</h3>
+									<p class="crow-model-tagline">경량 고기동 사족보행 로봇<br />다리 관절 12개 / 운용 시간 3시간</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>RBQ10 - 4족 보행 로봇</td>
+										</tr>
+										<tr>
+											<th>접합부 직경(mm)</th>
+											<td class="col-gap"></td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<th>적정 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>최대 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.6</td>
+										</tr>
+										<tr>
+											<th>최대 방수량(LPM)</th>
+											<td class="col-gap"></td>
+											<td>1,000</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>37</td>
+										</tr>
+										<tr>
+											<th rowspan="2">가동 범위</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">상하(TILT)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">좌우(PAN)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>운용시간</th>
+											<td class="col-gap"></td>
+											<td>3시간</td>
+										</tr>
+										<tr>
+											<th>단차 보행 능력(cm)</th>
+											<td class="col-gap"></td>
+											<td>12</td>
+										</tr>
+										<tr>
+											<th>이동 속도(km/h)</th>
+											<td class="col-gap"></td>
+											<td>4</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── 갤러리 (탭 밖, Detail 안) ── -->
+					<div class="crow-gallery">
+						<div class="crow-gallery-left">
+							<div class="crow-gal-wrap"><img src="../../img/product/pro_02_03.png" alt="4족 보행 로봇" /></div>
+							<div class="crow-gal-wrap"><img src="../../img/product/pro_02_04.png" alt="4족 보행 로봇" /></div>
+						</div>
+						<div class="crow-gallery-right">
+							<div class="crow-gal-wrap"><img src="../../img/product/pro_02_04_01.png" alt="4족 보행 로봇" /></div>
+						</div>
+					</div>
+
+					<!-- ── Key Technology ── -->
+					<div class="b2-key-tech">
+						<div class="crow-detail-head">
+							<span>Key Technology</span>
+							<img src="../../img/product/table_mark.png" alt="" />
+						</div>
+						<div class="b2-key-tech-grid">
+							<div class="b2-key-tech-item">
+								<div class="b2-key-tech-img">
+									<img src="../../img/product/pro_02_06.png" alt="SLAM 결과물 TopView" />
+								</div>
+								<p class="b2-key-tech-caption">SLAM 결과물 TopView 기능</p>
+							</div>
+							<div class="b2-key-tech-item">
+								<div class="b2-key-tech-img">
+									<img src="../../img/product/pro_02_07.png" alt="3D SLAM 지도" />
+								</div>
+								<p class="b2-key-tech-caption">3D SLAM 지도 자료 공유</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /b2Detail -->
+
+				<script>
+					function b2Switch(id, btn) {
+						document.querySelectorAll('#tab2 .crow-model-panel').forEach(function (p) {
+							p.classList.remove('active');
+						});
+						document.querySelectorAll('#tab2 .crow-sub-tab').forEach(function (t) {
+							t.classList.remove('active');
+						});
+						document.getElementById(id).classList.add('active');
+						btn.classList.add('active');
+						var detail = document.getElementById('b2Detail');
+						if (detail) {
+							var y = detail.getBoundingClientRect().top + window.scrollY - 80;
+							window.scrollTo({ top: y, behavior: 'smooth' });
+						}
+					}
+
+					/* 자동 슬라이드쇼 */
+					(function () {
+						var slides = document.querySelectorAll('#b2HeroSlider .b2-slide-img');
+						var dots = document.querySelectorAll('#b2HeroSlider .b2-slide-dot');
+						var cur = 0;
+
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
 			</section>
 
 			<!-- 섹션 2: 협소 공간 탐지 로봇 -->
 			<section class="prod-section" id="tab3">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">DTX-100</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Robot Product</p>
-						<h2 class="prod-placeholder-title">협소 공간 탐지 로봇</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">협소 공간 탐지 로봇</h2>
+							<p class="crow-hero-tagline">협소공간 주행·탐지 기반 지능형 대응 로봇</p>
+							<p class="crow-hero-desc">
+								협소하고 위험한 재난 환경에서도 안정적인 주행과 정밀한 탐지가 가능하도록 설계된 지능형 로봇으로,<br />
+								자율주행과 통신·전력 시스템을 기반으로 신속한 현장 대응을 지원합니다.
+							</p>
+							<div class="crow-spec-grid">
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">협소 및 험지 주행 능력</span>
+									<span class="crow-spec-card-sub">폭 15cm 이내 협소 공간 및<br />단차 7cm 장애물 극복 가능 주행</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">위험물 탐지</span>
+									<span class="crow-spec-card-sub">위험물 탐지를 위한 카메라 및<br />센서 유닛 탑재</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">원격 자율 주행</span>
+									<span class="crow-spec-card-sub">무선 운용이 가능한<br />자율 주행 센서 탑재</span>
+								</div>
+								<div class="crow-spec-card">
+									<span class="crow-spec-card-title">자율 매핑</span>
+									<span class="crow-spec-card-sub">SLAM 기반 실시간 환경<br />지도 생성 및 분석</span>
+								</div>
+							</div>
+							<button
+								class="crow-view-btn"
+								onclick="
+									var d = document.getElementById('dtxDetail');
+									d.style.display = 'block';
+									setTimeout(function () {
+										var y = d.getBoundingClientRect().top + window.scrollY - 80;
+										window.scrollTo({ top: y, behavior: 'smooth' });
+									}, 0);
+								"
+							>
+								View Detail &nbsp;→
+							</button>
+						</div>
+						<div class="crow-hero-img-wrap">
+							<img src="../../img/product/pro_03_01.png" alt="협소 공간 탐지 로봇" />
+						</div>
 					</div>
 				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="dtxDetail">
+					<!-- 단일 모델 패널 (서브탭 없음) -->
+					<div class="crow-model-panel active">
+						<div class="dtx-bg-wrap">
+							<span class="dtx-bg-text-line">Confined Space</span>
+							<span class="dtx-bg-text-line">Detection Robot</span>
+						</div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../img/product/pro_03_01.png" alt="협소 공간 탐지 로봇" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper"></div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>협소 공간 탐지 로봇</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>5kg</td>
+										</tr>
+										<tr>
+											<th>속도</th>
+											<td class="col-gap"></td>
+											<td>0.3m/s이상</td>
+										</tr>
+										<tr>
+											<th>운용 방법</th>
+											<td class="col-gap"></td>
+											<td>무선 전원/ 통신</td>
+										</tr>
+										<tr>
+											<th>연속운용거리</th>
+											<td class="col-gap"></td>
+											<td>300m 이상</td>
+										</tr>
+										<tr>
+											<th>접근 가능 구간 폭</th>
+											<td class="col-gap"></td>
+											<td>폭 15cm 이내</td>
+										</tr>
+										<tr>
+											<th>장애물 극복 가능 단차</th>
+											<td class="col-gap"></td>
+											<td>단차 7cm 이상</td>
+										</tr>
+										<tr>
+											<th rowspan="6">주요 기능</th>
+											<td class="col-gap" rowspan="6"></td>
+											<td>무선 통신을 활용한 원격 조종</td>
+										</tr>
+										<tr>
+											<td>카메라, 조명, 자율주행 센서 탑재</td>
+										</tr>
+										<tr>
+											<td>환경 지도 생성 및 자율주행</td>
+										</tr>
+										<tr>
+											<td>탐색 환경 지도 생성</td>
+										</tr>
+										<tr>
+											<td>위험물 탐색 정보 제공</td>
+										</tr>
+										<tr>
+											<td>영상 기반 위험물 탐지/인식/분류 기술</td>
+										</tr>
+										<tr>
+											<th>사용자 편의성 향상 기술</th>
+											<td class="col-gap"></td>
+											<td>사용자 친화적 원격 조작 인터페이스</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── Key Technology (탭 밖) ── -->
+					<div class="dtx-key-tech">
+						<div class="dtx-key-tech-head">
+							<span>Key Technology</span>
+							<img src="../../img/product/table_mark.png" alt="" />
+						</div>
+
+						<!-- 영상 블록 -->
+						<div class="dtx-video-wrap" id="dtxVideo">
+							<img class="dtx-video-thumb" src="../../img/product/pro_03_video.png" alt="영상 썸네일" />
+							<div class="dtx-play-overlay">
+								<img src="../../img/product/video_play.png" alt="재생" />
+							</div>
+							<div class="dtx-iframe-wrap" id="dtxIframeWrap"></div>
+						</div>
+
+						<!-- 4-image 그리드 -->
+						<div class="dtx-img-grid">
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../img/product/pro_03_03.png" alt="현장 지도 생성" />
+								</div>
+								<p class="dtx-img-caption">현장 지도 생성</p>
+							</div>
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../img/product/pro_03_04.png" alt="천장 내부 협소 공간 자동 탐색" />
+								</div>
+								<p class="dtx-img-caption">천장 내부 협소 공간 자동 탐색</p>
+							</div>
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../img/product/pro_03_05.png" alt="위험물 탐지/인식/분류" />
+								</div>
+								<p class="dtx-img-caption">위험물 탐지/인식/분류</p>
+							</div>
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../img/product/pro_03_06.png" alt="실증 환경 내 CCTV 및 영상 흔들림 보정" />
+								</div>
+								<p class="dtx-img-caption">실증 환경 내 CCTV 및 영상 흔들림 보정</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /dtxDetail -->
+
+				<script>
+					document.getElementById('dtxVideo').addEventListener('click', function () {
+						if (this.classList.contains('playing')) return;
+						this.classList.add('playing');
+						document.getElementById('dtxIframeWrap').innerHTML =
+							'<iframe src="https://www.youtube.com/embed/KGCwM4jjbnI?autoplay=1"' +
+							' title="환경지도 생성 및 자율주행 기술 보유"' +
+							' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+							' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+					});
+				</script>
 			</section>
 		</main>
 
