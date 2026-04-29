@@ -1,0 +1,183 @@
+/* ─── Product layout overrides ─── */
+.prod-layout .header {
+	position: fixed;
+	width: 100%;
+	transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prod-layout .header.scroll-hide {
+	transform: translateY(-100%);
+}
+
+.prod-layout main {
+	overflow: visible;
+}
+
+/* ─── Tab bar ─── */
+.prod-tab-bar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 990;
+	background: #fff;
+	border-bottom: 1px solid #e8e8e8;
+	height: 64px;
+	top: 72px; /* JS가 실제 헤더 높이로 덮어씀 */
+	transition: top 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prod-tab-bar.header-hidden {
+	/* top은 JS inline style로 관리 */
+}
+
+.prod-tab-inner {
+	max-width: 1680px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 40px;
+	display: flex;
+	align-items: stretch;
+	overflow-x: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.prod-tab-inner::-webkit-scrollbar {
+	display: none;
+}
+
+.prod-tab {
+	flex: 1;
+	min-width: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 16px;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 17px;
+	font-weight: 500;
+	color: #888;
+	background: none;
+	border: none;
+	border-bottom: 3px solid transparent;
+	cursor: pointer;
+	transition:
+		color 0.2s,
+		border-color 0.2s;
+	letter-spacing: -0.5px;
+	white-space: nowrap;
+}
+
+.prod-tab:hover {
+	color: #333;
+}
+
+.prod-tab.active {
+	color: #d60057;
+	border-bottom-color: #d60057;
+	font-weight: 700;
+}
+
+/* ─── Main & sections ─── */
+.prod-main {
+	/* JS가 계산한 padding-top으로 덮어씀 — 초기값 */
+	padding-top: 136px;
+}
+
+.prod-section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.prod-section:nth-child(even) .prod-placeholder {
+	background: #f8f8f8;
+}
+
+/* ─── Placeholder (콘텐츠 교체 시 제거) ─── */
+.prod-placeholder {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+	padding: 80px 40px;
+	text-align: center;
+	position: relative;
+}
+
+.prod-placeholder-bg {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.prod-placeholder-bg-text {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(72px, 14vw, 200px);
+	font-weight: 800;
+	color: rgba(0, 0, 0, 0.04);
+	letter-spacing: 0.04em;
+	white-space: nowrap;
+	user-select: none;
+}
+
+.prod-placeholder-content {
+	position: relative;
+	z-index: 1;
+}
+
+.prod-placeholder-eyebrow {
+	font-family: 'Poppins', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	color: #d60057;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+.prod-placeholder-title {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 52px;
+	font-weight: 700;
+	color: #121212;
+	letter-spacing: -2px;
+	line-height: 1.2;
+	margin-bottom: 16px;
+}
+
+.prod-placeholder-sub {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 18px;
+	color: #aaa;
+	letter-spacing: -0.5px;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+	.prod-tab-bar {
+		height: 52px;
+	}
+	.prod-tab {
+		font-size: 13px;
+		min-width: 90px;
+		padding: 0 10px;
+	}
+	.prod-placeholder-title {
+		font-size: 32px;
+		letter-spacing: -1px;
+	}
+	.prod-placeholder-sub {
+		font-size: 15px;
+	}
+	.prod-placeholder-bg-text {
+		font-size: clamp(48px, 14vw, 100px);
+	}
+}

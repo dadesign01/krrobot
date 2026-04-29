@@ -148,6 +148,15 @@ address {
 	padding-bottom: 14px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
+a.mega-heading {
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+a.mega-heading:hover {
+	color: #ff4d8d;
+}
 .mega-col ul li a {
 	color: rgba(255, 255, 255, 0.65);
 	font-size: 13px;
