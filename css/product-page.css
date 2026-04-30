@@ -775,6 +775,12 @@
 		scrollbar-width: none;
 		justify-content: flex-start;
 	}
+	.prod-tab-inner::before,
+	.prod-tab-inner::after {
+		content: '';
+		flex: 1 0 0;
+		min-width: 0;
+	}
 	.prod-tab-inner::-webkit-scrollbar {
 		display: none;
 	}
