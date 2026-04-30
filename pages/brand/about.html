@@ -8,6 +8,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/sub.css" />
@@ -20,12 +21,18 @@
 				<a href="../../index.html" class="logo"><img src="../../img/main/logo.png" alt="KRR 케이대응로봇" /></a>
 				<nav class="gnb" id="gnb">
 					<ul class="gnb-list">
-						<li class="gnb-item has-mega">
-							<a href="../product/index.html" class="gnb-link">Product</a>
-							<div class="mega-menu">
-								<div class="mega-inner">
+						<li class="gnb-item"><a href="../product/index.html" class="gnb-link">Product</a></li>
+						<li class="gnb-item"><a href="../rd/future.html" class="gnb-link">R&amp;D</a></li>
+						<li class="gnb-item active"><a href="about.html" class="gnb-link">Brand</a></li>
+						<li class="gnb-item"><a href="../news/ir.html" class="gnb-link">News</a></li>
+					</ul>
+					<div class="mega-menu">
+						<div class="mega-inner">
+							<div class="mega-section mega-section--product">
+								<a href="../product/index.html" class="mega-section-title">Product</a>
+								<div class="mega-cols">
 									<div class="mega-col">
-										<a href="../product/index.html" class="mega-heading">로봇 제품</a>
+										<span class="mega-heading">ROBOT</span>
 										<ul>
 											<li><a href="../product/index.html#tab1">원격 방수총</a></li>
 											<li><a href="../product/index.html#tab2">4족 보행 로봇</a></li>
@@ -33,7 +40,7 @@
 										</ul>
 									</div>
 									<div class="mega-col">
-										<a href="../product/sensor.html" class="mega-heading">센서·운용·S/W 기술</a>
+										<span class="mega-heading">SW</span>
 										<ul>
 											<li><a href="../product/sensor.html#tab1">농연 가시화 센서</a></li>
 											<li><a href="../product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
@@ -44,38 +51,104 @@
 									</div>
 								</div>
 							</div>
-						</li>
-						<li class="gnb-item has-drop">
-							<a href="../rd/future.html" class="gnb-link">R&amp;D</a>
-							<ul class="drop-menu">
-								<li><a href="../rd/future.html">Future Technology R&amp;D</a></li>
-								<li><a href="../rd/cert.html">특허 및 인증</a></li>
-							</ul>
-						</li>
-						<li class="gnb-item has-drop">
-							<a href="about.html" class="gnb-link">Brand</a>
-							<ul class="drop-menu">
-								<li><a href="about.html">회사 소개</a></li>
-							</ul>
-						</li>
-						<li class="gnb-item has-drop">
-							<a href="../news/ir.html" class="gnb-link">News</a>
-							<ul class="drop-menu">
-								<li><a href="../news/ir.html">IR 공시정보</a></li>
-								<li><a href="../news/jobs.html">채용</a></li>
-								<li><a href="../news/press.html">PRESS</a></li>
-							</ul>
-						</li>
-					</ul>
+							<div class="mega-section">
+								<a href="../rd/future.html" class="mega-section-title">R&amp;D</a>
+								<div class="mega-cols">
+									<div class="mega-col">
+										<ul>
+											<li><a href="../rd/future.html">Future Technology R&amp;D</a></li>
+											<li><a href="../rd/cert.html">특허 및 인증</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="mega-section">
+								<a href="about.html" class="mega-section-title">Brand</a>
+								<div class="mega-cols">
+									<div class="mega-col">
+										<ul>
+											<li><a href="about.html">회사 소개</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="mega-section">
+								<a href="../news/ir.html" class="mega-section-title">News</a>
+								<div class="mega-cols">
+									<div class="mega-col">
+										<ul>
+											<li><a href="../news/ir.html">IR 공시정보</a></li>
+											<li><a href="../news/jobs.html">채용</a></li>
+											<li><a href="../news/press.html">PRESS</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</nav>
 				<button class="hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
 			</div>
 			<div class="mobile-nav" id="mobileNav">
 				<ul>
-					<li><a href="../product/index.html">Product</a></li>
-					<li><a href="../rd/future.html">R&amp;D</a></li>
-					<li><a href="about.html">Brand</a></li>
-					<li><a href="../news/ir.html">News</a></li>
+					<li class="m-item m-has-sub">
+						<div class="m-item-head">
+							<a href="../product/index.html" class="m-item-link">Product</a>
+							<button class="m-toggle" aria-label="하위 메뉴 열기">&#9660;</button>
+						</div>
+						<div class="m-sub-panel">
+							<p class="m-sub-cat">ROBOT</p>
+							<ul>
+								<li><a href="../product/index.html#tab1">원격 방수총</a></li>
+								<li><a href="../product/index.html#tab2">4족 보행 로봇</a></li>
+								<li><a href="../product/index.html#tab3">협소 공간 탐지 로봇</a></li>
+							</ul>
+							<p class="m-sub-cat">SW</p>
+							<ul>
+								<li><a href="../product/sensor.html#tab1">농연 가시화 센서</a></li>
+								<li><a href="../product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
+								<li><a href="../product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
+								<li><a href="../product/sensor.html#tab4">유해 기체 탐지 센서</a></li>
+								<li><a href="../product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="m-item m-has-sub">
+						<div class="m-item-head">
+							<a href="../rd/future.html" class="m-item-link">R&amp;D</a>
+							<button class="m-toggle" aria-label="하위 메뉴 열기">&#9660;</button>
+						</div>
+						<div class="m-sub-panel">
+							<ul>
+								<li><a href="../rd/future.html">Future Technology R&amp;D</a></li>
+								<li><a href="../rd/cert.html">특허 및 인증</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="m-item m-has-sub">
+						<div class="m-item-head">
+							<a href="about.html" class="m-item-link">Brand</a>
+							<button class="m-toggle" aria-label="하위 메뉴 열기">&#9660;</button>
+						</div>
+						<div class="m-sub-panel">
+							<ul>
+								<li><a href="about.html">회사 소개</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="m-item m-has-sub">
+						<div class="m-item-head">
+							<a href="../news/ir.html" class="m-item-link">News</a>
+							<button class="m-toggle" aria-label="하위 메뉴 열기">&#9660;</button>
+						</div>
+						<div class="m-sub-panel">
+							<ul>
+								<li><a href="../news/ir.html">IR 공시정보</a></li>
+								<li><a href="../news/jobs.html">채용</a></li>
+								<li><a href="../news/press.html">PRESS</a></li>
+							</ul>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</header>

@@ -6,6 +6,15 @@ hamburger.addEventListener('click', () => {
 	mobileNav.classList.toggle('open');
 });
 
+// ── Mobile sub-menu accordion ────────────────────────────────────
+document.querySelectorAll('.m-toggle').forEach(btn => {
+	btn.addEventListener('click', () => {
+		const panel = btn.closest('.m-item-head').nextElementSibling;
+		const isOpen = btn.classList.toggle('open');
+		if (panel) panel.classList.toggle('open', isOpen);
+	});
+});
+
 // ── Product Carousel (Vanilla) ───────────────────────────────────
 (function () {
 	const track = document.getElementById('productTrack');
