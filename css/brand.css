@@ -305,6 +305,7 @@
 	background: url('../../img/sub/brand_bg_02.png') lightgray 0.33px -49.494px / 100% 124.46% no-repeat;
 	mix-blend-mode: luminosity;
 	z-index: 0;
+	filter: grayscale(1);
 }
 .ab-slider-outer::after {
 	content: '';

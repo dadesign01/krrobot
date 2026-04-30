@@ -436,6 +436,15 @@
 	display: none;
 }
 
+/* rowspan으로 마지막 th가 tr:last-child에 없을 때 */
+.crow-table th.th-last {
+	border-radius: 0 0 20px 20px;
+	border-bottom: none;
+}
+.crow-table th.th-last::after {
+	display: none;
+}
+
 /* 가동 범위 등 서브행 레이아웃 */
 .td-sub {
 	display: flex;
@@ -831,6 +840,10 @@
 		height: 150px;
 	}
 
+	#tab3 .description_wrapper {
+		display: none;
+	}
+
 	.crow-model-left {
 		position: relative;
 		top: 0;
@@ -968,7 +981,7 @@
 	.dtx-img-grid {
 		grid-template-columns: 1fr;
 		margin-top: 60px;
-		padding: 0 20px;
+		padding: 0;
 	}
 	.dtx-img-wrap {
 		height: 220px;
