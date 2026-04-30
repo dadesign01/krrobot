@@ -88,6 +88,10 @@ address {
 	display: flex;
 	align-items: center;
 	gap: 52px;
+	transition: gap 0.4s ease;
+}
+.gnb:hover .gnb-list {
+	gap: 80px;
 }
 
 .gnb-link {
