@@ -495,32 +495,440 @@
 				</script>
 			</section>
 
-			<!-- 섹션 3: 유해 기체 탐지 센서 -->
+			<!-- 섹션 3: 유해 기체 탐지 센서 로봇 -->
 			<section class="prod-section" id="tab4">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">UHTGRB1</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Sensor &amp; S/W</p>
-						<h2 class="prod-placeholder-title">유해 기체 탐지 센서</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<!-- HERO -->
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">유해 가스 탐지 센서 로봇</h2>
+							<p class="sensor-hero-tagline">유해 가스를 탐지하고 현장을 매핑하는 스마트 로봇 기술</p>
+							<p class="sensor-hero-desc-gray">우리의 유해 기체 탐지 로봇은 위험한 환경에서 유해 가스를 감지하고,<br />실시간으로 현장 지도를 생성하는 원격 제어 로봇입니다.</p>
+
+							<!-- 4-수치 스펙 바 -->
+							<div class="s4-spec-bar">
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">7km/h</span>
+									<span class="s4-spec-label">최대 이동속도</span>
+								</div>
+								<div class="s4-spec-divider"></div>
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">20kg</span>
+									<span class="s4-spec-label">1인 운반 가능</span>
+								</div>
+								<div class="s4-spec-divider"></div>
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">IP57</span>
+									<span class="s4-spec-label">방수방진등급</span>
+								</div>
+								<div class="s4-spec-divider"></div>
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">0.05m</span>
+									<span class="s4-spec-label">SLAM 매핑 오차</span>
+								</div>
+							</div>
+
+							<!-- 특징 카드 HW / IP / AI -->
+							<div class="sensor-spec-grid s4-feat-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">HW</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">강력한 이동 성능</span>
+										<p class="sensor-spec-card-desc">7km/h, 1인 운반 20kg<br />경사 29° · 20cm 장애물<br />트랙크 직재·계단 등반</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">IP</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">내구성 IP57</span>
+										<p class="sensor-spec-card-desc">방수방진 IP57 등급<br />혹독한 현장 환경 대응</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">AI</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">탐지·SLAM 매핑</span>
+										<p class="sensor-spec-card-desc">실시간 환경 지도 생성<br />SLAM 오차 0.05m<br />농연 속 시야 확보</p>
+									</div>
+								</div>
+							</div>
+
+							<button
+								class="crow-view-btn"
+								onclick="
+									var d = document.getElementById('s4Detail');
+									d.style.display = 'block';
+									setTimeout(function () {
+										var y = d.getBoundingClientRect().top + window.scrollY - 80;
+										window.scrollTo({ top: y, behavior: 'smooth' });
+									}, 0);
+								"
+							>
+								View Detail &nbsp;→
+							</button>
+						</div>
+
+						<!-- 우측 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-slide-dots" id="sensorDots04">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide04">
+								<div class="sensor-slide active">
+									<div class="s4-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../img/product/sen_04_01.png" alt="유해 가스 탐지 센서 로봇" />
+									</div>
+								</div>
+								<div class="sensor-slide">
+									<div class="s4-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../img/product/sen_04_02.png" alt="유해 가스 탐지 센서 로봇" />
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- DETAIL (초기 숨김) -->
+				<div class="s4-detail" id="s4Detail">
+					<!-- 배경 텍스트 -->
+					<div class="s4-det-bg-wrap">
+						<span class="s4-det-bg-line">Hazardous Gas</span>
+						<span class="s4-det-bg-line">Detection Robot</span>
+					</div>
+
+					<!-- 이미지·테이블 페어 레이아웃 -->
+					<div class="s4-det-layout">
+						<!-- Row 1: 로봇 본체 -->
+						<div class="s4-det-row">
+							<div class="s4-det-img-wrap">
+								<img class="s4-det-img" src="../../img/product/sen_04_03.png" alt="유해 가스 탐지 센서 로봇 본체" />
+							</div>
+							<div class="s4-det-content">
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>유해 가스 탐지 센서 로봇</td>
+										</tr>
+										<tr>
+											<th>크기(mm)</th>
+											<td class="col-gap"></td>
+											<td>1000×430×300</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>20</td>
+										</tr>
+										<tr>
+											<th>이동 속도(km/h)</th>
+											<td class="col-gap"></td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<th>운용 시간(기본/대용량 배터리)</th>
+											<td class="col-gap"></td>
+											<td>1/2 h</td>
+										</tr>
+										<tr>
+											<th>방수방진등급</th>
+											<td class="col-gap"></td>
+											<td>IP57</td>
+										</tr>
+										<tr>
+											<th>험지주행성능(각도, 단차)</th>
+											<td class="col-gap"></td>
+											<td>29°, 20cm</td>
+										</tr>
+										<tr>
+											<th>SLAM Mapping 오차(m)</th>
+											<td class="col-gap"></td>
+											<td>0.05</td>
+										</tr>
+										<tr>
+											<th>탑재모듈</th>
+											<td class="col-gap"></td>
+											<td>기체센서, 기체포집장치, 기체 순환 모듈,<br />전방 조명, 융합센서모듈(Lidar, IMU, Camera)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!-- Row 2: UMPC (50px 갭) -->
+						<div class="s4-det-row s4-det-row-gap">
+							<div class="s4-det-img-wrap">
+								<img class="s4-det-img" src="../../img/product/sen_04_04.png" alt="UMPC" />
+							</div>
+							<div class="s4-det-content">
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>크기(mm)</th>
+											<td class="col-gap"></td>
+											<td>500×350×160</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>8.3</td>
+										</tr>
+										<tr>
+											<th>화장화면(inch, Pixel)</th>
+											<td class="col-gap"></td>
+											<td>15.1, 1920×1080</td>
+										</tr>
+										<tr>
+											<th>운용시간(hour)</th>
+											<td class="col-gap"></td>
+											<td>2</td>
+										</tr>
+										<tr>
+											<th>UMPC 사양<br />(Ultra Mobile Personal Computer)</th>
+											<td class="col-gap"></td>
+											<td>인텔 코어 11세대, 16 GB, 8.4인치 HD(2560 × 1600) 터치스크린,<br />Wi-Fi 6, 블루투스 5, 288 × 130 × 21 mm, 819 g</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Key Technology -->
+				<div class="s4-key-tech">
+					<div class="s4-key-tech-head">
+						<span>Key Techology</span>
+						<img src="../../img/product/table_mark.png" alt="" />
+					</div>
+					<div class="s4-key-tech-grid">
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../img/product/sen_04_05.png" alt="SLAM 결과물 TopView 지도" />
+							</div>
+							<p class="s4-key-tech-caption">SLAM 결과물 TopView 지도</p>
+						</div>
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../img/product/sen_04_06.png" alt="공장 시뮬레이션 환경지도" />
+							</div>
+							<p class="s4-key-tech-caption">공장 시뮬레이션 환경에서 생성한 보유 기술로 생성한 환경지도</p>
+						</div>
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../img/product/sen_04_07.png" alt="16단 표준계단승월" />
+							</div>
+							<p class="s4-key-tech-caption">16단 표준계단승월/경사(25° 이상) 장애물 극복 가능</p>
+						</div>
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../img/product/sen_04_08.png" alt="로봇 원격 제어" />
+							</div>
+							<p class="s4-key-tech-caption">로봇 원격 제어(속도 : 5km/h 이상 / 연속 운용시간 : 1시간)</p>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide04');
+						var dotsWrap = document.getElementById('sensorDots04');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
 			</section>
 
 			<!-- 섹션 4: UWB 인명탐지 레이더 센서 -->
 			<section class="prod-section" id="tab5">
-				<div class="prod-placeholder">
-					<div class="prod-placeholder-bg">
-						<span class="prod-placeholder-bg-text">HTLSENSOR</span>
-					</div>
-					<div class="prod-placeholder-content">
-						<p class="prod-placeholder-eyebrow">Sensor &amp; S/W</p>
-						<h2 class="prod-placeholder-title">UWB 인명탐지 레이더 센서</h2>
-						<p class="prod-placeholder-sub">콘텐츠를 준비중입니다.</p>
+				<!-- HERO -->
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">인명 탐지 레이더 센서</h2>
+							<p class="sensor-hero-tagline">재난 환경에서도 인명을 탐지하는 첨단 레이더 센서 기술</p>
+							<p class="sensor-hero-desc-gray">
+								우리의 재난 환경 인명 탐지 기술은 연기, 장애물(벽에 있는 것) 등이 있는 환경에서도<br />전파(RF) 기반 센서를 통해서 인명을 탐지할 수 있는 첨단 기술입니다.
+							</p>
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">RF<br />전파 기반 인명 탐지</span>
+										<p class="sensor-spec-card-desc">비가시 환경(연기·장애물) 투과<br />cm급 고해상도 단일칩 레이더<br />우수한 RF 대역 안테나 설계</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">RT<br />실시간 탐지·처리</span>
+										<p class="sensor-spec-card-desc">실시간 신호 처리 및 분석<br />레이더 데이터 수집·제어<br />Raspberry Pi 등 OS 연동 가능</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left">
+									<span>Key Techology</span>
+									<img src="../../img/product/table_mark.png" alt="" />
+								</div>
+								<div class="sensor-slide-dots" id="sensorDots05">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide05">
+								<div class="sensor-slide active">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../img/product/sen_05_01.png" alt="레이더 탐지 원리" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">레이더 탐지 원리</p>
+											<p class="sensor-slide-sub">RF 신호 투과 메카니즘</p>
+										</div>
+									</div>
+								</div>
+								<div class="sensor-slide">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../img/product/sen_05_02.png" alt="UWB 인명탐지 레이더 센서" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">탐지 결과 UI</p>
+											<p class="sensor-slide-sub">실시간 위치 표시 화면</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- DETAIL -->
+				<div class="s5-detail">
+					<!-- 배경 텍스트 -->
+					<div class="crow-model-bg-wrap">
+						<span class="crow-model-bg-text">UWB Radar</span>
+					</div>
+					<div class="crow-model-layout">
+						<!-- 좌측 sticky 이미지 -->
+						<div class="crow-model-left">
+							<img src="../../img/product/sen_05_03.png" alt="UWB 인명탐지 레이더 센서" />
+						</div>
+						<!-- 우측 테이블 -->
+						<div class="crow-model-right">
+							<div class="crow-detail-head">
+								<span>Product Detail</span>
+								<img src="../../img/product/table_mark.png" alt="" />
+							</div>
+							<table class="crow-table">
+								<tbody>
+									<tr>
+										<th>모델명</th>
+										<td class="col-gap"></td>
+										<td>UWB 레이더 - 인명 탐지 레이더 센서</td>
+									</tr>
+									<tr>
+										<th>탐지 거리 및 각도</th>
+										<td class="col-gap"></td>
+										<td>최대 12m / 방위각 53° / 고도각 66°</td>
+									</tr>
+									<tr>
+										<th>배터리</th>
+										<td class="col-gap"></td>
+										<td>4시간</td>
+									</tr>
+									<tr>
+										<th>사이즈(cm)</th>
+										<td class="col-gap"></td>
+										<td>23 × 20 × 12</td>
+									</tr>
+									<tr>
+										<th>주파수</th>
+										<td class="col-gap"></td>
+										<td>4GHz</td>
+									</tr>
+									<tr>
+										<th>화면크기</th>
+										<td class="col-gap"></td>
+										<td>5 inch</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 하단 갤러리 -->
+				<div class="s5-gallery">
+					<!-- 좌측: 2장 스택 -->
+					<div class="s5-gallery-left">
+						<div class="s5-gal-wrap">
+							<img src="../../img/product/sen_05_04.png" alt="실내 인명 탐지 실증" />
+						</div>
+						<div class="s5-gal-wrap">
+							<img src="../../img/product/sen_05_05.png" alt="제품 다각도" />
+						</div>
+					</div>
+					<!-- 우측: 1장 풀 높이 -->
+					<div class="s5-gallery-right">
+						<div class="s5-gal-wrap">
+							<img src="../../img/product/sen_05_06.png" alt="UWB 레이더 화면 클로즈업" />
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide05');
+						var dotsWrap = document.getElementById('sensorDots05');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
 			</section>
 		</main>
 

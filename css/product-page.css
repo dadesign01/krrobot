@@ -431,6 +431,11 @@
 	border-bottom: none;
 }
 
+.crow-table tr:last-child th::after,
+.crow-table tr:last-child td:not(.col-gap)::after {
+	display: none;
+}
+
 /* 가동 범위 등 서브행 레이아웃 */
 .td-sub {
 	display: flex;
@@ -972,18 +977,15 @@
    ============================================================ */
 
 /* Hero layout */
-.sensor-hero {
-	/* padding: 80px 0; */
-}
-
 .sensor-hero-inner {
 	max-width: 1680px;
 	margin: 0 auto;
 	padding: 40px 40px 0;
 	display: flex;
-	gap: 138px;
+	gap: 130px;
 	align-items: flex-start;
 	box-sizing: border-box;
+	justify-content: space-between;
 }
 
 .sensor-hero-left {
@@ -1130,6 +1132,10 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 20px;
+}
+
+#tab4 .sensor-key-head {
+	justify-content: flex-end;
 }
 
 .sensor-key-head-left {
@@ -1600,6 +1606,7 @@
 
 	.sensor-hero-inner {
 		padding: 40px 0 0;
+		gap: 50px;
 	}
 
 	.sensor-slide-caption {
@@ -1667,6 +1674,379 @@
 	.s3-row1,
 	.s3-row3 {
 		height: 370px;
+	}
+}
+
+/* ============================================================
+   SENSOR tab4 — 유해 가스 탐지 센서 로봇
+   ============================================================ */
+
+/* 4-수치 스펙 바 */
+.s4-spec-bar {
+	width: 693px;
+	height: 129px;
+	border-radius: 15px;
+	background: #f8f8f8;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.s4-spec-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 92.5px;
+}
+
+.s4-spec-divider {
+	width: 1px;
+	height: 92.5px;
+	background: #e0e0e0;
+	flex-shrink: 0;
+}
+
+.s4-spec-num {
+	color: var(--MainColor, #d60057);
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 58px;
+	letter-spacing: -1.28px;
+}
+
+.s4-spec-label {
+	color: #555;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.4;
+	letter-spacing: -0.5px;
+}
+
+/* 특징 카드 (HW/IP/AI) — 배경 텍스트 우측 정렬 */
+.s4-feat-grid {
+	margin-bottom: 24px;
+}
+
+.s4-feat-grid .sensor-spec-num {
+	left: auto;
+	right: -6px;
+}
+
+/* 슬라이드 이미지 (캡션 없는 심플형) */
+.s4-slide-img-wrap {
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.s4-slide-img-wrap img {
+	width: 100%;
+	display: block;
+	transition: transform 0.4s ease;
+}
+
+/* Detail 초기 숨김 */
+#s4Detail {
+	scroll-margin-top: 80px;
+	display: none;
+	position: relative;
+	overflow: hidden;
+}
+
+/* 배경 텍스트 두 줄 */
+.s4-det-bg-wrap {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 40px;
+	gap: 0;
+}
+
+.s4-det-bg-line {
+	color: #000;
+	font-family: 'Poppins', sans-serif;
+	font-size: 180px;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -7px;
+	opacity: 0.05;
+	white-space: nowrap;
+	user-select: none;
+}
+
+/* 페어 레이아웃 컨테이너 */
+.s4-det-layout {
+	position: relative;
+	z-index: 1;
+	max-width: 1680px;
+	margin: 0 auto;
+	padding: 300px 40px 80px;
+	display: flex;
+	flex-direction: column;
+}
+
+/* 각 이미지+테이블 행 */
+.s4-det-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 80px;
+}
+
+.s4-det-row-gap {
+	margin-top: 50px;
+}
+
+/* 이미지 영역 */
+.s4-det-img-wrap {
+	flex: 0 0 43%;
+	max-width: 43%;
+}
+
+.s4-det-img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	display: block;
+}
+
+/* 테이블 영역 */
+.s4-det-content {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Key Technology */
+.s4-key-tech {
+	max-width: 1680px;
+	margin: 80px auto 80px;
+	padding: 0 40px;
+}
+
+.s4-key-tech-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 32px;
+	color: #121212;
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 58px;
+	letter-spacing: -0.8px;
+}
+
+.s4-key-tech-head img {
+	width: 19px;
+	height: 19px;
+	flex-shrink: 0;
+	margin: 0 0 20px 0;
+}
+
+.s4-key-tech-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 22px;
+	row-gap: 150px;
+}
+
+.s4-key-tech-img-wrap {
+	border: 1px solid #d3d3d3;
+	border-radius: 15px;
+	overflow: hidden;
+	height: 394px;
+}
+
+.s4-key-tech-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s4-key-tech-item:hover .s4-key-tech-img-wrap img {
+	transform: scale(1.06);
+}
+
+.s4-key-tech-caption {
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 15px;
+	color: #555;
+	margin-top: 12px;
+	letter-spacing: -0.5px;
+	word-break: keep-all;
+}
+
+/* ============================================================
+   SENSOR tab5 — UWB 인명탐지 레이더 센서
+   ============================================================ */
+#tab5 .sensor-hero-right {
+	max-width: 850px;
+}
+
+#tab5 .sensor-spec-card {
+	width: 340px;
+}
+/* Detail 영역 (항상 표시, 배경 텍스트 포함) */
+.s5-detail {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 80px;
+}
+
+#tab5 .crow-model-layout {
+	padding: 300px 40px 80px;
+	align-items: center;
+}
+
+/* 하단 갤러리 */
+.s5-gallery {
+	display: flex;
+	gap: 22px;
+	height: 652px;
+	max-width: 1680px;
+	margin: 0 auto 80px;
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+.s5-gallery-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	max-width: 637px;
+}
+
+.s5-gallery-right {
+	flex: 1;
+	display: flex;
+}
+
+.s5-gal-wrap {
+	flex: 1;
+	overflow: hidden;
+	border-radius: 15px;
+	background: #eee;
+}
+
+.s5-gal-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.s5-gallery-left .s5-gal-wrap:hover img,
+.s5-gallery-right .s5-gal-wrap:hover img {
+	transform: scale(1.06);
+}
+
+/* ── 반응형 ── */
+@media (max-width: 1400px) {
+	.s4-spec-bar {
+		width: 100%;
+		max-width: 693px;
+	}
+	.s4-det-bg-line {
+		font-size: 130px;
+		letter-spacing: -5px;
+	}
+
+	.s4-det-layout {
+		padding: 60px 40px 80px;
+	}
+
+	.s5-gallery {
+		padding: 0 40px;
+		height: 450px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.s4-spec-bar {
+		max-width: 100%;
+	}
+	.s4-det-bg-line {
+		font-size: 100px;
+		letter-spacing: -4px;
+	}
+	.s5-gallery {
+		height: 500px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.s4-det-layout {
+		padding: 50px 0 60px;
+		gap: 50px;
+	}
+	/* 각 행을 세로(이미지 위, 테이블 아래)로 전환 */
+	.s4-det-row {
+		flex-direction: column;
+		gap: 24px;
+	}
+	.s4-det-img-wrap {
+		flex: none;
+		max-width: 100%;
+		width: 100%;
+	}
+	.s4-det-content {
+		width: 100%;
+	}
+	.s4-key-tech {
+		padding: 0;
+	}
+	.s4-key-tech-grid {
+		row-gap: 60px;
+	}
+	.s4-key-tech-img-wrap {
+		height: 300px;
+	}
+	.s4-det-bg-line {
+		font-size: 70px;
+		letter-spacing: -2.8px;
+	}
+
+	#tab4 .sensor-hero-inner {
+		flex-direction: column-reverse;
+	}
+
+	.s5-gallery {
+		height: auto;
+		flex-direction: column;
+		padding: 0 20px;
+		width: 100%;
+	}
+	.s5-gallery-left,
+	.s5-gallery-right {
+		height: 400px;
+	}
+	.s5-gallery-left {
+		height: auto;
+		width: 100%;
+		max-width: 100%;
+	}
+	.s5-gallery-left .s5-gal-wrap {
+		/* height: 280px; */
+		flex: none;
+		width: 100%;
+	}
+	.s5-gallery-right .s5-gal-wrap {
+		height: 400px;
 	}
 }
 
@@ -1808,5 +2188,70 @@
 	.s3-bottom {
 		/* height:auto; */
 		margin: 50px auto 0;
+	}
+
+	.s4-spec-bar {
+		height: auto;
+		min-height: 90px;
+		padding: 12px 0;
+	}
+	.s4-spec-col {
+		height: auto;
+	}
+	.s4-spec-divider {
+		height: 60px;
+	}
+	.s4-spec-num {
+		font-size: 22px;
+		line-height: 36px;
+	}
+	.s4-spec-label {
+		font-size: 11px;
+	}
+	.s4-det-row-gap {
+		margin-top: 32px;
+	}
+	.s4-det-bg-line {
+		font-size: 44px;
+		letter-spacing: -1.8px;
+	}
+	.s4-table-gap {
+		margin-top: 32px;
+	}
+	.s4-key-tech {
+		margin: 40px auto 40px;
+	}
+	.s4-key-tech-grid {
+		grid-template-columns: 1fr;
+		row-gap: 40px;
+	}
+	.s4-key-tech-img-wrap {
+		height: 220px;
+	}
+	.s4-key-tech-head {
+		font-size: 18px;
+		margin-bottom: 16px;
+	}
+
+	.s5-gallery {
+		flex-direction: column;
+		height: auto;
+		gap: 16px;
+		padding: 0;
+		margin-bottom: 40px;
+	}
+	.s5-gallery-left {
+		height: auto;
+		gap: 16px;
+	}
+	.s5-gallery-left .s5-gal-wrap {
+		height: 200px;
+		flex: none;
+	}
+	.s5-gallery-right .s5-gal-wrap {
+		height: 280px;
+	}
+	#tab5 .crow-model-layout {
+		padding: 30px 0 0;
 	}
 }
