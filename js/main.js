@@ -1,3 +1,35 @@
+// ── Header scroll background ─────────────────────────────────────
+(function () {
+	const header = document.getElementById('header');
+	if (!header) return;
+	function update() {
+		header.classList.toggle('scrolled', window.scrollY > 10);
+	}
+	window.addEventListener('scroll', update, { passive: true });
+	update();
+})();
+
+// ── GNB dropdown hover with active state ─────────────────────────
+(function () {
+	const items = document.querySelectorAll('.gnb-item');
+	items.forEach(item => {
+		let closeTimer = null;
+		item.addEventListener('mouseenter', () => {
+			clearTimeout(closeTimer);
+			items.forEach(other => { if (other !== item) other.classList.remove('is-open'); });
+			item.classList.add('is-open');
+		});
+		item.addEventListener('mouseleave', () => {
+			closeTimer = setTimeout(() => item.classList.remove('is-open'), 150);
+		});
+	});
+	document.addEventListener('click', e => {
+		if (!e.target.closest('.gnb-item')) {
+			items.forEach(item => item.classList.remove('is-open'));
+		}
+	});
+})();
+
 // ── Mobile hamburger ─────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');

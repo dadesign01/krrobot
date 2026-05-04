@@ -57,14 +57,23 @@ address {
 /* =============================================
    HEADER
    ============================================= */
+site-header,
+site-footer {
+	display: block;
+}
+
 .header {
 	position: sticky;
 	top: 0;
 	z-index: 1000;
+	background: transparent;
+	box-shadow: none;
+	width: 100%;
+	transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.header.scrolled {
 	background: #fff;
 	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-	width: 100%;
-	/* display: flex; */
 }
 
 .header-inner {
@@ -88,10 +97,10 @@ address {
 	display: flex;
 	align-items: center;
 	gap: 52px;
-	transition: gap 0.4s ease;
 }
-.gnb:hover .gnb-list {
-	gap: 80px;
+
+.gnb-item {
+	position: relative;
 }
 
 .gnb-link {
@@ -107,106 +116,77 @@ address {
 	transition: color 0.2s;
 }
 .gnb-item:hover .gnb-link,
+.gnb-item.is-open .gnb-link,
 .gnb-item.active .gnb-link {
 	color: #d4005a;
 }
 
-/* Mega Menu — unified full-width panel, triggered by .gnb hover */
-.mega-menu {
+/* Per-item dropdown */
+.gnb-dropdown {
 	position: absolute;
 	top: 100%;
-	left: 0;
-	right: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(-6px);
 	background: #fff;
-	border-top: 1px solid #E8E8E8;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	border-top: 2px solid #d4005a;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+	min-width: 200px;
 	opacity: 0;
 	visibility: hidden;
-	transform: translateY(-8px);
 	transition:
-		opacity 0.22s ease,
-		visibility 0.22s ease,
-		transform 0.22s ease;
+		opacity 0.2s ease,
+		visibility 0.2s ease,
+		transform 0.2s ease;
 	pointer-events: none;
 	z-index: 999;
+	padding: 8px 0 12px;
 }
-/* triggered by hovering anywhere in gnb (including the mega-menu itself as a descendant) */
-.gnb:hover .mega-menu {
+.gnb-item.is-open > .gnb-dropdown {
 	opacity: 1;
 	visibility: visible;
-	transform: translateY(0);
+	transform: translateX(-50%) translateY(0);
 	pointer-events: auto;
 }
-.mega-inner {
-	max-width: 1760px;
-	margin: 0 auto;
-	padding: 36px 80px 40px;
-	display: flex;
-	align-items: flex-start;
-	gap: 0;
+/* 마지막 아이템(News) 드롭다운은 오른쪽 정렬 — 뷰포트 밖으로 넘치지 않도록 */
+.gnb-item:last-child > .gnb-dropdown {
+	left: auto;
+	right: 0;
+	transform: translateY(-6px);
 }
-/* Each nav section column */
-.mega-section {
-	flex: 1;
-	padding-right: 48px;
-	margin-right: 48px;
-	border-right: 1px solid #E8E8E8;
-	min-width: 0;
+.gnb-item:last-child.is-open > .gnb-dropdown {
+	transform: translateY(0);
 }
-.mega-section--product {
-	flex: 2.2; /* Product gets more space for ROBOT + SW columns */
-}
-.mega-section:last-child {
-	border-right: none;
-	padding-right: 0;
-	margin-right: 0;
-}
-/* Section title = Product / R&D / Brand / News */
-.mega-section-title {
+
+.gnb-drop-heading {
 	display: block;
-	color: #121212;
+	color: #a3a3a3;
 	font-family: 'Wanted Sans', 'Pretendard', sans-serif;
-	font-size: 18px;
+	font-size: 11px;
 	font-weight: 700;
-	line-height: 24px;
-	letter-spacing: -0.72px;
-	margin-bottom: 20px;
-	padding-bottom: 14px;
-	border-bottom: 1px solid #E8E8E8;
-	transition: color 0.2s;
-}
-a.mega-section-title:hover {
-	color: #D60057;
-}
-/* Sub-column layout within a section */
-.mega-cols {
-	display: flex;
-	gap: 36px;
-}
-/* Sub-category heading = ROBOT / SW */
-.mega-heading {
-	color: #A3A3A3;
-	font-family: 'Wanted Sans', 'Pretendard', sans-serif;
-	font-size: 13px;
-	font-weight: 700;
-	letter-spacing: 0.04em;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	margin-bottom: 10px;
-	display: block;
+	padding: 10px 20px 4px;
 }
-.mega-col ul li a {
+
+.gnb-dropdown ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.gnb-dropdown ul li a {
+	display: block;
 	color: #383838;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: 400;
-	line-height: 24px;
-	letter-spacing: -0.6px;
-	padding: 7px 0;
-	display: block;
-	transition: color 0.2s;
+	line-height: 1.4;
+	padding: 9px 20px;
+	white-space: nowrap;
+	transition: color 0.15s, background 0.15s;
 }
-.mega-col ul li a:hover {
-	color: #D60057;
+.gnb-dropdown ul li a:hover {
+	color: #d4005a;
+	background: #fdf5f8;
 }
 
 /* Hamburger */
@@ -1385,10 +1365,7 @@ a.mega-section-title:hover {
 	.header-inner {
 		padding: 0 48px;
 	}
-	.mega-inner {
-		padding: 32px 48px 36px;
-	}
-	.ph-img {
+.ph-img {
 		right: -14%;
 	}
 

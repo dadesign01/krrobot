@@ -130,7 +130,7 @@
 
 	/* 메가메뉴 같은 페이지 해시 */
 	var curPage = location.pathname.split('/').pop();
-	document.querySelectorAll('.mega-menu a').forEach(function (link) {
+	document.querySelectorAll('.gnb-dropdown a').forEach(function (link) {
 		link.addEventListener('click', function (e) {
 			var href = link.getAttribute('href') || '';
 			var hi   = href.indexOf('#');
