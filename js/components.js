@@ -1,8 +1,7 @@
 (function () {
-
 	// ── 헤더 HTML ────────────────────────────────────────────────────
 	function buildHeader(active) {
-		const a = (id) => active === id ? ' active' : '';
+		const a = id => (active === id ? ' active' : '');
 		return `<div class="header-inner">
 			<a href="/" class="logo"><img src="/img/main/logo.png" alt="KRR 케이대응로봇" /></a>
 			<nav class="gnb" id="gnb">
@@ -16,7 +15,7 @@
 								<li><a href="/pages/product/index.html#tab2">4족 보행 로봇</a></li>
 								<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
 							</ul>
-							<span class="gnb-drop-heading">SW</span>
+							<span class="gnb-drop-heading">부품 / SW</span>
 							<ul>
 								<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 								<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
@@ -71,7 +70,7 @@
 							<li><a href="/pages/product/index.html#tab2">4족 보행 로봇</a></li>
 							<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
 						</ul>
-						<p class="m-sub-cat">SW</p>
+						<p class="m-sub-cat">부품 / SW</p>
 						<ul>
 							<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 							<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
@@ -200,22 +199,27 @@
 	}
 
 	// ── Custom Elements 등록 ─────────────────────────────────────────
-	customElements.define('site-header', class extends HTMLElement {
-		connectedCallback() {
-			this.className = 'header';
-			this.id = 'header';
-			this.setAttribute('role', 'banner');
-			this.innerHTML = buildHeader(this.getAttribute('active') || '');
+	customElements.define(
+		'site-header',
+		class extends HTMLElement {
+			connectedCallback() {
+				this.className = 'header';
+				this.id = 'header';
+				this.setAttribute('role', 'banner');
+				this.innerHTML = buildHeader(this.getAttribute('active') || '');
+			}
 		}
-	});
+	);
 
-	customElements.define('site-footer', class extends HTMLElement {
-		connectedCallback() {
-			this.className = 'contact-footer';
-			this.id = 'contact';
-			this.setAttribute('role', 'contentinfo');
-			this.innerHTML = buildFooter();
+	customElements.define(
+		'site-footer',
+		class extends HTMLElement {
+			connectedCallback() {
+				this.className = 'contact-footer';
+				this.id = 'contact';
+				this.setAttribute('role', 'contentinfo');
+				this.innerHTML = buildFooter();
+			}
 		}
-	});
-
+	);
 })();

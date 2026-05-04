@@ -20,8 +20,8 @@
 	right: 0;
 	z-index: 990;
 	background: #fff;
-	height: 75px;
-	top: 72px;
+	height: 100px;
+	top: 100px;
 	transition: top 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 	display: flex;
 	align-items: center;
@@ -33,7 +33,7 @@
 	width: 100%;
 	max-width: 1680px;
 	height: 59px;
-	background: #F8F8F8;
+	background: #f8f8f8;
 	border-radius: 600px;
 	position: relative;
 	display: flex;
@@ -48,11 +48,13 @@
 	left: 7px;
 	height: 45px;
 	border-radius: 600px;
-	background: #D60057;
+	background: #d60057;
 	pointer-events: none;
 	z-index: 0;
 	width: 0;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), width 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+		width 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .prod-tab {
@@ -65,7 +67,7 @@
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
 	font-size: 20px;
 	font-weight: 500;
-	color: #2C2C2C;
+	color: #2c2c2c;
 	background: none;
 	border: none;
 	border-radius: 600px;
@@ -89,8 +91,14 @@
 }
 
 @keyframes tabFadeIn {
-	from { opacity: 0; transform: translateY(14px); }
-	to   { opacity: 1; transform: translateY(0); }
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .prod-section {

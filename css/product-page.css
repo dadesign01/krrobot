@@ -47,7 +47,7 @@
 /* 좌측 콘텐츠 */
 .crow-hero-left {
 	flex: 0 0 700px;
-	padding: 0 0 0 40px;
+	padding: 0 0 0 0;
 }
 
 .crow-hero-title {
@@ -207,7 +207,7 @@
 	cursor: pointer;
 	color: #c3c3c3;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 500;
 	line-height: 56px;
 	letter-spacing: -1.28px;
@@ -678,15 +678,22 @@
 }
 
 .b2-slider .b2-slide-img {
-	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	max-width: 800px;
 	height: 500px;
 	object-fit: contain;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.45s ease;
 }
 
 .b2-slider .b2-slide-img.active {
-	display: block;
+	position: relative;
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .b2-slider-dots {
@@ -994,6 +1001,11 @@
 /* ============================================================
    SENSOR PAGE — 농연 가시화 센서 (tab1)
    ============================================================ */
+#tab5 .sensor-hero {
+	height: 100vh;
+	/* display: flex; */
+	/* align-items: center; */
+}
 
 /* Hero layout */
 .sensor-hero-inner {
@@ -1002,7 +1014,7 @@
 	padding: 40px 40px 0;
 	display: flex;
 	gap: 130px;
-	align-items: flex-start;
+	align-items: center;
 	box-sizing: border-box;
 	justify-content: space-between;
 }
@@ -1120,8 +1132,8 @@
 	color: #121212;
 	text-align: center;
 	letter-spacing: -0.8px;
-	line-height: 58px;
-	margin-bottom: 0;
+	line-height: 160%;
+	margin-bottom: 20px;
 	transition: color 0.25s;
 }
 
@@ -1209,11 +1221,19 @@
 }
 
 .sensor-slide {
-	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.45s ease;
 }
 
 .sensor-slide.active {
-	display: block;
+	position: relative;
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .sensor-slide-img {

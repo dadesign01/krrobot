@@ -27,13 +27,11 @@
 					<p class="sub-desc">로봇 전문기업, 케이대응로봇을 소개합니다.</p>
 				</div>
 				<div class="sub-location">
-					<div class="sub-location-wrap">
-						<select onchange="if (this.value) location.href = this.value;">
-							<option value="about.html">회사 소개</option>
-						</select>
-						<span class="sub-location-arrow">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212" /></svg>
-						</span>
+					<div class="sub-nav">
+						<div class="sub-nav-head">
+							<span>회사 소개</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212" /></svg>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -48,8 +46,19 @@
 							<p class="ab-headline-black">Special Environment?</p>
 							<p class="ab-headline-red">Smart Solution!</p>
 							<div class="ab-body-group">
-								<p>Robotics·Sensor·AI 융합으로<br />복잡하고 위험한 현장을 안전하고 효율적으로 바꿉니다.</p>
-								<p>재난환경현장에서 작동하는 실질적 솔루션에 집중하며,<br />인간과 기술의 조화로 안전하고 지속가능한 미래를 만듭니다.<br />지속적인 혁신으로 신뢰받는 기술 파트너가 되겠습니다.</p>
+								<p>
+									㈜케이대응로봇은 소방, 경찰 등 위험한 업무 분야에서 사람을 대신하여 인명탐지,<br />화재진압, 대테러, 범죄자 파악 등 임무를 수행할 수 있는 로봇과 로봇 기반 운용 솔루션을 개발하여<br />
+									청년 인력 부족의 시대에서도 로봇을 통한 안전한 사회를 구현하려고 합니다.
+								</p>
+
+								<p>
+									짙은 연기로 인하여 잘 보이지 않고, 방향감각 상실이 우려될 때,<br />
+									유독가스가 존재할 때, 낙하물 등으로 진입이 곤란할 때 등 상황에서 활용할 수 있는<br />
+									소방 전술 개발에 참여하여 재난대응의 안전성과 효율성을 제고하여,<br />
+									장기적으로는 40~50%의 임무를 소방 로봇이 담당하도록 하겠습니다.
+								</p>
+
+								<p>㈜케이대응로봇은 안전한 사회 구현을 위한 세계 최고 수준의<br />로봇/솔루션을 공급하는 회사를 목표로 끊임없이 혁신할 것입니다.</p>
 							</div>
 						</div>
 						<div class="ab-intro-mark">
@@ -59,11 +68,16 @@
 				</div>
 			</section>
 
-			<!-- ── 2. 비전 이미지 ── -->
+			<!-- ── 2. 비전 이미지 슬라이더 ── -->
 			<section class="ab-vision-section">
 				<div class="ab-container">
 					<div class="ab-vision-img">
-						<h2 class="ab-vision-title">사람을 향한 기술,<br />현장을 바꾸는 로봇 솔루션</h2>
+						<div class="ab-vision-slide ab-vision-slide--1 active">
+							<h2 class="ab-vision-title">사람을 향한 기술,<br />현장을 바꾸는 로봇 솔루션</h2>
+						</div>
+						<div class="ab-vision-slide ab-vision-slide--2">
+							<h2 class="ab-vision-title">로봇 AI를 활용한 인명구조,<br />화재진압 패러다임을 선도하는 기업</h2>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -338,6 +352,18 @@
 					if (item.delay) el.style.transitionDelay = item.delay + 's';
 					io.observe(el);
 				});
+			})();
+
+			/* ── 비전 슬라이더 자동 전환 ── */
+			(function () {
+				var slides = document.querySelectorAll('.ab-vision-slide');
+				if (!slides.length) return;
+				var current = 0;
+				setInterval(function () {
+					slides[current].classList.remove('active');
+					current = (current + 1) % slides.length;
+					slides[current].classList.add('active');
+				}, 4000);
 			})();
 
 			/* ── 슬라이더 ── */
