@@ -427,21 +427,24 @@ site-footer {
 }
 .hero-word-wrap {
 	display: inline-block;
-	/* overflow: hidden; */
-	vertical-align: middle;
+	overflow-x: visible;
+	overflow-y: clip;
+	vertical-align: bottom;
+	padding: 0.15em 0;
+	margin: -0.15em 0;
 }
 .hero-word {
 	display: inline-block;
 	transition:
-		transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-		opacity 0.45s ease;
+		transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+		opacity 0.5s ease;
 }
 .hero-word.exit {
-	transform: translateY(-110%);
+	transform: translateY(-100%);
 	opacity: 0;
 }
 .hero-word.enter-start {
-	transform: translateY(110%);
+	transform: translateY(100%);
 	opacity: 0;
 	transition: none !important;
 }
@@ -606,7 +609,7 @@ site-footer {
 
 .ph2-text {
 	height: 100%;
-	padding: 40px 48px 60px;
+	padding: 40px 100px 60px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -664,7 +667,9 @@ site-footer {
 	inset: 0;
 	opacity: 0;
 	transform: scale(1.03);
-	transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .ph2-slide.active {
 	opacity: 1;
@@ -816,7 +821,7 @@ site-footer {
 	width: 403px;
 	height: 400px;
 	background-size: cover;
-	left: 14%;
+	left: 0;
 	top: -32%;
 	z-index: 999;
 }

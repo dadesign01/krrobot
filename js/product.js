@@ -19,6 +19,10 @@
 		TAB_H = tabBar.offsetHeight;
 		tabBar.style.top = HEADER_H + 'px';
 		prodMain.style.paddingTop = HEADER_H + TAB_H + 'px';
+		var minH = window.innerHeight - HEADER_H - TAB_H;
+		sections.forEach(function (s) {
+			s.style.minHeight = minH + 'px';
+		});
 		updateIndicator(activeIdx, true);
 	}
 
@@ -111,17 +115,20 @@
 		{ passive: true }
 	);
 
-	/* 스크롤 최상단에서 위로 → 이전 탭 (마우스 휠) */
+	/* 마우스 휠 → 이전/다음 탭 (스크롤 불가 대형 화면 포함) */
 	window.addEventListener(
 		'wheel',
 		function (e) {
 			if (going) return;
-			if (e.deltaY < 0 && window.scrollY <= 0) goTo(activeIdx - 1);
+			var atTop = window.scrollY <= 0;
+			var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+			if (e.deltaY < 0 && atTop) goTo(activeIdx - 1);
+			if (e.deltaY > 0 && atBottom) goTo(activeIdx + 1);
 		},
 		{ passive: true }
 	);
 
-	/* 스크롤 최상단에서 위로 → 이전 탭 (터치) */
+	/* 터치 → 이전/다음 탭 */
 	var touchStartY = 0;
 	window.addEventListener(
 		'touchstart',
@@ -134,9 +141,11 @@
 		'touchend',
 		function (e) {
 			if (going) return;
-			if (e.changedTouches[0].clientY - touchStartY > 60 && window.scrollY <= 0) {
-				goTo(activeIdx - 1);
-			}
+			var dy = e.changedTouches[0].clientY - touchStartY;
+			var atTop = window.scrollY <= 0;
+			var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+			if (dy > 60 && atTop) goTo(activeIdx - 1);
+			if (dy < -60 && atBottom) goTo(activeIdx + 1);
 		},
 		{ passive: true }
 	);

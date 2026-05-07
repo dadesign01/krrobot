@@ -44,22 +44,22 @@
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">01</span>
 									<div class="sensor-spec-content">
-										<span class="sensor-spec-card-title">실시간 데이터 처리 및 시각화 기술 </span>
-										<p class="sensor-spec-card-desc">- CAN, EtherCAT 등<br />다양한 통신 방식 지원 <br />- 사용자 인터페이스 및 센서와의<br />실시간 데이터 연동</p>
+										<span class="sensor-spec-card-title">실시간 데이터 처리 및 시각화 기술</span>
+										<p class="sensor-spec-card-desc">- CAN, EtherCAT 등 다양한 통신 방식 지원 <br />- 사용자 인터페이스 및 센서와의 실시간 데이터 연동</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">02</span>
 									<div class="sensor-spec-content">
 										<span class="sensor-spec-card-title">AI 기반 객체 탐지 기술 </span>
-										<p class="sensor-spec-card-desc">-AI 학습 모델을 활용한<br />정밀한 위치 탐지 <br />- AI 분석 결과에 따라<br />비가시 환경에서 시야 확보</p>
+										<p class="sensor-spec-card-desc">- AI 학습 모델을 활용한 정밀한 위치 탐지 <br />- AI 분석 결과에 따라 비가시 환경에서 시야 확보</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">03</span>
 									<div class="sensor-spec-content">
 										<span class="sensor-spec-card-title">멀티센서 융합 기술</span>
-										<p class="sensor-spec-card-desc">- 열화상 카메라, RGB 카메라 및<br />인명 탐지 센서 융합 기술 - 멀티센서 기반 높은<br />정확도의 생존자 탐색</p>
+										<p class="sensor-spec-card-desc">- 열화상 카메라, RGB 카메라 및 인명 탐지 센서 융합 기술 <br />- 멀티센서 기반 높은 정확도의 생존자 탐색</p>
 									</div>
 								</div>
 							</div>
@@ -104,12 +104,52 @@
 				<!-- 하단 이미지 2개 -->
 				<div class="sensor-img-pair">
 					<div class="sensor-img-item">
-						<img src="../../img/product/sen_01_03.png" alt="농연 가시화 - 객체 탐지" />
+						<div class="sensor-img-inner">
+							<img src="../../img/product/sen_01_03.png" alt="농연 가시화 - 객체 탐지" />
+						</div>
+						<p class="sensor-img-caption">농연 가시화</p>
 					</div>
 					<div class="sensor-img-item">
-						<img src="../../img/product/sen_01_04.png" alt="농연 가시화 - 실증 장면" />
+						<div class="sensor-img-inner">
+							<img src="../../img/product/sen_01_04.png" alt="농연 가시화 - 실증 장면" />
+						</div>
+						<p class="sensor-img-caption">주요 객체 인식</p>
 					</div>
 				</div>
+
+				<!-- 하단 동영상 2개 -->
+				<div class="sensor-video-pair">
+					<div class="sensor-video-item">
+						<div class="sensor-video-wrap" id="senVideo1">
+							<video class="sensor-video" src="../../video/sen_01.mp4" playsinline preload="metadata"></video>
+							<div class="sensor-video-play">
+								<img src="../../img/product/video_play.png" alt="재생" />
+							</div>
+						</div>
+						<p class="sensor-video-caption">농연 가시화 센서 화면</p>
+					</div>
+					<div class="sensor-video-item">
+						<div class="sensor-video-wrap" id="senVideo2">
+							<video class="sensor-video" src="../../video/sen_02.mp4" playsinline preload="metadata"></video>
+							<div class="sensor-video-play">
+								<img src="../../img/product/video_play.png" alt="재생" />
+							</div>
+						</div>
+						<p class="sensor-video-caption">주요 객체 인식 ( AI 탐지 결과)</p>
+					</div>
+				</div>
+				<script>
+					['senVideo1', 'senVideo2'].forEach(function (id) {
+						var wrap = document.getElementById(id);
+						var video = wrap.querySelector('video');
+						var overlay = wrap.querySelector('.sensor-video-play');
+						wrap.addEventListener('click', function () {
+							overlay.style.display = 'none';
+							video.controls = true;
+							video.play();
+						});
+					});
+				</script>
 
 				<script>
 					(function () {
@@ -153,22 +193,22 @@
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">01</span>
 									<div class="sensor-spec-content">
-										<span class="sensor-spec-card-title">모바일 로봇 기반 SLAM </span>
+										<span class="sensor-spec-card-title">모바일 로봇 기반 SLAM</span>
 										<p class="sensor-spec-card-desc">진동 극복 + 다중 플랫폼 지원</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">02</span>
 									<div class="sensor-spec-content">
-										<span class="sensor-spec-card-title">실내/실외 환경지도 생성 기술 </span>
-										<p class="sensor-spec-card-desc">- LIDAR + IMU 만으로<br />조명 없이 구동 가능 - 초심자도 활용 가능한<br />직관적인 GUI</p>
+										<span class="sensor-spec-card-title">실내/실외 환경지도 생성 기술</span>
+										<p class="sensor-spec-card-desc">- LIDAR + IMU 만으로 조명 없이 구동 가능<br />- 초심자도 활용 가능한 직관적인 GUI</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">03</span>
 									<div class="sensor-spec-content">
-										<span class="sensor-spec-card-title">천장환경 자율 주행 </span>
-										<p class="sensor-spec-card-desc">- 천장환경 장애물 인식 및<br />최적경로 탐색을 통한<br />효율적 자율주행</p>
+										<span class="sensor-spec-card-title">천장환경 자율 주행</span>
+										<p class="sensor-spec-card-desc">천장환경 장애물 인식 및 최적경로 탐색을 통한<br />효율적 자율주행</p>
 									</div>
 								</div>
 							</div>
@@ -234,9 +274,57 @@
 						<div class="s2-img-wrap">
 							<img src="../../img/product/sen_02_03_02.png" alt="위성 지도 및 SLAM 결과물" />
 						</div>
-						<p class="s2-img-caption">위성 지도 및 SLAM 결과물</p>
+						<p class="s2-img-caption">SLAM 결과물 Top View 지도</p>
 					</div>
 				</div>
+
+				<!-- 4개 이미지 그리드 -->
+				<div class="s2-quad-grid">
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../img/product/sen_02_03_03.png" alt="위성 지도 및 SLAM 결과물" />
+						</div>
+						<p class="s2-quad-caption">위성 지도 및 SLAM 결과물</p>
+					</div>
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../img/product/sen_02_03_04.png" alt="SLAM 동일 위치 출발-도착간 3차원 평균위치오차 결과" />
+						</div>
+						<p class="s2-quad-caption">SLAM 동일 위치 출발-도착간 3차원 평균위치오차 결과</p>
+					</div>
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../img/product/sen_02_03_05.png" alt="농연상황에서 LiDAR 대신 Radar SLAM기술" />
+						</div>
+						<p class="s2-quad-caption">•농연상황에서 성능이 저하되는 LiDAR 방식 대신 Radar, Thermal Depth 방식 SLAM기술</p>
+					</div>
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../img/product/sen_02_03_06.png" alt="비가시 현장 환경 지도 생성" />
+						</div>
+						<p class="s2-quad-caption">비가시 현장 환경 지도 생성</p>
+					</div>
+				</div>
+
+				<!-- environ.mp4 비디오 -->
+				<div class="s2-environ-video-wrap" id="s2EnvVideo">
+					<video class="s2-environ-video" src="../../video/environ.mp4" playsinline preload="metadata"></video>
+					<div class="s2-environ-play">
+						<img src="../../img/product/video_play.png" alt="재생" />
+					</div>
+				</div>
+				<script>
+					(function () {
+						var wrap = document.getElementById('s2EnvVideo');
+						var video = wrap.querySelector('video');
+						var overlay = wrap.querySelector('.s2-environ-play');
+						wrap.addEventListener('click', function () {
+							overlay.style.display = 'none';
+							video.controls = true;
+							video.play();
+						});
+					})();
+				</script>
 
 				<!-- 기술 보유 섹션 -->
 				<div class="s2-tech-section">
@@ -476,25 +564,22 @@
 									<span class="sensor-spec-num">HW</span>
 									<div class="sensor-spec-content">
 										<span class="sensor-spec-card-title">강력한 이동 성능</span>
-										<p class="sensor-spec-card-desc">
-											- 최대 속도 7km/h,<br />연속 운용 시간 약 1시간 <br />- 경사 29° 및 20cm 높이<br />장애물 극복 가능 <br />- 승용차 트렁크에<br />적재 가능 (1인 운반 가능)
-										</p>
+										<p class="sensor-spec-card-desc">- 최대 속도 7km/h, 연속 운용 시간 약 1시간<br />- 경사 29° 및 20cm 높이 장애물 극복 가능<br />- 승용차 트렁크에 적재 가능 (1인 운반 가능)</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">IP</span>
 									<div class="sensor-spec-content">
-										<span class="sensor-spec-card-title">우수한 내구성(방수/방진 지원) </span>
-										<p class="sensor-spec-card-desc">IP57 등급으로<br />방수·방진 기능 제공</p>
+										<span class="sensor-spec-card-title">우수한 내구성(방수/방진 지원)</span>
+										<p class="sensor-spec-card-desc">IP57 등급으로 방수·방진 기능 제공</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
 									<span class="sensor-spec-num">AI</span>
 									<div class="sensor-spec-content">
-										<span class="sensor-spec-card-title">유해 기체 탐지 및<br />실시간 지도 생성 </span>
+										<span class="sensor-spec-card-title">유해 기체 탐지 및 실시간 지도 생성</span>
 										<p class="sensor-spec-card-desc">
-											농연환경에서 실시간 지도 생성 및<br />로봇 위치 전송<br />
-											<br />- 사고 지점 및 요구조자<br />(구조 대상) 위치 표시 <br />- SLAM(동시 위치추정 및 매핑) 오차 0.05m 이하
+											- 농연환경에서 실시간 지도 생성 및 로봇 위치 전송<br />- 사고 지점 및 요구조자(구조 대상) 위치 표시<br />- SLAM(동시 위치추정 및 매핑) 오차 0.05m 이하
 										</p>
 									</div>
 								</div>
@@ -849,6 +934,25 @@
 							<img src="../../img/product/sen_05_06.png" alt="UWB 레이더 화면 클로즈업" />
 						</div>
 					</div>
+				</div>
+
+				<!-- Key Technology 이미지 영역 -->
+				<div class="s5-key-tech">
+					<div class="sensor-key-head">
+						<div class="sensor-key-head-left">
+							<span>Key Techology</span>
+							<img src="../../img/product/table_mark.png" alt="" />
+						</div>
+					</div>
+					<div class="s5-key-img-grid">
+						<div class="s5-key-img-wrap">
+							<img src="../../img/product/sen_05_07.png" alt="장애물 투과 인명 탐지" />
+						</div>
+						<div class="s5-key-img-wrap">
+							<img src="../../img/product/sen_05_08.png" alt="인명 탐지 결과 화면" />
+						</div>
+					</div>
+					<p class="s5-key-caption">•레이더를 이용하여 현재 위치로부터 요구조자의 방향, 거리를 탐지하는 기술</p>
 				</div>
 
 				<script>

@@ -14,6 +14,7 @@
 								<li><a href="/pages/product/index.html#tab1">원격 방수총</a></li>
 								<li><a href="/pages/product/index.html#tab2">4족 보행 로봇</a></li>
 								<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
+								<li><a href="/pages/product/index.html#tab4">고소 방수 드론</a></li>
 							</ul>
 							<span class="gnb-drop-heading">부품 / SW</span>
 							<ul>
@@ -69,6 +70,7 @@
 							<li><a href="/pages/product/index.html#tab1">원격 방수총</a></li>
 							<li><a href="/pages/product/index.html#tab2">4족 보행 로봇</a></li>
 							<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
+							<li><a href="/pages/product/index.html#tab4">고소 방수 드론</a></li>
 						</ul>
 						<p class="m-sub-cat">부품 / SW</p>
 						<ul>
