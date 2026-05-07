@@ -1,3 +1,42 @@
+// ── Hero text slider ─────────────────────────────────────────────
+(function () {
+	const slides = [
+		{ word: 'Possibility', desc: '로봇 기술의 가능성을 혁신으로 현실화합니다.<br />상상을 넘어선 현실로의 전환을 꿈꾸며...' },
+		{ word: 'Passion',     desc: '도전하는 모든 분야에 있어 Global No.1을 향해 가는 케이대응로봇<br />주도적인 변화와 혁신을 통해 세계 시장의 주역이 되는 기업이 되겠습니다.' },
+		{ word: 'Challenge',   desc: '한계를 뛰어 넘는 도전으로<br />불가능을 가능케 하며, 생활과 산업의 미래를 재정립합니다.' },
+	];
+	const wordEl = document.getElementById('heroWord');
+	const descEl = document.getElementById('heroDesc');
+	if (!wordEl || !descEl) return;
+
+	let idx = 0;
+	const DUR = 450; // ms — matches CSS transition
+
+	setInterval(function () {
+		// 1) 현재 단어 위로 슬라이드 아웃 + 설명 페이드 아웃
+		wordEl.classList.add('exit');
+		descEl.classList.add('fading');
+
+		setTimeout(function () {
+			idx = (idx + 1) % slides.length;
+
+			// 2) 새 텍스트로 교체하고 아래에 순간 배치 (transition 없이)
+			wordEl.classList.remove('exit');
+			wordEl.classList.add('enter-start');
+			wordEl.textContent = slides[idx].word;
+			descEl.innerHTML = slides[idx].desc;
+
+			// 3) 리플로우 후 슬라이드 인 + 설명 페이드 인
+			requestAnimationFrame(function () {
+				requestAnimationFrame(function () {
+					wordEl.classList.remove('enter-start');
+					descEl.classList.remove('fading');
+				});
+			});
+		}, DUR);
+	}, 4000);
+})();
+
 // ── Header scroll background ─────────────────────────────────────
 (function () {
 	const header = document.getElementById('header');
@@ -46,6 +85,29 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 		if (panel) panel.classList.toggle('open', isOpen);
 	});
 });
+
+// ── Product Highlight v2 Sliders ─────────────────────────────────
+(function () {
+	function initPh2(imgsId, pgId) {
+		var imgs = document.getElementById(imgsId);
+		var pg = document.getElementById(pgId);
+		if (!imgs || !pg) return;
+		var slides = Array.from(imgs.querySelectorAll('.ph2-slide'));
+		var dots = Array.from(pg.querySelectorAll('.ph2-dot'));
+		var cur = 0;
+		function goTo(i) {
+			slides[cur].classList.remove('active');
+			dots[cur].classList.remove('active');
+			cur = i;
+			slides[cur].classList.add('active');
+			dots[cur].classList.add('active');
+		}
+		dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
+		setInterval(function () { goTo((cur + 1) % slides.length); }, 5000);
+	}
+	initPh2('ph2Imgs1', 'ph2Pg1');
+	initPh2('ph2Imgs2', 'ph2Pg2');
+})();
 
 // ── Product Carousel (Vanilla) ───────────────────────────────────
 (function () {
