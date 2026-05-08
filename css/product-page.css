@@ -1289,9 +1289,10 @@
 	font-weight: 400;
 	color: #d60057;
 	letter-spacing: -0.88px;
-	line-height: 58px;
+	line-height: 160%;
 	margin-bottom: 0;
 	word-break: keep-all;
+	padding-bottom: 20px;
 }
 
 .sensor-hero-desc-pink {

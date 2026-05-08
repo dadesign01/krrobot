@@ -913,7 +913,7 @@ site-footer {
 	left: 60%;
 	transform: translateY(-50%);
 	width: 443px;
-	min-height: 402px;
+	min-height: 420px;
 	z-index: 10;
 }
 .product-panel {
@@ -951,7 +951,7 @@ site-footer {
 		-apple-system,
 		BlinkMacSystemFont,
 		sans-serif;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: 400;
 	color: #3b3b3b;
 	letter-spacing: -0.8px;
