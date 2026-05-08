@@ -1,3 +1,12 @@
+/* ── Paperlogy font ──────────────────────────────────────────────── */
+@font-face {
+	font-family: 'Paperlogy';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2309@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* =============================================
    RESET & BASE
    ============================================= */
@@ -374,6 +383,45 @@ site-footer {
 	height: 100%;
 	object-fit: cover;
 	display: block;
+}
+
+/* Hero bg image crossfade */
+.hero-bg-img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center left;
+	opacity: 0;
+	transition: opacity 0.9s ease;
+}
+.hero-bg-img.active {
+	opacity: 1;
+}
+
+/* Hero pagination */
+.hero-pagination {
+	display: flex;
+	align-items: baseline;
+	margin-top: 16px;
+}
+.hero-pg-cur {
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: -0.72px;
+}
+.hero-pg-sep,
+.hero-pg-tot {
+	color: #d7d7d7;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: -0.56px;
 }
 
 /* left-to-right gradient so text stays legible */

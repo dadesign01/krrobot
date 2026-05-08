@@ -7,6 +7,8 @@
 	];
 	const wordEl = document.getElementById('heroWord');
 	const descEl = document.getElementById('heroDesc');
+	const bgImgs = document.querySelectorAll('.hero-bg-img');
+	const pgCur = document.getElementById('heroPgCur');
 	if (!wordEl || !descEl) return;
 
 	let idx = 0;
@@ -26,7 +28,11 @@
 			wordEl.textContent = slides[idx].word;
 			descEl.innerHTML = slides[idx].desc;
 
-			// 3) 리플로우 후 슬라이드 인 + 설명 페이드 인
+			// 3) 배경 이미지 크로스페이드 + 페이지네이션
+			bgImgs.forEach(function (img, i) { img.classList.toggle('active', i === idx); });
+			if (pgCur) pgCur.textContent = idx + 1;
+
+			// 4) 리플로우 후 슬라이드 인 + 설명 페이드 인
 			requestAnimationFrame(function () {
 				requestAnimationFrame(function () {
 					wordEl.classList.remove('enter-start');
