@@ -350,7 +350,7 @@ site-footer {
 	max-width: 1680px;
 	height: 100%;
 	border-radius: 40px;
-	background: #4b4b4b;
+	/* background: #4b4b4b; */
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
@@ -1676,7 +1676,7 @@ site-footer {
 	}
 	.hero-card {
 		/* max-width: 2400px; */
-		/* border-radius: 56px; */
+		border-radius: 56px;
 	}
 	.hero-title {
 		font-size: 110px;
@@ -1688,6 +1688,20 @@ site-footer {
 	.hero-desc {
 		font-size: 26px;
 	}
+
+	.ph2-section {
+		max-width: 1680px;
+		margin: 0 auto;
+	}
+
+	.ph2-card {
+		border-radius: 40px;
+	}
+
+	.ph2-row--rev .ph2-card {
+		border-radius: 40px;
+	}
+
 	.ph-card {
 		width: 1800px;
 		max-width: 80vw;
@@ -1736,7 +1750,7 @@ site-footer {
 		/* height: 100px; */
 	}
 	.hero-card {
-		/* max-width: 100%; */
+		max-width: 100%;
 	}
 	.hero-title {
 		font-size: 140px;
@@ -2338,7 +2352,11 @@ site-footer {
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(12px);
-	transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease,
+		transform 0.3s ease,
+		background 0.2s ease;
 	backdrop-filter: blur(8px);
 }
 .top-btn.visible {

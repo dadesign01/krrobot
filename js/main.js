@@ -275,15 +275,57 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 })();
 
 // ── Contact form ─────────────────────────────────────────────────
-document.getElementById('contactForm')?.addEventListener('submit', e => {
+document.getElementById('contactForm')?.addEventListener('submit', async function (e) {
 	e.preventDefault();
-	const name = e.target.querySelector('[name="name"]').value.trim();
-	if (!name) {
-		alert('이름을 입력해 주세요.');
-		return;
+	const form = e.target;
+
+	const name    = form.querySelector('[name="name"]').value.trim();
+	const org     = form.querySelector('[name="org"]').value.trim();
+	const tel     = form.querySelector('[name="tel"]').value.trim();
+	const email   = form.querySelector('[name="email"]').value.trim();
+	const type    = form.querySelector('[name="type"]').value.trim();
+	const content = form.querySelector('[name="content"]').value.trim();
+	const agree   = form.querySelector('[name="agree"]').checked;
+
+	if (!name)    { alert('이름을 입력해 주세요.');         return; }
+	if (!tel)     { alert('연락처를 입력해 주세요.');       return; }
+	if (!email)   { alert('이메일을 입력해 주세요.');       return; }
+	if (!content) { alert('문의 내용을 입력해 주세요.');    return; }
+	if (!agree)   { alert('개인정보 수집에 동의해 주세요.'); return; }
+
+	const submitBtn = form.querySelector('.submit-btn');
+	submitBtn.disabled = true;
+	submitBtn.textContent = '전송 중...';
+
+	try {
+		const res = await fetch('https://formsubmit.co/ajax/krr@krrobot.co.kr', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+			body: JSON.stringify({
+				이름: name,
+				소속: org,
+				연락처: tel,
+				이메일: email,
+				문의유형: type,
+				문의내용: content,
+				_subject: `[케이대응로봇 문의] ${name} / ${type || '일반 문의'}`,
+				_template: 'table',
+				_captcha: 'false',
+			}),
+		});
+
+		if (res.ok) {
+			alert('문의가 접수되었습니다.\n빠른 시일 내에 연락드리겠습니다. 감사합니다.');
+			form.reset();
+		} else {
+			alert('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+		}
+	} catch {
+		alert('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+	} finally {
+		submitBtn.disabled = false;
+		submitBtn.textContent = '문의하기';
 	}
-	alert('문의가 접수되었습니다.\n빠른 시일 내에 연락드리겠습니다. 감사합니다.');
-	e.target.reset();
 });
 
 // ── Scroll fade-in animation ─────────────────────────────────────
