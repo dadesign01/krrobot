@@ -1,9 +1,9 @@
 // ── Hero text slider ─────────────────────────────────────────────
 (function () {
 	const slides = [
-		{ word: 'Possibility', desc: '로봇 기술의 가능성을 혁신으로 현실화합니다.<br />상상을 넘어선 현실로의 전환을 꿈꾸며...' },
-		{ word: 'Passion',     desc: '도전하는 모든 분야에 있어 Global No.1을 향해 가는 케이대응로봇<br />주도적인 변화와 혁신을 통해 세계 시장의 주역이 되는 기업이 되겠습니다.' },
-		{ word: 'Challenge',   desc: '한계를 뛰어 넘는 도전으로<br />불가능을 가능케 하며, 생활과 산업의 미래를 재정립합니다.' },
+		{ word: 'Make it Possibility', desc: '케이대응로봇은 혁신적인 로봇 기술로 가능성을 현실로 만듭니다<br />재난안전로봇의 새로운 미래를 열어가겠습니다' },
+		{ word: 'Have Passion', desc: '케이대응로봇은 도전과 혁신으로 <br />재난안전로봇 분야의 글로벌 No. 1을 향해 나아갑니다<br />세계 시장을 선도하는 로봇 전문기업으로 성장하겠습니다' },
+		{ word: 'Challenge Limits', desc: '한계를 뛰어넘는 도전으로 불가능을 가능하게 만들고,<br />일상과 산업 현장의 더 안전한 미래를 열어갑니다' },
 	];
 	const wordEl = document.getElementById('heroWord');
 	const descEl = document.getElementById('heroDesc');
@@ -55,7 +55,9 @@
 		let closeTimer = null;
 		item.addEventListener('mouseenter', () => {
 			clearTimeout(closeTimer);
-			items.forEach(other => { if (other !== item) other.classList.remove('is-open'); });
+			items.forEach(other => {
+				if (other !== item) other.classList.remove('is-open');
+			});
 			item.classList.add('is-open');
 		});
 		item.addEventListener('mouseleave', () => {
@@ -102,8 +104,14 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 			slides[cur].classList.add('active');
 			dots[cur].classList.add('active');
 		}
-		dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
-		setInterval(function () { goTo((cur + 1) % slides.length); }, 5000);
+		dots.forEach(function (d, i) {
+			d.addEventListener('click', function () {
+				goTo(i);
+			});
+		});
+		setInterval(function () {
+			goTo((cur + 1) % slides.length);
+		}, 5000);
 	}
 	initPh2('ph2Imgs1', 'ph2Pg1');
 	initPh2('ph2Imgs2', 'ph2Pg2');
