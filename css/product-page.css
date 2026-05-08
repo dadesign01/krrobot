@@ -283,8 +283,7 @@
 
 #crowDetail {
 	scroll-margin-top: 80px;
-	display: none;
-}
+	}
 
 /* 서브탭 */
 .crow-sub-tabs {
@@ -604,8 +603,7 @@
 /* ── tab3 Detail 기본 숨김 ── */
 #dtxDetail {
 	scroll-margin-top: 80px;
-	display: none;
-}
+	}
 
 /* ── Confined Space 두 줄 배경 텍스트 ── */
 .dtx-bg-wrap {
@@ -758,8 +756,7 @@
 /* ── tab2 Detail 기본 숨김 ── */
 #b2Detail {
 	scroll-margin-top: 80px;
-	display: none;
-}
+	}
 
 /* ── 히어로 슬라이드쇼 ── */
 .b2-slider-wrap {
@@ -877,8 +874,7 @@
    ============================================================ */
 #droneDetail {
 	scroll-margin-top: 80px;
-	display: none;
-}
+	}
 
 /* 스펙 카드 3열 (드론 전용) */
 .drone-spec-grid {
@@ -2415,7 +2411,6 @@
 /* Detail 초기 숨김 */
 #s4Detail {
 	scroll-margin-top: 80px;
-	display: none;
 	position: relative;
 	overflow: hidden;
 }
