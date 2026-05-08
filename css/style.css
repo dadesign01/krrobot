@@ -595,7 +595,7 @@ site-footer {
 /* 그라데이션 텍스트 카드: 933.861 × 420 */
 .ph2-card {
 	flex-shrink: 0;
-	width: 934px;
+	width: 50%;
 	height: 420px;
 	background: linear-gradient(82deg, #9d0442 1.01%, #000624 44.08%);
 	border-radius: 0 40px 40px 0;
@@ -1250,7 +1250,7 @@ site-footer {
 	justify-content: flex-end;
 	align-items: center;
 	padding: 0 36px 60px;
-	gap: 45px;
+	gap: 30px;
 	color: #fff;
 	transition: background 0.3s;
 }
@@ -1262,7 +1262,7 @@ site-footer {
 	font-size: 48px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 32px;
+	line-height: 1;
 	letter-spacing: -1.92px;
 	color: #fff;
 	text-align: center;
@@ -1613,8 +1613,8 @@ site-footer {
 		padding: 0 120px;
 	}
 	.header-inner {
-		max-width: 2400px;
-		padding: 0 120px;
+		/* max-width: 2400px; */
+		/* padding: 0 120px; */
 		height: 88px;
 	}
 	.logo img {
@@ -1624,11 +1624,11 @@ site-footer {
 		font-size: 22px;
 	}
 	.hero-section {
-		padding: 60px 60px 180px;
+		/* padding: 60px 60px 180px; */
 	}
 	.hero-card {
-		max-width: 2400px;
-		border-radius: 56px;
+		/* max-width: 2400px; */
+		/* border-radius: 56px; */
 	}
 	.hero-title {
 		font-size: 110px;
@@ -1664,13 +1664,13 @@ site-footer {
 		gap: 40px;
 	}
 	.card {
-		height: 900px;
+		/* height: 900px; */
 	}
 	.card-body h3 {
-		font-size: 60px;
+		/* font-size: 60px; */
 	}
 	.card-body p {
-		font-size: 24px;
+		/* font-size: 24px; */
 	}
 	.contact-footer-inner {
 		max-width: 2400px;
@@ -1683,12 +1683,12 @@ site-footer {
 		max-width: 2000px;
 	}
 	.header-inner {
-		max-width: 3200px;
-		padding: 0 160px;
-		height: 100px;
+		/* max-width: 3200px; */
+		/* padding: 0 160px; */
+		/* height: 100px; */
 	}
 	.hero-card {
-		max-width: 100%;
+		/* max-width: 100%; */
 	}
 	.hero-title {
 		font-size: 140px;
@@ -1697,20 +1697,20 @@ site-footer {
 		font-size: 100px;
 	}
 	.cards-grid {
-		max-width: 3000px;
-		gap: 60px;
+		max-width: 1680px;
+		gap: 30px;
 		align-items: center;
 	}
 	.card {
-		height: 1100px;
-		border-radius: 50px;
-		width: 100%;
+		/* height: 1100px; */
+		/* border-radius: 50px; */
+		/* width: 100%; */
 	}
 	.card-body h3 {
-		font-size: 80px;
+		/* font-size: 80px; */
 	}
 	.card-body p {
-		font-size: 30px;
+		/* font-size: 30px; */
 	}
 	.contact-footer-inner {
 		max-width: 3000px;
@@ -2267,5 +2267,46 @@ site-footer {
 	}
 	.footer-policy a {
 		font-size: 12px;
+	}
+}
+
+/* ── Top Button ─────────────────────────────────────────────────── */
+.top-btn {
+	position: fixed;
+	right: 32px;
+	bottom: 40px;
+	width: 52px;
+	height: 52px;
+	background: rgba(20, 20, 20, 0.82);
+	color: #fff;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 50%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	cursor: pointer;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(12px);
+	transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
+	backdrop-filter: blur(8px);
+}
+.top-btn.visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.top-btn:hover {
+	background: rgba(50, 50, 50, 0.95);
+}
+@media (max-width: 768px) {
+	.top-btn {
+		right: 20px;
+		bottom: 28px;
+		width: 44px;
+		height: 44px;
+		font-size: 10px;
 	}
 }

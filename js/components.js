@@ -7,7 +7,7 @@
 			<nav class="gnb" id="gnb">
 				<ul class="gnb-list">
 					<li class="gnb-item${a('product')}">
-						<a href="/pages/product/index.html" class="gnb-link">Product</a>
+						<a href="javascript:void(0);" class="gnb-link">Product</a>
 						<div class="gnb-dropdown">
 							<span class="gnb-drop-heading">ROBOT</span>
 							<ul>
@@ -61,7 +61,7 @@
 			<ul>
 				<li class="m-item m-has-sub">
 					<div class="m-item-head">
-						<a href="/pages/product/index.html" class="m-item-link">Product</a>
+						<a href="javascript:void(0);" class="m-item-link">Product</a>
 						<button class="m-toggle" aria-label="하위 메뉴 열기">&#9660;</button>
 					</div>
 					<div class="m-sub-panel">
@@ -200,6 +200,11 @@
 		<div class="footer-copy"><p>Copyright 주식회사 케이대응로봇. All rights reserved.</p></div>`;
 	}
 
+	// ── Top 버튼 ─────────────────────────────────────────────────────
+	function buildTopBtn() {
+		return `<button id="topBtn" class="top-btn" aria-label="맨 위로">TOP</button>`;
+	}
+
 	// ── Custom Elements 등록 ─────────────────────────────────────────
 	customElements.define(
 		'site-header',
@@ -221,6 +226,22 @@
 				this.id = 'contact';
 				this.setAttribute('role', 'contentinfo');
 				this.innerHTML = buildFooter();
+			}
+		}
+	);
+
+	customElements.define(
+		'site-top-btn',
+		class extends HTMLElement {
+			connectedCallback() {
+				this.innerHTML = buildTopBtn();
+				const btn = this.querySelector('#topBtn');
+				window.addEventListener('scroll', function () {
+					btn.classList.toggle('visible', window.scrollY > 300);
+				}, { passive: true });
+				btn.addEventListener('click', function () {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				});
 			}
 		}
 	);
