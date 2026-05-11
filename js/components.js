@@ -12,7 +12,7 @@
 							<span class="gnb-drop-heading">ROBOT</span>
 							<ul>
 								<li><a href="/pages/product/index.html#tab1">원격 방수총</a></li>
-								<li><a href="/pages/product/index.html#tab2">4족 보행 로봇</a></li>
+								<li><a href="/pages/product/index.html#tab2">원격 방수 사족 보행 로봇</a></li>
 								<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
 								<li><a href="/pages/product/index.html#tab4">고소 방수 드론</a></li>
 							</ul>
@@ -68,7 +68,7 @@
 						<p class="m-sub-cat">ROBOT</p>
 						<ul>
 							<li><a href="/pages/product/index.html#tab1">원격 방수총</a></li>
-							<li><a href="/pages/product/index.html#tab2">4족 보행 로봇</a></li>
+							<li><a href="/pages/product/index.html#tab2">원격 방수 사족 보행 로봇</a></li>
 							<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
 							<li><a href="/pages/product/index.html#tab4">고소 방수 드론</a></li>
 						</ul>
@@ -236,9 +236,13 @@
 			connectedCallback() {
 				this.innerHTML = buildTopBtn();
 				const btn = this.querySelector('#topBtn');
-				window.addEventListener('scroll', function () {
-					btn.classList.toggle('visible', window.scrollY > 300);
-				}, { passive: true });
+				window.addEventListener(
+					'scroll',
+					function () {
+						btn.classList.toggle('visible', window.scrollY > 300);
+					},
+					{ passive: true }
+				);
 				btn.addEventListener('click', function () {
 					window.scrollTo({ top: 0, behavior: 'smooth' });
 				});

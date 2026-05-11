@@ -417,7 +417,7 @@
 				<div class="crow-hero">
 					<div class="crow-hero-inner prod-inner">
 						<div class="crow-hero-left">
-							<h2 class="crow-hero-title">원격 방수 + 4족 보행 로봇</h2>
+							<h2 class="crow-hero-title">원격 방수 사족 보행 로봇</h2>
 							<p class="crow-hero-tagline">재난 환경을 인식하고 대응하는 지능형 스마트 사족보행 로봇</p>
 							<p class="crow-hero-desc">우리의 4족 보행 로봇은 불규칙 지형과 위험 요소를 스스로 판단해<br />탐지·이동·대응까지 수행하는 지능형 사족 보행 로봇입니다.</p>
 							<div class="crow-spec-grid">
@@ -573,7 +573,7 @@
 										<tr>
 											<th>모델명</th>
 											<td class="col-gap"></td>
-											<td>RBQ10 - 4족 보행 로봇</td>
+											<td>RBQ10 - 원격 방수 사족 보행 로봇</td>
 										</tr>
 										<tr>
 											<th>접합부 직경(mm)</th>
@@ -664,6 +664,32 @@
 								<p class="b2-key-tech-caption">3D SLAM 지도 작성 결과</p>
 							</div>
 						</div>
+
+						<!-- 영상 2개 -->
+						<div class="drone-video-grid">
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="b2Video1">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../video/4_video_01.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../img/product/video_play.png" alt="재생" />
+									</div>
+								</div>
+								<p class="drone-video-caption">사족보행 로봇 화재 대응 시연</p>
+							</div>
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="b2Video2">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../video/4_video_02.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../img/product/video_play.png" alt="재생" />
+									</div>
+								</div>
+								<p class="drone-video-caption">원격 방수 사족보행 로봇 시연</p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- /b2Detail -->
@@ -684,6 +710,23 @@
 							window.scrollTo({ top: y, behavior: 'smooth' });
 						}
 					}
+
+					/* 4족 보행 로봇 영상 — 첫 프레임 미리보기 후 재생 */
+					document.querySelectorAll('.b2-video-element').forEach(function (v) {
+						v.addEventListener('loadedmetadata', function () {
+							v.currentTime = 0.5;
+						});
+					});
+					['b2Video1', 'b2Video2'].forEach(function (id) {
+						document.getElementById(id).addEventListener('click', function () {
+							if (this.classList.contains('playing')) return;
+							this.classList.add('playing');
+							var v = this.querySelector('.b2-video-element');
+							v.controls = true;
+							v.currentTime = 0;
+							v.play();
+						});
+					});
 
 					/* 자동 슬라이드쇼 */
 					(function () {
