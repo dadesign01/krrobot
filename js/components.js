@@ -21,7 +21,7 @@
 								<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 								<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
 								<li><a href="/pages/product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
-								<li><a href="/pages/product/sensor.html#tab4">유해 기체 탐지 센서</a></li>
+								<li><a href="/pages/product/sensor.html#tab4">유해 가스 탐지 로봇 </a></li>
 								<li><a href="/pages/product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
 							</ul>
 						</div>
@@ -77,7 +77,7 @@
 							<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 							<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
 							<li><a href="/pages/product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
-							<li><a href="/pages/product/sensor.html#tab4">유해 기체 탐지 센서</a></li>
+							<li><a href="/pages/product/sensor.html#tab4">유해 가스 탐지 로봇 </a></li>
 							<li><a href="/pages/product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
 						</ul>
 					</div>
