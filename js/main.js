@@ -1,3 +1,22 @@
+// ── Mobile hero slider ───────────────────────────────────────────
+(function () {
+	var bgImgs = document.querySelectorAll('.hero-mo-bg-img');
+	var slides = document.querySelectorAll('.hero-mo-slide');
+	var pgCur = document.querySelector('.hero-mo-cur');
+	if (!bgImgs.length || !slides.length) return;
+
+	var idx = 0;
+
+	setInterval(function () {
+		bgImgs[idx].classList.remove('active');
+		slides[idx].classList.remove('active');
+		idx = (idx + 1) % slides.length;
+		bgImgs[idx].classList.add('active');
+		slides[idx].classList.add('active');
+		if (pgCur) pgCur.textContent = idx + 1;
+	}, 4000);
+})();
+
 // ── Hero text slider ─────────────────────────────────────────────
 (function () {
 	const slides = [

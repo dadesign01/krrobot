@@ -678,6 +678,7 @@ site-footer {
 	font-size: 18px;
 	font-weight: 600;
 	margin-bottom: 2px;
+	word-break: keep-all;
 }
 .ph2-eng {
 	color: #fff;
@@ -692,6 +693,7 @@ site-footer {
 	color: rgba(255, 255, 255, 0.6);
 	font-size: 15px;
 	line-height: 1.8;
+	word-break: keep-all;
 }
 
 /* 이미지 슬라이더 (카드 외부) */
@@ -804,7 +806,7 @@ site-footer {
 	}
 	.ph2-row,
 	.ph2-row--rev {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 		gap: 32px;
 	}
@@ -831,13 +833,19 @@ site-footer {
 @media (max-width: 768px) {
 	.ph2-section {
 		gap: 60px;
-		padding: 40px 16px 80px;
+		padding: 40px 0 80px;
 	}
 	.ph2-title {
-		font-size: 22px;
+		font-size: 26px;
 	}
+	.ph2-model {
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+	}
+
 	.ph2-desc {
-		font-size: 13px;
+		font-size: 14px;
 	}
 	.ph2-text {
 		padding: 28px 24px 50px;
@@ -848,6 +856,23 @@ site-footer {
 		width: 100%;
 		max-width: 100%;
 		margin-top: 16px;
+	}
+
+	.ph2-card {
+		width: 100%;
+		border-radius: 0 15px 15px 0;
+	}
+
+	.ph2-row {
+		padding: 0 16px 0 0;
+	}
+
+	.ph2-row--rev {
+		padding: 0 0 0 16px;
+	}
+
+	.ph2-row--rev .ph2-card {
+		border-radius: 15px 0 0 15px;
 	}
 }
 
@@ -992,6 +1017,7 @@ site-footer {
 	letter-spacing: -1.12px;
 	text-align: left;
 	margin-bottom: 16px;
+	word-break: keep-all;
 }
 .car-sub {
 	font-family:
@@ -1242,6 +1268,10 @@ site-footer {
 	color: #fff;
 }
 
+.vision-bg-wrap img {
+	display: block;
+}
+
 /* =============================================
    COMPANY CARDS
    ============================================= */
@@ -1339,6 +1369,88 @@ site-footer {
 	color: var(--MainColor, #d60057);
 	text-align: center;
 	display: block;
+}
+
+/* Mobile hero slider — hidden on desktop */
+.hero-mo {
+	display: none;
+	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+	height: 540px;
+}
+.hero-mo-bg-img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 0.8s ease;
+}
+.hero-mo-bg-img.active {
+	opacity: 1;
+}
+.hero-mo::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.25) 50%, transparent 100%);
+	z-index: 1;
+}
+.hero-mo-content {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0 20px 44px;
+}
+.hero-mo-slide {
+	display: none;
+}
+.hero-mo-slide.active {
+	display: block;
+}
+.hero-mo-title {
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	font-size: 42px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 55px;
+	letter-spacing: -1.68px;
+	margin: 0 0 14px;
+}
+.hero-mo-last {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.hero-mo-mark {
+	height: 26px;
+	flex-shrink: 0;
+}
+.hero-mo-desc {
+	color: #e9e9e9;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	letter-spacing: -0.64px;
+	margin: 0 0 10px;
+}
+.hero-mo-pagination {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	z-index: 2;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
 }
 
 /* Cards scroll-in stagger */
@@ -1803,6 +1915,7 @@ site-footer {
 
 	.vision-overlay {
 		padding: 0 40px;
+		justify-content: flex-start;
 	}
 	/* Vision */
 	.vision-cards {
@@ -2006,6 +2119,7 @@ site-footer {
 	.card-body p,
 	.card-more {
 		font-size: 14px;
+		height: auto;
 	}
 	.gnb {
 		display: none;
@@ -2083,13 +2197,25 @@ site-footer {
 	.vision-cards {
 		flex-direction: column;
 		align-items: center;
-		gap: 40px;
+		gap: 25px;
 		margin-top: -80px;
-		padding: 0 24px 60px;
+		padding: 0 16px 60px;
 	}
 	.vision-card {
 		width: 100%;
 		max-width: 520px;
+	}
+	.vision-headline {
+		margin: 50px 0 18px 0;
+	}
+	.vision-bg-wrap img {
+		display: none;
+	}
+	.vision-section {
+		margin-top: 60px;
+		background: url('../img/main/vision.png') no-repeat center;
+		background-size: cover;
+		height: 700px;
 	}
 }
 
@@ -2112,6 +2238,10 @@ site-footer {
 		background: linear-gradient(to right, rgba(17, 17, 17, 2) 10%, rgba(17, 17, 17, 0.2) 1%, rgba(17, 17, 17, 0.1) 30%, rgba(17, 17, 17, 0) 50%);
 	}
 
+	.logo img {
+		height: 23px;
+	}
+
 	.hero-title {
 		font-size: 36px;
 		letter-spacing: -1.5px;
@@ -2132,11 +2262,33 @@ site-footer {
 		margin-top: 60px;
 		padding-bottom: 70px;
 	}
+	.car-dots {
+		gap: 15px;
+	}
+	.c-dot {
+		width: 5px;
+		height: 5px;
+	}
+	.vision-overlay {
+		padding: 0 16px;
+	}
 
+	/* Hero — hide desktop slider, show mobile slider */
+	.hero-section {
+		padding: 12px 10px 0;
+	}
+	.hero-card {
+		display: none;
+	}
+	.hero-mo {
+		display: block;
+	}
+
+	/* Cards — original mobile layout restored */
 	.cards-grid {
 		grid-template-columns: 1fr;
 		max-width: 100%;
-		padding: 24px;
+		padding: 16px;
 		gap: 20px;
 	}
 	.card {
@@ -2144,7 +2296,9 @@ site-footer {
 		width: 100%;
 	}
 
-	/* Cards scroll-in stagger */
+	.cards-grid.animated .card {
+		height: 224px;
+	}
 	.cards-grid.animated .card:nth-child(1) {
 		opacity: 1;
 		transform: translateY(0);
@@ -2201,20 +2355,29 @@ site-footer {
 		padding: 0 24px;
 	}
 	.section-title {
-		font-size: 32px;
+		font-size: 42px;
 		margin-bottom: 40px;
+		line-height: 48px;
 	}
 
 	.product-panel h3 {
 		font-size: 22px;
+		text-align: center;
 	}
 
 	.more-view {
 		font-size: 16px;
+		text-align: center;
 	}
 
 	.car-sub {
-		font-size: 16px;
+		font-size: 15px;
+		text-align: center;
+	}
+
+	.product-panel ul li {
+		font-size: 14px;
+		text-align: center;
 	}
 
 	.carousel-wrap {
@@ -2254,7 +2417,7 @@ site-footer {
 		text-overflow: ellipsis;
 	}
 	.cards-section {
-		padding: 50px 0;
+		padding: 20px 0 100px;
 	}
 	.submit-btn {
 		width: 154px;
@@ -2269,6 +2432,8 @@ site-footer {
 	/* Vision */
 	.vision-section {
 		margin-top: 60px;
+		background: url('../img/main/vision.png') no-repeat center;
+		background-size: cover;
 	}
 	.vision-bg-wrap {
 		height: 300px;
@@ -2277,27 +2442,33 @@ site-footer {
 		font-size: 24px;
 	}
 	.vision-sub {
-		font-size: 16px;
-		line-height: 28px;
+		font-size: 18px;
+		line-height: 24px;
 		letter-spacing: -0.64px;
 		padding-bottom: 75px;
+		word-break: keep-all;
 	}
 	.vision-card {
 		padding: 40px 32px;
 		height: 200px;
 	}
 	.vision-card-title {
-		font-size: 36px;
+		font-size: 32px;
 	}
+
+	.vision-card-desc {
+		font-size: 16px;
+	}
+
 	.vision-icon {
-		width: 100px;
-		height: 100px;
+		width: 70px;
+		height: 70px;
 		top: 26px;
 		right: 24px;
 	}
 	.vision-icon img {
-		width: 56px;
-		height: 56px;
+		width: 45px;
+		height: 45px;
 	}
 }
 
@@ -2316,7 +2487,7 @@ site-footer {
 		font-size: 28px;
 	}
 	.card-body h3 {
-		font-size: 20px;
+		/* font-size: 20px; */
 	}
 	.footer-addr p {
 		font-size: 12px;
