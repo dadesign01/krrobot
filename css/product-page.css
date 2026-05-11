@@ -1018,9 +1018,163 @@
 }
 
 /* ============================================================
+   저반동 관창 기술 섹션 (tab1 최하단)
+   ============================================================ */
+.crow-recoil {
+	padding: 130px 0 100px;
+}
+
+.crow-recoil-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+}
+
+.crow-recoil-title {
+	color: #121212;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 28px;
+	letter-spacing: -1.44px;
+	margin: 0 0 48px;
+	text-align: center;
+}
+
+.crow-recoil-title span {
+	color: #d60057;
+}
+
+.crow-recoil-img-wrap {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.crow-recoil-img-wrap img {
+	width: 100%;
+	height: 518px;
+	object-fit: contain;
+	border-radius: 20px;
+	display: block;
+}
+
+.crow-recoil-box {
+	width: 100%;
+	border-radius: 20px;
+	padding: 0 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 72px;
+}
+
+.crow-recoil-box p {
+	color: #121212;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: -0.96px;
+	margin: 0;
+}
+
+.crow-recoil-box--gray {
+	background: #f2f2f2;
+	margin-bottom: 0;
+}
+
+.crow-recoil-box--gray p {
+	line-height: 42px;
+}
+
+.crow-recoil-box--outline {
+	background: #fff;
+	border: 2px solid #d60057;
+	margin-bottom: 24px;
+}
+
+.crow-recoil-box--outline p {
+	line-height: 58px;
+}
+
+.crow-recoil-box--outline span {
+	color: #d60057;
+}
+
+.crow-recoil-arrow {
+	display: flex;
+	justify-content: center;
+	padding: 16px 0;
+}
+
+.crow-recoil-arrow img {
+	height: 32px;
+	width: auto;
+}
+
+.crow-recoil-compare {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	width: 100%;
+	margin-bottom: 60px;
+}
+
+.crow-recoil-compare-item {
+	border-radius: 20px;
+	background: #f1f1f1;
+	min-height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px 32px;
+	cursor: default;
+	transition: background 0.25s;
+}
+
+.crow-recoil-compare-item:hover {
+	background: #d60057;
+}
+
+.crow-recoil-compare-item p {
+	color: #121212;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.6;
+	letter-spacing: -0.8px;
+	margin: 0;
+	transition: color 0.25s;
+}
+
+.crow-recoil-compare-item:hover p {
+	color: #fff;
+}
+
+.crow-recoil-videos {
+	width: 100%;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* ============================================================
    반응형
    ============================================================ */
 @media (max-width: 1200px) {
+	.crow-recoil-title {
+		font-size: 30px;
+	}
+	.crow-recoil-box p {
+		font-size: 20px;
+	}
+	.crow-recoil-compare-item p {
+		font-size: 18px;
+	}
+
 	.prod-tab-bar {
 		padding: 0 16px;
 	}
@@ -1060,6 +1214,17 @@
 }
 
 @media (max-width: 1024px) {
+	.crow-recoil {
+		padding: 80px 0 60px;
+	}
+	.crow-recoil-img-wrap img {
+		height: 380px;
+	}
+	.crow-recoil-compare-item {
+		min-height: 100px;
+		padding: 20px 24px;
+	}
+
 	.crow-hero {
 		padding: 10px 0;
 	}
@@ -1125,6 +1290,44 @@
 	.drone-photo-grid {
 		grid-template-columns: 1fr;
 		padding: 0;
+	}
+
+	.crow-recoil {
+		padding: 60px 0 40px;
+	}
+	.crow-recoil-inner {
+		padding: 0;
+	}
+	.crow-recoil-title {
+		font-size: 22px;
+		line-height: 1.5;
+		margin-bottom: 28px;
+	}
+	.crow-recoil-img-wrap img {
+		height: auto;
+		aspect-ratio: 4 / 3;
+	}
+	.crow-recoil-box {
+		padding: 16px 20px;
+		min-height: unset;
+	}
+	.crow-recoil-box p {
+		font-size: 15px;
+		line-height: 1.6;
+	}
+	.crow-recoil-box--outline p {
+		line-height: 1.6;
+	}
+	.crow-recoil-compare {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+	.crow-recoil-compare-item {
+		min-height: 80px;
+		padding: 18px 20px;
+	}
+	.crow-recoil-compare-item p {
+		font-size: 15px;
 	}
 
 	.crow-hero-title {

@@ -22,7 +22,7 @@
 		<div class="prod-tab-bar" id="prodTabBar" role="navigation" aria-label="로봇 제품 분류">
 			<div class="prod-tab-inner prod-tab-inner--robot">
 				<div class="prod-tab-indicator"></div>
-				<button class="prod-tab active" data-idx="0" aria-selected="true">원격 방수총</button>
+				<button class="prod-tab active" data-idx="0" aria-selected="true">원격 방수총 + 저반동 관창 기술</button>
 				<button class="prod-tab" data-idx="1" aria-selected="false">원격 방수 + 4족 보행 로봇</button>
 				<button class="prod-tab" data-idx="2" aria-selected="false">협소 공간 탐지 로봇</button>
 				<button class="prod-tab" data-idx="3" aria-selected="false">고소 방수 드론</button>
@@ -391,7 +391,75 @@
 				</div>
 				<!-- /crow-detail -->
 
+				<!-- ── 저반동 관창 기술 ── -->
+				<div class="crow-recoil">
+					<div class="crow-recoil-inner prod-inner">
+						<h2 class="crow-recoil-title">원격 방수총에 적용된 <span>저반동 관창 기술</span></h2>
+						<div class="crow-recoil-img-wrap">
+							<img src="../../img/product/pro_01_11.png" alt="저반동 관창 기술" />
+						</div>
+						<div class="crow-recoil-box crow-recoil-box--gray">
+							<p>화재진압 시 관창의 반발력 위험성(사망/부상), 장기 방수 시 소방관은 피로도 증가</p>
+						</div>
+						<div class="crow-recoil-arrow">
+							<img src="../../img/product/arrow_down.png" alt="" />
+						</div>
+						<div class="crow-recoil-box crow-recoil-box--outline">
+							<p>안전하고 피로도가 적은 <span>저반동</span> 방수총 기술 확보</p>
+						</div>
+						<div class="crow-recoil-compare">
+							<div class="crow-recoil-compare-item">
+								<p>1인 방수 또는<br />무인 고정 방수 가능</p>
+							</div>
+							<div class="crow-recoil-compare-item">
+								<p>4명의 소방관이 2개의 관창으로 방수하는 방수량을<br />1명의 소방관이 1대의 방수총으로 방수할 수 있음</p>
+							</div>
+						</div>
+
+						<!-- 영상 2개 -->
+						<div class="drone-video-grid crow-recoil-videos">
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="crow01Video1">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../video/pro_01.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../img/product/video_play.png" alt="재생" />
+									</div>
+								</div>
+							</div>
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="crow01Video2">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../video/pro_02.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../img/product/video_play.png" alt="재생" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<script>
+					/* 원격방수총 영상 */
+					document.querySelectorAll('#tab1 .b2-video-element').forEach(function (v) {
+						v.addEventListener('loadedmetadata', function () {
+							v.currentTime = 0.5;
+						});
+					});
+					['crow01Video1', 'crow01Video2'].forEach(function (id) {
+						document.getElementById(id).addEventListener('click', function () {
+							if (this.classList.contains('playing')) return;
+							this.classList.add('playing');
+							var v = this.querySelector('.b2-video-element');
+							v.controls = true;
+							v.currentTime = 0;
+							v.play();
+						});
+					});
+
 					/* 서브탭 클릭 → 해당 패널만 표시 (exclusive tab) */
 					function crowSwitch(id, btn) {
 						document.querySelectorAll('#tab1 .crow-model-panel').forEach(function (p) {
