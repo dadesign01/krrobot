@@ -14,14 +14,14 @@
 								<li><a href="/pages/product/index.html#tab1">원격 방수총</a></li>
 								<li><a href="/pages/product/index.html#tab2">원격 방수 사족 보행 로봇</a></li>
 								<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
-								<li><a href="/pages/product/index.html#tab4">고소 방수 드론</a></li>
+								<li><a href="/pages/product/index.html#tab4">유해 가스 탐지 로봇</a></li>
+								<li><a href="/pages/product/index.html#tab5">고소 방수 드론</a></li>
 							</ul>
 							<span class="gnb-drop-heading">부품 / SW</span>
 							<ul>
 								<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 								<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
 								<li><a href="/pages/product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
-								<li><a href="/pages/product/sensor.html#tab4">유해 가스 탐지 로봇 </a></li>
 								<li><a href="/pages/product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
 							</ul>
 						</div>
@@ -70,14 +70,14 @@
 							<li><a href="/pages/product/index.html#tab1">원격 방수총</a></li>
 							<li><a href="/pages/product/index.html#tab2">원격 방수 사족 보행 로봇</a></li>
 							<li><a href="/pages/product/index.html#tab3">협소 공간 탐지 로봇</a></li>
-							<li><a href="/pages/product/index.html#tab4">고소 방수 드론</a></li>
+							<li><a href="/pages/product/index.html#tab4">유해 가스 탐지 로봇</a></li>
+							<li><a href="/pages/product/index.html#tab5">고소 방수 드론</a></li>
 						</ul>
 						<p class="m-sub-cat">부품 / SW</p>
 						<ul>
 							<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 							<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
 							<li><a href="/pages/product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
-							<li><a href="/pages/product/sensor.html#tab4">유해 가스 탐지 로봇 </a></li>
 							<li><a href="/pages/product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
 						</ul>
 					</div>

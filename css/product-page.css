@@ -1860,6 +1860,10 @@
 	justify-content: flex-start;
 }
 
+#sensorHero04 .sensor-spec-card {
+	height: 180px;
+}
+
 #tab4 .sensor-spec-num {
 	position: absolute;
 	top: 50%;
@@ -1899,6 +1903,11 @@
 	flex-shrink: 0;
 	max-width: 260px;
 	width: 100%;
+}
+
+#sensorHero04 .sensor-spec-card-title {
+	font-size: 18px;
+	line-height: 160%;
 }
 
 #tab4 .sensor-spec-card:hover .sensor-spec-card-title {
