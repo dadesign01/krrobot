@@ -1810,7 +1810,7 @@ site-footer {
 		/* padding: 60px 60px 180px; */
 	}
 	.hero-card {
-		/* max-width: 2400px; */
+		max-width: 2400px;
 		border-radius: 56px;
 	}
 	.hero-title {
@@ -1857,7 +1857,7 @@ site-footer {
 		font-size: 80px;
 	}
 	.cards-grid {
-		max-width: 2400px;
+		/* max-width: 2400px; */
 		gap: 40px;
 	}
 	.card {
