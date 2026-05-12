@@ -54,7 +54,7 @@
 .crow-hero-title {
 	color: #000;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 42px;
+	font-size: clamp(28px, 3.5vw, 42px);
 	font-weight: 700;
 	line-height: 56px;
 	letter-spacing: -1.68px;
@@ -64,11 +64,12 @@
 .crow-hero-tagline {
 	color: #d60057;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 22px;
+	font-size: clamp(18px, 2vw, 22px);
 	font-weight: 400;
 	line-height: 58px;
 	letter-spacing: -0.88px;
 	margin: 0;
+	word-break: keep-all;
 }
 
 .crow-hero-desc {
@@ -80,6 +81,186 @@
 	letter-spacing: -0.64px;
 	margin: 0 0 36px;
 	word-break: keep-all;
+}
+
+/* ── 원격 방수총 가로형 스펙 카드 리스트 ── */
+.crow-spec-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 24px;
+}
+.crow-spec-list-card {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 15px;
+	background: #f8f8f8;
+	padding: 18px 28px 18px 88px;
+	min-height: 76px;
+	transition: background 0.25s;
+	cursor: default;
+	justify-content: space-between;
+}
+.crow-spec-list-card:hover {
+	background: #d60057;
+}
+.crow-spec-list-num {
+	position: absolute;
+	left: -6px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #d0d0d0;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 58px;
+	letter-spacing: -3.2px;
+	pointer-events: none;
+	z-index: 0;
+	user-select: none;
+	transition: color 0.25s;
+}
+.crow-spec-list-card:hover .crow-spec-list-num {
+	color: #94003c;
+}
+.crow-spec-list-content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 24px;
+	justify-content: space-between;
+	width: 100%;
+}
+.crow-spec-list-title {
+	display: block;
+	flex-shrink: 0;
+	min-width: 160px;
+	color: #1c1c1c;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: -0.6px;
+	transition: color 0.25s;
+}
+
+#tab1 .crow-spec-list-title {
+	max-width: 176px;
+	width: 100%;
+}
+
+#tab1 .crow-spec-list-sub {
+	max-width: 400px;
+	width: 100%;
+}
+
+.crow-spec-list-card:hover .crow-spec-list-title {
+	color: #fff;
+}
+.crow-spec-list-sub {
+	display: block;
+	color: #888;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.65;
+	word-break: keep-all;
+	transition: color 0.25s;
+}
+.crow-spec-list-card:hover .crow-spec-list-sub {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── 사족 보행 로봇 가로형 스펙 카드 리스트 (tab2 전용) ── */
+.b2-spec-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 24px;
+}
+.b2-spec-list-card {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 15px;
+	background: #f8f8f8;
+	padding: 18px 28px 18px 88px;
+	min-height: 76px;
+	gap: 24px;
+	transition: background 0.25s;
+	cursor: default;
+}
+.b2-spec-list-card:hover {
+	background: #d60057;
+}
+.b2-spec-list-num {
+	position: absolute;
+	left: -6px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #d0d0d0;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 58px;
+	letter-spacing: -3.2px;
+	pointer-events: none;
+	z-index: 0;
+	user-select: none;
+	transition: color 0.25s;
+}
+.b2-spec-list-card:hover .b2-spec-list-num {
+	color: #94003c;
+}
+.b2-spec-list-title {
+	position: relative;
+	z-index: 1;
+	flex: 0 0 170px;
+	max-width: 170px;
+	color: #1c1c1c;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: -0.6px;
+	transition: color 0.25s;
+}
+.b2-spec-list-card:hover .b2-spec-list-title {
+	color: #fff;
+}
+.b2-spec-list-sub {
+	position: relative;
+	z-index: 1;
+	flex: 1;
+	max-width: 420px;
+	color: #888;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.65;
+	word-break: keep-all;
+	transition: color 0.25s;
+}
+.b2-spec-list-card:hover .b2-spec-list-sub {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* tab5 고소 방수 드론 — 타이틀 폭 확장 */
+#tab5 .b2-spec-list-title {
+	flex: 0 0 270px;
+	max-width: 270px;
+}
+
+/* sensor.html tab3 소형 다중센서 — sensor-hero-left 안에서 전체 너비 사용 */
+#tab3 .sensor-hero-left .b2-spec-list {
+	margin-top: 20px;
 }
 
 /* 스펙 카드 슬라이더 (원격 방수총 tab1) */
@@ -301,7 +482,7 @@
 	cursor: pointer;
 	color: #c3c3c3;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 28px;
+	font-size: clamp(20px, 3vw, 28px);
 	font-weight: 500;
 	line-height: 56px;
 	letter-spacing: -1.28px;
@@ -341,10 +522,10 @@
 	transform: translate(-50%, 0%);
 	color: #000;
 	font-family: 'Poppins', sans-serif;
-	font-size: 280px;
+	font-size: clamp(75px, 17vw, 320px);
 	font-weight: 800;
 	line-height: 1;
-	letter-spacing: -11.2px;
+	letter-spacing: -4.2px;
 	opacity: 0.05;
 	pointer-events: none;
 	white-space: nowrap;
@@ -378,11 +559,16 @@
 
 .crow-model-left img {
 	width: 100%;
-	height: 660px;
+	height: clamp(300px, 41vw, 660px);
 	object-fit: contain;
 	display: block;
 }
-
+#b2UnitreePanel .crow-model-left img {
+	height: clamp(700px, 75vw, 762px);
+}
+#b2RBQ10Panel .crow-model-left img {
+	height: clamp(555px, 65vw, 762px);
+}
 /* 우측 스크롤 정보 */
 .crow-model-right {
 	flex: 1;
@@ -400,7 +586,7 @@
 .crow-model-name {
 	color: #000;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 42px;
+	font-size: clamp(28px, 3.5vw, 42px);
 	font-weight: 700;
 	line-height: 56px;
 	letter-spacing: -1.68px;
@@ -410,7 +596,7 @@
 .crow-model-tagline {
 	color: #d60057;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 26px;
+	font-size: clamp(18px, 2vw, 22px);
 	font-weight: 400;
 	line-height: 36px;
 	letter-spacing: -1.04px;
@@ -425,17 +611,18 @@
 	margin-bottom: 16px;
 	color: #121212;
 	font-family: 'Poppins', sans-serif;
-	font-size: 24px;
+	font-size: clamp(16px, 1.5vw, 24px);
 	font-weight: 500;
 	line-height: 58px;
 	letter-spacing: -0.96px;
 }
 
 .crow-detail-head img {
-	width: 19px;
-	height: 19px;
+	width: 3vw;
+	height: fit-content;
 	flex-shrink: 0;
 	margin: 0 0 20px 0;
+	max-width: 19px;
 }
 
 /* 스펙 테이블 */
@@ -454,11 +641,11 @@
 }
 
 .crow-table th {
-	width: 225px;
+	width: clamp(130px, 20vw, 225px);
 	background: #d60057;
 	color: #ffe9f2;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 18px;
+	font-size: clamp(14px, 1.5vw, 18px);
 	font-weight: 500;
 	line-height: 24px;
 	letter-spacing: -0.72px;
@@ -481,7 +668,7 @@
 	background: #f8f8f8;
 	color: #121212;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 18px;
+	font-size: clamp(14px, 1.5vw, 18px);
 	font-weight: 500;
 	line-height: 24px;
 	letter-spacing: -0.72px;
@@ -622,10 +809,10 @@
 .dtx-bg-text-line {
 	color: #000;
 	font-family: 'Poppins', sans-serif;
-	font-size: 200px;
+	font-size: clamp(54px, 11vw, 220px);
 	font-weight: 800;
 	line-height: 1;
-	letter-spacing: -8px;
+	letter-spacing: -0.2vw;
 	opacity: 0.05;
 	pointer-events: none;
 	white-space: nowrap;
@@ -644,20 +831,21 @@
 	gap: 8px;
 	max-width: 1680px;
 	margin: 0 auto 24px;
-	padding: 0 40px;
+	padding: 0;
 	color: #121212;
 	font-family: 'Poppins', sans-serif;
-	font-size: 24px;
+	font-size: clamp(16px, 1.5vw, 24px);
 	font-weight: 500;
 	line-height: 58px;
 	letter-spacing: -0.96px;
 }
 
 .dtx-key-tech-head img {
-	width: 19px;
-	height: 19px;
+	width: 3vw;
+	height: fit-content;
 	flex-shrink: 0;
 	margin: 0 0 20px 0;
+	max-width: 19px;
 }
 
 /* ── 영상 블록 ── */
@@ -904,10 +1092,10 @@
 	display: block;
 	color: #000;
 	font-family: 'Poppins', sans-serif;
-	font-size: 190px;
+	font-size: clamp(50px, 10vw, 175px);
 	font-weight: 800;
-	line-height: 207px;
-	letter-spacing: -7.6px;
+	line-height: 120%;
+	letter-spacing: -0.5vw;
 	opacity: 0.05;
 	pointer-events: none;
 	white-space: nowrap;
@@ -919,7 +1107,6 @@
 .drone-concept-wrap {
 	max-width: 1680px;
 	margin: 60px auto 0;
-	padding: 0 40px;
 }
 
 .drone-concept-img {
@@ -946,7 +1133,6 @@
 	gap: 20px;
 	max-width: 1680px;
 	margin: 80px auto 0;
-	padding: 0 40px;
 }
 
 .drone-video-item {
@@ -985,15 +1171,17 @@
 	gap: 20px;
 	max-width: 1680px;
 	margin: 60px auto 0;
-	padding: 0 40px 80px;
+	padding: 0 0 80px;
 }
 
 .drone-photo-wrap {
 	width: 100%;
-	height: 394px;
+	height: 25vw;
 	overflow: hidden;
 	border-radius: 15px;
 	background: #eee;
+	min-height: 250px;
+	max-height: 420px;
 }
 
 .drone-photo-wrap img {
@@ -1302,7 +1490,7 @@
 	}
 	.crow-hero-img-wrap img {
 		width: 100%;
-		max-width: 666px;
+		max-width: 510px;
 		height: auto;
 	}
 	.crow-model-layout {
@@ -1320,7 +1508,7 @@
 
 	.crow-model-left {
 		position: relative;
-		top: 0;
+		top: 5vw;
 		flex: none;
 		max-width: 100%;
 		width: 100%;
@@ -1342,12 +1530,12 @@
 }
 
 @media (max-width: 768px) {
-	.drone-video-grid,
-	.drone-photo-grid {
-		grid-template-columns: 1fr;
-		padding: 0;
+	.crow-hero-title,
+	.crow-hero-tagline,
+	.crow-hero-desc {
+		text-align: center;
+		line-height: 160%;
 	}
-
 	.crow-recoil {
 		padding: 60px 0 40px;
 	}
@@ -1405,18 +1593,8 @@
 		font-size: 15px;
 	}
 
-	.crow-hero-title {
-		font-size: 28px;
-		line-height: 40px;
-	}
-
-	.crow-hero-tagline {
-		font-size: 16px;
-		line-height: 40px;
-	}
-
 	.crow-hero-desc {
-		font-size: 14px;
+		font-size: 16px;
 		/* word-break:keep-all; */
 	}
 
@@ -1431,7 +1609,9 @@
 	.crow-spec-card-sub {
 		font-size: 14px;
 	}
-
+	.crow-model-layout {
+		padding: 30px 0 0;
+	}
 	.crow-spec-grid {
 		grid-template-columns: 1fr;
 	}
@@ -1441,30 +1621,20 @@
 	.crow-spec-track .crow-spec-card {
 		height: 200px;
 	}
-	.crow-sub-tab {
-		font-size: 22px;
-	}
-	.crow-model-name {
-		font-size: 28px;
-	}
-	.crow-model-left img {
-		height: 350px;
-	}
-
-	.crow-model-bg-text {
-		font-size: 80px;
-	}
 
 	.crow-model-tagline {
 		font-size: 16px;
 		line-height: 160%;
+		text-align: center;
+	}
+	.crow-detail-head {
+		margin: 10vw 0 0;
 	}
 	.col-gap {
 		width: 8px;
 	}
 	.crow-table th {
-		width: 100px;
-		font-size: 13px;
+		width: 130px;
 		padding: 10px 10px;
 	}
 	.crow-table td:not(.col-gap) {
@@ -1481,7 +1651,7 @@
 	.crow-gallery {
 		flex-direction: column;
 		margin: 80px auto 0;
-		padding: 0 20px;
+		padding: 0 0;
 	}
 
 	.crow-gal-wrap:hover img {
@@ -1501,9 +1671,12 @@
 		max-height: 260px;
 	}
 
+	.description_wrapper {
+		align-items: center;
+	}
 	.b2-key-tech {
 		margin-top: 80px;
-		padding: 0 20px;
+		padding: 0;
 	}
 	.b2-key-tech-grid {
 		flex-direction: column;
@@ -1513,10 +1686,6 @@
 	}
 	.b2-slider-dots {
 		max-width: 100%;
-	}
-	.dtx-bg-text-line {
-		font-size: 60px;
-		letter-spacing: -2.4px;
 	}
 	.dtx-video-wrap {
 		height: 240px;
@@ -1533,7 +1702,13 @@
 		margin-top: 100px;
 	}
 }
-
+@media (max-width: 500px) {
+	.drone-video-grid,
+	.drone-photo-grid {
+		grid-template-columns: 1fr;
+		padding: 0;
+	}
+}
 /* ============================================================
    SENSOR PAGE — 농연 가시화 센서 (tab1)
    ============================================================ */
@@ -1547,9 +1722,9 @@
 .sensor-hero-inner {
 	max-width: 1680px;
 	margin: 0 auto;
-	padding: 40px 40px 0;
+	padding: 40px 0 0;
 	display: flex;
-	gap: 130px;
+	gap: 5vw;
 	align-items: center;
 	box-sizing: border-box;
 	justify-content: space-between;
@@ -1557,6 +1732,7 @@
 
 .sensor-hero-left {
 	flex: 0 0 auto;
+	width: 50%;
 }
 
 .sensor-hero-right {
@@ -1566,7 +1742,7 @@
 
 .sensor-hero-title {
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 42px;
+	font-size: clamp(28px, 3.5vw, 42px);
 	font-weight: 700;
 	color: #121212;
 	letter-spacing: -1.68px;
@@ -1576,7 +1752,7 @@
 
 .sensor-hero-tagline {
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 22px;
+	font-size: clamp(18px, 2vw, 22px);
 	font-weight: 400;
 	color: #d60057;
 	letter-spacing: -0.88px;
@@ -1697,11 +1873,11 @@
 }
 
 #tab1 .sensor-spec-card {
-	width: 692px;
-	height: 87px;
+	width: 100%;
+	height: fit-content;
 	flex-direction: row;
 	align-items: center;
-	padding: 0 24px 0 80px;
+	padding: 1.5vw 24px 1.5vw 80px;
 	background: #f8f8f8;
 	border-radius: 15px;
 	justify-content: flex-start;
@@ -1740,7 +1916,6 @@
 	color: #1c1c1c;
 	font-size: 20px;
 	font-weight: 700;
-	line-height: 58px;
 	letter-spacing: -0.8px;
 	margin-bottom: 0;
 	text-align: left;
@@ -2047,10 +2222,12 @@
 }
 
 .sensor-img-inner {
-	height: 554px;
+	height: 25vw;
 	border-radius: 15px;
 	overflow: hidden;
 	background: #eee;
+	min-height: 250px;
+	max-height: 420px;
 }
 
 .sensor-img-item img {
@@ -2557,6 +2734,35 @@
 		flex: 0 0 620px;
 	}
 
+	#tab1 .sensor-spec-content {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	#tab1 .crow-spec-list-title {
+		max-width: 160px;
+		font-size: 18px;
+		width: 100%;
+	}
+
+	#tab1 .crow-spec-list-sub {
+		max-width: 400px;
+		width: 100%;
+	}
+
+	.b2-spec-list-card {
+		padding: 18px 24px 18px 80px;
+	}
+	.b2-spec-list-num {
+		font-size: 70px;
+		line-height: 52px;
+	}
+	.b2-spec-list-title {
+		flex: 0 0 140px;
+		max-width: 140px;
+		font-size: 18px;
+	}
+
 	.crow-spec-card-sub {
 		font-size: 14px;
 	}
@@ -2614,9 +2820,8 @@
 		font-size: 18px;
 	}
 	.sensor-hero-inner {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		gap: 50px;
-		padding: 0 20px;
 	}
 	.sensor-hero-left,
 	.sensor-hero-right {
@@ -3058,32 +3263,51 @@
 		padding: 0 20px;
 	}
 	.sensor-hero {
-		padding: 0;
+		padding: 50px 0 0 0;
 	}
 	.sensor-hero-inner {
 		gap: 32px;
 		padding: 0;
 	}
-	.sensor-hero-title {
-		font-size: 28px;
-		line-height: 40px;
-		letter-spacing: -1px;
-	}
-	.sensor-hero-tagline {
-		font-size: 16px;
-		line-height: 28px;
-	}
-	.sensor-hero-desc-pink {
-		font-size: 16px;
-		line-height: 28px;
-	}
+	.sensor-hero-title,
+	.sensor-hero-tagline,
 	.sensor-hero-desc-gray {
-		font-size: 14px;
-		margin-bottom: 28px;
+		text-align: center;
 	}
 	.sensor-spec-grid {
 		flex-wrap: wrap;
 		gap: 8px;
+	}
+	#tab1 .crow-hero-left {
+		flex: none;
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+	}
+	#tab1 .crow-spec-list-content {
+		flex-direction: column;
+	}
+
+	.b2-spec-list-card {
+		align-items: flex-start;
+		padding: 14px 16px 14px 68px;
+		min-height: 60px;
+		gap: 5px;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.b2-spec-list-num {
+		font-size: 60px;
+		line-height: 46px;
+	}
+	.b2-spec-list-title {
+		flex: unset;
+		max-width: unset;
+		font-size: 16px;
+	}
+	.b2-spec-list-sub {
+		font-size: 13px;
+		max-width: 100%;
 	}
 
 	#tab1 .sensor-spec-content,
@@ -3172,6 +3396,7 @@
 	.sensor-video-slide {
 		height: 280px;
 	}
+
 	.s2-video-main {
 		margin: 50px auto 0;
 		max-width: 100%;

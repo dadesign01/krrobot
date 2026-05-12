@@ -22,7 +22,7 @@
 								<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 								<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
 								<li><a href="/pages/product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
-								<li><a href="/pages/product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
+								<li><a href="/pages/product/sensor.html#tab4">UWB 인명탐지 레이더 센서</a></li>
 							</ul>
 						</div>
 					</li>
@@ -78,7 +78,7 @@
 							<li><a href="/pages/product/sensor.html#tab1">농연 가시화 센서</a></li>
 							<li><a href="/pages/product/sensor.html#tab2">환경지도 생성 및 자율주행</a></li>
 							<li><a href="/pages/product/sensor.html#tab3">소형 다중센서 통합 모듈</a></li>
-							<li><a href="/pages/product/sensor.html#tab5">UWB 인명탐지 레이더 센서</a></li>
+							<li><a href="/pages/product/sensor.html#tab4">UWB 인명탐지 레이더 센서</a></li>
 						</ul>
 					</div>
 				</li>

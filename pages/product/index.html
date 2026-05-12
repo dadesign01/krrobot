@@ -40,119 +40,41 @@
 							<h2 class="crow-hero-title">원격 방수총 CROW - 40/65</h2>
 							<p class="crow-hero-tagline">고위험 화재 현장을 위한 원거리 무선 방수 솔루션</p>
 							<p class="crow-hero-desc">우리의 스마트 원격 방수총은 반복적이고 위험한 방수 작업을<br />무선 원격 조작으로 제어할 수 있도록 설계된 전동식 방수 장비입니다.</p>
-							<div class="crow-spec-slider-wrap" id="crowSpecSlider1">
-								<div class="crow-spec-dots" id="crowSpecDots1"></div>
-								<div class="crow-spec-track-outer">
-									<div class="crow-spec-track" id="crowSpecTrack1">
-										<div class="crow-spec-card">
-											<span class="crow-spec-num">01</span>
-											<span class="crow-spec-card-title">원격 구동 제어</span>
-											<span class="crow-spec-card-sub"
-												>- 전동 PAN/TILT 구동으로 좌·우 및 상·하 방향 원격 제어<br />- 무선 컨트롤 패드를 통해 안전 거리에서 직관적인 조작 가능<br />- 넓은 구동 범위로 현장 대응성 강화<br />좌우(PAN):
-												약 ±170°(총 340°) <br />상하(TILT): 0° ~ 90°</span
-											>
-										</div>
-										<div class="crow-spec-card">
-											<span class="crow-spec-num">02</span>
-											<span class="crow-spec-card-title">편리한 오실레이션 기능</span>
-											<span class="crow-spec-card-sub">- 설정 범위 내에서 자동 반복 구동되어 방수 작업의 부담 감소<br />- 광범위 연소 확산 구간에서 저지선 형성</span>
-										</div>
-										<div class="crow-spec-card">
-											<span class="crow-spec-num">03</span>
-											<span class="crow-spec-card-title">통신·안전 제어 로직</span>
-											<span class="crow-spec-card-sub"
-												>- 오실레이션 동작 중 통신이 끊겨도 오실레이션 동작 지속 수행<br />- 방수 중 장비가 불안정해지면 안전 장치 작동<br />- 비상 상황 발생 시 제어 중단을 통한 2차 사고 예방</span
-											>
-										</div>
-										<div class="crow-spec-card">
-											<span class="crow-spec-num">04</span>
-											<span class="crow-spec-card-title">40A / 65A 라인업</span>
-											<span class="crow-spec-card-sub">- 40A: 최대 1,000 LPM 방수 성능<br />- 65A: 최대 2,000 LPM 방수 성능<br />- 차량 탑재형 또는 이동식 구성으로 운용 가능</span>
-										</div>
+							<div class="crow-spec-list">
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">01</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">원격 구동 제어</span>
+										<span class="crow-spec-list-sub"
+											>- 전동 PAN/TILT 구동으로 좌·우 및 상·하 방향 원격 제어<br />- 무선 컨트롤 패드를 통해 안전 거리에서 직관적인 조작 가능<br />- 넓은 구동 범위로 현장 대응성 강화<br />좌우(PAN):
+											약 ±170°(총 340°) / 상하(TILT): 0° ~ 90°</span
+										>
+									</div>
+								</div>
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">02</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">편리한 오실레이션 기능</span>
+										<span class="crow-spec-list-sub">- 설정 범위 내에서 자동 반복 구동되어 방수 작업의 부담 감소<br />- 광범위 연소 확산 구간에서 저지선 형성</span>
+									</div>
+								</div>
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">03</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">통신·안전 제어 로직</span>
+										<span class="crow-spec-list-sub"
+											>- 오실레이션 동작 중 통신이 끊겨도 오실레이션 동작 지속 수행<br />- 방수 중 장비가 불안정해지면 안전 장치 작동<br />- 비상 상황 발생 시 제어 중단을 통한 2차 사고 예방</span
+										>
+									</div>
+								</div>
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">04</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">40A / 65A 라인업</span>
+										<span class="crow-spec-list-sub">- 40A: 최대 1,000 LPM 방수 성능<br />- 65A: 최대 2,000 LPM 방수 성능<br />- 차량 탑재형 또는 이동식 구성으로 운용 가능</span>
 									</div>
 								</div>
 							</div>
-							<script>
-								(function () {
-									var slider = document.getElementById('crowSpecSlider1');
-									var track = document.getElementById('crowSpecTrack1');
-									var dotsWrap = document.getElementById('crowSpecDots1');
-									var cards = Array.from(track.querySelectorAll('.crow-spec-card'));
-									var cur = 0;
-									var GAP = 10;
-
-									function perPage() {
-										return window.innerWidth <= 768 ? 1 : 2;
-									}
-
-									function pageCount() {
-										return Math.ceil(cards.length / perPage());
-									}
-
-									function buildDots() {
-										dotsWrap.innerHTML = '';
-										for (var i = 0; i < pageCount(); i++) {
-											var d = document.createElement('span');
-											d.className = 'crow-spec-dot' + (i === cur ? ' active' : '');
-											(function (idx) {
-												d.addEventListener('click', function () {
-													goTo(idx);
-												});
-											})(i);
-											dotsWrap.appendChild(d);
-										}
-									}
-
-									function goTo(page) {
-										cur = Math.max(0, Math.min(page, pageCount() - 1));
-										var pp = perPage();
-										var cw = cards[0].offsetWidth;
-										track.style.transform = 'translateX(' + -(cur * pp * (cw + GAP)) + 'px)';
-										Array.from(dotsWrap.querySelectorAll('.crow-spec-dot')).forEach(function (d, i) {
-											d.classList.toggle('active', i === cur);
-										});
-									}
-
-									function setup() {
-										var pp = perPage();
-										var outerW = slider.offsetWidth;
-										var cw = pp === 1 ? outerW : Math.min(380, Math.floor((outerW - GAP * (pp - 1)) / pp));
-										cards.forEach(function (c) {
-											c.style.width = cw + 'px';
-											c.style.height = '237px';
-										});
-										cur = 0;
-										buildDots();
-										goTo(0);
-									}
-
-									setup();
-									window.addEventListener('resize', setup);
-
-									// 터치 / 마우스 드래그 스와이프
-									var startX = 0;
-									var isDragging = false;
-									var THRESHOLD = 50;
-
-									function onDragStart(x) {
-										startX = x;
-										isDragging = true;
-									}
-									function onDragEnd(x) {
-										if (!isDragging) return;
-										isDragging = false;
-										var diff = startX - x;
-										if (Math.abs(diff) >= THRESHOLD) {
-											goTo(diff > 0 ? cur + 1 : cur - 1);
-										}
-									}
-
-									slider.addEventListener('touchstart', function (e) { onDragStart(e.touches[0].clientX); }, { passive: true });
-									slider.addEventListener('touchend', function (e) { onDragEnd(e.changedTouches[0].clientX); });
-									slider.addEventListener('mousedown', function (e) { onDragStart(e.clientX); });
-									window.addEventListener('mouseup', function (e) { onDragEnd(e.clientX); });
-								})();
-							</script>
 						</div>
 						<div class="crow-hero-img-wrap">
 							<img src="../../img/product/pro_01_01_new.png" alt="원격 방수총" />
@@ -528,25 +450,26 @@
 							<h2 class="crow-hero-title">원격 방수 사족 보행 로봇</h2>
 							<p class="crow-hero-tagline">재난 환경을 인식하고 대응하는 지능형 스마트 사족보행 로봇</p>
 							<p class="crow-hero-desc">우리의 4족 보행 로봇은 불규칙 지형과 위험 요소를 스스로 판단해<br />탐지·이동·대응까지 수행하는 지능형 사족 보행 로봇입니다.</p>
-							<div class="crow-spec-grid">
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">험지 주행성</span>
-									<span class="crow-spec-card-sub">- 불규칙 지형과 잔해 속에서도<br />안정적인 이동 가능</span>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">험지 주행성</span>
+									<span class="b2-spec-list-sub">- 불규칙 지형과 잔해 속에서도 안정적인 이동 가능</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">계단 대응력</span>
-									<span class="crow-spec-card-sub">- 계단 승월 및 하강이 가능한<br />뛰어난 기동성</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">계단 대응력</span>
+									<span class="b2-spec-list-sub">- 계단 승월 및 하강이 가능한 뛰어난 기동성</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">스마트 탐지</span>
-									<span class="crow-spec-card-sub"
-										>- 유해가스·인명·화점<br />
-										- 자동 인식 및 탐지</span
-									>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">스마트 탐지</span>
+									<span class="b2-spec-list-sub">- 유해가스·인명·화점 자동 인식 및 탐지</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">자율 매핑</span>
-									<span class="crow-spec-card-sub">- SLAM 기반 실시간 환경<br />- 지도 생성 및 분석</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">04</span>
+									<span class="b2-spec-list-title">자율 매핑</span>
+									<span class="b2-spec-list-sub">- SLAM 기반 실시간 환경 지도 생성 및 분석</span>
 								</div>
 							</div>
 						</div>
@@ -875,22 +798,26 @@
 								협소한 환경에서 안정적인 주행과 정밀한 탐지가 가능하며, 자율주행 기능과 원격통신 기능,<br />
 								위험물 탐지기능을 활용하여 안전 점검 분야에서 다양하게 활용할 수 있습니다.
 							</p>
-							<div class="crow-spec-grid">
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">협소 및 험지 주행 능력</span>
-									<span class="crow-spec-card-sub">- 폭 15cm 이내 협소 공간 및<br />단차 7cm 장애물 극복 가능 주행</span>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">협소 및 험지 주행 능력</span>
+									<span class="b2-spec-list-sub">- 폭 15cm 이내 협소 공간 및 단차 7cm 장애물 극복 가능 주행</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">위험물 탐지</span>
-									<span class="crow-spec-card-sub">- 위험물 탐지를 위한 카메라 및<br />센서 유닛 탑재</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">위험물 탐지</span>
+									<span class="b2-spec-list-sub">- 위험물 탐지를 위한 카메라 및 센서 유닛 탑재</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">원격 자율 주행</span>
-									<span class="crow-spec-card-sub">- 무선 운용이 가능한<br />자율 주행 센서 탑재</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">원격 자율 주행</span>
+									<span class="b2-spec-list-sub">- 무선 운용이 가능한 자율 주행 센서 탑재</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">자율 매핑</span>
-									<span class="crow-spec-card-sub">- SLAM 기반 실시간 환경<br />지도 생성 및 분석</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">04</span>
+									<span class="b2-spec-list-title">자율 매핑</span>
+									<span class="b2-spec-list-sub">SLAM 기반 실시간 환경 지도 생성 및 분석</span>
 								</div>
 							</div>
 						</div>
@@ -1079,21 +1006,21 @@
 							<!-- 특징 카드 HW / IP / AI -->
 							<div class="sensor-spec-grid s4-feat-grid">
 								<div class="sensor-spec-card">
-									<span class="sensor-spec-num">HW</span>
+									<span class="sensor-spec-num">01</span>
 									<div class="sensor-spec-content">
 										<span class="sensor-spec-card-title">강력한 이동 성능</span>
 										<p class="sensor-spec-card-desc">- 최대 속도 7km/h, 연속 운용 시간 약 1시간<br />- 경사 29° 및 20cm 높이 장애물 극복 가능<br />- 승용차 트렁크에 적재 가능 (1인 운반 가능)</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
-									<span class="sensor-spec-num">IP</span>
+									<span class="sensor-spec-num">02</span>
 									<div class="sensor-spec-content">
 										<span class="sensor-spec-card-title">우수한 내구성(방수/방진 지원)</span>
 										<p class="sensor-spec-card-desc">- IP57 등급으로 방수·방진 기능 제공</p>
 									</div>
 								</div>
 								<div class="sensor-spec-card">
-									<span class="sensor-spec-num">AI</span>
+									<span class="sensor-spec-num">03</span>
 									<div class="sensor-spec-content">
 										<span class="sensor-spec-card-title">유해 기체 탐지 및 실시간 지도 생성</span>
 										<p class="sensor-spec-card-desc">
@@ -1312,18 +1239,21 @@
 								우리의 고소 방수 드론은 고층 건물 화재 및 접근이 어려운 지역에서 빠르고 효과적으로 소화수<br />
 								혹은 CAFS (Compressed Air Foam System)를 분사하여 화재를 진압할 수 있는 최첨단 소방 드론입니다.
 							</p>
-							<div class="crow-spec-grid drone-spec-grid">
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">고중량 운용 &<br />고성능 소화 시스템</span>
-									<span class="crow-spec-card-sub">- 최대 100kg 탑재,<br />CAFS(압축공기포) 기반<br />효율적 화재 진압</span>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">고중량 운용 & 고성능 소화 시스템</span>
+									<span class="b2-spec-list-sub">- 최대 100kg 탑재, CAFS(압축공기포) 기반 효율적 화재 진압</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">첨단 드론 제어 기술</span>
-									<span class="crow-spec-card-sub">- 장애물 회피 비행 +<br />고정밀 호버링 안정성 확보</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">첨단 드론 제어 기술</span>
+									<span class="b2-spec-list-sub">- 장애물 회피 비행 + 고정밀 호버링 안정성 확보</span>
 								</div>
-								<div class="crow-spec-card">
-									<span class="crow-spec-card-title">안정적인<br />통신 및 방수 시스템</span>
-									<span class="crow-spec-card-sub">- 실시간 통신 +<br />온보드 컴퓨팅 +<br />휴대형 조종 솔루션</span>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">안정적인 통신 및 방수 시스템</span>
+									<span class="b2-spec-list-sub">- 실시간 통신 + 온보드 컴퓨팅 + 휴대형 조종 솔루션</span>
 								</div>
 							</div>
 						</div>
