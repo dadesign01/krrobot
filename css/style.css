@@ -1301,7 +1301,7 @@ site-footer {
 .cards-section {
 	height: 100vh;
 	overflow: visible;
-	padding: 60px 0;
+	padding: 60px 0 0;
 }
 .cards-grid {
 	display: grid;
@@ -1509,7 +1509,7 @@ site-footer {
    ============================================= */
 .contact-footer {
 	background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(124, 45, 77, 0.15) 100%);
-	padding-top: 240px;
+	padding-top: 200px;
 	position: relative;
 	overflow: hidden;
 }
