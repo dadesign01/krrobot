@@ -130,7 +130,7 @@
 				<p class="footer-company-name">주식회사 케이대응로봇</p>
 				<address class="footer-addr">
 					<p class="addr-section-label">ADDRESS</p>
-					<p><span class="addr-label">본사</span><span class="addr-val">대전 유성구 계롱로 114(봉명동), BYC유성빌딩 1007호</span></p>
+					<p><span class="addr-label">본사</span><span class="addr-val">대전 유성구 계룡로 114(봉명동), BYC유성빌딩 1007호</span></p>
 					<p><span class="addr-label">포항지사</span><span class="addr-val">경상북도 포항시 남구 지곡로 394 제1벤처동 311호</span></p>
 					<p><span class="addr-label">생산센터</span><span class="addr-val">대전광역시 대덕구 생산5길 29</span></p>
 					<p class="addr-contact-row">
