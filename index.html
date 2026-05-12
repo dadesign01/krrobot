@@ -94,7 +94,7 @@
 			<section class="ph2-section">
 				<!-- Row 1: 원격방수총 — 그라데이션 카드 좌 / 이미지 우, 간격 140px -->
 				<div class="ph2-row">
-					<div class="ph2-card">
+					<div class="ph2-card" data-anim="fade-left">
 						<div class="ph2-text">
 							<h2 class="ph2-title">원격방수총</h2>
 							<p class="ph2-model">CROW - 40/65<br />화재 대응 현장의 안전성과 효율성을 높이는 무선 원격 방수 장비</p>
@@ -106,7 +106,7 @@
 							<button class="ph2-dot"></button>
 						</div>
 					</div>
-					<div class="ph2-imgs ph2-imgs--sm" id="ph2Imgs1">
+					<div class="ph2-imgs ph2-imgs--sm" id="ph2Imgs1" data-anim="fade-right">
 						<div class="ph2-slide active"><img src="img/main/pro_01_01.png" alt="원격방수총" /></div>
 						<div class="ph2-slide"><img src="img/main/pro_01_02.png" alt="원격방수총 2" /></div>
 					</div>
@@ -114,7 +114,7 @@
 
 				<!-- Row 2: 사족보행로봇 — 이미지 좌 / 그라데이션 카드 우, 간격 140px -->
 				<div class="ph2-row ph2-row--rev">
-					<div class="ph2-card">
+					<div class="ph2-card" data-anim="fade-right">
 						<div class="ph2-text">
 							<h2 class="ph2-title">원격 방수 사족 보행 로봇</h2>
 							<p class="ph2-eng">
@@ -128,7 +128,7 @@
 							<button class="ph2-dot"></button>
 						</div>
 					</div>
-					<div class="ph2-imgs ph2-imgs--lg" id="ph2Imgs2">
+					<div class="ph2-imgs ph2-imgs--lg" id="ph2Imgs2" data-anim="fade-left">
 						<div class="ph2-slide active"><img src="img/main/pro_02_01.png" alt="사족보행로봇" /></div>
 						<div class="ph2-slide"><img src="img/main/pro_02_02.png" alt="사족보행로봇 2" /></div>
 					</div>
@@ -137,9 +137,9 @@
 
 			<!-- ===================== PRODUCT CAROUSEL ===================== -->
 			<section class="product-section">
-				<h2 class="section-title">PRODUCT & TECHNOLOGY</h2>
+				<h2 class="section-title" data-anim="fade-up">PRODUCT & TECHNOLOGY</h2>
 
-				<div class="product-inner">
+				<div class="product-inner" data-anim="fade-up">
 					<!-- 이미지만 슬라이드 -->
 					<div class="product-slider-wrap">
 						<div class="product-track" id="productTrack">
@@ -240,7 +240,7 @@
 
 			<!-- ===================== VISION ===================== -->
 			<section class="vision-section">
-				<div class="vision-bg-wrap">
+				<div class="vision-bg-wrap" data-anim="fade-up">
 					<img src="img/main/vision.png" alt="" class="vision-bg-img" />
 					<div class="vision-overlay">
 						<h2 class="vision-headline">Build What's Next</h2>
@@ -251,14 +251,14 @@
 					</div>
 				</div>
 				<div class="vision-cards">
-					<div class="vision-card">
+					<div class="vision-card" data-anim="fade-up">
 						<div class="vision-icon">
 							<img src="img/main/vision_icon1.png" alt="Vision" />
 						</div>
 						<h3 class="vision-card-title">VISION</h3>
 						<p class="vision-card-desc">로봇 기술의 선두주자로,<br />더 나은 미래를 함께 만들어갑니다.</p>
 					</div>
-					<div class="vision-card">
+					<div class="vision-card" data-anim="fade-up">
 						<div class="vision-icon">
 							<img src="img/main/vision_icon2.png" alt="Mission" />
 						</div>
@@ -271,7 +271,7 @@
 			<!-- ===================== COMPANY CARDS ===================== -->
 			<section class="cards-section">
 				<div class="cards-grid">
-					<a href="/pages/rd/future.html" class="card">
+					<a href="/pages/rd/future.html" class="card" data-anim="fade-up">
 						<img src="img/main/company_01.png" alt="For the Future" />
 						<div class="card-body">
 							<h3>FOR THE FUTURE</h3>
@@ -283,7 +283,7 @@
 						</div>
 					</a>
 
-					<a href="/pages/brand/about.html" class="card">
+					<a href="/pages/brand/about.html" class="card" data-anim="fade-up">
 						<img src="img/main/company_02.png" alt="Brand" />
 						<div class="card-body">
 							<h3>BRAND</h3>
@@ -295,7 +295,7 @@
 						</div>
 					</a>
 
-					<a href="javascript:void(0);" class="card">
+					<a href="javascript:void(0);" class="card" data-anim="fade-up">
 						<img src="img/main/company_03.png" alt="Technology" />
 						<div class="card-body">
 							<h3>TECHNOLOGY</h3>
@@ -311,5 +311,38 @@
 		<site-top-btn></site-top-btn>
 
 		<script src="js/main.js"></script>
+		<script>
+			(function () {
+				var els = document.querySelectorAll('[data-anim]');
+				if (!els.length) return;
+
+				// 같은 그룹(부모)에 속한 요소끼리 순서대로 딜레이
+				var delays = [0, 120, 240];
+				var groups = {};
+				els.forEach(function (el) {
+					var parent = el.parentElement;
+					if (!groups[parent]) groups[parent] = [];
+					groups[parent].push(el);
+				});
+				Object.keys(groups).forEach(function (key) {
+					groups[key].forEach(function (el, i) {
+						el.style.transitionDelay = (delays[i] || i * 120) + 'ms';
+					});
+				});
+
+				var io = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('anim-visible');
+								io.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.15 }
+				);
+				els.forEach(function (el) { io.observe(el); });
+			})();
+		</script>
 	</body>
 </html>

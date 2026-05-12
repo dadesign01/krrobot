@@ -1,3 +1,26 @@
+/* =============================================
+   SCROLL ENTRANCE ANIMATIONS
+   ============================================= */
+[data-anim] {
+	opacity: 0;
+	transition:
+		opacity 0.7s ease,
+		transform 0.7s ease;
+}
+[data-anim='fade-up'] {
+	transform: translateY(48px);
+}
+[data-anim='fade-left'] {
+	transform: translateX(-48px);
+}
+[data-anim='fade-right'] {
+	transform: translateX(48px);
+}
+[data-anim].anim-visible {
+	opacity: 1;
+	transform: none;
+}
+
 /* ── Paperlogy font ──────────────────────────────────────────────── */
 @font-face {
 	font-family: 'Paperlogy';
