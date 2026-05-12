@@ -2025,7 +2025,7 @@
 }
 
 #tab4 .sensor-spec-card {
-	width: 692px;
+	width: 100%;
 	height: 87px;
 	flex-direction: row;
 	align-items: center;
