@@ -1,4 +1,4 @@
-/* ─── Product layout overrides ─── */
+﻿/* ─── Product layout overrides ─── */
 .prod-layout .header {
 	position: fixed;
 	width: 100%;
@@ -220,5 +220,106 @@
 	}
 	.prod-placeholder-bg-text {
 		font-size: clamp(48px, 14vw, 100px);
+	}
+}
+
+
+/* ── 모바일 탭 드롭다운 ── */
+.prod-tab-dropdown {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.prod-tab-inner {
+		display: none !important;
+	}
+	.prod-tab-dropdown {
+		display: block;
+		position: relative;
+		width: calc(100% - 32px);
+		max-width: 480px;
+		margin: 0 auto;
+	}
+	.prod-tab-dropdown-btn {
+		width: 100%;
+		height: 45px;
+		background: #d60057;
+		color: #fff;
+		border-radius: 600px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 20px 0 24px;
+		font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+		font-size: 15px;
+		font-weight: 600;
+		letter-spacing: -0.4px;
+		cursor: pointer;
+		border: none;
+		gap: 12px;
+	}
+	.prod-tab-dropdown-label {
+		flex: 1;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.prod-tab-dropdown-arrow {
+		flex-shrink: 0;
+		width: 8px;
+		height: 8px;
+		border-right: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		transform: rotate(45deg);
+		margin-bottom: 4px;
+		transition: transform 0.2s ease;
+	}
+	.prod-tab-dropdown.open .prod-tab-dropdown-arrow {
+		transform: rotate(-135deg);
+		margin-bottom: -2px;
+	}
+	.prod-tab-dropdown-list {
+		position: absolute;
+		top: calc(100% + 8px);
+		left: 0;
+		right: 0;
+		background: #fff;
+		border-radius: 14px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+		list-style: none;
+		padding: 6px 0;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-6px);
+		transition:
+			opacity 0.2s ease,
+			visibility 0.2s ease,
+			transform 0.2s ease;
+		z-index: 1100;
+	}
+	.prod-tab-dropdown.open .prod-tab-dropdown-list {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	.prod-tab-dropdown-item {
+		padding: 13px 20px;
+		font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		color: #383838;
+		cursor: pointer;
+		transition:
+			background 0.15s,
+			color 0.15s;
+	}
+	.prod-tab-dropdown-item:hover {
+		background: #fdf5f8;
+		color: #d60057;
+	}
+	.prod-tab-dropdown-item.active {
+		color: #d60057;
+		font-weight: 700;
 	}
 }

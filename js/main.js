@@ -167,10 +167,14 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 	let activeW = 0;
 
 	const MOBILE_BP = 1024;
+	const PEEK_BP = 768;
 
 	function calcSizes() {
 		const vw = window.innerWidth;
-		if (vw <= MOBILE_BP) {
+		if (vw < PEEK_BP) {
+			peekW = 50;
+			activeW = vw - peekW * 2;
+		} else if (vw <= MOBILE_BP) {
 			peekW = 0;
 			activeW = vw;
 		} else {
@@ -181,36 +185,59 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 
 	// 각 슬라이드를 offset 기준으로 위치/크기 설정
 	function place(withTransition) {
-		const tr = withTransition ? 'transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.7s ease' : 'none';
 		const vw = window.innerWidth;
 		const mobile = vw <= MOBILE_BP;
+		const smallPeek = vw < PEEK_BP;
 
-		allSlides.forEach((s, i) => {
-			const offset = i - trackPos;
-			s.style.transition = tr;
-			s.classList.remove('active', 'slide-prev', 'slide-next');
+		if (smallPeek) {
+			// ── 모바일 Swiper: 트랙 전체를 translateX ──
+			const SLIDE_W = Math.round(vw * 0.72);
+			const GAP = 14;
+			const centerOffset = (vw - SLIDE_W) / 2;
+			const trackX = centerOffset - trackPos * (SLIDE_W + GAP);
 
-			if (offset === 0) {
-				// 활성
-				s.classList.add('active');
-				s.style.transform = mobile ? 'translateX(0)' : `translateX(${peekW}px)`;
-				s.style.width = activeW + 'px';
-			} else if (!mobile && offset === -1) {
-				// 이전 peek (데스크탑만)
-				s.classList.add('slide-prev');
-				s.style.transform = 'translateX(0)';
-				s.style.width = peekW + 'px';
-			} else if (!mobile && offset === 1) {
-				// 다음 peek (데스크탑만)
-				s.classList.add('slide-next');
-				s.style.transform = `translateX(${vw - peekW}px)`;
-				s.style.width = peekW + 'px';
-			} else {
-				// 화면 밖
-				s.style.transform = offset < 0 ? `translateX(${-(activeW + 60)}px)` : `translateX(${vw + 60}px)`;
-				s.style.width = Math.max(peekW, 60) + 'px';
-			}
-		});
+			track.style.transition = withTransition ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+			track.style.transform = `translateX(${trackX}px)`;
+
+			allSlides.forEach((s, i) => {
+				s.style.width = SLIDE_W + 'px';
+				s.style.transform = '';
+				s.style.transition = 'opacity 0.4s ease';
+				s.classList.remove('active', 'slide-prev', 'slide-next');
+				if (i === trackPos) s.classList.add('active');
+				else if (i === trackPos - 1) s.classList.add('slide-prev');
+				else if (i === trackPos + 1) s.classList.add('slide-next');
+			});
+		} else {
+			// ── 데스크탑: 개별 슬라이드 절대 위치 ──
+			track.style.transform = '';
+			track.style.transition = 'none';
+
+			const tr = withTransition ? 'transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.7s ease' : 'none';
+
+			allSlides.forEach((s, i) => {
+				const offset = i - trackPos;
+				s.style.transition = tr;
+				s.classList.remove('active', 'slide-prev', 'slide-next');
+
+				if (offset === 0) {
+					s.classList.add('active');
+					s.style.transform = mobile ? 'translateX(0)' : `translateX(${peekW}px)`;
+					s.style.width = activeW + 'px';
+				} else if (!mobile && offset === -1) {
+					s.classList.add('slide-prev');
+					s.style.transform = 'translateX(0)';
+					s.style.width = peekW + 'px';
+				} else if (!mobile && offset === 1) {
+					s.classList.add('slide-next');
+					s.style.transform = `translateX(${vw - peekW}px)`;
+					s.style.width = peekW + 'px';
+				} else {
+					s.style.transform = offset < 0 ? `translateX(${-(activeW + 60)}px)` : `translateX(${vw + 60}px)`;
+					s.style.width = Math.max(peekW, 60) + 'px';
+				}
+			});
+		}
 
 		panels.forEach((p, i) => p.classList.toggle('active', i === current));
 		dots.forEach((d, i) => d.classList.toggle('active', i === current));
@@ -223,7 +250,7 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 		current = newCurrent;
 		place(true);
 
-		// 애니메이션 종료 후 클론→실제 슬라이드 순간이동
+		const delay = window.innerWidth < PEEK_BP ? 560 : 1050;
 		setTimeout(() => {
 			animating = false;
 			if (trackPos === 0) {
@@ -233,7 +260,7 @@ document.querySelectorAll('.m-toggle').forEach(btn => {
 				trackPos = 1;
 				place(false);
 			}
-		}, 1050);
+		}, delay);
 	}
 
 	function prev() {

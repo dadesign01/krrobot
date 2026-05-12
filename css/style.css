@@ -1061,6 +1061,7 @@ site-footer {
 	flex: 1;
 }
 .product-panel ul li {
+	word-break: keep-all;
 	font-family:
 		'Pretendard',
 		-apple-system,
@@ -2098,7 +2099,6 @@ site-footer {
 		padding-left: 24px;
 		padding-right: 24px;
 		overflow: hidden;
-		/* justify-content: center; */
 	}
 	.product-slide img {
 		height: 300px;
@@ -2568,5 +2568,50 @@ site-footer {
 		width: 44px;
 		height: 44px;
 		font-size: 10px;
+	}
+}
+
+/* ── 모바일 Swiper peek (767px 이하) ── */
+@media (max-width: 767px) {
+	.product-inner {
+		overflow: visible;
+	}
+	.product-slider-wrap {
+		height: 280px;
+		overflow: visible;
+		/* 양쪽 끝을 gradient로 자연스럽게 페이드 */
+		-webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+		mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+	}
+	/* flex 기반 트랙으로 전환 */
+	.product-track {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		width: auto;
+	}
+	.product-slide {
+		position: relative;
+		flex-shrink: 0;
+		height: 100%;
+		opacity: 0.35;
+		overflow: visible;
+		justify-content: center;
+	}
+	.product-slide.active {
+		opacity: 1;
+		padding: 0;
+		overflow: visible;
+	}
+	.product-slide.slide-prev,
+	.product-slide.slide-next {
+		opacity: 0.3;
+	}
+	.product-slide img {
+		height: 220px;
+		transform: none !important;
+	}
+	.product-slide.active img {
+		transform: none !important;
 	}
 }

@@ -210,4 +210,69 @@
 	activeIdx = initIdx;
 	setActiveTab(initIdx);
 	updateIndicator(initIdx, true);
+
+	/* ── 모바일 드롭다운 (768px 이하) ── */
+	var ddLabelEl = null;
+	var ddItems = [];
+
+	// goTo 래핑 → 드롭다운 동기화
+	var _origGoTo = goTo;
+	goTo = function (idx) {
+		_origGoTo(idx);
+		if (ddLabelEl && tabs[idx]) {
+			ddLabelEl.textContent = tabs[idx].textContent.trim();
+		}
+		ddItems.forEach(function (li, i) {
+			li.classList.toggle('active', i === idx);
+		});
+	};
+
+	(function () {
+		if (!tabBar || !tabs.length) return;
+
+		var dd = document.createElement('div');
+		dd.className = 'prod-tab-dropdown';
+
+		var btn = document.createElement('button');
+		btn.type = 'button';
+		btn.className = 'prod-tab-dropdown-btn';
+
+		ddLabelEl = document.createElement('span');
+		ddLabelEl.className = 'prod-tab-dropdown-label';
+		ddLabelEl.textContent = tabs[initIdx].textContent.trim();
+
+		var arrow = document.createElement('span');
+		arrow.className = 'prod-tab-dropdown-arrow';
+
+		btn.appendChild(ddLabelEl);
+		btn.appendChild(arrow);
+		dd.appendChild(btn);
+
+		var list = document.createElement('ul');
+		list.className = 'prod-tab-dropdown-list';
+
+		tabs.forEach(function (tab, i) {
+			var li = document.createElement('li');
+			li.className = 'prod-tab-dropdown-item' + (i === initIdx ? ' active' : '');
+			li.textContent = tab.textContent.trim();
+			li.addEventListener('click', function () {
+				closeDD();
+				goTo(i);
+			});
+			ddItems.push(li);
+			list.appendChild(li);
+		});
+
+		dd.appendChild(list);
+		tabBar.appendChild(dd);
+
+		function openDD() { dd.classList.add('open'); }
+		function closeDD() { dd.classList.remove('open'); }
+
+		btn.addEventListener('click', function (e) {
+			e.stopPropagation();
+			dd.classList.contains('open') ? closeDD() : openDD();
+		});
+		document.addEventListener('click', closeDD);
+	})();
 })();
