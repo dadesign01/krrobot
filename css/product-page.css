@@ -15,7 +15,7 @@
    ============================================================ */
 .crow-hero {
 	position: relative;
-	padding: 100px 0 80px;
+	padding: 100px 0 0;
 	background: #fff;
 	overflow: hidden;
 }
@@ -1209,7 +1209,7 @@
    저반동 관창 기술 섹션 (tab1 최하단)
    ============================================================ */
 .crow-recoil {
-	padding: 130px 0 100px;
+	padding: 0 0 100px;
 }
 
 .crow-recoil-inner {
@@ -1217,6 +1217,31 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 0;
+}
+
+.crow-recoil-title-wrap {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.crow-recoil-key-label {
+	align-self: flex-start;
+	margin-bottom: 0;
+	line-height: normal;
+}
+
+.crow-recoil-title-bg {
+	display: block;
+	width: auto;
+	max-width: 100%;
+	margin: 0 auto -24px;
+	position: relative;
+	z-index: 0;
+	pointer-events: none;
+	user-select: none;
 }
 
 .crow-recoil-title {
@@ -1227,8 +1252,10 @@
 	font-weight: 700;
 	line-height: 28px;
 	letter-spacing: -1.44px;
-	margin: 0 0 48px;
+	margin: 0 0 90px;
 	text-align: center;
+	position: relative;
+	z-index: 1;
 }
 
 .crow-recoil-title span {
@@ -1236,14 +1263,15 @@
 }
 
 .crow-recoil-img-wrap {
+	position: relative;
 	width: 100%;
 	margin-bottom: 40px;
 }
 
 .crow-recoil-img-wrap img {
 	width: 100%;
-	height: 518px;
-	object-fit: contain;
+	height: auto;
+	object-fit: cover;
 	border-radius: 20px;
 	display: block;
 }
@@ -1303,6 +1331,80 @@
 	width: auto;
 }
 
+/* ── 저반동 기술 비교 배너 ── */
+.crow-rcb {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	width: 100%;
+	margin: 100px auto;
+}
+
+.crow-rcb-left {
+	width: 425px;
+	height: 425px;
+	border-radius: 50%;
+	background: url('../../img/product/tab_ellipse.png') center / cover no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 52px;
+	box-sizing: border-box;
+	flex-shrink: 0;
+}
+
+.crow-rcb-left p {
+	color: #000;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 42px;
+	letter-spacing: -1.12px;
+	margin: 0;
+	word-break: keep-all;
+}
+
+.crow-rcb-left strong {
+	font-weight: 700;
+}
+
+.crow-rcb-arrow {
+	height: 44px;
+	width: auto;
+	flex-shrink: 0;
+}
+
+.crow-rcb-right {
+	width: 425px;
+	height: 425px;
+	border-radius: 425px;
+	background: #d60057;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 52px;
+	box-sizing: border-box;
+	flex-shrink: 0;
+}
+
+.crow-rcb-right p {
+	color: #fff;
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 42px;
+	letter-spacing: -1.12px;
+	margin: 0;
+	word-break: keep-all;
+}
+
+.crow-rcb-right strong {
+	font-weight: 800;
+}
+
 .crow-recoil-compare {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -1343,6 +1445,49 @@
 	color: #fff;
 }
 
+/* ── 저반동 특징 번호 리스트 ── */
+.crow-recoil-list {
+	width: 100%;
+	margin-bottom: 60px;
+}
+
+.crow-recoil-list-item {
+	display: flex;
+	align-items: center;
+	gap: 70px;
+	padding: 50px 0;
+	border-top: 1px solid #dadada;
+}
+
+.crow-recoil-list-item:last-child {
+	border-bottom: 1px solid #dadada;
+}
+
+.crow-recoil-list-num {
+	color: #d60057;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 58px;
+	letter-spacing: -3.2px;
+	flex-shrink: 0;
+}
+
+.crow-recoil-list-text {
+	color: #121212;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 36px;
+	letter-spacing: -1.12px;
+	margin: 0;
+	word-break: keep-all;
+}
+
+.crow-recoil-list-text strong {
+	font-weight: 700;
+}
+
 .crow-recoil-spec-row {
 	display: flex;
 	align-items: center;
@@ -1352,20 +1497,38 @@
 }
 
 .crow-recoil-spec-left {
+	position: absolute;
+	bottom: 60px;
+	right: 60px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	min-width: 300px;
+	z-index: 1;
 }
 
 .crow-recoil-spec-left p {
-	color: #121212;
+	display: flex;
+	align-items: center;
+	width: 552px;
+	max-width: 100%;
+	height: 93px;
+	padding: 0 28px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	background: #565656;
+	color: #fff;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: 500;
-	line-height: 1.6;
-	letter-spacing: -0.8px;
+	line-height: 36px;
+	letter-spacing: -0.96px;
 	margin: 0;
+	cursor: default;
+	transition: background 0.2s ease;
+}
+
+.crow-recoil-spec-left p:hover {
+	background: #d60057;
 }
 
 .crow-recoil-spec-right {
@@ -1399,9 +1562,129 @@
 	object-fit: contain;
 }
 
+/* ── 특허 등록 표 (tab1) ── */
+.crow-patent {
+	width: 100%;
+	margin-top: 60px;
+}
+
+.crow-patent-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: #121212;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 28px;
+	letter-spacing: -1.12px;
+	margin: 25px 0 24px;
+}
+
+.crow-patent-mark {
+	display: inline-block;
+	height: 28px;
+	width: auto;
+	flex-shrink: 0;
+	vertical-align: middle;
+}
+
+.crow-patent-title-text {
+	flex: 1;
+	min-width: 0;
+	word-break: keep-all;
+}
+
+.crow-patent-title-country {
+	font-weight: 400;
+}
+
+.crow-patent-table-wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.crow-patent-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0 10px;
+	table-layout: auto;
+}
+
+.crow-patent-table thead th {
+	background: #d60057;
+	height: 53px;
+	white-space: nowrap;
+	color: #ffe9f2;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: -0.72px;
+	text-align: center;
+	padding: 0 12px;
+	position: relative;
+}
+
+.crow-patent-table thead th:first-child {
+	border-radius: 15px 0 0 15px;
+}
+
+.crow-patent-table thead th:last-child {
+	border-radius: 0 15px 15px 0;
+}
+
+.crow-patent-table thead th + th::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 44px;
+	background: #b9004b;
+}
+
+.crow-patent-table tbody td {
+	height: 53px;
+	white-space: nowrap;
+	background: #f8f8f8;
+	color: #121212;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: -0.72px;
+	text-align: center;
+	padding: 0 12px;
+}
+
+.crow-patent-table tbody td {
+	position: relative;
+}
+
+.crow-patent-table tbody td:first-child {
+	border-radius: 15px 0 0 15px;
+}
+
+.crow-patent-table tbody td:last-child {
+	border-radius: 0 15px 15px 0;
+}
+
+.crow-patent-table tbody td + td::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 44px;
+	background: #e2e2e2;
+}
+
 .crow-recoil-videos {
 	width: 100%;
-	margin-top: 0;
+	margin-top: 100px;
 	padding: 0;
 }
 
@@ -1542,6 +1825,10 @@
 	.crow-recoil-inner {
 		padding: 0;
 	}
+	.crow-recoil-title-bg {
+		max-width: 70%;
+		margin-bottom: -16px;
+	}
 	.crow-recoil-title {
 		font-size: 22px;
 		line-height: 1.5;
@@ -1573,17 +1860,56 @@
 	.crow-recoil-compare-item p {
 		font-size: 15px;
 	}
+	.crow-recoil-list-item {
+		gap: 32px;
+		padding: 28px 0;
+	}
+	.crow-recoil-list-num {
+		font-size: 52px;
+		line-height: 42px;
+		letter-spacing: -2px;
+	}
+	.crow-recoil-list-text {
+		font-size: 18px;
+		line-height: 28px;
+		letter-spacing: -0.72px;
+	}
+
+	.crow-rcb {
+		flex-direction: column;
+		gap: 24px;
+	}
+	.crow-rcb-left,
+	.crow-rcb-right {
+		width: 280px;
+		height: 280px;
+		padding: 36px;
+	}
+	.crow-rcb-left p,
+	.crow-rcb-right p {
+		font-size: 18px;
+		line-height: 30px;
+		letter-spacing: -0.72px;
+	}
+	.crow-rcb-arrow {
+		height: 32px;
+		transform: rotate(90deg);
+	}
+
 	.crow-recoil-spec-row {
 		flex-direction: column;
 		gap: 20px;
 		margin: 28px 0 24px;
 	}
 	.crow-recoil-spec-left {
-		min-width: unset;
-		width: 100%;
+		top: 20px;
+		right: 20px;
 	}
 	.crow-recoil-spec-left p {
-		font-size: 16px;
+		width: auto;
+		height: 56px;
+		font-size: 14px;
+		padding: 0 16px;
 	}
 	.crow-recoil-spec-right {
 		width: 100%;
@@ -1591,6 +1917,34 @@
 	}
 	.crow-recoil-spec-right p {
 		font-size: 15px;
+	}
+
+	.crow-patent-title {
+		font-size: 20px;
+		line-height: 1.4;
+		letter-spacing: -0.8px;
+	}
+	.crow-patent-mark {
+		height: 20px;
+	}
+	.crow-patent-table {
+		border-spacing: 0 6px;
+	}
+	.crow-patent-table thead th {
+		height: 40px;
+		font-size: 13px;
+		padding: 0 8px;
+		line-height: 40px;
+	}
+	.crow-patent-table tbody td {
+		height: 40px;
+		font-size: 13px;
+		padding: 0 8px;
+		line-height: 40px;
+	}
+	.crow-patent-table thead th + th::before,
+	.crow-patent-table tbody td + td::before {
+		height: 26px;
 	}
 
 	.crow-hero-desc {
