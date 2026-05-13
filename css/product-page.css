@@ -1742,7 +1742,7 @@
 
 @media (max-width: 1024px) {
 	.crow-recoil {
-		padding: 80px 0 60px;
+		padding: 80px 0 150px;
 	}
 	.crow-recoil-img-wrap img {
 		height: 380px;
@@ -2061,6 +2061,10 @@
 	.drone-photo-grid {
 		grid-template-columns: 1fr;
 		padding: 0;
+	}
+	.crow-recoil-videos,
+	.crow-patent {
+		margin-top: 20px;
 	}
 }
 /* ============================================================
