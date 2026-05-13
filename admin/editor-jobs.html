@@ -97,6 +97,10 @@
 						<div class="side-field">
 							<label>마감일</label>
 							<input type="date" class="inp" id="end-date" onchange="calcDDay()" />
+							<label style="margin-top:8px; display:flex; align-items:center; gap:8px; cursor:pointer; font-size:12px; color:var(--muted2); text-transform:none; letter-spacing:0; font-weight:400">
+								<input type="checkbox" id="open-until-filled" onchange="toggleDeadlineMode()" style="accent-color:var(--accent); width:14px; height:14px; cursor:pointer; flex-shrink:0;" />
+								채용 시 마감
+							</label>
 						</div>
 						<div class="d-days" id="d-days">마감일을 선택하세요</div>
 					</div>

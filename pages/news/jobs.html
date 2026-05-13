@@ -255,8 +255,9 @@ async function loadPosts() {
     const isActive = r.status === 'active'
     const dday = calcDDay(r.end_date)
     const ddayHtml = dday ? `<span class="job-dday">${dday}</span>` : ''
-    const dateRange = (r.start_date || r.end_date)
-      ? `${fmtDate(r.start_date)} ~ ${fmtDate(r.end_date)}`
+    const endLabel = r.end_date ? fmtDate(r.end_date) : (isActive ? '채용 시 마감' : '')
+    const dateRange = (r.start_date || r.end_date || isActive)
+      ? (r.start_date ? `${fmtDate(r.start_date)} ~ ${endLabel}` : endLabel)
       : ''
 
     const subItems = []

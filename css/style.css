@@ -688,7 +688,7 @@ site-footer {
 
 .ph2-title {
 	font-family: 'Pretendard', sans-serif;
-	font-size: 32px;
+	font-size: 35px;
 	font-weight: 800;
 	color: #fff;
 	line-height: 1.25;
@@ -698,7 +698,7 @@ site-footer {
 .ph2-model {
 	color: #fff;
 	font-family: 'Pretendard', sans-serif;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 600;
 	margin-bottom: 2px;
 	word-break: keep-all;
@@ -714,7 +714,7 @@ site-footer {
 }
 .ph2-desc {
 	color: rgba(255, 255, 255, 0.6);
-	font-size: 15px;
+	font-size: 17px;
 	line-height: 1.8;
 	word-break: keep-all;
 }

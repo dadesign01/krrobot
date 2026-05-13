@@ -61,15 +61,34 @@ if (id) {
 			document.getElementById('status').value = data.status
 			document.getElementById('is-published').checked = data.is_published
 			if (data.start_date) document.getElementById('start-date').value = data.start_date
-			if (data.end_date) document.getElementById('end-date').value = data.end_date
+			if (data.end_date) {
+				document.getElementById('end-date').value = data.end_date
+			} else {
+				document.getElementById('open-until-filled').checked = true
+				toggleDeadlineMode()
+			}
 			calcDDay()
 			setExistingAttachments(data.attachments)
 		})
 }
 
+function toggleDeadlineMode() {
+	const checked = document.getElementById('open-until-filled').checked
+	const endDateEl = document.getElementById('end-date')
+	endDateEl.disabled = checked
+	endDateEl.style.opacity = checked ? '0.3' : '1'
+	if (checked) endDateEl.value = ''
+	calcDDay()
+}
+
 function calcDDay() {
-	const endVal = document.getElementById('end-date').value
 	const el = document.getElementById('d-days')
+	if (document.getElementById('open-until-filled').checked) {
+		el.textContent = '채용 시 마감'
+		el.className = 'd-days'
+		return
+	}
+	const endVal = document.getElementById('end-date').value
 	if (!endVal) { el.textContent = '마감일을 선택하세요'; el.className = 'd-days'; return }
 	const diff = Math.ceil((new Date(endVal) - new Date()) / (1000 * 60 * 60 * 24))
 	if (diff < 0) { el.textContent = '마감됨'; el.className = 'd-days'; }
@@ -98,7 +117,7 @@ async function save(publish) {
 			status: document.getElementById('status').value,
 			is_published: publish,
 			start_date: document.getElementById('start-date').value || null,
-			end_date: document.getElementById('end-date').value || null,
+			end_date: document.getElementById('open-until-filled').checked ? null : (document.getElementById('end-date').value || null),
 			attachments: attachList,
 		}
 		const { error } = id
