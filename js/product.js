@@ -157,6 +157,47 @@
 		});
 	});
 
+	/* ── 태블릿 탭바 마우스 드래그 스크롤 (769–1024px) ── */
+	var drag = { on: false, x: 0, sl: 0, moved: false };
+	var preventClick = false;
+
+	tabBar.addEventListener('mousedown', function (e) {
+		drag.on = true;
+		drag.x = e.clientX;
+		drag.sl = tabBar.scrollLeft;
+		drag.moved = false;
+	});
+
+	document.addEventListener(
+		'mousemove',
+		function (e) {
+			if (!drag.on) return;
+			var dx = e.clientX - drag.x;
+			if (Math.abs(dx) > 4) {
+				drag.moved = true;
+				preventClick = true;
+				tabBar.scrollLeft = drag.sl - dx;
+				e.preventDefault();
+			}
+		},
+		{ passive: false }
+	);
+
+	document.addEventListener('mouseup', function () {
+		drag.on = false;
+	});
+
+	tabBar.addEventListener(
+		'click',
+		function (e) {
+			if (preventClick) {
+				e.stopPropagation();
+				preventClick = false;
+			}
+		},
+		true
+	);
+
 	/* 메가메뉴 같은 페이지 해시 */
 	var curPage = location.pathname.split('/').pop();
 	document.querySelectorAll('.gnb-dropdown a').forEach(function (link) {

@@ -70,9 +70,7 @@
 }
 
 /* ── Product Detail / Key Technology 섹션 헤더 공통 ── */
-.crow-detail-head,
-.dtx-key-tech-head,
-.s4-key-tech-head {
+.crow-detail-head {
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -82,8 +80,7 @@
 	line-height: 58px;
 }
 
-.crow-detail-head img,
-.dtx-key-tech-head img {
+.crow-detail-head img {
 	width: 3vw;
 	max-width: 19px;
 	height: fit-content;
@@ -121,6 +118,106 @@
 	user-select: none;
 }
 
+/* ── 스펙 카드 설명 텍스트 공통 ── */
+.crow-spec-list-sub,
+.b2-spec-list-sub,
+.sensor-spec-card-desc {
+	color: #1c1c1c;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: -0.64px;
+}
+
+/* ── 히어로 제목 공통 ── */
+.crow-hero-title,
+.sensor-hero-title {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: clamp(28px, 3.5vw, 42px);
+	font-weight: 700;
+	line-height: 56px;
+	letter-spacing: -1.68px;
+}
+
+/* ── 히어로 태그라인 공통 ── */
+.crow-hero-tagline,
+.sensor-hero-tagline {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: clamp(18px, 2vw, 22px);
+	font-weight: 400;
+	color: #d60057;
+	letter-spacing: -0.88px;
+	word-break: keep-all;
+}
+
+/* ── 히어로 설명 텍스트 공통 ── */
+.crow-hero-desc,
+.sensor-hero-desc-gray {
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: -0.64px;
+	word-break: keep-all;
+}
+
+/* ── 가로형 스펙 카드 리스트 공통 ── */
+.crow-spec-list,
+.b2-spec-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 24px;
+}
+
+/* ── 가로형 스펙 카드 아이템 공통 ── */
+.crow-spec-list-card,
+.b2-spec-list-card {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 15px;
+	background: #f8f8f8;
+	min-height: 76px;
+	transition: background 0.25s;
+	cursor: default;
+}
+
+/* ── 가로형 스펙 카드 번호 공통 ── */
+.crow-spec-list-num,
+.b2-spec-list-num {
+	position: absolute;
+	left: -6px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #e5e5e5;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 58px;
+	letter-spacing: -3.2px;
+	pointer-events: none;
+	z-index: 0;
+	user-select: none;
+	transition: color 0.25s;
+}
+
+/* ── 가로형 스펙 카드 제목 공통 ── */
+.crow-spec-list-title,
+.b2-spec-list-title {
+	color: #1c1c1c;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: -0.6px;
+	transition: color 0.25s;
+	word-break: keep-all;
+}
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -132,13 +229,14 @@
 }
 
 /* 우측 배경 패턴 */
-.crow-hero::after {
+.prod-section::after {
 	content: '';
 	position: absolute;
-	right: -22%;
-	top: -43%;
+	right: 0;
+	top: 0;
 	bottom: 0;
-	width: 58%;
+	width: 460px;
+	height: 419px;
 	background: url('../img/product/pro_bg.png') center / auto no-repeat;
 	opacity: 1;
 	z-index: 0;
@@ -165,72 +263,23 @@
 
 .crow-hero-title {
 	color: #000;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: clamp(28px, 3.5vw, 42px);
-	font-weight: 700;
-	line-height: 56px;
-	letter-spacing: -1.68px;
 	margin: 0;
 }
 
 .crow-hero-tagline {
-	color: #d60057;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: clamp(18px, 2vw, 22px);
-	font-weight: 400;
 	line-height: 58px;
-	letter-spacing: -0.88px;
 	margin: 0;
-	word-break: keep-all;
 }
 
 .crow-hero-desc {
 	color: #373737;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 22px;
-	letter-spacing: -0.64px;
 	margin: 0 0 36px;
-	word-break: keep-all;
 }
 
 /* ── 원격 방수총 가로형 스펙 카드 리스트 ── */
-.crow-spec-list {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-bottom: 24px;
-}
 .crow-spec-list-card {
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	border-radius: 15px;
-	background: #f8f8f8;
 	padding: 20px 5vw;
-	min-height: 76px;
-	transition: background 0.25s;
-	cursor: default;
 	justify-content: space-between;
-}
-.crow-spec-list-num {
-	position: absolute;
-	left: -6px;
-	top: 50%;
-	transform: translateY(-50%);
-	color: #e5e5e5;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 80px;
-	font-weight: 700;
-	line-height: 58px;
-	letter-spacing: -3.2px;
-	pointer-events: none;
-	z-index: 0;
-	user-select: none;
-	transition: color 0.25s;
 }
 .crow-spec-list-content {
 	position: relative;
@@ -246,13 +295,6 @@
 	display: block;
 	flex-shrink: 0;
 	min-width: 160px;
-	color: #1c1c1c;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 20px;
-	font-weight: 700;
-	line-height: 1.3;
-	letter-spacing: -0.6px;
-	transition: color 0.25s;
 }
 
 #tab1 .crow-spec-list-title {
@@ -270,11 +312,6 @@
 }
 .crow-spec-list-sub {
 	display: block;
-	color: #888;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.65;
 	word-break: keep-all;
 	transition: color 0.25s;
 }
@@ -282,55 +319,16 @@
 	color: rgba(255, 255, 255, 0.85);
 }
 
-/* ── 사족 보행 로봇 가로형 스펙 카드 리스트 (tab2 전용) ── */
-.b2-spec-list {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-bottom: 24px;
-}
+/* ── 사족 보행 로봇 / 드론 / 협소공간 가로형 스펙 카드 리스트 ── */
 .b2-spec-list-card {
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	border-radius: 15px;
-	background: #f8f8f8;
 	padding: 18px 28px 18px 88px;
-	min-height: 76px;
 	gap: 24px;
-	transition: background 0.25s;
-	cursor: default;
-}
-.b2-spec-list-num {
-	position: absolute;
-	left: -6px;
-	top: 50%;
-	transform: translateY(-50%);
-	color: #e5e5e5;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 80px;
-	font-weight: 700;
-	line-height: 58px;
-	letter-spacing: -3.2px;
-	pointer-events: none;
-	z-index: 0;
-	user-select: none;
-	transition: color 0.25s;
 }
 .b2-spec-list-title {
 	position: relative;
 	z-index: 1;
 	flex: 0 0 170px;
 	max-width: 170px;
-	color: #1c1c1c;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 20px;
-	font-weight: 700;
-	line-height: 1.3;
-	letter-spacing: -0.6px;
-	transition: color 0.25s;
 }
 .b2-spec-list-card:hover .b2-spec-list-title {
 	color: #fff;
@@ -340,11 +338,6 @@
 	z-index: 1;
 	flex: 1;
 	max-width: 420px;
-	color: #888;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.65;
 	word-break: keep-all;
 	transition: color 0.25s;
 }
@@ -874,7 +867,7 @@
 	padding-bottom: 80px;
 }
 
-.dtx-key-tech-head {
+.dtx-key-tech .crow-detail-head {
 	max-width: 1680px;
 	margin: 0 auto 24px;
 	padding: 0;
@@ -1744,6 +1737,7 @@
 		height: 150px;
 	}
 
+	#tab5 .description_wrapper,
 	#tab3 .description_wrapper {
 		display: none;
 	}
@@ -1775,8 +1769,15 @@
 @media (max-width: 768px) {
 	.crow-hero-title,
 	.crow-hero-tagline,
-	.crow-hero-desc {
+	.crow-hero-desc,
+	.sensor-hero-title,
+	.sensor-hero-tagline,
+	.sensor-hero-desc-gray {
 		text-align: center;
+	}
+	.crow-hero-title,
+	.crow-hero-tagline,
+	.crow-hero-desc {
 		line-height: 160%;
 	}
 	.crow-hero-inner {
@@ -1920,10 +1921,18 @@
 	.crow-spec-list-card {
 		padding: 20px 5vw;
 	}
+	.crow-spec-list-title,
+	.b2-spec-list-title {
+		font-size: 16px;
+	}
+	.crow-spec-list-sub,
+	.b2-spec-list-sub {
+		font-size: 14px;
+	}
 	#tab1 .crow-spec-list-title {
 		max-width: unset !important;
-		font-size: 18px !important;
-		text-align: center;
+		font-size: 16px !important;
+		text-align: left;
 	}
 	#tab1 .crow-spec-list-sub {
 		max-width: unset !important;
@@ -1958,7 +1967,7 @@
 		text-align: center;
 	}
 	.crow-detail-head {
-		margin: 10vw 0 0;
+		margin: 0 auto;
 	}
 	.col-gap {
 		width: 8px;
@@ -2023,8 +2032,13 @@
 	.dtx-img-wrap {
 		aspect-ratio: unset;
 	}
-	.dtx-key-tech {
-		margin-top: 100px;
+
+	.dtx-key-tech .crow-detail-head {
+		margin: 0 auto;
+	}
+	.dtx-key-tech,
+	.drone-concept-wrap {
+		margin-top: 10px;
 	}
 	.crow-hero-img-wrap img {
 		max-width: 430px;
@@ -2036,6 +2050,7 @@
 	.drone-photo-grid {
 		grid-template-columns: 1fr;
 		padding: 0;
+		margin: 30px auto 0;
 	}
 	.crow-recoil-videos,
 	.crow-patent {
@@ -2083,24 +2098,13 @@
 }
 
 .sensor-hero-title {
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: clamp(28px, 3.5vw, 42px);
-	font-weight: 700;
 	color: #121212;
-	letter-spacing: -1.68px;
-	line-height: 56px;
 	margin-bottom: 14px;
 }
 
 .sensor-hero-tagline {
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: clamp(18px, 2vw, 22px);
-	font-weight: 400;
-	color: #d60057;
-	letter-spacing: -0.88px;
 	line-height: 160%;
 	margin-bottom: 0;
-	word-break: keep-all;
 	padding-bottom: 20px;
 }
 
@@ -2115,14 +2119,8 @@
 }
 
 .sensor-hero-desc-gray {
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
 	color: #929292;
-	line-height: 22px;
-	letter-spacing: -0.64px;
 	margin-bottom: 40px;
-	word-break: keep-all;
 }
 
 /* Spec cards */
@@ -2157,8 +2155,8 @@
 	font-weight: 700;
 	line-height: 58px;
 	letter-spacing: -3.2px;
-	opacity: 0.74;
-	color: #c3c3c3;
+	opacity: 1;
+	color: #e5e5e5;
 	pointer-events: none;
 	z-index: 0;
 	transition: color 0.25s;
@@ -2176,7 +2174,7 @@
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
 	font-size: 20px;
 	font-weight: 700;
-	color: #121212;
+	color: #1c1c1c;
 	text-align: center;
 	letter-spacing: -0.8px;
 	line-height: 160%;
@@ -2189,13 +2187,7 @@
 }
 
 .sensor-spec-card-desc {
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	color: #888;
 	text-align: center;
-	line-height: 22px;
-	letter-spacing: -0.64px;
 	transition: color 0.25s;
 	word-break: keep-all;
 }
@@ -2230,7 +2222,7 @@
 	font-weight: 700;
 	line-height: 58px;
 	letter-spacing: -3.2px;
-	color: #d0d0d0;
+	color: #e5e5e5;
 	opacity: 1;
 }
 
@@ -2267,11 +2259,6 @@
 }
 
 #tab1 .sensor-spec-card-desc {
-	color: #1c1c1c;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 22px;
-	letter-spacing: -1.64px;
 	text-align: left;
 	max-width: 310px;
 	width: 100%;
@@ -2307,7 +2294,7 @@
 	font-weight: 700;
 	line-height: 58px;
 	letter-spacing: -3.2px;
-	color: #d0d0d0;
+	color: #e5e5e5;
 	opacity: 1;
 }
 
@@ -2344,11 +2331,6 @@
 }
 
 #tab2 .sensor-spec-card-desc {
-	color: #1c1c1c;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 22px;
-	letter-spacing: -0.64px;
 	text-align: left;
 }
 
@@ -2428,11 +2410,6 @@
 }
 
 #tab4 .sensor-spec-card-desc {
-	color: #1c1c1c;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 22px;
-	letter-spacing: -0.64px;
 	text-align: left;
 }
 
@@ -3077,6 +3054,12 @@
 		font-size: 18px;
 	}
 
+	#tab5 .b2-spec-list-title {
+		flex: 0 0 140px;
+		max-width: 140px;
+		font-size: 18px;
+	}
+
 	.crow-spec-card-sub {
 		font-size: 14px;
 	}
@@ -3119,6 +3102,10 @@
 	}
 }
 @media (max-width: 1200px) {
+	#tab1 .crow-hero-left {
+		flex: none;
+	}
+
 	.sensor-hero-inner {
 		gap: 40px;
 	}
@@ -3138,6 +3125,10 @@
 }
 
 @media (max-width: 1024px) {
+	.b2-spec-list-title {
+		flex: none;
+		max-width: fit-content;
+	}
 	.sensor-slide-caption {
 		right: 2%;
 	}
@@ -3367,17 +3358,10 @@
 	padding: 0 40px;
 }
 
-.s4-key-tech-head {
+.s4-key-tech .crow-detail-head {
 	margin-bottom: 32px;
 	font-size: 20px;
 	letter-spacing: -0.8px;
-}
-
-.s4-key-tech-head img {
-	width: 19px;
-	height: 19px;
-	flex-shrink: 0;
-	margin: 0 0 20px 0;
 }
 
 .s4-key-tech-grid {
@@ -3402,6 +3386,11 @@
 
 .s4-key-tech-caption {
 	word-break: keep-all;
+}
+.s4-det-img-wrap {
+	flex: none;
+	max-width: 100%;
+	width: 100%;
 }
 
 /* ============================================================
@@ -3513,14 +3502,14 @@
 	.sensor-hero {
 		padding: 50px 0 0 0;
 	}
+	.s4-det-layout {
+		padding: 18vw 0 0;
+		gap: 50px;
+	}
+
 	.sensor-hero-inner {
 		gap: 32px;
 		padding: 0;
-	}
-	.sensor-hero-title,
-	.sensor-hero-tagline,
-	.sensor-hero-desc-gray {
-		text-align: center;
 	}
 	.sensor-spec-grid {
 		flex-wrap: wrap;
@@ -3534,6 +3523,7 @@
 	}
 	#tab1 .crow-spec-list-content {
 		flex-direction: column;
+		gap: 5px;
 	}
 
 	.b2-spec-list-card {
@@ -3548,10 +3538,9 @@
 		font-size: 60px;
 		line-height: 46px;
 	}
-	.b2-spec-list-title {
-		flex: unset;
-		max-width: unset;
-		font-size: 16px;
+	#tab5 .b2-spec-list-title {
+		flex: none;
+		max-width: fit-content;
 	}
 
 	#tab1 .sensor-spec-content,
@@ -3599,10 +3588,9 @@
 	}
 	#tab4 .sensor-spec-card-desc {
 		font-size: 14px;
-		color: #888;
 	}
 	.sensor-spec-card-desc {
-		font-size: 13px;
+		font-size: 14px;
 	}
 	.sensor-key-head-left span {
 		font-size: 16px;
@@ -3643,6 +3631,12 @@
 	#tab2.prod-section {
 		padding: 20px 20px;
 	}
+
+	.s4-det-row {
+		flex-direction: column;
+		gap: 24px;
+	}
+
 	.sensor-video-slide {
 		height: 280px;
 	}
@@ -3753,13 +3747,14 @@
 	}
 	.s4-key-tech {
 		margin: 40px auto 40px;
+		padding: 0;
 	}
 	.s4-key-tech-grid {
 		grid-template-columns: 1fr;
 		row-gap: 40px;
 	}
 
-	.s4-key-tech-head {
+	.s4-key-tech .crow-detail-head {
 		font-size: 18px;
 		margin-bottom: 16px;
 	}

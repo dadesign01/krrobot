@@ -191,21 +191,25 @@
 	.prod-tab-bar {
 		padding: 0 16px;
 	}
-	.prod-tab-inner {
+}
+
+/* ── 769px–1024px: 가로 스와이프 탭 ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+	/* border-radius가 없는 바깥 바를 스크롤 컨테이너로 사용
+	   (inner에 overflow 걸면 border-radius가 탭을 잘라냄) */
+	.prod-tab-bar {
 		overflow-x: auto;
 		overflow-y: hidden;
 		-webkit-overflow-scrolling: touch;
 		scrollbar-width: none;
 		justify-content: flex-start;
 	}
-	.prod-tab-inner::before,
-	.prod-tab-inner::after {
-		content: '';
-		flex: 1 0 0;
-		min-width: 0;
-	}
-	.prod-tab-inner::-webkit-scrollbar {
+	.prod-tab-bar::-webkit-scrollbar {
 		display: none;
+	}
+	.prod-tab-inner {
+		flex-shrink: 0;
+		width: max-content;
 	}
 	.prod-tab {
 		flex: 0 0 auto;
