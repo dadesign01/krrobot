@@ -6,8 +6,119 @@
 .prod-inner {
 	max-width: 1680px;
 	margin: 0 auto;
-	padding: 0 40px;
 	box-sizing: border-box;
+}
+.prod-section {
+	padding: 0 40px;
+}
+
+/* ============================================================
+   공통 유틸리티 — 반복 패턴 공유
+   ============================================================ */
+
+/* ── 섹션 캡션 (이미지·영상 아래 설명) ── */
+.dtx-img-caption,
+.b2-key-tech-caption,
+.drone-concept-caption,
+.drone-video-caption,
+.drone-photo-caption,
+.sensor-video-caption,
+.s4-key-tech-caption {
+	text-align: center;
+	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+	font-size: 15px;
+	color: #555;
+	margin-top: 12px;
+	letter-spacing: -0.5px;
+}
+
+/* ── 이미지 hover 줌 공통 ── */
+.crow-gal-wrap img,
+.dtx-img-wrap img,
+.b2-key-tech-img img,
+.drone-photo-wrap img,
+.sensor-img-item img,
+.s2-img-wrap img,
+.s4-key-tech-img-wrap img,
+.s5-gal-wrap img,
+.s5-key-img-wrap img {
+	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.crow-gal-wrap:hover img,
+.dtx-img-item:hover .dtx-img-wrap img,
+.b2-key-tech-item:hover .b2-key-tech-img img,
+.drone-photo-item:hover .drone-photo-wrap img,
+.sensor-img-item:hover img,
+.s2-img-item:hover .s2-img-wrap img,
+.s4-key-tech-item:hover .s4-key-tech-img-wrap img,
+.s5-gallery-left .s5-gal-wrap:hover img,
+.s5-gallery-right .s5-gal-wrap:hover img,
+.s5-key-img-wrap:hover img {
+	transform: scale(1.06);
+}
+
+/* ── 배경 오버레이 래퍼 공통 ── */
+.crow-model-bg-wrap,
+.dtx-bg-wrap,
+.drone-bg-wrap,
+.s4-det-bg-wrap {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* ── Product Detail / Key Technology 섹션 헤더 공통 ── */
+.crow-detail-head,
+.dtx-key-tech-head,
+.s4-key-tech-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #121212;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	line-height: 58px;
+}
+
+.crow-detail-head img,
+.dtx-key-tech-head img {
+	width: 3vw;
+	max-width: 19px;
+	height: fit-content;
+	flex-shrink: 0;
+	margin: 0 0 20px 0;
+}
+
+/* ── 스펙 카드 hover 배경색 공통 ── */
+.crow-spec-list-card:hover,
+.b2-spec-list-card:hover,
+.crow-spec-card:hover,
+.s2-tech-card:hover {
+	background: #d60057;
+}
+
+/* ── 스펙 카드 hover 배경 숫자 색상 공통 ── */
+.crow-spec-list-card:hover .crow-spec-list-num,
+.b2-spec-list-card:hover .b2-spec-list-num,
+.crow-spec-track .crow-spec-card:hover .crow-spec-num,
+.sensor-spec-card:hover .sensor-spec-num {
+	color: #94003c;
+}
+
+/* ── 장식용 대형 배경 텍스트 공통 ── */
+.crow-model-bg-text,
+.dtx-bg-text-line,
+.drone-bg-line,
+.s4-det-bg-line {
+	color: #000;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 800;
+	opacity: 0.05;
+	pointer-events: none;
+	white-space: nowrap;
+	user-select: none;
 }
 
 /* ============================================================
@@ -42,6 +153,7 @@
 	display: flex;
 	align-items: center;
 	gap: 0;
+	padding: 20px;
 }
 
 /* 좌측 콘텐츠 */
@@ -98,21 +210,18 @@
 	align-items: center;
 	border-radius: 15px;
 	background: #f8f8f8;
-	padding: 18px 28px 18px 88px;
+	padding: 20px 5vw;
 	min-height: 76px;
 	transition: background 0.25s;
 	cursor: default;
 	justify-content: space-between;
-}
-.crow-spec-list-card:hover {
-	background: #d60057;
 }
 .crow-spec-list-num {
 	position: absolute;
 	left: -6px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #d0d0d0;
+	color: #e5e5e5;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
 	font-size: 80px;
 	font-weight: 700;
@@ -122,9 +231,6 @@
 	z-index: 0;
 	user-select: none;
 	transition: color 0.25s;
-}
-.crow-spec-list-card:hover .crow-spec-list-num {
-	color: #94003c;
 }
 .crow-spec-list-content {
 	position: relative;
@@ -197,15 +303,12 @@
 	transition: background 0.25s;
 	cursor: default;
 }
-.b2-spec-list-card:hover {
-	background: #d60057;
-}
 .b2-spec-list-num {
 	position: absolute;
 	left: -6px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: #d0d0d0;
+	color: #e5e5e5;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
 	font-size: 80px;
 	font-weight: 700;
@@ -215,9 +318,6 @@
 	z-index: 0;
 	user-select: none;
 	transition: color 0.25s;
-}
-.b2-spec-list-card:hover .b2-spec-list-num {
-	color: #94003c;
 }
 .b2-spec-list-title {
 	position: relative;
@@ -332,10 +432,6 @@
 	transition: color 0.25s;
 }
 
-.crow-spec-track .crow-spec-card:hover .crow-spec-num {
-	color: #94003c;
-}
-
 .crow-spec-track .crow-spec-card .crow-spec-card-title,
 .crow-spec-track .crow-spec-card .crow-spec-card-sub {
 	position: relative;
@@ -373,9 +469,6 @@
 	transition: background 0.25s;
 }
 
-.crow-spec-card:hover {
-	background: #d60057;
-}
 
 .crow-spec-card-title {
 	display: block;
@@ -507,11 +600,7 @@
 
 /* 배경 텍스트 클리핑 레이어 */
 .crow-model-bg-wrap {
-	position: absolute;
-	inset: 0;
 	overflow: hidden;
-	pointer-events: none;
-	z-index: 0;
 }
 
 /* 배경 텍스트 */
@@ -520,17 +609,10 @@
 	left: 50%;
 	top: 0%;
 	transform: translate(-50%, 0%);
-	color: #000;
-	font-family: 'Poppins', sans-serif;
 	font-size: clamp(75px, 17vw, 320px);
-	font-weight: 800;
 	line-height: 1;
 	letter-spacing: -4.2px;
-	opacity: 0.05;
-	pointer-events: none;
-	white-space: nowrap;
 	z-index: 0;
-	user-select: none;
 }
 
 /* 레이아웃: sticky 이미지 + 우측 스크롤 콘텐츠 */
@@ -605,24 +687,9 @@
 
 /* Product Detail 헤더 */
 .crow-detail-head {
-	display: flex;
-	align-items: center;
-	gap: 8px;
 	margin-bottom: 16px;
-	color: #121212;
-	font-family: 'Poppins', sans-serif;
 	font-size: clamp(16px, 1.5vw, 24px);
-	font-weight: 500;
-	line-height: 58px;
 	letter-spacing: -0.96px;
-}
-
-.crow-detail-head img {
-	width: 3vw;
-	height: fit-content;
-	flex-shrink: 0;
-	margin: 0 0 20px 0;
-	max-width: 19px;
 }
 
 /* 스펙 테이블 */
@@ -747,7 +814,6 @@
 	gap: 15px;
 	max-width: 1680px;
 	margin: 240px auto 0;
-	padding: 0 40px;
 }
 
 .crow-gallery-left {
@@ -780,11 +846,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.crow-gal-wrap:hover img {
-	transform: scale(1.06);
 }
 
 /* ── tab3 Detail 기본 숨김 ── */
@@ -794,11 +855,7 @@
 
 /* ── Confined Space 두 줄 배경 텍스트 ── */
 .dtx-bg-wrap {
-	position: absolute;
-	inset: 0;
 	overflow: hidden;
-	pointer-events: none;
-	z-index: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -807,16 +864,9 @@
 }
 
 .dtx-bg-text-line {
-	color: #000;
-	font-family: 'Poppins', sans-serif;
 	font-size: clamp(54px, 11vw, 220px);
-	font-weight: 800;
 	line-height: 1;
 	letter-spacing: -0.2vw;
-	opacity: 0.05;
-	pointer-events: none;
-	white-space: nowrap;
-	user-select: none;
 }
 
 /* ── tab3 Key Technology 섹션 ── */
@@ -826,26 +876,11 @@
 }
 
 .dtx-key-tech-head {
-	display: flex;
-	align-items: center;
-	gap: 8px;
 	max-width: 1680px;
 	margin: 0 auto 24px;
 	padding: 0;
-	color: #121212;
-	font-family: 'Poppins', sans-serif;
 	font-size: clamp(16px, 1.5vw, 24px);
-	font-weight: 500;
-	line-height: 58px;
 	letter-spacing: -0.96px;
-}
-
-.dtx-key-tech-head img {
-	width: 3vw;
-	height: fit-content;
-	flex-shrink: 0;
-	margin: 0 0 20px 0;
-	max-width: 19px;
 }
 
 /* ── 영상 블록 ── */
@@ -909,17 +944,17 @@
 .dtx-img-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 60px;
+	gap: 3vw;
 	max-width: 1680px;
 	margin: 150px auto 0;
-	padding: 0 40px;
 }
 
 .dtx-img-wrap {
 	overflow: hidden;
 	border-radius: 15px;
-	height: 394px;
+	aspect-ratio: 770 / 385;
 	background: #eee;
+	margin: 0 auto;
 }
 
 .dtx-img-wrap img {
@@ -927,20 +962,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.dtx-img-item:hover .dtx-img-wrap img {
-	transform: scale(1.06);
-}
-
-.dtx-img-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
 }
 
 /* ── tab2 Detail 기본 숨김 ── */
@@ -1006,7 +1027,6 @@
 .b2-key-tech {
 	max-width: 1680px;
 	margin: 150px auto 80px;
-	padding: 0 40px;
 }
 
 .b2-key-tech-title {
@@ -1031,32 +1051,16 @@
 }
 
 .b2-key-tech-img {
-	width: 100%;
-	height: 394px;
+	aspect-ratio: 770 / 385;
 	border-radius: 15px;
 	border: 1px solid #d3d3d3;
 	overflow: hidden;
 }
 
 .b2-key-tech-img img {
-	width: 100%;
-	height: 100%;
+	aspect-ratio: 770 / 385;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.b2-key-tech-item:hover .b2-key-tech-img img {
-	transform: scale(1.06);
-}
-
-.b2-key-tech-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
 }
 
 /* ============================================================
@@ -1076,11 +1080,7 @@
 
 /* 배경 텍스트 두 줄 */
 .drone-bg-wrap {
-	position: absolute;
-	inset: 0;
 	overflow: hidden;
-	pointer-events: none;
-	z-index: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1090,16 +1090,9 @@
 
 .drone-bg-line {
 	display: block;
-	color: #000;
-	font-family: 'Poppins', sans-serif;
 	font-size: clamp(50px, 10vw, 175px);
-	font-weight: 800;
 	line-height: 120%;
 	letter-spacing: -0.5vw;
-	opacity: 0.05;
-	pointer-events: none;
-	white-space: nowrap;
-	user-select: none;
 	text-align: center;
 }
 
@@ -1117,14 +1110,6 @@
 	border: 1px solid #e8e8e8;
 }
 
-.drone-concept-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
-}
 
 /* 영상 2개 그리드 */
 .drone-video-grid {
@@ -1155,14 +1140,6 @@
 	background: #000;
 }
 
-.drone-video-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
-}
 
 /* 사진 2개 그리드 */
 .drone-photo-grid {
@@ -1189,20 +1166,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.drone-photo-item:hover .drone-photo-wrap img {
-	transform: scale(1.06);
-}
-
-.drone-photo-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
 }
 
 /* ============================================================
@@ -1237,7 +1200,7 @@
 	display: block;
 	width: auto;
 	max-width: 100%;
-	margin: 0 auto -24px;
+	margin: 50px auto -24px;
 	position: relative;
 	z-index: 0;
 	pointer-events: none;
@@ -1342,25 +1305,29 @@
 }
 
 .crow-rcb-left {
-	width: 425px;
-	height: 425px;
+	width: 25vw;
+	height: 25vw;
 	border-radius: 50%;
-	background: url('../../img/product/tab_ellipse.png') center / cover no-repeat;
+	background: url(../../img/product/tab_ellipse.png) center / cover no-repeat;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 52px;
+	padding: 1.5vw;
 	box-sizing: border-box;
 	flex-shrink: 0;
+	max-width: 450px;
+	max-height: 450px;
+	min-width: 330px;
+	min-height: 330px;
 }
 
 .crow-rcb-left p {
 	color: #000;
 	text-align: center;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 25px;
+	font-size: clamp(20px, 2vw, 24px);
 	font-weight: 500;
-	line-height: 42px;
+	line-height: 175%;
 	letter-spacing: -1.12px;
 	margin: 0;
 	word-break: keep-all;
@@ -1377,25 +1344,29 @@
 }
 
 .crow-rcb-right {
-	width: 425px;
-	height: 425px;
+	width: 25vw;
+	height: 25vw;
 	border-radius: 425px;
 	background: #d60057;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 52px;
+	padding: 1.5vw;
 	box-sizing: border-box;
 	flex-shrink: 0;
+	max-width: 450px;
+	max-height: 450px;
+	min-width: 330px;
+	min-height: 330px;
 }
 
 .crow-rcb-right p {
 	color: #fff;
 	text-align: center;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 24px;
+	font-size: clamp(20px, 2vw, 24px);
 	font-weight: 500;
-	line-height: 42px;
+	line-height: 175%;
 	letter-spacing: -1.12px;
 	margin: 0;
 	word-break: keep-all;
@@ -1466,7 +1437,7 @@
 .crow-recoil-list-num {
 	color: #d60057;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 80px;
+	font-size: clamp(20px, 7vw, 80px);
 	font-weight: 700;
 	line-height: 58px;
 	letter-spacing: -3.2px;
@@ -1476,7 +1447,7 @@
 .crow-recoil-list-text {
 	color: #121212;
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 28px;
+	font-size: clamp(18px, 2.4vw, 28px);
 	font-weight: 500;
 	line-height: 36px;
 	letter-spacing: -1.12px;
@@ -1509,10 +1480,9 @@
 .crow-recoil-spec-left p {
 	display: flex;
 	align-items: center;
-	width: 552px;
+	width: 28vw;
 	max-width: 100%;
-	height: 93px;
-	padding: 0 28px;
+	padding: 1.5vw 28px;
 	box-sizing: border-box;
 	border-radius: 20px;
 	background: #565656;
@@ -1701,35 +1671,19 @@
 	.crow-recoil-compare-item p {
 		font-size: 18px;
 	}
-
-	.prod-tab-bar {
-		padding: 0 16px;
-	}
-	.prod-tab-inner {
-		overflow-x: auto;
-		overflow-y: hidden;
-		-webkit-overflow-scrolling: touch;
-		scrollbar-width: none;
-		justify-content: flex-start;
-	}
-	.prod-tab-inner::before,
-	.prod-tab-inner::after {
-		content: '';
-		flex: 1 0 0;
-		min-width: 0;
-	}
-	.prod-tab-inner::-webkit-scrollbar {
-		display: none;
-	}
-	.prod-tab {
-		flex: 0 0 auto;
-		white-space: nowrap;
-	}
 	.crow-hero-left {
 		flex: 0 0 590px;
 	}
 	.crow-spec-grid {
 		grid-template-columns: repeat(2, 1fr);
+	}
+	.crow-spec-list-content {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.crow-recoil-spec-left p {
+		font-size: 20px;
+		line-height: 28px;
 	}
 	.crow-spec-card {
 		width: auto;
@@ -1738,6 +1692,14 @@
 		width: 100%;
 		max-width: 590px;
 	}
+	.crow-gallery {
+		margin: 120px auto 0;
+		flex-direction: column;
+	}
+	.crow-gallery-left {
+		flex: 0 0 45%;
+		flex-direction: row;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -1745,7 +1707,7 @@
 		padding: 80px 0 150px;
 	}
 	.crow-recoil-img-wrap img {
-		height: 380px;
+		height: 490px;
 	}
 	.crow-recoil-compare-item {
 		min-height: 100px;
@@ -1800,15 +1762,16 @@
 		max-width: 100%;
 		width: 100%;
 	}
-	.crow-gallery {
-		margin: 120px auto 0;
-		flex-direction: column;
-	}
-	.crow-gallery-left {
-		flex: 0 0 45%;
-	}
+
 	.crow-gallery-left .crow-gal-wrap {
-		height: 400px;
+		height: 240px;
+	}
+	.crow-gallery-right .crow-gal-wrap {
+		height: 460px;
+	}
+	.crow-recoil-spec-left p {
+		width: 45vw;
+		border-radius: 15px;
 	}
 }
 
@@ -1818,6 +1781,9 @@
 	.crow-hero-desc {
 		text-align: center;
 		line-height: 160%;
+	}
+	.crow-hero-inner {
+		padding: 0;
 	}
 	.crow-recoil {
 		padding: 60px 0 40px;
@@ -1878,6 +1844,7 @@
 	.crow-rcb {
 		flex-direction: column;
 		gap: 24px;
+		margin: 50px auto;
 	}
 	.crow-rcb-left,
 	.crow-rcb-right {
@@ -1885,12 +1852,7 @@
 		height: 280px;
 		padding: 36px;
 	}
-	.crow-rcb-left p,
-	.crow-rcb-right p {
-		font-size: 18px;
-		line-height: 30px;
-		letter-spacing: -0.72px;
-	}
+
 	.crow-rcb-arrow {
 		height: 32px;
 		transform: rotate(90deg);
@@ -1902,14 +1864,16 @@
 		margin: 28px 0 24px;
 	}
 	.crow-recoil-spec-left {
-		top: 20px;
+		bottom: 20px;
 		right: 20px;
+		gap: 5px;
 	}
 	.crow-recoil-spec-left p {
 		width: auto;
-		height: 56px;
-		font-size: 14px;
+		height: 50px;
+		font-size: 16px;
 		padding: 0 16px;
+		border-radius: 10px;
 	}
 	.crow-recoil-spec-right {
 		width: 100%;
@@ -1941,6 +1905,7 @@
 		font-size: 13px;
 		padding: 0 8px;
 		line-height: 40px;
+		font-weight: normal;
 	}
 	.crow-patent-table thead th + th::before,
 	.crow-patent-table tbody td + td::before {
@@ -1955,7 +1920,21 @@
 	.crow-spec-card-title {
 		font-size: 18px;
 	}
-
+	.crow-spec-list-card {
+		padding: 20px 5vw;
+	}
+	#tab1 .crow-spec-list-title {
+		max-width: unset !important;
+		font-size: 18px !important;
+		text-align: center;
+	}
+	#tab1 .crow-spec-list-sub {
+		max-width: unset !important;
+	}
+	.crow-spec-list-num {
+		position: absolute;
+		top: 30px;
+	}
 	.crow-view-btn {
 		font-size: 18px;
 	}
@@ -2019,11 +1998,6 @@
 	.crow-gallery-right {
 		width: 100%;
 	}
-	.crow-gallery-right .crow-gal-wrap,
-	.crow-gallery-left .crow-gal-wrap {
-		height: auto;
-		max-height: 260px;
-	}
 
 	.description_wrapper {
 		align-items: center;
@@ -2035,14 +2009,14 @@
 	.b2-key-tech-grid {
 		flex-direction: column;
 	}
-	.b2-key-tech-img {
-		height: 220px;
-	}
 	.b2-slider-dots {
 		max-width: 100%;
 	}
 	.dtx-video-wrap {
 		height: 240px;
+	}
+	.drone-video-grid {
+		grid-template-columns: repeat(1, 1fr);
 	}
 	.dtx-img-grid {
 		grid-template-columns: 1fr;
@@ -2050,10 +2024,14 @@
 		padding: 0;
 	}
 	.dtx-img-wrap {
-		height: 220px;
+		aspect-ratio: unset;
 	}
 	.dtx-key-tech {
 		margin-top: 100px;
+	}
+	.crow-hero-img-wrap img {
+		max-width: 430px;
+		margin: 20px 0;
 	}
 }
 @media (max-width: 500px) {
@@ -2065,6 +2043,15 @@
 	.crow-recoil-videos,
 	.crow-patent {
 		margin-top: 20px;
+	}
+	.crow-gallery-left .crow-gal-wrap {
+		height: 170px;
+	}
+	.crow-gallery-right .crow-gal-wrap {
+		height: 300px;
+	}
+	.crow-hero-img-wrap img {
+		max-width: 360px;
 	}
 }
 /* ============================================================
@@ -2179,10 +2166,6 @@
 	z-index: 0;
 	transition: color 0.25s;
 	user-select: none;
-}
-
-.sensor-spec-card:hover .sensor-spec-num {
-	color: #94003c;
 }
 
 .sensor-spec-content {
@@ -2406,7 +2389,7 @@
 	font-weight: 700;
 	line-height: 58px;
 	letter-spacing: -3.2px;
-	color: #d0d0d0;
+	color: #e5e5e5;
 	opacity: 1;
 }
 
@@ -2468,9 +2451,6 @@
 	margin-bottom: 20px;
 }
 
-#tab4 .sensor-key-head {
-	justify-content: flex-end;
-}
 
 .sensor-key-head-left {
 	display: flex;
@@ -2593,11 +2573,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sensor-img-item:hover img {
-	transform: scale(1.06);
 }
 
 .sensor-img-caption {
@@ -2654,15 +2629,6 @@
 .sensor-video-play img {
 	width: 80px;
 	height: 80px;
-}
-
-.sensor-video-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
 }
 
 .sensor-spec-card:hover {
@@ -2757,11 +2723,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.s2-img-item:hover .s2-img-wrap img {
-	transform: scale(1.06);
 }
 
 .s2-img-caption {
@@ -3098,9 +3059,8 @@
 	}
 
 	#tab1 .crow-spec-list-title {
-		max-width: 160px;
 		font-size: 18px;
-		width: 100%;
+		margin: 0 auto;
 	}
 
 	#tab1 .crow-spec-list-sub {
@@ -3126,7 +3086,6 @@
 	}
 
 	.prod-section {
-		padding: 0 40px;
 		gap: 40px;
 	}
 
@@ -3151,6 +3110,17 @@
 	.s3-bottom {
 		margin: 100px auto 0;
 	}
+	.s4-spec-bar {
+		width: 100%;
+		max-width: 693px;
+	}
+	.s4-det-layout {
+		padding: 18vw 40px 80px;
+	}
+	.s5-gallery {
+		padding: 0 40px;
+		height: 450px;
+	}
 }
 @media (max-width: 1200px) {
 	.sensor-hero-inner {
@@ -3159,10 +3129,15 @@
 	.sensor-spec-card {
 		width: 190px;
 	}
-
 	.s3-row3 {
 		/* grid-template-columns: 1fr; */
 		display: flex;
+	}
+	.s4-spec-bar {
+		max-width: 100%;
+	}
+	.s5-gallery {
+		height: 500px;
 	}
 }
 
@@ -3200,6 +3175,55 @@
 	.s3-row3 {
 		height: 370px;
 	}
+	.s4-det-layout {
+		padding: 18vw 0 60px;
+		gap: 50px;
+	}
+	/* 각 행을 세로(이미지 위, 테이블 아래)로 전환 */
+	.s4-det-row {
+		flex-direction: column;
+		gap: 24px;
+	}
+	.s4-det-img-wrap {
+		flex: none;
+		max-width: 100%;
+		width: 100%;
+	}
+	.s4-det-content {
+		width: 100%;
+	}
+	.s4-key-tech {
+		padding: 0;
+	}
+	.s4-key-tech-grid {
+		row-gap: 60px;
+	}
+	#tab4 .sensor-hero-inner {
+		flex-direction: column-reverse;
+	}
+	.s5-gallery {
+		height: auto;
+		flex-direction: column;
+		padding: 0 20px;
+		width: 100%;
+	}
+	.s5-gallery-left,
+	.s5-gallery-right {
+		height: 400px;
+	}
+	.s5-gallery-left {
+		height: auto;
+		width: 100%;
+		max-width: 100%;
+	}
+	.s5-gallery-left .s5-gal-wrap {
+		/* height: 280px; */
+		flex: none;
+		width: 100%;
+	}
+	.s5-gallery-right .s5-gal-wrap {
+		height: 400px;
+	}
 }
 
 /* ============================================================
@@ -3208,7 +3232,6 @@
 
 /* 4-수치 스펙 바 */
 .s4-spec-bar {
-	width: 693px;
 	height: 129px;
 	border-radius: 15px;
 	background: #f8f8f8;
@@ -3285,10 +3308,6 @@
 
 /* 배경 텍스트 두 줄 */
 .s4-det-bg-wrap {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	z-index: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -3298,15 +3317,9 @@
 }
 
 .s4-det-bg-line {
-	color: #000;
-	font-family: 'Poppins', sans-serif;
-	font-size: 180px;
-	font-weight: 800;
+	font-size: clamp(51px, 12vw, 200px);
 	line-height: 1;
 	letter-spacing: -7px;
-	opacity: 0.05;
-	white-space: nowrap;
-	user-select: none;
 }
 
 /* 페어 레이아웃 컨테이너 */
@@ -3315,7 +3328,7 @@
 	z-index: 1;
 	max-width: 1680px;
 	margin: 0 auto;
-	padding: 300px 40px 80px;
+	padding: 18vw 40px 80px;
 	display: flex;
 	flex-direction: column;
 }
@@ -3348,6 +3361,7 @@
 .s4-det-content {
 	flex: 1;
 	min-width: 0;
+	margin-top: 5vw;
 }
 
 /* Key Technology */
@@ -3358,15 +3372,8 @@
 }
 
 .s4-key-tech-head {
-	display: flex;
-	align-items: center;
-	gap: 8px;
 	margin-bottom: 32px;
-	color: #121212;
-	font-family: 'Poppins', sans-serif;
 	font-size: 20px;
-	font-weight: 500;
-	line-height: 58px;
 	letter-spacing: -0.8px;
 }
 
@@ -3388,28 +3395,16 @@
 	border: 1px solid #d3d3d3;
 	border-radius: 15px;
 	overflow: hidden;
-	height: 394px;
+	aspect-ratio: 770 / 385;
 }
 
 .s4-key-tech-img-wrap img {
-	width: 100%;
-	height: 100%;
+	aspect-ratio: 770 / 385;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.s4-key-tech-item:hover .s4-key-tech-img-wrap img {
-	transform: scale(1.06);
 }
 
 .s4-key-tech-caption {
-	text-align: center;
-	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: 15px;
-	color: #555;
-	margin-top: 12px;
-	letter-spacing: -0.5px;
 	word-break: keep-all;
 }
 
@@ -3471,12 +3466,6 @@
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.s5-gallery-left .s5-gal-wrap:hover img,
-.s5-gallery-right .s5-gal-wrap:hover img {
-	transform: scale(1.06);
 }
 
 /* Key Technology 이미지 영역 */
@@ -3519,101 +3508,6 @@
 	color: #555;
 	text-align: center;
 	margin: 0;
-}
-
-/* ── 반응형 ── */
-@media (max-width: 1400px) {
-	.s4-spec-bar {
-		width: 100%;
-		max-width: 693px;
-	}
-	.s4-det-bg-line {
-		font-size: 130px;
-		letter-spacing: -5px;
-	}
-
-	.s4-det-layout {
-		padding: 60px 40px 80px;
-	}
-
-	.s5-gallery {
-		padding: 0 40px;
-		height: 450px;
-	}
-}
-
-@media (max-width: 1200px) {
-	.s4-spec-bar {
-		max-width: 100%;
-	}
-	.s4-det-bg-line {
-		font-size: 100px;
-		letter-spacing: -4px;
-	}
-	.s5-gallery {
-		height: 500px;
-	}
-}
-
-@media (max-width: 1024px) {
-	.s4-det-layout {
-		padding: 50px 0 60px;
-		gap: 50px;
-	}
-	/* 각 행을 세로(이미지 위, 테이블 아래)로 전환 */
-	.s4-det-row {
-		flex-direction: column;
-		gap: 24px;
-	}
-	.s4-det-img-wrap {
-		flex: none;
-		max-width: 100%;
-		width: 100%;
-	}
-	.s4-det-content {
-		width: 100%;
-	}
-	.s4-key-tech {
-		padding: 0;
-	}
-	.s4-key-tech-grid {
-		row-gap: 60px;
-	}
-	.s4-key-tech-img-wrap {
-		height: 300px;
-	}
-	.s4-det-bg-line {
-		font-size: 70px;
-		letter-spacing: -2.8px;
-	}
-
-	#tab4 .sensor-hero-inner {
-		flex-direction: column-reverse;
-	}
-
-	.s5-gallery {
-		height: auto;
-		flex-direction: column;
-		padding: 0 20px;
-		width: 100%;
-	}
-	.s5-gallery-left,
-	.s5-gallery-right {
-		height: 400px;
-	}
-	.s5-gallery-left {
-		height: auto;
-		width: 100%;
-		max-width: 100%;
-	}
-	.s5-gallery-left .s5-gal-wrap {
-		/* height: 280px; */
-		flex: none;
-		width: 100%;
-	}
-	.s5-gallery-right .s5-gal-wrap {
-		height: 400px;
-	}
 }
 
 @media (max-width: 768px) {
@@ -3663,10 +3557,6 @@
 		max-width: unset;
 		font-size: 16px;
 	}
-	.b2-spec-list-sub {
-		font-size: 13px;
-		max-width: 100%;
-	}
 
 	#tab1 .sensor-spec-content,
 	#tab2 .sensor-spec-content,
@@ -3708,7 +3598,13 @@
 		line-height: 160%;
 		width: 100%;
 	}
-
+	#tab4 .sensor-spec-card-title {
+		font-size: 16px;
+	}
+	#tab4 .sensor-spec-card-desc {
+		font-size: 14px;
+		color: #888;
+	}
 	.sensor-spec-card-desc {
 		font-size: 13px;
 	}
@@ -3846,19 +3742,16 @@
 		height: 60px;
 	}
 	.s4-spec-num {
-		font-size: 22px;
-		line-height: 36px;
+		font-size: 25px;
+		line-height: 45px;
 	}
 	.s4-spec-label {
-		font-size: 11px;
+		font-size: 13px;
 	}
 	.s4-det-row-gap {
 		margin-top: 32px;
 	}
-	.s4-det-bg-line {
-		font-size: 44px;
-		letter-spacing: -1.8px;
-	}
+
 	.s4-table-gap {
 		margin-top: 32px;
 	}
@@ -3869,9 +3762,7 @@
 		grid-template-columns: 1fr;
 		row-gap: 40px;
 	}
-	.s4-key-tech-img-wrap {
-		height: 220px;
-	}
+
 	.s4-key-tech-head {
 		font-size: 18px;
 		margin-bottom: 16px;
@@ -3908,5 +3799,11 @@
 	}
 	.s5-key-img-wrap {
 		height: 250px;
+	}
+}
+@media (max-width: 500px) {
+	.s4-det-bg-line {
+		font-size: 55px;
+		letter-spacing: -3px;
 	}
 }

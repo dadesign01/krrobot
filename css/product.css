@@ -186,58 +186,54 @@
 		font-size: 18px;
 	}
 }
-/* ─── Mobile ─── */
-@media (max-width: 768px) {
+
+@media (max-width: 1200px) {
 	.prod-tab-bar {
-		height: 62px;
-		padding: 0 40px;
+		padding: 0 16px;
 	}
 	.prod-tab-inner {
-		height: 48px;
-		padding: 5px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		justify-content: flex-start;
 	}
-	.prod-tab-inner--robot {
-		width: fit-content;
-		margin: 0 auto;
+	.prod-tab-inner::before,
+	.prod-tab-inner::after {
+		content: '';
+		flex: 1 0 0;
+		min-width: 0;
 	}
-	.prod-tab-indicator {
-		height: 38px;
-		top: 5px;
-		left: 5px;
+	.prod-tab-inner::-webkit-scrollbar {
+		display: none;
 	}
 	.prod-tab {
-		font-size: 13px;
-		min-width: 90px;
-		height: 38px;
-		padding: 0 10px;
-	}
-	.prod-placeholder-title {
-		font-size: 32px;
-		letter-spacing: -1px;
-	}
-	.prod-placeholder-sub {
-		font-size: 15px;
-	}
-	.prod-placeholder-bg-text {
-		font-size: clamp(48px, 14vw, 100px);
+		flex: 0 0 auto;
+		white-space: nowrap;
 	}
 }
-
 
 /* ── 모바일 탭 드롭다운 ── */
 .prod-tab-dropdown {
 	display: none;
 }
 
+/* ─── Mobile ─── */
 @media (max-width: 768px) {
+	/* 탭바 */
+	.prod-tab-bar {
+		height: 62px;
+		padding: 0 40px;
+	}
 	.prod-tab-inner {
 		display: none !important;
 	}
+
+	/* 드롭다운 */
 	.prod-tab-dropdown {
 		display: block;
 		position: relative;
-		width: calc(100% - 32px);
-		max-width: 480px;
+		width: 100%;
 		margin: 0 auto;
 	}
 	.prod-tab-dropdown-btn {
@@ -321,5 +317,17 @@
 	.prod-tab-dropdown-item.active {
 		color: #d60057;
 		font-weight: 700;
+	}
+
+	/* 플레이스홀더 */
+	.prod-placeholder-title {
+		font-size: 32px;
+		letter-spacing: -1px;
+	}
+	.prod-placeholder-sub {
+		font-size: 15px;
+	}
+	.prod-placeholder-bg-text {
+		font-size: clamp(48px, 14vw, 100px);
 	}
 }
