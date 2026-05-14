@@ -469,7 +469,6 @@
 	transition: background 0.25s;
 }
 
-
 .crow-spec-card-title {
 	display: block;
 	color: #1c1c1c;
@@ -620,11 +619,11 @@
 	position: relative;
 	z-index: 1;
 	display: flex;
-	align-items: flex-start;
+	align-items: flex-end;
 	gap: 100px;
 	max-width: 1680px;
 	margin: 0 auto;
-	padding: 60px 40px 0;
+	padding: 100px 40px 0;
 }
 
 /* 좌측 sticky 이미지 */
@@ -1110,7 +1109,6 @@
 	border: 1px solid #e8e8e8;
 }
 
-
 /* 영상 2개 그리드 */
 .drone-video-grid {
 	display: grid;
@@ -1139,7 +1137,6 @@
 	display: block;
 	background: #000;
 }
-
 
 /* 사진 2개 그리드 */
 .drone-photo-grid {
@@ -2450,7 +2447,6 @@
 	justify-content: space-between;
 	margin-bottom: 20px;
 }
-
 
 .sensor-key-head-left {
 	display: flex;
