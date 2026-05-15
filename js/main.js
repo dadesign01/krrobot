@@ -119,8 +119,7 @@ hamburger.addEventListener('click', () => {
 // ── Mobile sub-menu accordion ────────────────────────────────────
 document.querySelectorAll('.m-item-head').forEach(head => {
 	head.addEventListener('click', e => {
-		// m-item-head 내 링크 클릭 시 페이지 이동 방지하고 토글
-		if (e.target.closest('a')) e.preventDefault();
+		e.preventDefault();
 		const btn = head.querySelector('.m-toggle');
 		const panel = head.nextElementSibling;
 		const isOpen = btn.classList.toggle('open');
@@ -426,21 +425,93 @@ fadeTargets.forEach(el => {
 	observer.observe(el);
 });
 
-// ── Cards stagger animation (repeats on scroll in/out) ───────────
-const cardsGrid = document.querySelector('.cards-grid');
-if (cardsGrid) {
-	const cardsSection = document.querySelector('.cards-section');
-	const cardsObserver = new IntersectionObserver(
+// ── Cards: data-anim 시스템(index.html inline script)이 fade-in 처리 ──
+// 데스크탑 높이 스태거는 CSS margin-top으로 설정 (style.css @media min-width:769px)
+
+(function () {
+	// ============================================
+	// 1. 등장 효과
+	// ============================================
+	const observer = new IntersectionObserver(
 		entries => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
-					cardsGrid.classList.add('animated');
-				} else {
-					cardsGrid.classList.remove('animated');
+					entry.target.classList.add('anim-visible');
+					observer.unobserve(entry.target);
 				}
 			});
 		},
-		{ threshold: 0.15 }
+		{ threshold: 0.15, rootMargin: '0px 0px -80px 0px' }
 	);
-	cardsObserver.observe(cardsSection || cardsGrid);
-}
+
+	document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+
+	// ============================================
+	// 2. 카드 패럴랙스 (선택적)
+	// ============================================
+	const section = document.querySelector('.cards-section');
+	const cards = document.querySelectorAll('.cards-section .card');
+
+	// 섹션이 없으면 종료 (다른 페이지 대응)
+	if (!section || cards.length === 0) return;
+
+	const speeds = [0.05, 0, -0.05];
+	let ticking = false;
+	// 등장 애니메이션 완료 후에만 패럴랙스 시작
+	let entranceComplete = [false, false, false];
+
+	// anim-visible 클래스가 붙으면 0.9초(transition 시간) + 0.4초(딜레이) 후 패럴랙스 활성화
+	cards.forEach((card, i) => {
+		const checkVisible = setInterval(() => {
+			if (card.classList.contains('anim-visible')) {
+				clearInterval(checkVisible);
+				// transition 끝나는 시간만큼 기다림 (delay + duration)
+				const delay = i * 200; // 0, 200, 400ms
+				setTimeout(() => {
+					entranceComplete[i] = true;
+				}, delay + 900); // 0.9s transition 끝난 후
+			}
+		}, 100);
+	});
+
+	function updateParallax() {
+		ticking = false;
+
+		// 모바일은 패럴랙스 안 함
+		if (window.innerWidth <= 768) return;
+
+		const rect = section.getBoundingClientRect();
+		const windowHeight = window.innerHeight;
+
+		// 섹션이 뷰포트 밖이면 계산 안 함
+		if (rect.bottom < 0 || rect.top > windowHeight) return;
+
+		const offset = (rect.top - windowHeight / 2) * -1;
+
+		cards.forEach((card, i) => {
+			// 등장 애니메이션 완료된 카드만 패럴랙스 적용
+			if (!entranceComplete[i]) return;
+			card.style.transform = `translateY(${offset * speeds[i]}px)`;
+		});
+	}
+
+	window.addEventListener(
+		'scroll',
+		() => {
+			if (!ticking) {
+				requestAnimationFrame(updateParallax);
+				ticking = true;
+			}
+		},
+		{ passive: true }
+	);
+
+	// 리사이즈 시 모바일이면 인라인 스타일 초기화
+	window.addEventListener('resize', () => {
+		if (window.innerWidth <= 768) {
+			cards.forEach(card => {
+				card.style.transform = '';
+			});
+		}
+	});
+})(); // ← IIFE 즉시 실행
