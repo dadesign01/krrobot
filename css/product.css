@@ -227,7 +227,7 @@
 	/* 탭바 */
 	.prod-tab-bar {
 		height: 62px;
-		padding: 0 40px;
+		padding: 0 20px;
 	}
 	.prod-tab-inner {
 		display: none !important;

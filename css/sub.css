@@ -59,8 +59,12 @@
 }
 
 @keyframes hero-zoom {
-	from { transform: scale(1.04); }
-	to   { transform: scale(1); }
+	from {
+		transform: scale(1.04);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
 /* --bg 커스텀 프로퍼티로 배경 이미지 전달 */
@@ -1036,16 +1040,19 @@
 	font-size: 16px;
 }
 @media (max-width: 1280px) {
-	.rd-card-title{
+	.sub-content {
+		padding-top: 60px;
+	}
+
+	.rd-card-title {
 		font-size: 16px;
 		line-height: 20px;
 	}
-
 }
 @media (max-width: 1024px) {
-	.rd-grid{
+	.rd-grid {
 		grid-template-columns: repeat(2, 1fr);
-		gap:12px;
+		gap: 12px;
 	}
 }
 /* ── 모바일 ── */
@@ -1400,15 +1407,14 @@
 		line-height: 20px;
 	}
 }
-@media (max-width: 500px){
+@media (max-width: 500px) {
 	.rd-grid {
 		grid-template-columns: 1fr;
 		gap: 16px;
 	}
-	.rd-card-img-wrap{
+	.rd-card-img-wrap {
 		aspect-ratio: 335 / 180;
 	}
-
 }
 
 /* ── 상세 페이지 ── */

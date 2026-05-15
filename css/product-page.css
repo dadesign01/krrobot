@@ -1693,6 +1693,18 @@
 }
 
 @media (max-width: 1024px) {
+	.dtx-key-tech {
+		margin-top: 0;
+	}
+
+	.dtx-key-tech .crow-detail-head {
+		margin: 0;
+	}
+
+	.drone-concept-wrap {
+		margin: 10px auto;
+	}
+
 	.crow-recoil {
 		padding: 80px 0 150px;
 	}
@@ -1886,6 +1898,11 @@
 		line-height: 1.4;
 		letter-spacing: -0.8px;
 	}
+
+	.crow-patent-title-country {
+		display: block;
+	}
+
 	.crow-patent-mark {
 		height: 20px;
 	}

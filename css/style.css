@@ -802,6 +802,7 @@ site-footer {
 @media (max-width: 1400px) {
 	.ph2-section {
 		gap: 160px;
+		padding: 80px 0;
 	}
 	.ph2-row {
 		gap: 60px;
@@ -823,9 +824,12 @@ site-footer {
 	}
 }
 @media (max-width: 1100px) {
+	.hero-bg-img {
+		object-position: center;
+	}
 	.ph2-section {
 		gap: 80px;
-		padding: 60px 20px 100px;
+		padding: 60px 0 100px;
 	}
 	.ph2-row,
 	.ph2-row--rev {
@@ -833,10 +837,18 @@ site-footer {
 		align-items: center;
 		gap: 32px;
 	}
+
+	.ph2-row {
+		padding: 0 40px 0 0;
+	}
+	.ph2-row--rev {
+		padding: 0 0 0 40px;
+	}
+
 	.ph2-card {
-		width: min(934px, calc(100vw - 40px));
+		width: 100%;
 		height: auto;
-		border-radius: 20px;
+		/* border-radius: 20px; */
 	}
 	.ph2-text {
 		height: auto;
@@ -1544,7 +1556,7 @@ site-footer {
 }
 
 .footer-logo img {
-	width: 317px;
+	width: 270px;
 	height: 43.802px;
 	aspect-ratio: 317 / 43.8;
 	object-fit: contain;
@@ -1938,9 +1950,21 @@ site-footer {
 	}
 
 	.vision-overlay {
-		padding: 0 40px;
+		padding: 50px 40px 0;
 		justify-content: flex-start;
 	}
+	.vision-bg-wrap {
+		height: 400px;
+	}
+
+	.vision-sub {
+		padding-bottom: 50px;
+	}
+
+	.vision-section {
+		padding: 0 0 80px;
+	}
+
 	/* Vision */
 	.vision-cards {
 		gap: 60px;
@@ -2367,6 +2391,10 @@ site-footer {
 	}
 
 	.form-field.textarea-field {
+		padding: 10px;
+	}
+
+	.form-field.textarea-field {
 		flex-direction: column;
 	}
 
@@ -2440,7 +2468,7 @@ site-footer {
 		text-overflow: ellipsis;
 	}
 	.cards-section {
-		padding: 20px 0 100px;
+		padding: 50px 0 100px;
 	}
 	.submit-btn {
 		width: 154px;

@@ -48,7 +48,9 @@
 			descEl.innerHTML = slides[idx].desc;
 
 			// 3) 배경 이미지 크로스페이드 + 페이지네이션
-			bgImgs.forEach(function (img, i) { img.classList.toggle('active', i === idx); });
+			bgImgs.forEach(function (img, i) {
+				img.classList.toggle('active', i === idx);
+			});
 			if (pgCur) pgCur.textContent = idx + 1;
 
 			// 4) 리플로우 후 슬라이드 인 + 설명 페이드 인
@@ -88,6 +90,16 @@
 		item.addEventListener('mouseleave', () => {
 			closeTimer = setTimeout(() => item.classList.remove('is-open'), 150);
 		});
+		// 상위 링크 클릭 시 페이지 이동 방지하고 드롭다운 토글
+		const link = item.querySelector('.gnb-link');
+		if (link) {
+			link.addEventListener('click', e => {
+				e.preventDefault();
+				const isOpen = item.classList.contains('is-open');
+				items.forEach(other => other.classList.remove('is-open'));
+				if (!isOpen) item.classList.add('is-open');
+			});
+		}
 	});
 	document.addEventListener('click', e => {
 		if (!e.target.closest('.gnb-item')) {
@@ -105,9 +117,12 @@ hamburger.addEventListener('click', () => {
 });
 
 // ── Mobile sub-menu accordion ────────────────────────────────────
-document.querySelectorAll('.m-toggle').forEach(btn => {
-	btn.addEventListener('click', () => {
-		const panel = btn.closest('.m-item-head').nextElementSibling;
+document.querySelectorAll('.m-item-head').forEach(head => {
+	head.addEventListener('click', e => {
+		// m-item-head 내 링크 클릭 시 페이지 이동 방지하고 토글
+		if (e.target.closest('a')) e.preventDefault();
+		const btn = head.querySelector('.m-toggle');
+		const panel = head.nextElementSibling;
 		const isOpen = btn.classList.toggle('open');
 		if (panel) panel.classList.toggle('open', isOpen);
 	});
@@ -325,19 +340,34 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
 	e.preventDefault();
 	const form = e.target;
 
-	const name    = form.querySelector('[name="name"]').value.trim();
-	const org     = form.querySelector('[name="org"]').value.trim();
-	const tel     = form.querySelector('[name="tel"]').value.trim();
-	const email   = form.querySelector('[name="email"]').value.trim();
-	const type    = form.querySelector('[name="type"]').value.trim();
+	const name = form.querySelector('[name="name"]').value.trim();
+	const org = form.querySelector('[name="org"]').value.trim();
+	const tel = form.querySelector('[name="tel"]').value.trim();
+	const email = form.querySelector('[name="email"]').value.trim();
+	const type = form.querySelector('[name="type"]').value.trim();
 	const content = form.querySelector('[name="content"]').value.trim();
-	const agree   = form.querySelector('[name="agree"]').checked;
+	const agree = form.querySelector('[name="agree"]').checked;
 
-	if (!name)    { alert('이름을 입력해 주세요.');         return; }
-	if (!tel)     { alert('연락처를 입력해 주세요.');       return; }
-	if (!email)   { alert('이메일을 입력해 주세요.');       return; }
-	if (!content) { alert('문의 내용을 입력해 주세요.');    return; }
-	if (!agree)   { alert('개인정보 수집에 동의해 주세요.'); return; }
+	if (!name) {
+		alert('이름을 입력해 주세요.');
+		return;
+	}
+	if (!tel) {
+		alert('연락처를 입력해 주세요.');
+		return;
+	}
+	if (!email) {
+		alert('이메일을 입력해 주세요.');
+		return;
+	}
+	if (!content) {
+		alert('문의 내용을 입력해 주세요.');
+		return;
+	}
+	if (!agree) {
+		alert('개인정보 수집에 동의해 주세요.');
+		return;
+	}
 
 	const submitBtn = form.querySelector('.submit-btn');
 	submitBtn.disabled = true;
@@ -346,7 +376,7 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
 	try {
 		const res = await fetch('https://formsubmit.co/ajax/krr@krrobot.co.kr', {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+			headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 			body: JSON.stringify({
 				이름: name,
 				소속: org,
