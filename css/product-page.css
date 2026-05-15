@@ -144,10 +144,10 @@
 .crow-hero-tagline,
 .sensor-hero-tagline {
 	font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
-	font-size: clamp(18px, 2vw, 22px);
+	font-size: clamp(17px, 2vw, 22px);
 	font-weight: 400;
 	color: #d60057;
-	letter-spacing: -0.88px;
+	letter-spacing: -1.5px;
 	word-break: keep-all;
 }
 
@@ -1928,7 +1928,7 @@
 	}
 
 	.crow-hero-desc {
-		font-size: 16px;
+		font-size: 15px;
 		/* word-break:keep-all; */
 	}
 
@@ -2074,10 +2074,10 @@
 		margin-top: 20px;
 	}
 	.crow-gallery-left .crow-gal-wrap {
-		height: 170px;
+		height: auto;
 	}
 	.crow-gallery-right .crow-gal-wrap {
-		height: 300px;
+		height: 200px;
 	}
 	.crow-hero-img-wrap img {
 		max-width: 360px;
@@ -3510,6 +3510,7 @@
 	color: #555;
 	text-align: center;
 	margin: 0;
+	word-break: keep-all;
 }
 
 @media (max-width: 768px) {
