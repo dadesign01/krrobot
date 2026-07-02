@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>제품 (테스트)</title>
+
+  <!-- 기존 사이트 CSS 경로에 맞게 수정 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/product.css" />
+  <link rel="stylesheet" href="../../css/product-page.css" />
+
+  <style>
+    .loading-msg { text-align: center; padding: 80px 20px; color: #888; font-size: 14px; }
+    .error-msg { text-align: center; padding: 60px 20px; color: #c00; font-size: 14px; }
+  </style>
+</head>
+<body class="prod-layout">
+
+  <!-- 탭 바 -->
+  <div class="prod-tab-bar" id="prodTabBar">
+    <div class="prod-tab-inner prod-tab-inner--robot">
+      <div class="prod-tab-indicator"></div>
+    </div>
+  </div>
+
+  <!-- 본문 -->
+  <main class="prod-main">
+    <div class="loading-msg">불러오는 중...</div>
+  </main>
+
+  <script src="./product-loader.js"></script>
+</body>
+</html>
