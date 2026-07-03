@@ -958,6 +958,11 @@
 	text-align: center;
 	transition: color 0.3s;
 	word-break: keep-all;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .rd-card:hover .rd-card-title {

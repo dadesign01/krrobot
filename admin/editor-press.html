@@ -16,7 +16,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
 		<style>
-			.ql-toolbar { background: #1c1c1c; border: 1px solid #232323 !important; border-radius: 10px 10px 0 0; }
+			.ql-toolbar { background: #1c1c1c; border: 1px solid #232323 !important; border-radius: 10px 10px 0 0; position: sticky; top: 0; z-index: 10; }
 			.ql-toolbar .ql-stroke { stroke: #888; }
 			.ql-toolbar .ql-fill { fill: #888; }
 			.ql-toolbar .ql-picker { color: #888; }
@@ -26,8 +26,8 @@
 			.ql-container { background: #141414; border: 1px solid #232323 !important; border-top: none !important; border-radius: 0 0 10px 10px; }
 			.ql-editor { color: #f0f0f0; font-family: 'Noto Sans KR', sans-serif; font-size: 14px; line-height: 1.75; }
 			.ql-editor.ql-blank::before { color: #5a5a5a; font-style: normal; }
-			#content-editor .ql-editor { min-height: 300px; }
-			#summary-editor .ql-editor { min-height: 80px; }
+			#content-editor .ql-editor { min-height: 300px; max-height: 500px; overflow-y: auto; }
+			#summary-editor .ql-editor { min-height: 80px; max-height: 240px; overflow-y: auto; }
 			.ql-picker-options { background: #1c1c1c !important; border: 1px solid #232323 !important; }
 			.ql-picker-item { color: #888 !important; }
 		</style>
