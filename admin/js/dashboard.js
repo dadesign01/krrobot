@@ -14,6 +14,7 @@ const BOARDS = {
 let curBoard = 'ir';
 let curPage = 1;
 let curFilter = 'all';
+let curLang = 'ko';
 let searchQ = '';
 let delId = null;
 let searchTimer = null;
@@ -55,8 +56,12 @@ function switchBoard(el, board) {
 	curFilter = 'all';
 	searchQ = '';
 	document.getElementById('search').value = '';
-	document.querySelectorAll('.tab').forEach(t => {
+	document.querySelectorAll('.tab[data-val]').forEach(t => {
 		t.classList.toggle('active', t.dataset.val === 'all');
+	});
+	// 언어 탭은 현재 선택 언어 유지
+	document.querySelectorAll('#filter-lang .tab').forEach(t => {
+		t.classList.toggle('active', t.dataset.lang === curLang);
 	});
 	// 채용 필터 토글
 	document.getElementById('filter-pub').style.display = board === 'jobs' ? 'none' : '';
@@ -72,6 +77,16 @@ function setFilter(el, val) {
 		.forEach(t => t.classList.remove('active'));
 	el.classList.add('active');
 	curFilter = val;
+	curPage = 1;
+	loadPosts();
+}
+
+function setLang(el, lang) {
+	el.closest('.filter-tabs')
+		.querySelectorAll('.tab')
+		.forEach(t => t.classList.remove('active'));
+	el.classList.add('active');
+	curLang = lang;
 	curPage = 1;
 	loadPosts();
 }
@@ -94,7 +109,7 @@ async function loadPosts() {
 	tbody.innerHTML = `<tr class="loading-row"><td colspan="6">불러오는 중...</td></tr>`;
 
 	const cfg = BOARDS[curBoard];
-	let q = sb.from(cfg.table).select('*', { count: 'exact' });
+	let q = sb.from(cfg.table).select('*', { count: 'exact' }).eq('lang', curLang);
 
 	// 필터
 	if (curBoard === 'jobs') {

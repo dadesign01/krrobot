@@ -12,6 +12,16 @@
 	padding: 0 40px;
 }
 
+/* ── 영문(lang="en") 자동 줄바꿈 품질 개선 ──
+   word-break:keep-all은 라틴 문자에 무효이므로 text-wrap 사용.
+   :where()로 명시도 0 → 개별 지정 규칙은 그대로 우선, 기본값만 보강 */
+html[lang='en'] .prod-main :where(p, span, li, dd) {
+	text-wrap: pretty; /* 마지막 줄 고아 단어 방지 + 더 나은 분절점 */
+}
+html[lang='en'] .prod-main :where(h1, h2, h3, h4, h5, h6, .crow-hero-tagline, .crow-model-tagline, .sensor-hero-tagline, .crow-spec-list-title, .b2-spec-list-title, .sensor-spec-card-title) {
+	text-wrap: balance; /* 제목·태그라인 줄 길이 균형 */
+}
+
 /* ============================================================
    공통 유틸리티 — 반복 패턴 공유
    ============================================================ */

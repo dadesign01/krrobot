@@ -70,6 +70,7 @@ if (id) {
 			quill.root.innerHTML = data.content || ''
 			document.getElementById('type').value = data.type
 			document.getElementById('is-published').checked = data.is_published
+			document.getElementById('lang').value = data.lang || 'ko'
 			if (data.image_url) setPreview(data.image_url)
 			if (data.video_url) document.getElementById('video-url').value = data.video_url
 			onTypeChange(document.getElementById('type'))
@@ -135,6 +136,7 @@ async function save(publish) {
 			content,
 			type: document.getElementById('type').value,
 			is_published: publish,
+			lang: document.getElementById('lang').value,
 			image_url: imageUrl || null,
 			video_url: document.getElementById('video-url').value.trim() || null,
 			attachments: attachList,

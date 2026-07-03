@@ -1,0 +1,598 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About Us | KRR K Response Robotics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel="stylesheet" href="../../../css/style.css" />
+		<link rel="stylesheet" href="../../../css/sub.css" />
+		<link rel="stylesheet" href="../../../css/brand.css" />
+		<link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
+		<script src="../../js/components.js"></script>
+		<!-- brand.css는 한글 기준(넓은 폰트·좁은 자간) 튜닝이라, 영문에 맞게 자간·크기 보정 (이 페이지 한정) -->
+		<style>
+			/* 헤드라인: 크기 유지, 자간만 완화 */
+			.ab-page .ab-headline-black,
+			.ab-page .ab-headline-red {
+				letter-spacing: -1px;
+			}
+			/* 인트로 본문: 영문 문장이 길어 축소 + 자간 완화 */
+			.ab-page .ab-body-group p {
+				font-size: clamp(16px, 1.5vw, 21px);
+				line-height: 168%;
+				letter-spacing: -0.2px;
+			}
+			.ab-page .ab-body-group p + p {
+				margin-top: 34px;
+			}
+			/* 비전 타이틀 */
+			.ab-page .ab-vision-title {
+				font-size: clamp(22px, 3.4vw, 44px);
+				line-height: 134%;
+				letter-spacing: -0.4px;
+			}
+			/* 스탯 라벨: 영문이 길어 축소 + 넘침 방지 */
+			.ab-page .ab-stat-num {
+				letter-spacing: -1px;
+			}
+			.ab-page .ab-stat-label {
+				font-size: clamp(12px, 1.3vw, 18px);
+				letter-spacing: -0.2px;
+				text-align: center;
+				padding: 0 6px;
+				word-break: keep-all;
+			}
+			/* 슬라이더 타이틀 */
+			.ab-page .ab-slider-title-wrap h2 {
+				font-size: clamp(18px, 2.5vw, 38px);
+				line-height: 152%;
+				letter-spacing: -0.4px;
+			}
+			/* 빨간 하이라이트가 줄바꿈돼도 배경이 깔끔하게 유지 */
+			.ab-page .ab-slider-title-wrap h2 span {
+				-webkit-box-decoration-break: clone;
+				box-decoration-break: clone;
+				line-height: 1.5;
+			}
+			/* 슬라이드 카드 제목/본문 */
+			.ab-page .ab-slide-title {
+				font-size: clamp(19px, 2.3vw, 28px);
+				line-height: 1.28;
+				letter-spacing: -0.3px;
+			}
+			.ab-page .ab-slide-body {
+				font-size: clamp(15px, 1.7vw, 20px);
+				letter-spacing: -0.15px;
+			}
+			/* 슬라이드 버튼: 영문은 nowrap 대신 줄바꿈 허용 */
+			.ab-page .ab-slide-btn {
+				white-space: normal;
+				overflow: visible;
+				text-overflow: clip;
+				text-align: left;
+				line-height: 1.35;
+				font-size: clamp(13px, 1.4vw, 16px);
+				letter-spacing: -0.1px;
+				padding: 6px 14px;
+			}
+			/* CTA */
+			.ab-page .ab-cta-red,
+			.ab-page .ab-cta-black {
+				font-size: clamp(22px, 2.9vw, 40px);
+				letter-spacing: -0.5px;
+			}
+
+			/* ── 모바일(≤768px) 보정 ── */
+			@media (max-width: 768px) {
+				/* 비전 배너: 텍스트가 가장자리에 붙지 않게 좌우 패딩 */
+				.ab-page .ab-vision-slide {
+					padding: 0 24px;
+				}
+				.ab-page .ab-vision-title {
+					font-size: 22px;
+					line-height: 132%;
+				}
+				/* 슬라이더 타이틀/카드 영역 좌우 여백 확보 */
+				.ab-page .ab-slider-title-wrap {
+					padding: 30px 22px 0;
+				}
+				.ab-page .ab-slider-card-area {
+					padding: 0 20px 44px;
+				}
+				/* 슬라이드 이미지 다시 표시 (기존 CSS는 ≤1024에서 display:none) */
+				.ab-page .ab-slide-bg-img {
+					display: block;
+				}
+				/* 이미지+텍스트가 칸을 넘지 않도록 카드 높이 자동화 */
+				.ab-page .ab-slider-outer {
+					height: auto;
+				}
+				.ab-page .ab-slide-card {
+					height: auto;
+					min-height: 377px;
+					padding-bottom: 8px;
+				}
+				/* 폰트 축소로 칸 넘침 방지 */
+				.ab-page .ab-slide-title {
+					font-size: 18px;
+					line-height: 1.25;
+				}
+				.ab-page .ab-slide-body {
+					font-size: 13px;
+					line-height: 1.5;
+				}
+				.ab-page .ab-slide-btn {
+					font-size: 12px;
+					padding: 5px 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<site-header active="brand"></site-header>
+
+		<section class="sub-header sub-header--brand">
+			<div class="sub-header-inner">
+				<div class="sub-header-content">
+					<span class="sub-badge">Brand</span>
+					<h1 class="sub-title">About Us</h1>
+					<p class="sub-desc">Introducing K Response Robotics, a&nbsp;robotics specialist company.</p>
+				</div>
+				<div class="sub-location">
+					<div class="sub-nav">
+						<div class="sub-nav-head">
+							<span>About Us</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212" /></svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<main class="sub-content ab-page">
+			<!-- ── 1. 인트로 ── -->
+			<section class="ab-intro">
+				<div class="ab-container">
+					<div class="ab-intro-inner">
+						<div class="ab-intro-text">
+							<p class="ab-headline-black">Special Environment?</p>
+							<p class="ab-headline-red">Smart Solution!</p>
+							<div class="ab-body-group">
+								<p>Hello.<br />I am Koo Kwang-min, CEO of K Response Robotics Co., Ltd.</p>
+								<p>
+									K Response Robotics is a&nbsp;venture company specializing in disaster-response robots.
+									We develop robotic technologies for diverse disaster-safety fields — firefighting, police,
+									defense, forestry, marine, and industrial sites — to protect people at hazardous sites
+									and improve the&nbsp;efficiency of response operations.
+								</p>
+								<p>Going forward, we will keep creating the&nbsp;technologies the&nbsp;field needs — technologies that protect people.</p>
+								<p>Thank you.</p>
+								<p class="ab-signature">Koo Kwang-min, CEO of K Response Robotics Co., Ltd.</p>
+							</div>
+						</div>
+						<div class="ab-intro-mark">
+							<img src="../../../img/sub/logo_bg.png" alt="KRR logo mark" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── 2. 비전 이미지 슬라이더 ── -->
+			<section class="ab-vision-section">
+				<div class="ab-container">
+					<div class="ab-vision-img">
+						<div class="ab-vision-slide ab-vision-slide--1 active">
+							<h2 class="ab-vision-title">Technology for people, robot solutions that transform the&nbsp;field</h2>
+						</div>
+						<div class="ab-vision-slide ab-vision-slide--2">
+							<h2 class="ab-vision-title">A&nbsp;company leading the&nbsp;paradigm of life rescue<br />and fire suppression powered by robotics and AI</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── 3. 스탯 바 ── -->
+			<section class="ab-stats-section">
+				<div class="ab-container">
+					<div class="ab-stats-bar">
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="14">0</span><span class="ab-stat-unit"></span></div>
+							<div class="ab-stat-label">Domestic Patents</div>
+						</div>
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="4">0</span><span class="ab-stat-unit"></span></div>
+							<div class="ab-stat-label">Overseas Patents</div>
+						</div>
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="3">0</span><span class="ab-stat-unit"></span></div>
+							<div class="ab-stat-label">Designs</div>
+						</div>
+						<div class="ab-stat-item">
+							<div class="ab-stat-num"><span class="ab-stat-count" data-target="7">0</span><span class="ab-stat-unit"></span></div>
+							<div class="ab-stat-label">Tech Transfers</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── 4. 연혁 ── -->
+			<section class="ab-history-section">
+				<div class="ab-container">
+					<p class="ab-history-label">KRR's History</p>
+					<div class="ab-history-grid">
+						<!-- 2025 -->
+						<div class="ab-history-col">
+							<div class="ab-history-year">2025</div>
+							<div class="ab-tl-row">
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">10.</div>
+										<div class="ab-tl-desc">Obtained ISO9001 certification</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">08.</div>
+										<div class="ab-tl-desc">Registered Pohang branch R&amp;D center/<br />factory</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">05.</div>
+										<div class="ab-tl-desc">Established Pohang branch<br />(Pohang Technopark R&amp;D special zone)</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 2024 -->
+						<div class="ab-history-col">
+							<div class="ab-history-year">2024</div>
+							<div class="ab-tl-row">
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">09.</div>
+										<div class="ab-tl-desc">Adopted KIRO hazardous-gas<br />detection robot technology</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">08.</div>
+										<div class="ab-tl-desc">Adopted ETRI UWB radar<br />technology</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">04.</div>
+										<div class="ab-tl-desc">Registered as a&nbsp;professional research business</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">02.</div>
+										<div class="ab-tl-desc">Established corporate R&amp;D institute</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">01.</div>
+										<div class="ab-tl-desc">Relocated headquarters (Yuseong-gu, Daejeon)</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 2023 -->
+						<div class="ab-history-col">
+							<div class="ab-history-year">2023</div>
+							<div class="ab-tl-row">
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">11.</div>
+										<div class="ab-tl-desc">Selected for TIPS</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">10.</div>
+										<div class="ab-tl-desc">Secured startup investment (seed)</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">10.</div>
+										<div class="ab-tl-desc">Registered as a&nbsp;research institute company</div>
+									</div>
+								</div>
+								<div class="ab-tl-item">
+									<div class="ab-tl-dot">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<circle opacity="0.85" cx="12" cy="12" r="12" fill="#D60057" />
+											<circle cx="12" cy="12" r="6" fill="white" />
+										</svg>
+									</div>
+									<div class="ab-tl-text">
+										<div class="ab-tl-date">09.</div>
+										<div class="ab-tl-desc">Company incorporation and opening</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── 5. 슬라이더 ── -->
+			<section class="ab-slider-section">
+				<div class="ab-container">
+					<div class="ab-slider-outer">
+						<div class="ab-slider-inner">
+							<div class="ab-slider-title-wrap">
+								<h2>Leading the&nbsp;paradigm shift in life rescue and fire suppression,<br />K Response Robotics delivers<br /><span>disaster &amp; safety robot solutions</span><br />through firefighting robots and AI</h2>
+								<div class="ab-slider-redbar"></div>
+								<div class="ab-slider-redbar mo_line"></div>
+							</div>
+							<div class="ab-slider-card-area">
+								<div class="ab-slides-wrapper">
+									<!-- Slide 1 -->
+									<div class="ab-slide-card active">
+										<div class="ab-slide-bg-img slider_01"></div>
+										<div class="ab-slide-content">
+											<h3 class="ab-slide-title">Low-Recoil Remote Water Cannon</h3>
+											<p class="ab-slide-body">A&nbsp;Remote Water Cannon system that ensures firefighters' safety <br />and improves fire-suppression efficiency</p>
+											<button class="ab-slide-btn">Safer, more efficient response — protecting firefighters</button>
+										</div>
+									</div>
+
+									<!-- Slide 2 -->
+									<div class="ab-slide-card">
+										<div class="ab-slide-bg-img slider_02"></div>
+										<div class="ab-slide-content">
+											<h3 class="ab-slide-title">Dense-Smoke Visualization Sensor / OWL-E</h3>
+											<p class="ab-slide-body">Overcoming dense-smoke environments: non-visible conditions -> improved visibility <br />AI-based object detection through an&nbsp;integrated sensor module</p>
+											<button class="ab-slide-btn">Life rescue and fire response</button>
+										</div>
+									</div>
+
+									<!-- Slide 3 -->
+									<div class="ab-slide-card">
+										<div class="ab-slide-bg-img slider_03"></div>
+										<div class="ab-slide-content">
+											<h3 class="ab-slide-title">Firefighting Robot &amp; AI Solutions</h3>
+											<p class="ab-slide-body">AI- and robot-based firefighting response tactical service <br />Firefighting DATA collection and analysis<br />Intelligent situational awareness and visualization</p>
+											<div class="ab-slide-flow ab-slide-btn">Safer, more efficient disaster response with robots</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 페이지네이션 -->
+						<div class="ab-slider-dots">
+							<button class="ab-dot active" data-idx="0" aria-label="Slide 1"></button>
+							<button class="ab-dot" data-idx="1" aria-label="Slide 2"></button>
+							<button class="ab-dot" data-idx="2" aria-label="Slide 3"></button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── 6. CTA ── -->
+			<section class="ab-cta-section">
+				<div class="ab-container">
+					<p class="ab-cta-black"><span class="ab-cta-red">K Response Robotics</span>, through the&nbsp;convergence of core technologies,<br />builds robot systems tailored to customer needs</p>
+				</div>
+			</section>
+		</main>
+
+		<site-footer></site-footer>
+		<site-top-btn></site-top-btn>
+
+		<script src="../../../js/main.js"></script>
+		<script>
+			/* ── 숫자 카운팅 애니메이션 ── */
+			(function () {
+				var counters = document.querySelectorAll('.ab-stat-count');
+				var hasAnimated = false;
+
+				function animateCounter(el) {
+					var target = parseInt(el.dataset.target, 10);
+					var duration = 1400;
+					var start = performance.now();
+					function step(now) {
+						var t = Math.min((now - start) / duration, 1);
+						var eased = 1 - Math.pow(1 - t, 3);
+						el.textContent = Math.round(eased * target);
+						if (t < 1) requestAnimationFrame(step);
+					}
+					requestAnimationFrame(step);
+				}
+
+				var observer = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting && !hasAnimated) {
+								hasAnimated = true;
+								counters.forEach(animateCounter);
+							}
+						});
+					},
+					{ threshold: 0.5 }
+				);
+
+				var bar = document.querySelector('.ab-stats-bar');
+				if (bar) observer.observe(bar);
+			})();
+
+			/* ── 연혁 마우스 드래그 스크롤 ── */
+			(function () {
+				var grid = document.querySelector('.ab-history-grid');
+				if (!grid) return;
+				var isDown = false;
+				var startX, scrollLeft;
+
+				grid.addEventListener('mousedown', function (e) {
+					isDown = true;
+					grid.classList.add('is-dragging');
+					startX = e.pageX - grid.getBoundingClientRect().left;
+					scrollLeft = grid.scrollLeft;
+				});
+				document.addEventListener('mouseup', function () {
+					isDown = false;
+					grid.classList.remove('is-dragging');
+				});
+				grid.addEventListener('mousemove', function (e) {
+					if (!isDown) return;
+					e.preventDefault();
+					var x = e.pageX - grid.getBoundingClientRect().left;
+					grid.scrollLeft = scrollLeft - (x - startX) * 1.4;
+				});
+			})();
+
+			/* ── 플로팅 스크롤 애니메이션 ── */
+			(function () {
+				var items = [
+					{ sel: '.ab-intro-text', delay: 0 },
+					{ sel: '.ab-intro-mark', delay: 0.18 },
+					{ sel: '.ab-vision-img', delay: 0 },
+					{ sel: '.ab-stats-bar', delay: 0 },
+					{ sel: '.ab-history-label', delay: 0 },
+					{ sel: '.ab-history-grid', delay: 0.14 },
+					{ sel: '.ab-slider-outer', delay: 0 },
+					{ sel: '.ab-cta-red', delay: 0 },
+					{ sel: '.ab-cta-black', delay: 0.18 },
+				];
+
+				var io = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('is-visible');
+								io.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.12 }
+				);
+
+				items.forEach(function (item) {
+					var el = document.querySelector(item.sel);
+					if (!el) return;
+					el.classList.add('float-in');
+					if (item.delay) el.style.transitionDelay = item.delay + 's';
+					io.observe(el);
+				});
+			})();
+
+			/* ── 비전 슬라이더 자동 전환 ── */
+			(function () {
+				var slides = document.querySelectorAll('.ab-vision-slide');
+				if (!slides.length) return;
+				var current = 0;
+				setInterval(function () {
+					slides[current].classList.remove('active');
+					current = (current + 1) % slides.length;
+					slides[current].classList.add('active');
+				}, 4000);
+			})();
+
+			/* ── 슬라이더 ── */
+			(function () {
+				var cards = document.querySelectorAll('.ab-slide-card');
+				var dots = document.querySelectorAll('.ab-dot');
+				var current = 0;
+
+				function goTo(idx) {
+					cards[current].classList.remove('active');
+					dots[current].classList.remove('active');
+					current = idx;
+					cards[current].classList.add('active');
+					dots[current].classList.add('active');
+				}
+
+				dots.forEach(function (dot) {
+					dot.addEventListener('click', function () {
+						goTo(parseInt(this.dataset.idx));
+					});
+				});
+
+				/* 자동 슬라이드 5초 */
+				setInterval(function () {
+					goTo((current + 1) % cards.length);
+				}, 5000);
+			})();
+		</script>
+	</body>
+</html>

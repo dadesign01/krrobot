@@ -1,0 +1,1490 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Robotic Products | KRR K Response Robotics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+		<link rel="stylesheet" href="../../../css/style.css" />
+		<link rel="stylesheet" href="../../../css/product.css" />
+		<link rel="stylesheet" href="../../../css/product-page.css" />
+		<link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
+		<script src="../../js/components.js"></script>
+		<!-- 영문 라벨이 길어 탭 폰트만 축소 (이 페이지 한정) -->
+		<style>
+			.prod-tab-inner--robot .prod-tab {
+				font-size: 15px;
+				letter-spacing: -0.3px;
+				padding: 0 10px;
+			}
+			/* 영문 제목이 두 줄로 줄바꿈될 때 줄 간격이 벌어지는 문제 보정 */
+			#tab2 .sensor-spec-card-title,
+			#tab4 .sensor-spec-card-title {
+				line-height: 1.3;
+			}
+		</style>
+	</head>
+	<body class="prod-layout">
+		<site-header active="product"></site-header>
+
+		<!-- 탭 바 -->
+		<div class="prod-tab-bar" id="prodTabBar" role="navigation" aria-label="Robotic product categories">
+			<div class="prod-tab-inner prod-tab-inner--robot">
+				<div class="prod-tab-indicator"></div>
+				<button class="prod-tab active" data-idx="0" aria-selected="true">Remote Water Cannon + Low-Recoil Nozzle</button>
+				<button class="prod-tab" data-idx="1" aria-selected="false">Remote Firefighting Quadruped Robot</button>
+				<button class="prod-tab" data-idx="2" aria-selected="false">Confined Space Inspection Robot</button>
+				<button class="prod-tab" data-idx="3" aria-selected="false">Hazardous Gas Detection Robot</button>
+				<button class="prod-tab" data-idx="4" aria-selected="false">Aerial Firefighting Drone</button>
+			</div>
+		</div>
+
+		<main class="prod-main">
+			<!-- 섹션 0: 원격 방수총 -->
+			<section class="prod-section" id="tab1">
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">Remote Water Cannon CROW - 40/65</h2>
+							<p class="crow-hero-tagline">A&nbsp;long-range wireless water-discharge solution for&nbsp;high-risk fire scenes</p>
+							<p class="crow-hero-desc">
+								Our smart remote water cannon is a&nbsp;motorized water-discharge system designed to&nbsp;control repetitive and hazardous discharge operations through&nbsp;wireless remote operation.
+							</p>
+							<div class="crow-spec-list">
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">01</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">Remote Drive Control</span>
+										<span class="crow-spec-list-sub"
+											>- Remote left/right and up/down control via&nbsp;motorized PAN/TILT drive<br />- Intuitive operation from&nbsp;a&nbsp;safe distance using a&nbsp;wireless control pad<br />- Enhanced
+											on-site responsiveness with&nbsp;a&nbsp;wide range of&nbsp;motion<br />PAN (left/right): approx. ±170° (340° total) / TILT (up/down): 0° ~ 90°</span
+										>
+									</div>
+								</div>
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">02</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">Convenient Oscillation Function</span>
+										<span class="crow-spec-list-sub"
+											>- Automatically cycles within a&nbsp;set range, reducing the&nbsp;burden of&nbsp;discharge operations<br />- Forms a&nbsp;containment line across wide-area fire-spread zones</span
+										>
+									</div>
+								</div>
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">03</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">Communication & Safety Control Logic</span>
+										<span class="crow-spec-list-sub"
+											>- Oscillation continues even if communication is lost during operation<br />- Safety mechanism activates if the&nbsp;equipment becomes unstable during discharge<br />- Prevents
+											secondary accidents by&nbsp;halting control in&nbsp;emergency situations</span
+										>
+									</div>
+								</div>
+								<div class="crow-spec-list-card">
+									<span class="crow-spec-list-num">04</span>
+									<div class="crow-spec-list-content">
+										<span class="crow-spec-list-title">40A / 65A Lineup</span>
+										<span class="crow-spec-list-sub"
+											>- 40A: up to&nbsp;1,000 LPM discharge performance<br />- 65A: up to&nbsp;2,000 LPM discharge performance<br />- Available in&nbsp;vehicle-mounted or mobile configurations</span
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="crow-hero-img-wrap">
+							<img src="../../../img/product/pro_01_01_new.png" alt="Remote Water Cannon" />
+						</div>
+					</div>
+				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="crowDetail">
+					<!-- 서브탭 -->
+					<div class="crow-sub-tabs">
+						<button class="crow-sub-tab active" onclick="crowSwitch('crow40', this)">CROW-40</button>
+						<!--	<button class="crow-sub-tab" onclick="crowSwitch('crow65', this)">CROW-65</button>-->
+					</div>
+
+					<!-- ── CROW-40 ── -->
+					<div class="crow-model-panel active" id="crow40">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">CROW-40</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../../img/product/pro_01_02_new.png" alt="CROW-40" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">CROW-40</h3>
+									<p class="crow-model-tagline">A&nbsp;long-range wireless smart water-discharge solution for&nbsp;high-risk fire scenes<br />Coupling diameter 40mm / Max discharge 1,000LPM</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Model Name</th>
+											<td class="col-gap"></td>
+											<td>CROW-40 - Remote Water Cannon</td>
+										</tr>
+										<tr>
+											<th>Coupling Diameter (mm)</th>
+											<td class="col-gap"></td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<th>Nominal Discharge Pressure (MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Pressure (MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.5</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Flow (LPM)</th>
+											<td class="col-gap"></td>
+											<td>1,000</td>
+										</tr>
+										<tr>
+											<th>Weight (kg)</th>
+											<td class="col-gap"></td>
+											<td>21</td>
+										</tr>
+										<tr>
+											<th rowspan="2">Range of&nbsp;Motion</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">TILT (up/down)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">PAN (left/right)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<!--<tr>
+											<th>동작전압(V)</th>
+											<td class="col-gap"></td>
+											<td>24V</td>
+										</tr>
+										<tr>
+											<th>상하모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/99, Encoder 미포함)</td>
+										</tr>
+										<tr>
+											<th>좌우모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/704, Encoder 포함)</td>
+										</tr>
+										<tr>
+											<th>노즐모터 사양</th>
+											<td class="col-gap"></td>
+											<td>LM2038A 24V Stroke:30mm</td>
+										</tr>
+										<tr>
+											<th>밸브모터 사양</th>
+											<td class="col-gap"></td>
+											<td>YH-525 24V Stroke:20mm</td>
+										</tr>
+										<tr>
+											<th>무선 통신 규격</th>
+											<td class="col-gap"></td>
+											<td>900MHz RF</td>
+										</tr>-->
+										<tr>
+											<th>Remote Controller Battery</th>
+											<td class="col-gap"></td>
+											<td>Samsung SDI 18650 (3,500mAh, rechargeable) or compatible equivalent</td>
+										</tr>
+										<tr>
+											<th>Size (mm)</th>
+											<td class="col-gap"></td>
+											<td>300×240×300</td>
+										</tr>
+										<tr>
+											<th>Material</th>
+											<td class="col-gap"></td>
+											<td>AA6061</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="crow-gallery">
+							<div class="crow-gallery-left">
+								<div class="crow-gal-wrap"><img src="../../../img/product/pro_01_03_new.png" alt="CROW-40" /></div>
+								<div class="crow-gal-wrap"><img src="../../../img/product/pro_01_04_new.png" alt="CROW-40" /></div>
+							</div>
+							<div class="crow-gallery-right">
+								<div class="crow-gal-wrap"><img src="../../../img/product/pro_01_05_new.png" alt="CROW-40" /></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── CROW-65 ── -->
+					<!--<div class="crow-model-panel" id="crow65">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">CROW-65</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../../img/product/pro_01_06.png" alt="CROW-65" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">CROW-65</h3>
+									<p class="crow-model-tagline">A&nbsp;long-range wireless smart water-discharge solution for&nbsp;high-risk fire scenes<br />Coupling diameter 65mm / Max discharge 2,000LPM</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>모델명</th>
+											<td class="col-gap"></td>
+											<td>CROW-65 - 원격 방수총</td>
+										</tr>
+										<tr>
+											<th>접합부 직경(mm)</th>
+											<td class="col-gap"></td>
+											<td>65</td>
+										</tr>
+										<tr>
+											<th>적정 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>최대 방수압력(MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.5</td>
+										</tr>
+										<tr>
+											<th>최대 방수량(LPM)</th>
+											<td class="col-gap"></td>
+											<td>2,000</td>
+										</tr>
+										<tr>
+											<th>무게(kg)</th>
+											<td class="col-gap"></td>
+											<td>23</td>
+										</tr>
+										<tr>
+											<th rowspan="2">가동 범위</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">상하(TILT)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">좌우(PAN)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>동작시간</th>
+											<td class="col-gap"></td>
+											<td>8시간 이상</td>
+										</tr>
+										<tr>
+											<th>동작전압(V)</th>
+											<td class="col-gap"></td>
+											<td>24V</td>
+										</tr>
+										<tr>
+											<th>상하모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/240, Encoder 미포함)</td>
+										</tr>
+										<tr>
+											<th>좌우모터 사양</th>
+											<td class="col-gap"></td>
+											<td>DC 24V 기어드 모터(감속비 1/704, Encoder 포함)</td>
+										</tr>
+										<tr>
+											<th>노즐모터 사양</th>
+											<td class="col-gap"></td>
+											<td>SLA01 24V Stroke:30mm</td>
+										</tr>
+										<tr>
+											<th>밸브모터 사양</th>
+											<td class="col-gap"></td>
+											<td>YH-525 24V Stroke:20mm</td>
+										</tr>-->
+					<!--<tr>
+											<th>방수총 배터리 사양</th>
+											<td class="col-gap"></td>
+											<td>Greenworks 24V Li-ion 배터리 (65Ah / 156Wh) 또는 동일 규격 제품 호환</td>
+										</tr>
+										<tr>
+											<th>리모컨 배터리 사양</th>
+											<td class="col-gap"></td>
+											<td>Samsung SDI 18650(3,500mAh, 충전식) 또는 동일 규격 제품 호환</td>
+										</tr>
+										<tr>
+											<th>사이즈(mm)</th>
+											<td class="col-gap"></td>
+											<td>700×250×300</td>
+										</tr>
+										<tr>
+											<th>재질</th>
+											<td class="col-gap"></td>
+											<td>AA6061</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="crow-gallery">
+							<div class="crow-gallery-left">
+								<div class="crow-gal-wrap"><img src="../../../img/product/pro_01_07.png" alt="CROW-M65" /></div>
+								<div class="crow-gal-wrap"><img src="../../../img/product/pro_01_08.png" alt="CROW-M65" /></div>
+							</div>
+							<div class="crow-gallery-right">
+								<div class="crow-gal-wrap"><img src="../../../img/product/pro_01_09.png" alt="CROW-M65" /></div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<!-- /crow-detail -->
+
+				<!-- ── 저반동 관창 기술 ── -->
+				<div class="crow-recoil">
+					<div class="crow-recoil-inner prod-inner">
+						<div class="crow-recoil-title-wrap">
+							<div class="crow-detail-head crow-recoil-key-label">
+								<span>Key Technology</span>
+								<img src="../../../img/product/table_mark_right.png" alt="" />
+							</div>
+							<img src="../../../img/product/minimal_recoil.png" alt="" class="crow-recoil-title-bg" />
+							<h2 class="crow-recoil-title"><span>Low-Recoil Nozzle Technology</span> applied to&nbsp;the&nbsp;Remote Water Cannon</h2>
+						</div>
+						<div class="crow-recoil-img-wrap">
+							<img src="../../../img/product/pro_01_11.png" alt="Low-Recoil Nozzle Technology" />
+							<div class="crow-recoil-spec-left">
+								<p>Discharge pressure : approx. 9 kgf/cm²</p>
+								<p>Discharge angle : approx. 70°</p>
+								<p>Max reach height : approx. 28m at&nbsp;9kgf/cm²</p>
+							</div>
+						</div>
+						<!-- 특허 등록 현황 표 -->
+						<div class="crow-patent">
+							<h3 class="crow-patent-title">
+								<img src="../../../img/product/table_mark_right.png" alt="" class="crow-patent-mark" /><span class="crow-patent-title-text"
+									>Low-Recoil Water Cannon Technology — Patents Registered in&nbsp;Major Countries <span class="crow-patent-title-country">(USA, China, Japan, Russia)</span></span
+								>
+							</h3>
+							<div class="crow-patent-table-wrap">
+								<table class="crow-patent-table">
+									<thead>
+										<tr>
+											<th>NO</th>
+											<th>Right</th>
+											<th>Filing Date</th>
+											<th>Application No.</th>
+											<th>Title of&nbsp;Invention</th>
+											<th>Country</th>
+											<th>Registration No.</th>
+											<th>Registration Date</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Patent</td>
+											<td>2019-08-29</td>
+											<td>16/489,818</td>
+											<td>Water-pressure control cartridge coupled with&nbsp;a&nbsp;fire-hose pressure-reducing valve</td>
+											<td>USA</td>
+											<td>11400327</td>
+											<td>2022-08-02</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Patent</td>
+											<td>2019-10-08</td>
+											<td>201880023774.2</td>
+											<td>Water-pressure control cartridge coupled with&nbsp;a&nbsp;fire-hose pressure-reducing valve</td>
+											<td>China</td>
+											<td>ZL201880023774.2</td>
+											<td>2021-03-16</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Patent</td>
+											<td>2019-10-16</td>
+											<td>2019-557489</td>
+											<td>Water-pressure control cartridge coupled with&nbsp;a&nbsp;fire-hose pressure-reducing valve</td>
+											<td>Japan</td>
+											<td>6838761</td>
+											<td>2021-02-16</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Patent</td>
+											<td>2020-11-16</td>
+											<td>2020137404</td>
+											<td>Water-pressure control cartridge coupled with&nbsp;a&nbsp;fire-hose pressure-reducing valve</td>
+											<td>Russia</td>
+											<td>2750809</td>
+											<td>2021-07-02</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- 저반동 기술 비교 배너 -->
+						<div class="crow-rcb">
+							<div class="crow-rcb-left">
+								<p>During firefighting,<br /><strong>nozzle recoil</strong> poses a&nbsp;risk (death/injury),<br />and prolonged discharge causes firefighters <strong>increased fatigue</strong></p>
+							</div>
+							<img src="../../../img/product/table_mark_right.png" alt="" class="crow-rcb-arrow" />
+							<div class="crow-rcb-right">
+								<p>Safe and low-fatigue<br /><strong>low-recoil</strong> water cannon technology secured</p>
+							</div>
+						</div>
+						<!-- 저반동 특징 리스트 -->
+						<div class="crow-recoil-list">
+							<div class="crow-recoil-list-item">
+								<span class="crow-recoil-list-num">01</span>
+								<p class="crow-recoil-list-text">Enables single-person discharge or unmanned fixed discharge</p>
+							</div>
+							<div class="crow-recoil-list-item">
+								<span class="crow-recoil-list-num">02</span>
+								<p class="crow-recoil-list-text">
+									The&nbsp;discharge volume that requires four firefighters using two nozzles <strong>can be delivered by&nbsp;a&nbsp;single firefighter with&nbsp;one water cannon</strong>
+								</p>
+							</div>
+							<div class="crow-recoil-list-item">
+								<span class="crow-recoil-list-num">03</span>
+								<p class="crow-recoil-list-text">Lower recoil than&nbsp;the&nbsp;U.S. TFT nozzle, <strong>ensuring firefighter safety</strong></p>
+							</div>
+						</div>
+
+						<!-- 영상 2개 -->
+						<div class="drone-video-grid crow-recoil-videos">
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="crow01Video1">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../../video/pro_01.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../../img/product/video_play.png" alt="Play" />
+									</div>
+								</div>
+							</div>
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="crow01Video2">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../../video/pro_02.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../../img/product/video_play.png" alt="Play" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					/* 원격방수총 영상 */
+					document.querySelectorAll('#tab1 .b2-video-element').forEach(function (v) {
+						v.addEventListener('loadedmetadata', function () {
+							v.currentTime = 0.5;
+						});
+					});
+					['crow01Video1', 'crow01Video2'].forEach(function (id) {
+						document.getElementById(id).addEventListener('click', function () {
+							if (this.classList.contains('playing')) return;
+							this.classList.add('playing');
+							var v = this.querySelector('.b2-video-element');
+							v.controls = true;
+							v.currentTime = 0;
+							v.play();
+						});
+					});
+
+					/* 서브탭 클릭 → 해당 패널만 표시 (exclusive tab) */
+					function crowSwitch(id, btn) {
+						document.querySelectorAll('#tab1 .crow-model-panel').forEach(function (p) {
+							p.classList.remove('active');
+						});
+						document.querySelectorAll('#tab1 .crow-sub-tab').forEach(function (t) {
+							t.classList.remove('active');
+						});
+						document.getElementById(id).classList.add('active');
+						btn.classList.add('active');
+						var detail = document.getElementById('crowDetail');
+						if (detail) {
+							var y = detail.getBoundingClientRect().top + window.scrollY - 80;
+							window.scrollTo({ top: y, behavior: 'smooth' });
+						}
+					}
+				</script>
+			</section>
+
+			<!-- 섹션 1: 4족 보행 로봇 -->
+			<section class="prod-section" id="tab2">
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">Remote Firefighting Quadruped Robot</h2>
+							<p class="crow-hero-tagline">An&nbsp;intelligent smart quadruped robot that perceives and responds to&nbsp;disaster environments</p>
+							<p class="crow-hero-desc">Our quadruped robot is an&nbsp;intelligent walking robot that independently assesses irregular terrain and hazards to&nbsp;perform detection, movement, and response.</p>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">Rough-Terrain Mobility</span>
+									<span class="b2-spec-list-sub">- Stable movement even across irregular terrain and debris</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">Stair Handling</span>
+									<span class="b2-spec-list-sub">- Outstanding mobility capable of&nbsp;climbing and descending stairs</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">Smart Detection</span>
+									<span class="b2-spec-list-sub">- Automatic recognition and detection of&nbsp;hazardous gases, people, and fire sources</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">04</span>
+									<span class="b2-spec-list-title">Autonomous Mapping</span>
+									<span class="b2-spec-list-sub">- SLAM-based real-time environment mapping and analysis</span>
+								</div>
+							</div>
+						</div>
+						<div class="crow-hero-img-wrap b2-slider-wrap" id="b2HeroSlider">
+							<div class="b2-slider">
+								<img class="b2-slide-img active" src="../../../img/product/pro_02_01_new.png" alt="Quadruped Robot" />
+								<img class="b2-slide-img" src="../../../img/product/pro_02_01.png" alt="Quadruped Robot" />
+								<img class="b2-slide-img" src="../../../img/product/pro_02_01_02.png" alt="Quadruped Robot" />
+								<img class="b2-slide-img" src="../../../img/product/pro_02_01_03.png" alt="Quadruped Robot" />
+							</div>
+							<div class="b2-slider-dots">
+								<span class="b2-slide-dot active"></span>
+								<span class="b2-slide-dot"></span>
+								<span class="b2-slide-dot"></span>
+								<span class="b2-slide-dot"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="b2Detail">
+					<div class="crow-sub-tabs">
+						<button class="crow-sub-tab active" onclick="b2Switch('b2UnitreePanel', this)">Unitree B2</button>
+						<button class="crow-sub-tab" onclick="b2Switch('b2RBQ10Panel', this)">RBQ10</button>
+					</div>
+
+					<!-- ── Unitree B2 ── -->
+					<div class="crow-model-panel active" id="b2UnitreePanel">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">Unitree B2</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../../img/product/pro_02_02_new.png" alt="Unitree B2" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">Unitree B2 · CROW - 40</h3>
+									<p class="crow-model-tagline">A&nbsp;remote quadruped robot for&nbsp;high-intensity disaster scenes<br />Max payload 100kg / Operating time 4 hours</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Model Name</th>
+											<td class="col-gap"></td>
+											<td>Unitree B2 - CROW 40 / CROW 65</td>
+										</tr>
+										<tr>
+											<th>Coupling Diameter (mm)</th>
+											<td class="col-gap"></td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<th>Nominal Discharge Pressure (MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Pressure (MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.5</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Flow (LPM)</th>
+											<td class="col-gap"></td>
+											<td>1,000</td>
+										</tr>
+										<tr>
+											<th>Weight (kg)</th>
+											<td class="col-gap"></td>
+											<td>60 + 21</td>
+										</tr>
+										<tr>
+											<th rowspan="2">Range of&nbsp;Motion</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">TILT (up/down)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">PAN (left/right)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>Operating Time</th>
+											<td class="col-gap"></td>
+											<td>4 hours</td>
+										</tr>
+										<tr>
+											<th>Remote Operating Range (m)</th>
+											<td class="col-gap"></td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th>Travel Speed (m/min)</th>
+											<td class="col-gap"></td>
+											<td>20</td>
+										</tr>
+										<tr>
+											<th>Water/Dust Resistance</th>
+											<td class="col-gap"></td>
+											<td>IP66</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── RBQ10 ── -->
+					<div class="crow-model-panel" id="b2RBQ10Panel">
+						<div class="crow-model-bg-wrap"><span class="crow-model-bg-text">RBQ10</span></div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../../img/product/pro_02_02_02_new.png" alt="RBQ10" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper">
+									<h3 class="crow-model-name">RBQ10 · CROW - 40</h3>
+									<p class="crow-model-tagline">A&nbsp;lightweight, high-mobility quadruped robot<br />12 leg joints / Operating time 3 hours</p>
+								</div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Model Name</th>
+											<td class="col-gap"></td>
+											<td>RBQ10 - Remote Firefighting Quadruped Robot</td>
+										</tr>
+										<tr>
+											<th>Coupling Diameter (mm)</th>
+											<td class="col-gap"></td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<th>Nominal Discharge Pressure (MPa)</th>
+											<td class="col-gap"></td>
+											<td>0.7</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Pressure (MPa)</th>
+											<td class="col-gap"></td>
+											<td>1.6</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Flow (LPM)</th>
+											<td class="col-gap"></td>
+											<td>1,000</td>
+										</tr>
+										<tr>
+											<th>Weight (kg)</th>
+											<td class="col-gap"></td>
+											<td>37 + 21</td>
+										</tr>
+										<tr>
+											<th rowspan="2">Range of&nbsp;Motion</th>
+											<td class="col-gap" rowspan="2"></td>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">TILT (up/down)</span><span>90° (0° ~ 90°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-sub"><span class="td-sub-key">PAN (left/right)</span><span>340° (-170° ~ 170°)</span></div>
+											</td>
+										</tr>
+										<tr>
+											<th>Operating Time</th>
+											<td class="col-gap"></td>
+											<td>3 hours</td>
+										</tr>
+										<tr>
+											<th>Step-Climbing Ability (cm)</th>
+											<td class="col-gap"></td>
+											<td>12</td>
+										</tr>
+										<tr>
+											<th>Travel Speed (km/h)</th>
+											<td class="col-gap"></td>
+											<td>4</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── 갤러리 (탭 밖, Detail 안) ── -->
+					<div class="crow-gallery">
+						<div class="crow-gallery-left">
+							<div class="crow-gal-wrap"><img src="../../../img/product/pro_02_03_new.png" alt="Quadruped Robot" /></div>
+							<div class="crow-gal-wrap"><img src="../../../img/product/pro_02_04_new.png" alt="Quadruped Robot" /></div>
+						</div>
+						<div class="crow-gallery-right">
+							<div class="crow-gal-wrap"><img src="../../../img/product/pro_02_04_01_new.png" alt="Quadruped Robot" /></div>
+						</div>
+					</div>
+
+					<!-- ── Key Technology ── -->
+					<div class="b2-key-tech">
+						<div class="crow-detail-head">
+							<span>Key Technology</span>
+							<img src="../../../img/product/table_mark.png" alt="" />
+						</div>
+						<div class="b2-key-tech-grid">
+							<div class="b2-key-tech-item">
+								<div class="b2-key-tech-img">
+									<img src="../../../img/product/pro_02_06.png" alt="SLAM Result TopView" />
+								</div>
+								<p class="b2-key-tech-caption">SLAM Result TopView Map</p>
+							</div>
+							<div class="b2-key-tech-item">
+								<div class="b2-key-tech-img">
+									<img src="../../../img/product/pro_02_07.png" alt="3D SLAM Map" />
+								</div>
+								<p class="b2-key-tech-caption">3D SLAM Mapping Result</p>
+							</div>
+						</div>
+
+						<!-- 영상 2개 -->
+						<div class="drone-video-grid">
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="b2Video1">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../../video/4_video_01.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../../img/product/video_play.png" alt="Play" />
+									</div>
+								</div>
+								<p class="drone-video-caption">Quadruped Robot Fire-Response Demonstration</p>
+							</div>
+							<div class="drone-video-item">
+								<div class="dtx-video-wrap" id="b2Video2">
+									<video class="b2-video-element" preload="auto" playsinline>
+										<source src="../../../video/4_video_02.mp4" type="video/mp4" />
+									</video>
+									<div class="dtx-play-overlay">
+										<img src="../../../img/product/video_play.png" alt="Play" />
+									</div>
+								</div>
+								<p class="drone-video-caption">Remote Firefighting Quadruped Robot Demonstration</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /b2Detail -->
+
+				<script>
+					function b2Switch(id, btn) {
+						document.querySelectorAll('#tab2 .crow-model-panel').forEach(function (p) {
+							p.classList.remove('active');
+						});
+						document.querySelectorAll('#tab2 .crow-sub-tab').forEach(function (t) {
+							t.classList.remove('active');
+						});
+						document.getElementById(id).classList.add('active');
+						btn.classList.add('active');
+						var detail = document.getElementById('b2Detail');
+						if (detail) {
+							var y = detail.getBoundingClientRect().top + window.scrollY - 80;
+							window.scrollTo({ top: y, behavior: 'smooth' });
+						}
+					}
+
+					/* 4족 보행 로봇 영상 — 첫 프레임 미리보기 후 재생 */
+					document.querySelectorAll('.b2-video-element').forEach(function (v) {
+						v.addEventListener('loadedmetadata', function () {
+							v.currentTime = 0.5;
+						});
+					});
+					['b2Video1', 'b2Video2'].forEach(function (id) {
+						document.getElementById(id).addEventListener('click', function () {
+							if (this.classList.contains('playing')) return;
+							this.classList.add('playing');
+							var v = this.querySelector('.b2-video-element');
+							v.controls = true;
+							v.currentTime = 0;
+							v.play();
+						});
+					});
+
+					/* 자동 슬라이드쇼 */
+					(function () {
+						var slides = document.querySelectorAll('#b2HeroSlider .b2-slide-img');
+						var dots = document.querySelectorAll('#b2HeroSlider .b2-slide-dot');
+						var cur = 0;
+
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
+			</section>
+
+			<!-- 섹션 2: 협소 공간 탐지 로봇 -->
+			<section class="prod-section" id="tab3">
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">Confined Space Inspection Robot</h2>
+							<p class="crow-hero-tagline">An&nbsp;intelligent response robot for&nbsp;navigation and detection in&nbsp;confined spaces</p>
+							<p class="crow-hero-desc">
+								It enables stable navigation and precise detection in&nbsp;confined environments, and can be used across a&nbsp;range of&nbsp;safety-inspection applications by&nbsp;leveraging autonomous driving, remote
+								communication, and hazardous-material detection.
+							</p>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">Confined & Rough-Terrain Mobility</span>
+									<span class="b2-spec-list-sub">- Navigates confined spaces as&nbsp;narrow as&nbsp;15cm and clears obstacles with&nbsp;7cm steps</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">Hazardous-Material Detection</span>
+									<span class="b2-spec-list-sub">- Equipped with&nbsp;a&nbsp;camera and sensor unit for&nbsp;hazardous-material detection</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">Remote Autonomous Driving</span>
+									<span class="b2-spec-list-sub">- Equipped with&nbsp;autonomous-driving sensors for&nbsp;wireless operation</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">04</span>
+									<span class="b2-spec-list-title">Autonomous Mapping</span>
+									<span class="b2-spec-list-sub">- SLAM-based real-time environment mapping and analysis</span>
+								</div>
+							</div>
+						</div>
+						<div class="crow-hero-img-wrap">
+							<img src="../../../img/product/pro_03_01.png" alt="Confined Space Inspection Robot" />
+						</div>
+					</div>
+				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="dtxDetail">
+					<!-- 단일 모델 패널 (서브탭 없음) -->
+					<div class="crow-model-panel active">
+						<div class="dtx-bg-wrap">
+							<span class="dtx-bg-text-line">Confined Space</span>
+							<span class="dtx-bg-text-line">Detection Robot</span>
+						</div>
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../../img/product/pro_03_01.png" alt="Confined Space Inspection Robot" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper"></div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Model Name</th>
+											<td class="col-gap"></td>
+											<td>Confined Space Inspection Robot</td>
+										</tr>
+										<tr>
+											<th>Weight (kg)</th>
+											<td class="col-gap"></td>
+											<td>5kg</td>
+										</tr>
+										<tr>
+											<th>Speed</th>
+											<td class="col-gap"></td>
+											<td>0.3m/s or more</td>
+										</tr>
+										<tr>
+											<th>Operation Method</th>
+											<td class="col-gap"></td>
+											<td>Wireless power / communication</td>
+										</tr>
+										<tr>
+											<th>Continuous Operating Range</th>
+											<td class="col-gap"></td>
+											<td>300m or more</td>
+										</tr>
+										<tr>
+											<th>Accessible Passage Width</th>
+											<td class="col-gap"></td>
+											<td>15cm wide or less</td>
+										</tr>
+										<tr>
+											<th>Clearable Obstacle Step</th>
+											<td class="col-gap"></td>
+											<td>7cm step or more</td>
+										</tr>
+										<tr>
+											<th rowspan="3">Key Functions</th>
+											<td class="col-gap" rowspan="3"></td>
+											<td>Remote control via&nbsp;wireless communication</td>
+										</tr>
+										<tr>
+											<td>Equipped with&nbsp;camera, lighting, and autonomous-driving sensors</td>
+										</tr>
+										<tr>
+											<td>Environment mapping and autonomous driving</td>
+										</tr>
+										<tr>
+											<th rowspan="3" class="th-last">User-Convenience Enhancement Technology</th>
+											<td class="col-gap" rowspan="3"></td>
+											<td>Search-environment map generation</td>
+										</tr>
+										<tr>
+											<td>Provides hazardous-material search information</td>
+										</tr>
+										<tr>
+											<td>Video-based hazardous-material detection/recognition/classification technology</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<!-- ── Key Technology (탭 밖) ── -->
+					<div class="dtx-key-tech">
+						<div class="crow-detail-head">
+							<span>Key Technology</span>
+							<img src="../../../img/product/table_mark.png" alt="" />
+						</div>
+
+						<!-- 영상 블록 -->
+						<div class="dtx-video-wrap" id="dtxVideo">
+							<img class="dtx-video-thumb" src="../../../img/product/pro_03_video.png" alt="Video thumbnail" />
+							<div class="dtx-play-overlay">
+								<img src="../../../img/product/video_play.png" alt="Play" />
+							</div>
+							<div class="dtx-iframe-wrap" id="dtxIframeWrap"></div>
+						</div>
+
+						<!-- 4-image 그리드 -->
+						<div class="dtx-img-grid">
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../../img/product/pro_03_03.png" alt="On-site map generation" />
+								</div>
+								<p class="dtx-img-caption">On-site map generation</p>
+							</div>
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../../img/product/pro_03_04.png" alt="Automatic search of confined spaces inside ceilings" />
+								</div>
+								<p class="dtx-img-caption">Automatic search of&nbsp;confined spaces inside ceilings</p>
+							</div>
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../../img/product/pro_03_05.png" alt="Hazardous-material detection/recognition/classification" />
+								</div>
+								<p class="dtx-img-caption">Hazardous-material detection/recognition/classification</p>
+							</div>
+							<div class="dtx-img-item">
+								<div class="dtx-img-wrap">
+									<img src="../../../img/product/pro_03_06.png" alt="CCTV and video stabilization in the demonstration environment" />
+								</div>
+								<p class="dtx-img-caption">CCTV and video stabilization in&nbsp;the&nbsp;demonstration environment</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /dtxDetail -->
+
+				<script>
+					document.getElementById('dtxVideo').addEventListener('click', function () {
+						if (this.classList.contains('playing')) return;
+						this.classList.add('playing');
+						document.getElementById('dtxIframeWrap').innerHTML =
+							'<iframe src="https://www.youtube.com/embed/KGCwM4jjbnI?autoplay=1"' +
+							' title="Proprietary environment mapping and autonomous-driving technology"' +
+							' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+							' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+					});
+				</script>
+			</section>
+			<!-- 섹션 3: 유해 가스 탐지 로봇 -->
+			<section class="prod-section" id="tab4">
+				<!-- HERO -->
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">Hazardous Gas Detection Robot</h2>
+							<p class="sensor-hero-tagline">Smart robot technology that detects hazardous gases and maps the&nbsp;scene</p>
+							<p class="sensor-hero-desc-gray">
+								Our hazardous gas detection robot is a&nbsp;remote-controlled robot that detects hazardous gases in&nbsp;dangerous environments<br />and generates on-site maps in&nbsp;real time.
+							</p>
+
+							<!-- 4-수치 스펙 바 -->
+							<div class="s4-spec-bar">
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">7km/h</span>
+									<span class="s4-spec-label">Max travel speed</span>
+								</div>
+								<div class="s4-spec-divider"></div>
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">20kg</span>
+									<span class="s4-spec-label">One-person portable</span>
+								</div>
+								<div class="s4-spec-divider"></div>
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">IP57</span>
+									<span class="s4-spec-label">Water/dust rating</span>
+								</div>
+								<div class="s4-spec-divider"></div>
+								<div class="s4-spec-col">
+									<span class="s4-spec-num">0.05m</span>
+									<span class="s4-spec-label">SLAM mapping error</span>
+								</div>
+							</div>
+
+							<!-- 특징 카드 HW / IP / AI -->
+							<div class="sensor-spec-grid s4-feat-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Powerful Mobility Performance</span>
+										<p class="sensor-spec-card-desc">
+											- Max speed 7km/h, continuous operating time approx. 1 hour<br />- Clears 29° inclines and 20cm-high obstacles<br />- Fits in&nbsp;a&nbsp;passenger car trunk (one-person portable)
+										</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Excellent Durability (Water/Dust Resistant)</span>
+										<p class="sensor-spec-card-desc">- Provides water and dust resistance at&nbsp;IP57 rating</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">03</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Hazardous Gas Detection & Real-Time Mapping</span>
+										<p class="sensor-spec-card-desc">
+											- Real-time map generation and robot-position transmission in&nbsp;dense-smoke environments<br />- Displays the&nbsp;accident location and the&nbsp;position of&nbsp;people requiring
+											rescue<br />- SLAM (Simultaneous Localization and Mapping) error of&nbsp;0.05m or less
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-slide-dots" id="sensorDots04">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide04">
+								<div class="sensor-slide active">
+									<div class="s4-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../../img/product/sen_04_01.png" alt="Hazardous Gas Detection Robot" />
+									</div>
+								</div>
+								<div class="sensor-slide">
+									<div class="s4-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../../img/product/sen_04_02.png" alt="Hazardous Gas Detection Robot" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- DETAIL -->
+				<div class="s4-detail" id="s4Detail">
+					<!-- 배경 텍스트 -->
+					<div class="s4-det-bg-wrap">
+						<span class="s4-det-bg-line">Hazardous Gas</span>
+						<span class="s4-det-bg-line">Detection Robot</span>
+					</div>
+
+					<!-- 이미지·테이블 페어 레이아웃 -->
+					<div class="s4-det-layout">
+						<!-- Row 1: 로봇 본체 -->
+						<div class="s4-det-row">
+							<div class="s4-det-img-wrap">
+								<img class="s4-det-img" src="../../../img/product/sen_04_03.png" alt="Hazardous Gas Detection Robot main body" />
+							</div>
+							<div class="s4-det-content">
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Model Name</th>
+											<td class="col-gap"></td>
+											<td>Hazardous Gas Detection Robot</td>
+										</tr>
+										<tr>
+											<th>Size (mm)</th>
+											<td class="col-gap"></td>
+											<td>1000×430×300</td>
+										</tr>
+										<tr>
+											<th>Weight (kg)</th>
+											<td class="col-gap"></td>
+											<td>20</td>
+										</tr>
+										<tr>
+											<th>Travel Speed (km/h)</th>
+											<td class="col-gap"></td>
+											<td>7</td>
+										</tr>
+										<tr>
+											<th>Operating Time (standard / high-capacity battery)</th>
+											<td class="col-gap"></td>
+											<td>1/2 h</td>
+										</tr>
+										<tr>
+											<th>Water/Dust Rating</th>
+											<td class="col-gap"></td>
+											<td>IP57</td>
+										</tr>
+										<tr>
+											<th>Rough-Terrain Performance (angle, step)</th>
+											<td class="col-gap"></td>
+											<td>29°, 20cm</td>
+										</tr>
+										<tr>
+											<th>SLAM Mapping Error (m)</th>
+											<td class="col-gap"></td>
+											<td>0.05</td>
+										</tr>
+										<tr>
+											<th>Onboard Modules</th>
+											<td class="col-gap"></td>
+											<td>Gas sensor, gas collection device, gas circulation module,<br />front lighting, fusion sensor module (Lidar, IMU, Camera)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!-- Row 2: UMPC -->
+						<div class="s4-det-row s4-det-row-gap">
+							<div class="s4-det-img-wrap">
+								<img class="s4-det-img" src="../../../img/product/sen_04_04.png" alt="UMPC" />
+							</div>
+							<div class="s4-det-content">
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Size (mm)</th>
+											<td class="col-gap"></td>
+											<td>500×350×160</td>
+										</tr>
+										<tr>
+											<th>Weight (kg)</th>
+											<td class="col-gap"></td>
+											<td>8.3</td>
+										</tr>
+										<tr>
+											<th>Display (inch, Pixel)</th>
+											<td class="col-gap"></td>
+											<td>15.1, 1920×1080</td>
+										</tr>
+										<tr>
+											<th>Operating Time (hour)</th>
+											<td class="col-gap"></td>
+											<td>2</td>
+										</tr>
+										<tr>
+											<th>UMPC Specifications<br />(Ultra Mobile Personal Computer)</th>
+											<td class="col-gap"></td>
+											<td>Intel Core 11th Gen, 16 GB, 8.4-inch HD (2560 × 1600) touchscreen,<br />Wi-Fi 6, Bluetooth 5, 288 × 130 × 21 mm, 819 g</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Key Technology -->
+				<div class="s4-key-tech">
+					<div class="crow-detail-head">
+						<span>Key Technology</span>
+						<img src="../../../img/product/table_mark.png" alt="" />
+					</div>
+					<div class="s4-key-tech-grid">
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../../img/product/sen_04_05.png" alt="SLAM Result TopView Map" />
+							</div>
+							<p class="s4-key-tech-caption">SLAM Result TopView Map</p>
+						</div>
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../../img/product/sen_04_06.png" alt="Factory simulation environment map" />
+							</div>
+							<p class="s4-key-tech-caption">Environment map generated with&nbsp;our proprietary technology in&nbsp;a&nbsp;factory simulation environment</p>
+						</div>
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../../img/product/sen_04_07.png" alt="16-step standard stair climbing" />
+							</div>
+							<p class="s4-key-tech-caption">Clears 16-step standard stairs / inclines (25° or more) and obstacles</p>
+						</div>
+						<div class="s4-key-tech-item">
+							<div class="s4-key-tech-img-wrap">
+								<img src="../../../img/product/sen_04_08.png" alt="Robot remote control" />
+							</div>
+							<p class="s4-key-tech-caption">Robot remote control (speed: 5km/h or more / continuous operating time: 1 hour)</p>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide04');
+						var dotsWrap = document.getElementById('sensorDots04');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
+			</section>
+
+			<!-- 섹션 4: 고소 방수 드론 -->
+			<section class="prod-section" id="tab5">
+				<!-- ── HERO ── -->
+				<div class="crow-hero">
+					<div class="crow-hero-inner prod-inner">
+						<div class="crow-hero-left">
+							<h2 class="crow-hero-title">Aerial Firefighting Drone</h2>
+							<p class="crow-hero-tagline">Aerial firefighting drone technology for&nbsp;suppressing high-rise fires</p>
+							<p class="crow-hero-desc">
+								Our state-of-the-art aerial firefighting drone can quickly and effectively spray extinguishing water or CAFS (Compressed Air Foam System) to&nbsp;suppress fires<br />
+								in&nbsp;high-rise buildings and hard-to-reach areas.
+							</p>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">Heavy-Payload Operation & High-Performance Suppression System</span>
+									<span class="b2-spec-list-sub">- Up to&nbsp;100kg payload, efficient fire suppression based on&nbsp;CAFS (compressed air foam)</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">Advanced Drone Control Technology</span>
+									<span class="b2-spec-list-sub">- Obstacle-avoidance flight + high-precision hovering stability</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">Reliable Communication & Water-Discharge System</span>
+									<span class="b2-spec-list-sub">- Real-time communication + onboard computing + portable control solution</span>
+								</div>
+							</div>
+						</div>
+						<div class="crow-hero-img-wrap">
+							<img src="../../../img/product/pro_04_01.png" alt="Aerial Firefighting Drone" />
+						</div>
+					</div>
+				</div>
+
+				<!-- ── DETAIL ── -->
+				<div class="crow-detail" id="droneDetail">
+					<div class="crow-model-panel active">
+						<!-- 배경 텍스트 -->
+						<div class="drone-bg-wrap">
+							<span class="drone-bg-line">High-Rise</span>
+							<span class="drone-bg-line">Firefighting Drone</span>
+						</div>
+
+						<div class="crow-model-layout">
+							<div class="crow-model-left">
+								<img src="../../../img/product/pro_04_02.png" alt="Aerial Firefighting Drone" />
+							</div>
+							<div class="crow-model-right">
+								<div class="description_wrapper"></div>
+								<div class="crow-detail-head">
+									<span>Product Detail</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<table class="crow-table">
+									<tbody>
+										<tr>
+											<th>Model Name</th>
+											<td class="col-gap"></td>
+											<td>Aerial Firefighting Drone</td>
+										</tr>
+										<tr>
+											<th>Max Discharge Height</th>
+											<td class="col-gap"></td>
+											<td>100m</td>
+										</tr>
+										<tr>
+											<th class="th-last">Key Function</th>
+											<td class="col-gap"></td>
+											<td>Maintains stable hovering even at&nbsp;pressures of&nbsp;3.0 MPa or higher</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!-- ── Key Technology ── -->
+						<div class="dtx-key-tech">
+							<div class="crow-detail-head">
+								<span>Key Technology</span>
+								<img src="../../../img/product/table_mark.png" alt="" />
+							</div>
+
+							<!-- 소방드론 개념도 -->
+							<div class="drone-concept-wrap">
+								<img src="../../../img/product/pro_04_03.png" alt="Firefighting drone concept diagram" class="drone-concept-img" />
+								<p class="drone-concept-caption">Firefighting drone concept diagram</p>
+							</div>
+
+							<!-- 영상 2개 -->
+							<div class="drone-video-grid">
+								<div class="drone-video-item">
+									<div class="dtx-video-wrap" id="droneVideo1">
+										<img class="dtx-video-thumb" src="../../../img/product/pro_04_04.png" alt="Firefighting drone demonstration for high-rise fire suppression (International Fire Safety Expo)" />
+										<div class="dtx-play-overlay">
+											<img src="../../../img/product/video_play.png" alt="Play" />
+										</div>
+										<div class="dtx-iframe-wrap" id="droneIframe1"></div>
+									</div>
+									<p class="drone-video-caption">Firefighting drone demonstration for&nbsp;high-rise fire suppression (International Fire Safety Expo)</p>
+								</div>
+								<div class="drone-video-item">
+									<div class="dtx-video-wrap" id="droneVideo2">
+										<img class="dtx-video-thumb" src="../../../img/product/pro_04_05.png" alt="Firefighting drone demonstration" />
+										<div class="dtx-play-overlay">
+											<img src="../../../img/product/video_play.png" alt="Play" />
+										</div>
+										<div class="dtx-iframe-wrap" id="droneIframe2"></div>
+									</div>
+									<p class="drone-video-caption">Firefighting drone demonstration</p>
+								</div>
+							</div>
+
+							<!-- 사진 2개 -->
+							<div class="drone-photo-grid">
+								<div class="drone-photo-item">
+									<div class="drone-photo-wrap">
+										<img src="../../../img/product/pro_04_04.png" alt="Firefighting drone demonstration for high-rise fire suppression (International Fire Safety Expo)" />
+									</div>
+									<p class="drone-photo-caption">Firefighting drone demonstration for&nbsp;high-rise fire suppression (International Fire Safety Expo)</p>
+								</div>
+								<div class="drone-photo-item">
+									<div class="drone-photo-wrap">
+										<img src="../../../img/product/pro_04_05.png" alt="Firefighting drone demonstration" />
+									</div>
+									<p class="drone-photo-caption">Firefighting drone demonstration</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /droneDetail -->
+
+				<script>
+					document.getElementById('droneVideo1').addEventListener('click', function () {
+						if (this.classList.contains('playing')) return;
+						this.classList.add('playing');
+						document.getElementById('droneIframe1').innerHTML =
+							'<iframe src="https://www.youtube.com/embed/41xw-Kt_RtI?autoplay=1"' +
+							' title="International Fire Safety Expo (firefighting drone demonstration)"' +
+							' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+							' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+					});
+					document.getElementById('droneVideo2').addEventListener('click', function () {
+						if (this.classList.contains('playing')) return;
+						this.classList.add('playing');
+						document.getElementById('droneIframe2').innerHTML =
+							'<iframe src="https://www.youtube.com/embed/JurN0sEi_wY?autoplay=1"' +
+							' title="Firefighting drone demonstration scene"' +
+							' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+							' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+					});
+				</script>
+			</section>
+		</main>
+
+		<site-footer></site-footer>
+		<site-top-btn></site-top-btn>
+
+		<script src="../../../js/main.js"></script>
+		<script src="../../../js/product.js"></script>
+	</body>
+</html>

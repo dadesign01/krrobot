@@ -60,6 +60,7 @@ if (id) {
 			quill.root.innerHTML = data.content || ''
 			document.getElementById('status').value = data.status
 			document.getElementById('is-published').checked = data.is_published
+			document.getElementById('lang').value = data.lang || 'ko'
 			if (data.start_date) document.getElementById('start-date').value = data.start_date
 			if (data.end_date) {
 				document.getElementById('end-date').value = data.end_date
@@ -116,6 +117,7 @@ async function save(publish) {
 			content,
 			status: document.getElementById('status').value,
 			is_published: publish,
+			lang: document.getElementById('lang').value,
 			start_date: document.getElementById('start-date').value || null,
 			end_date: document.getElementById('open-until-filled').checked ? null : (document.getElementById('end-date').value || null),
 			attachments: attachList,

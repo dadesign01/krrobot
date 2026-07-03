@@ -1,18 +1,18 @@
 ﻿<!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRESS | KRR 케이대응로봇</title>
+  <title>PRESS | KRR K Response Robotics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/sub.css" />
-  <link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/sub.css" />
+  <link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
   <script src="../../js/components.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -25,7 +25,7 @@
     <div class="sub-header-content">
       <span class="sub-badge">News</span>
       <h1 class="sub-title">PRESS</h1>
-      <p class="sub-desc">케이대응로봇의 보도자료와 미디어입니다.</p>
+      <p class="sub-desc">Press releases and media from K Response Robotics.</p>
     </div>
     <div class="sub-location">
       <div class="sub-nav">
@@ -34,8 +34,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212"/></svg>
         </div>
         <ul class="sub-nav-links">
-          <li><a href="ir.html">IR 공시정보</a></li>
-          <li><a href="jobs.html">채용</a></li>
+          <li><a href="ir.html">IR Disclosures</a></li>
+          <li><a href="jobs.html">Careers</a></li>
         </ul>
       </div>
     </div>
@@ -47,18 +47,18 @@
 
     <div class="press-topbar">
       <div class="press-tabs" id="press-tabs">
-        <button class="press-tab active" onclick="setTab(this,'all')">전체</button>
-        <button class="press-tab" onclick="setTab(this,'press')">보도자료</button>
-        <button class="press-tab" onclick="setTab(this,'media')">미디어</button>
+        <button class="press-tab active" onclick="setTab(this,'all')">All</button>
+        <button class="press-tab" onclick="setTab(this,'press')">Press Releases</button>
+        <button class="press-tab" onclick="setTab(this,'media')">Media</button>
       </div>
       <div class="search-bar">
-        <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
-        <button onclick="doSearch()">검색</button>
+        <input type="text" id="search-input" placeholder="Enter a search term" />
+        <button onclick="doSearch()">Search</button>
       </div>
     </div>
 
     <div class="press-list" id="post-list">
-      <p class="loading-msg">불러오는 중...</p>
+      <p class="loading-msg">Loading...</p>
     </div>
 
     <div class="pagination" id="pagination"></div>
@@ -69,8 +69,8 @@
 <site-footer></site-footer>
 <site-top-btn></site-top-btn>
 
-<script src="../../js/main.js"></script>
-<script src="../../js/sb.js"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/sb.js"></script>
 <script>
 const PER_PAGE = 8
 let curPage = 1
@@ -117,9 +117,9 @@ function esc(s) {
 
 async function loadPosts() {
   const list = document.getElementById('post-list')
-  list.innerHTML = '<p class="loading-msg">불러오는 중...</p>'
+  list.innerHTML = '<p class="loading-msg">Loading...</p>'
 
-  let q = sb.from('press_posts').select('*', { count: 'exact' }).eq('is_published', true).eq('lang', 'ko')
+  let q = sb.from('press_posts').select('*', { count: 'exact' }).eq('is_published', true).eq('lang', 'en')
   if (curType !== 'all') q = q.eq('type', curType)
   if (searchQ) q = q.ilike('title', `%${searchQ}%`)
 
@@ -128,13 +128,13 @@ async function loadPosts() {
     .order('created_at', { ascending: false })
     .range(from, from + PER_PAGE - 1)
 
-  if (error) { list.innerHTML = '<p class="empty-msg">데이터를 불러오지 못했습니다.</p>'; return }
+  if (error) { list.innerHTML = '<p class="empty-msg">Failed to load data.</p>'; return }
 
   totalCount = count || 0
-  if (!data.length) { list.innerHTML = '<p class="empty-msg">게시물이 없습니다.</p>'; renderPagination(); return }
+  if (!data.length) { list.innerHTML = '<p class="empty-msg">No posts found.</p>'; renderPagination(); return }
 
   list.innerHTML = data.map(r => {
-    const catLabel = r.type === 'media' ? '미디어' : '보도자료'
+    const catLabel = r.type === 'media' ? 'Media' : 'Press Release'
     const thumbHtml = r.image_url
       ? `<img src="${r.image_url}" alt="${esc(r.title)}" loading="lazy" />`
       : `<div class="press-thumb-empty"><i class="fa-solid fa-newspaper"></i></div>`
@@ -149,7 +149,7 @@ async function loadPosts() {
         <div class="press-excerpt">${esc(excerpt)}</div>
         <div class="press-date">${fmtDate(r.created_at)}</div>
       </div>
-      <img class="press-arrow-img" src="../../img/sub/arrow.png" alt="" />
+      <img class="press-arrow-img" src="../../../img/sub/arrow.png" alt="" />
     </a>`
   }).join('')
 

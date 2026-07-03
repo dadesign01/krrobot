@@ -117,6 +117,7 @@ async function loadPosts() {
   let q = sb.from('ir_posts')
     .select('*', { count: 'exact' })
     .eq('is_published', true)
+    .eq('lang', 'ko')
 
   if (searchQ) q = q.ilike('title', `%${searchQ}%`)
 

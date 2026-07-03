@@ -1,0 +1,750 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sensors · Operation · S/W Technology | KRR K Response Robotics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+		<link rel="stylesheet" href="../../../css/style.css" />
+		<link rel="stylesheet" href="../../../css/product.css" />
+		<link rel="stylesheet" href="../../../css/product-page.css" />
+		<link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
+		<script src="../../js/components.js"></script>
+		<!-- 이미지에 새겨진 캡션 박스에 맞게 영문 캡션 폰트 축소 (이 페이지 한정) -->
+		<!-- 모바일(≤768px)은 기존 반응형 규칙을 그대로 쓰도록 min-width로 스코프 -->
+		<style>
+			/* 영문 제목이 두 줄로 줄바꿈될 때 line-height:58px로 벌어지는 문제 보정 */
+			#tab2 .sensor-spec-card-title,
+			#tab4 .sensor-spec-card-title {
+				line-height: 1.3;
+			}
+			@media (min-width: 769px) {
+				.sensor-slide-caption {
+					right: 4%;
+					bottom: 5%;
+					max-width: 30%;
+				}
+				.sensor-slide-label {
+					font-size: 16px;
+					line-height: 20px;
+					margin-bottom: 2px;
+				}
+				.sensor-slide-sub {
+					font-size: 12px;
+					line-height: 15px;
+				}
+			}
+			@media (max-width: 768px) {
+				.sensor-slide-caption {
+					right: 3%;
+					bottom: 4%;
+					max-width: 55%;
+				}
+				.sensor-slide-label {
+					font-size: 13px;
+					line-height: 16px;
+					margin-bottom: 1px;
+				}
+				.sensor-slide-sub {
+					font-size: 10px;
+					line-height: 13px;
+				}
+			}
+		</style>
+	</head>
+	<body class="prod-layout">
+		<site-header active="product"></site-header>
+
+		<!-- 탭 바 -->
+		<div class="prod-tab-bar" id="prodTabBar" role="navigation" aria-label="Sensors · Operation · S/W Technology categories">
+			<div class="prod-tab-inner">
+				<div class="prod-tab-indicator"></div>
+				<button class="prod-tab active" data-idx="0" aria-selected="true">Smoke Visualization Sensor</button>
+				<button class="prod-tab" data-idx="1" aria-selected="false">Mapping & Autonomous Driving</button>
+				<button class="prod-tab" data-idx="2" aria-selected="false">Compact Multi-Sensor Module</button>
+				<button class="prod-tab" data-idx="3" aria-selected="false">UWB Human Detection Radar Sensor</button>
+			</div>
+		</div>
+
+		<main class="prod-main">
+			<!-- 섹션 0: 농연 가시화 센서 -->
+			<section class="prod-section" id="tab1">
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">Smoke Visualization Sensor</h2>
+							<p class="sensor-hero-tagline">Visualization sensor technology that secures visibility even in&nbsp;dense smoke</p>
+							<p class="sensor-hero-desc-gray">Our smoke visualization sensor technology leverages AI and multi-sensors<br />to&nbsp;secure visibility even in&nbsp;dense smoke, enabling accurate detection and control.</p>
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Real-Time Data Processing & Visualization</span>
+										<p class="sensor-spec-card-desc">- Support for&nbsp;various communication protocols such as&nbsp;CAN and EtherCAT <br />- Real-time data linkage between the&nbsp;user interface and sensors</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">AI-Based Object Detection </span>
+										<p class="sensor-spec-card-desc">- Precise location detection using AI learning models <br />- Securing visibility in&nbsp;non-visible environments based on&nbsp;AI analysis results</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">03</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Multi-Sensor Fusion</span>
+										<p class="sensor-spec-card-desc">- Fusion of&nbsp;thermal cameras, RGB cameras, and human detection sensors <br />- High-accuracy survivor search based on&nbsp;multi-sensors</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 Key Technology + 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left">
+									<span>Key Technology</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<div class="sensor-slide-dots" id="sensorDots01">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide01">
+								<div class="sensor-slide active">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../../img/product/sen_01_01.png" alt="Smoke visualization" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">Smoke Visualization</p>
+											<p class="sensor-slide-sub">Visibility secured in&nbsp;smoke</p>
+										</div>
+									</div>
+								</div>
+								<div class="sensor-slide">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../../img/product/sen_01_02.png" alt="Key object recognition" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">Key Object Recognition</p>
+											<p class="sensor-slide-sub">AI detection result overlay</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 하단 이미지 2개 -->
+				<div class="sensor-img-pair">
+					<div class="sensor-img-item">
+						<div class="sensor-img-inner">
+							<img src="../../../img/product/sen_01_03.png" alt="Smoke visualization - object detection" />
+						</div>
+						<p class="sensor-img-caption">Smoke Visualization</p>
+					</div>
+					<div class="sensor-img-item">
+						<div class="sensor-img-inner">
+							<img src="../../../img/product/sen_01_04.png" alt="Smoke visualization - field demonstration" />
+						</div>
+						<p class="sensor-img-caption">Key Object Recognition</p>
+					</div>
+				</div>
+
+				<!-- 하단 동영상 2개 -->
+				<div class="sensor-video-pair">
+					<div class="sensor-video-item">
+						<div class="sensor-video-wrap" id="senVideo1">
+							<video class="sensor-video" src="../../../video/sen_01.mp4" playsinline preload="metadata"></video>
+							<div class="sensor-video-play">
+								<img src="../../../img/product/video_play.png" alt="Play" />
+							</div>
+						</div>
+						<p class="sensor-video-caption">Smoke Visualization Sensor Display</p>
+					</div>
+					<!--<div class="sensor-video-item">
+						<div class="sensor-video-wrap" id="senVideo2">
+							<video class="sensor-video" src="../../../video/sen_02.mp4" playsinline preload="metadata"></video>
+							<div class="sensor-video-play">
+								<img src="../../../img/product/video_play.png" alt="Play" />
+							</div>
+						</div>
+						<p class="sensor-video-caption">Key Object Recognition (AI Detection Result)</p>
+					</div>-->
+				</div>
+				<script>
+					['senVideo1', 'senVideo2'].forEach(function (id) {
+						var wrap = document.getElementById(id);
+						var video = wrap.querySelector('video');
+						var overlay = wrap.querySelector('.sensor-video-play');
+						wrap.addEventListener('click', function () {
+							overlay.style.display = 'none';
+							video.controls = true;
+							video.play();
+						});
+					});
+				</script>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide01');
+						var dotsWrap = document.getElementById('sensorDots01');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
+			</section>
+
+			<!-- 섹션 1: 환경지도 생성 및 자율주행 -->
+			<section class="prod-section" id="tab2">
+				<!-- HERO -->
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">Mapping & Autonomous Driving</h2>
+							<p class="sensor-hero-tagline">SLAM-based indoor/outdoor autonomous driving technology — quadruped robots, hazardous gas detection robots</p>
+							<p class="sensor-hero-desc-gray">
+								Our mapping and autonomous driving technology uses continuous indoor/outdoor SLAM<br />to&nbsp;recognize spaces without lighting constraints and to&nbsp;generate precise detection and optimal routes.
+							</p>
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Mobile Robot-Based SLAM</span>
+										<p class="sensor-spec-card-desc">- Vibration mitigation + multi-platform support</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Indoor/Outdoor Mapping</span>
+										<p class="sensor-spec-card-desc">- Operates without lighting using only LIDAR + IMU<br />- Intuitive GUI usable even by&nbsp;beginners</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">03</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Ceiling-Environment Autonomous Driving</span>
+										<p class="sensor-spec-card-desc">- Efficient autonomous driving through&nbsp;ceiling-environment obstacle recognition and optimal path finding</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 Key Technology + 비디오 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left">
+									<span>Key Technology</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<div class="sensor-slide-dots" id="sensorDots02">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide02">
+								<div class="sensor-slide active">
+									<div class="sensor-video-slide" id="sensorVid02a">
+										<img class="sensor-video-thumb" src="../../../img/product/sen_02_01_02.png" alt="Mapping and autonomous driving capability (quadruped robot)" />
+										<div class="sensor-video-play">
+											<img src="../../../img/product/video_play.png" alt="Play" />
+										</div>
+										<div class="sensor-video-iframe" id="sensorIframe02a"></div>
+									</div>
+									<p class="sensor-slide-cap">Mapping & Autonomous Driving Capability (Quadruped Robot)</p>
+								</div>
+								<div class="sensor-slide">
+									<div class="sensor-video-slide" id="sensorVid02b">
+										<img class="sensor-video-thumb" src="../../../img/product/sen_02_02.png" alt="Mapping and autonomous driving capability (hazardous gas detection robot)" />
+										<div class="sensor-video-play">
+											<img src="../../../img/product/video_play.png" alt="Play" />
+										</div>
+										<div class="sensor-video-iframe" id="sensorIframe02b"></div>
+									</div>
+									<p class="sensor-slide-cap">Mapping & Autonomous Driving Capability (Hazardous Gas Detection Robot)</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- environ.mp4 비디오 -->
+				<div class="s2-environ-video-wrap" id="s2EnvVideo">
+					<video class="s2-environ-video" src="../../../video/environ.mp4" playsinline preload="metadata"></video>
+					<div class="s2-environ-play">
+						<img src="../../../img/product/video_play.png" alt="Play" />
+					</div>
+				</div>
+
+				<!-- 하단 이미지 2개 -->
+				<div class="s2-img-pair">
+					<div class="s2-img-item">
+						<div class="s2-img-wrap">
+							<img src="../../../img/product/sen_02_03_01.png" alt="Outdoor SLAM mapping" />
+						</div>
+						<p class="s2-img-caption">Outdoor SLAM Mapping</p>
+					</div>
+					<div class="s2-img-item">
+						<div class="s2-img-wrap">
+							<img src="../../../img/product/sen_02_03_02.png" alt="Satellite map and SLAM result" />
+						</div>
+						<p class="s2-img-caption">SLAM Result Top View Map</p>
+					</div>
+				</div>
+
+				<!-- 4개 이미지 그리드 -->
+				<div class="s2-quad-grid">
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../../img/product/sen_02_03_03.png" alt="Satellite map and SLAM result" />
+						</div>
+						<p class="s2-quad-caption">Satellite Map and SLAM Result</p>
+					</div>
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../../img/product/sen_02_03_04.png" alt="SLAM 3D average position error between same start and end location" />
+						</div>
+						<p class="s2-quad-caption">SLAM 3D Average Position Error Between Same Start and End Location</p>
+					</div>
+					<!--<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../../img/product/sen_02_03_05.png" alt="Radar SLAM technology instead of LiDAR in smoke conditions" />
+						</div>
+						<p class="s2-quad-caption">•Radar and Thermal Depth SLAM technology instead of&nbsp;LiDAR, whose performance degrades in&nbsp;smoke conditions</p>
+					</div>
+					<div class="s2-quad-item">
+						<div class="s2-quad-img-wrap">
+							<img src="../../../img/product/sen_02_03_06.png" alt="Mapping of non-visible field environments" />
+						</div>
+						<p class="s2-quad-caption">Mapping of&nbsp;Non-Visible Field Environments</p>
+					</div>-->
+				</div>
+
+				<script>
+					(function () {
+						var wrap = document.getElementById('s2EnvVideo');
+						var video = wrap.querySelector('video');
+						var overlay = wrap.querySelector('.s2-environ-play');
+						wrap.addEventListener('click', function () {
+							overlay.style.display = 'none';
+							video.controls = true;
+							video.play();
+						});
+					})();
+				</script>
+
+				<!-- 기술 보유 섹션 -->
+				<div class="s2-tech-section">
+					<div class="s2-tech-head">
+						<img src="../../../img/product/table_mark.png" alt="" />
+						<span>Mapping & Autonomous Driving Capabilities</span>
+					</div>
+					<div class="s2-tech-grid">
+						<div class="s2-tech-card">
+							<p class="s2-tech-card-title">Quadruped Robot</p>
+							<ul class="s2-tech-card-list">
+								<li>Indoor/outdoor mapping technology using quadruped robots</li>
+								<li>Mapping experience across various mobile platforms</li>
+							</ul>
+						</div>
+						<div class="s2-tech-card">
+							<p class="s2-tech-card-title">Hazardous Gas Detection Robot</p>
+							<ul class="s2-tech-card-list">
+								<li>Mapping technology through&nbsp;continuous indoor-outdoor SLAM</li>
+								<li>Even beginners can easily perform tasks such as&nbsp;robot driving, mapping, and marker placement</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide02');
+						var dotsWrap = document.getElementById('sensorDots02');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						var timer = null;
+
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+
+						function startTimer() {
+							timer = setInterval(function () {
+								goTo(cur + 1);
+							}, 3000);
+						}
+
+						function stopTimer() {
+							if (timer) {
+								clearInterval(timer);
+								timer = null;
+							}
+						}
+
+						startTimer();
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+
+						function setupVideo(vidEl, iframeEl, youtubeId) {
+							vidEl.addEventListener('click', function () {
+								if (this.classList.contains('playing')) return;
+								stopTimer();
+								this.classList.add('playing');
+								iframeEl.innerHTML =
+									'<iframe src="https://www.youtube.com/embed/' +
+									youtubeId +
+									'?autoplay=1"' +
+									' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+									' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+							});
+						}
+
+						setupVideo(document.getElementById('sensorVid02a'), document.getElementById('sensorIframe02a'), 'PKhmhVU6SdM');
+						setupVideo(document.getElementById('sensorVid02b'), document.getElementById('sensorIframe02b'), 'IIvVp0GvJ5U');
+
+						var s2MainEl = document.getElementById('s2VideoMain');
+						var s2MainIframe = document.getElementById('s2VideoMainIframe');
+						if (s2MainEl) {
+							s2MainEl.addEventListener('click', function () {
+								if (this.classList.contains('playing')) return;
+								this.classList.add('playing');
+								s2MainIframe.innerHTML =
+									'<iframe src="https://www.youtube.com/embed/PKhmhVU6SdM?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+							});
+						}
+					})();
+				</script>
+			</section>
+
+			<!-- 섹션 2: 소형 다중센서 통합 모듈 -->
+			<section class="prod-section" id="tab3">
+				<div class="sensor-hero">
+					<div class="sensor-hero-inner">
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">Compact Multi-Sensor Module</h2>
+							<p class="sensor-hero-tagline">An&nbsp;integrated multi-sensor solution for&nbsp;survivor detection</p>
+							<p class="sensor-hero-desc-gray">
+								Our compact multi-sensor module is an&nbsp;integrated multi-sensor solution equipped with&nbsp;five detection sensors<br />(camera, thermal imaging, IMU, gas, microphone) and a&nbsp;compact pattern projector for&nbsp;detecting survivors in&nbsp;confined spaces.
+							</p>
+							<div class="b2-spec-list">
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">01</span>
+									<span class="b2-spec-list-title">Confined-Space Mobility</span>
+									<span class="b2-spec-list-sub">- 64mm-diameter design capable of&nbsp;moving through&nbsp;confined spaces (100mm or less)</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">02</span>
+									<span class="b2-spec-list-title">Optimized Heat Dissipation Design</span>
+									<span class="b2-spec-list-sub">- Performance stabilization through&nbsp;distributed placement of&nbsp;heat-generating components</span>
+								</div>
+								<div class="b2-spec-list-card">
+									<span class="b2-spec-list-num">03</span>
+									<span class="b2-spec-list-title">Integrated Multi-Sensor Module</span>
+									<span class="b2-spec-list-sub">- Equipped with&nbsp;five sensors (camera, thermal imaging, IMU, gas, microphone)</span>
+								</div>
+							</div>
+						</div>
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left"><span>Key Technology</span><img src="../../../img/product/table_mark.png" alt="" /></div>
+								<div class="sensor-slide-dots" id="sensorDots03"><span class="sensor-slide-dot active"></span><span class="sensor-slide-dot"></span></div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide03">
+								<div class="sensor-slide active">
+									<div class="s3-slide-img-wrap"><img class="sensor-slide-img" src="../../../img/product/sen_03_01.png" alt="Sensor unit concept design" /></div>
+									<p class="s3-slide-cap">Sensor Unit Concept Design (with&nbsp;Compact Multi-Sensor Module)</p>
+								</div>
+								<div class="sensor-slide">
+									<div class="s3-slide-img-wrap"><img class="sensor-slide-img" src="../../../img/product/sen_03_02.png" alt="Sensor unit prototype" /></div>
+									<p class="s3-slide-cap">Sensor Unit Prototype</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="s3-bottom">
+					<div class="s3-row1">
+						<div class="s3-col-stack">
+							<div class="s3-img-item">
+								<div class="s3-img-wrap"><img src="../../../img/product/sen_03_03.png" alt="" /></div>
+							</div>
+							<div class="s3-img-item">
+								<div class="s3-img-wrap"><img src="../../../img/product/sen_03_04.png" alt="" /></div>
+							</div>
+						</div>
+						<div class="s3-img-item s3-col-large">
+							<div class="s3-img-wrap"><img src="../../../img/product/sen_03_05.png" alt="" /></div>
+						</div>
+					</div>
+					<!--
+					<div class="s3-img-full">
+						<div class="s3-img-wrap"><img src="../../../img/product/sen_03_06.png" alt="" /></div>
+					</div>
+					<div class="s3-row3">
+						<div class="s3-img-item s3-col-large">
+							<div class="s3-img-wrap"><img src="../../../img/product/sen_03_07.png" alt="" /></div>
+						</div>
+						<div class="s3-img-item">
+							<div class="s3-img-wrap"><img src="../../../img/product/sen_03_08.png" alt="" /></div>
+						</div>
+					</div>-->
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide03');
+						var dotsWrap = document.getElementById('sensorDots03');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
+			</section>
+
+			<!-- 섹션 3: UWB 인명탐지 레이더 센서 -->
+			<section class="prod-section" id="tab4">
+				<!-- HERO -->
+				<div class="sensor-hero" id="sensorHero04">
+					<div class="sensor-hero-inner">
+						<!-- 좌측 -->
+						<div class="sensor-hero-left">
+							<h2 class="sensor-hero-title">Human Detection Radar</h2>
+							<p class="sensor-hero-tagline">Detects people using UWB (Ultra-Wideband) radar even in&nbsp;disaster environments <br />where visibility is limited by&nbsp;smoke, walls, and other obstacles</p>
+							<!--<p class="sensor-hero-desc-gray">
+								Our disaster-environment human detection technology is an&nbsp;advanced technology that can detect people through&nbsp;RF-based sensors<br />even in&nbsp;environments with&nbsp;smoke, obstacles (such as&nbsp;walls), and more.
+							</p>-->
+							<div class="sensor-spec-grid">
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">01</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Ultra-Wideband (UWB)-Based Human Detection</span>
+										<p class="sensor-spec-card-desc">
+											- Accurate detection even in&nbsp;non-visible environments (low light, dense smoke, obstacles, etc.)<br />
+											- Application of&nbsp;centimeter-level high-resolution single-chip radar technology<br />
+											- Antenna and radar board design utilizing the&nbsp;UWB band with&nbsp;excellent penetration performance
+										</p>
+									</div>
+								</div>
+								<div class="sensor-spec-card">
+									<span class="sensor-spec-num">02</span>
+									<div class="sensor-spec-content">
+										<span class="sensor-spec-card-title">Real-Time Detection &<br />Data Processing</span>
+										<p class="sensor-spec-card-desc">
+											- Real-time signal processing and analysis of&nbsp;radar sensors<br />
+											- Analysis results can be integrated with&nbsp;other systems<br />
+											- Intuitive user interface and UI implementation available
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 우측 슬라이드 -->
+						<div class="sensor-hero-right">
+							<div class="sensor-key-head">
+								<div class="sensor-key-head-left">
+									<span>Key Techology</span>
+									<img src="../../../img/product/table_mark.png" alt="" />
+								</div>
+								<div class="sensor-slide-dots" id="sensorDots05">
+									<span class="sensor-slide-dot active"></span>
+									<span class="sensor-slide-dot"></span>
+								</div>
+							</div>
+							<div class="sensor-slide-inner" id="sensorSlide05">
+								<div class="sensor-slide active">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../../img/product/sen_05_01.png" alt="Radar detection principle" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">Radar Detection Principle</p>
+											<p class="sensor-slide-sub">RF signal penetration mechanism</p>
+										</div>
+									</div>
+								</div>
+								<div class="sensor-slide">
+									<div class="sensor-slide-img-wrap">
+										<img class="sensor-slide-img" src="../../../img/product/sen_05_02.png" alt="UWB Human Detection Radar Sensor" />
+										<div class="sensor-slide-caption">
+											<p class="sensor-slide-label">Detection Result UI</p>
+											<p class="sensor-slide-sub">Real-time position display</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- DETAIL -->
+				<div class="s5-detail">
+					<!-- 배경 텍스트 -->
+					<div class="crow-model-bg-wrap">
+						<span class="crow-model-bg-text">UWB Radar</span>
+					</div>
+					<div class="crow-model-layout">
+						<!-- 좌측 sticky 이미지 -->
+						<div class="crow-model-left">
+							<img src="../../../img/product/sen_05_03.png" alt="UWB Human Detection Radar Sensor" />
+						</div>
+						<!-- 우측 테이블 -->
+						<div class="crow-model-right">
+							<div class="crow-detail-head">
+								<span>Product Detail</span>
+								<img src="../../../img/product/table_mark.png" alt="" />
+							</div>
+							<table class="crow-table">
+								<tbody>
+									<tr>
+										<th>Model Name</th>
+										<td class="col-gap"></td>
+										<td>UWB Radar - Human Detection Radar Sensor</td>
+									</tr>
+									<tr>
+										<th>Detection Range</th>
+										<td class="col-gap"></td>
+										<td>Up to&nbsp;5m</td>
+									</tr>
+									<tr>
+										<th>Battery</th>
+										<td class="col-gap"></td>
+										<td>4 hours</td>
+									</tr>
+									<tr>
+										<th>Size (cm)</th>
+										<td class="col-gap"></td>
+										<td>23 × 20 × 12</td>
+									</tr>
+									<tr>
+										<th>Frequency</th>
+										<td class="col-gap"></td>
+										<td>4GHz</td>
+									</tr>
+									<tr>
+										<th>Screen Size</th>
+										<td class="col-gap"></td>
+										<td>5 inch</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 하단 갤러리 -->
+				<div class="s5-gallery">
+					<!-- 좌측: 2장 스택 -->
+					<div class="s5-gallery-left">
+						<div class="s5-gal-wrap">
+							<img src="../../../img/product/sen_05_04.png" alt="Indoor human detection demonstration" />
+						</div>
+						<div class="s5-gal-wrap">
+							<img src="../../../img/product/sen_05_05.png" alt="Multiple product angles" />
+						</div>
+					</div>
+					<!-- 우측: 1장 풀 높이 -->
+					<div class="s5-gallery-right">
+						<div class="s5-gal-wrap">
+							<img src="../../../img/product/sen_05_06.png" alt="UWB radar screen close-up" />
+						</div>
+					</div>
+				</div>
+
+				<!-- Key Technology 이미지 영역 -->
+				<div class="s5-key-tech">
+					<div class="crow-detail-head">
+						<span>Key Technology</span>
+						<img src="../../../img/product/table_mark.png" alt="" />
+					</div>
+					<div class="s5-key-img-grid">
+						<div class="s5-key-img-wrap">
+							<img src="../../../img/product/sen_05_07.png" alt="Obstacle-penetrating human detection" />
+						</div>
+						<div class="s5-key-img-wrap">
+							<img src="../../../img/product/sen_05_08.png" alt="Human detection result screen" />
+						</div>
+					</div>
+					<p class="s5-key-caption">•Technology that uses radar to&nbsp;detect the&nbsp;direction and distance of&nbsp;victims from&nbsp;the&nbsp;current location</p>
+				</div>
+
+				<script>
+					(function () {
+						var slideInner = document.getElementById('sensorSlide05');
+						var dotsWrap = document.getElementById('sensorDots05');
+						var slides = Array.from(slideInner.querySelectorAll('.sensor-slide'));
+						var dots = Array.from(dotsWrap.querySelectorAll('.sensor-slide-dot'));
+						var cur = 0;
+						function goTo(n) {
+							slides[cur].classList.remove('active');
+							dots[cur].classList.remove('active');
+							cur = (n + slides.length) % slides.length;
+							slides[cur].classList.add('active');
+							dots[cur].classList.add('active');
+						}
+						setInterval(function () {
+							goTo(cur + 1);
+						}, 3000);
+						dots.forEach(function (dot, i) {
+							dot.addEventListener('click', function () {
+								goTo(i);
+							});
+						});
+					})();
+				</script>
+			</section>
+		</main>
+
+		<site-footer></site-footer>
+		<site-top-btn></site-top-btn>
+
+		<script src="../../../js/main.js"></script>
+		<script src="../../../js/product.js"></script>
+	</body>
+</html>

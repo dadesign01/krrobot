@@ -1,3 +1,6 @@
+// ── 언어 감지 (/en/ 경로면 영문) ─────────────────────────────────
+var KRR_LANG = /^\/en(\/|$)/.test(location.pathname) ? 'en' : 'ko';
+
 // ── Mobile hero slider ───────────────────────────────────────────
 (function () {
 	var bgImgs = document.querySelectorAll('.hero-mo-bg-img');
@@ -19,11 +22,18 @@
 
 // ── Hero text slider ─────────────────────────────────────────────
 (function () {
-	const slides = [
-		{ word: 'Make it Possible', desc: '케이대응로봇은 혁신적인 로봇 기술로 가능성을 현실로 만듭니다.<br />재난안전로봇의 새로운 미래를 열어가겠습니다.' },
-		{ word: 'Have Passion', desc: '케이대응로봇은 도전과 혁신으로 <br />재난안전로봇 분야의 글로벌 No. 1을 향해 나아갑니다.<br />세계 시장을 선도하는 로봇 전문기업으로 성장하겠습니다.' },
-		{ word: 'Challenge Limits', desc: '한계를 뛰어넘는 도전으로 불가능을 가능하게 만들고,<br />일상과 산업 현장의 더 안전한 미래를 열어갑니다.' },
-	];
+	const slides =
+		KRR_LANG === 'en'
+			? [
+					{ word: 'Make it Possible', desc: 'K Response Robotics turns possibility into reality with innovative robotics technology.<br />We will open a new future for disaster-response robots.' },
+					{ word: 'Have Passion', desc: 'With challenge and innovation, K Response Robotics is advancing<br />toward becoming the global No. 1 in disaster-response robotics.<br />We will grow into a robotics leader that drives the world market.' },
+					{ word: 'Challenge Limits', desc: 'We turn the impossible into the possible through challenges beyond limits,<br />opening a safer future for everyday life and industrial sites.' },
+			  ]
+			: [
+					{ word: 'Make it Possible', desc: '케이대응로봇은 혁신적인 로봇 기술로 가능성을 현실로 만듭니다.<br />재난안전로봇의 새로운 미래를 열어가겠습니다.' },
+					{ word: 'Have Passion', desc: '케이대응로봇은 도전과 혁신으로 <br />재난안전로봇 분야의 글로벌 No. 1을 향해 나아갑니다.<br />세계 시장을 선도하는 로봇 전문기업으로 성장하겠습니다.' },
+					{ word: 'Challenge Limits', desc: '한계를 뛰어넘는 도전으로 불가능을 가능하게 만들고,<br />일상과 산업 현장의 더 안전한 미래를 열어갑니다.' },
+			  ];
 	const wordEl = document.getElementById('heroWord');
 	const descEl = document.getElementById('heroDesc');
 	const bgImgs = document.querySelectorAll('.hero-bg-img');
@@ -347,30 +357,59 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
 	const content = form.querySelector('[name="content"]').value.trim();
 	const agree = form.querySelector('[name="agree"]').checked;
 
+	const T =
+		KRR_LANG === 'en'
+			? {
+					needName: 'Please enter your name.',
+					needTel: 'Please enter your phone number.',
+					needEmail: 'Please enter your email.',
+					needContent: 'Please enter your message.',
+					needAgree: 'Please agree to the collection of personal information.',
+					sending: 'Sending...',
+					submit: 'Submit',
+					ok: 'Your inquiry has been received.\nWe will get back to you soon. Thank you.',
+					fail: 'Failed to send. Please try again in a moment.',
+					subjectTag: '[K Response Robotics Inquiry]',
+					defaultType: 'General inquiry',
+			  }
+			: {
+					needName: '이름을 입력해 주세요.',
+					needTel: '연락처를 입력해 주세요.',
+					needEmail: '이메일을 입력해 주세요.',
+					needContent: '문의 내용을 입력해 주세요.',
+					needAgree: '개인정보 수집에 동의해 주세요.',
+					sending: '전송 중...',
+					submit: '문의하기',
+					ok: '문의가 접수되었습니다.\n빠른 시일 내에 연락드리겠습니다. 감사합니다.',
+					fail: '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
+					subjectTag: '[케이대응로봇 문의]',
+					defaultType: '일반 문의',
+			  };
+
 	if (!name) {
-		alert('이름을 입력해 주세요.');
+		alert(T.needName);
 		return;
 	}
 	if (!tel) {
-		alert('연락처를 입력해 주세요.');
+		alert(T.needTel);
 		return;
 	}
 	if (!email) {
-		alert('이메일을 입력해 주세요.');
+		alert(T.needEmail);
 		return;
 	}
 	if (!content) {
-		alert('문의 내용을 입력해 주세요.');
+		alert(T.needContent);
 		return;
 	}
 	if (!agree) {
-		alert('개인정보 수집에 동의해 주세요.');
+		alert(T.needAgree);
 		return;
 	}
 
 	const submitBtn = form.querySelector('.submit-btn');
 	submitBtn.disabled = true;
-	submitBtn.textContent = '전송 중...';
+	submitBtn.textContent = T.sending;
 
 	try {
 		const res = await fetch('https://formsubmit.co/ajax/krr@krrobot.co.kr', {
@@ -383,23 +422,23 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
 				이메일: email,
 				문의유형: type,
 				문의내용: content,
-				_subject: `[케이대응로봇 문의] ${name} / ${type || '일반 문의'}`,
+				_subject: `${T.subjectTag} ${name} / ${type || T.defaultType}`,
 				_template: 'table',
 				_captcha: 'false',
 			}),
 		});
 
 		if (res.ok) {
-			alert('문의가 접수되었습니다.\n빠른 시일 내에 연락드리겠습니다. 감사합니다.');
+			alert(T.ok);
 			form.reset();
 		} else {
-			alert('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+			alert(T.fail);
 		}
 	} catch {
-		alert('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+		alert(T.fail);
 	} finally {
 		submitBtn.disabled = false;
-		submitBtn.textContent = '문의하기';
+		submitBtn.textContent = T.submit;
 	}
 });
 

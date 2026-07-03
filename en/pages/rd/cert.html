@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Patents &amp; Certifications | KRR K Response Robotics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel="stylesheet" href="../../../css/style.css" />
+		<link rel="stylesheet" href="../../../css/sub.css" />
+		<link rel="stylesheet" href="../../../css/cert.css" />
+		<link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
+		<script src="../../js/components.js"></script>
+	</head>
+	<body>
+		<site-header active="rd"></site-header>
+
+		<section class="sub-header sub-header--cert">
+			<div class="sub-header-inner">
+				<div class="sub-header-content">
+					<span class="sub-badge">R&amp;D</span>
+					<h1 class="sub-title">Patents &amp; Certifications</h1>
+					<p class="sub-desc">Discover the&nbsp;trusted technologies of K Response Robotics through our wide range of patents and certifications.</p>
+				</div>
+				<div class="sub-location">
+					<div class="sub-nav">
+						<div class="sub-nav-head">
+							<span>Patents &amp; Certifications</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212"/></svg>
+						</div>
+						<ul class="sub-nav-links">
+							<li><a href="future.html">Future Technology R&amp;D</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<main class="sub-content">
+			<div class="sub-container">
+				<!-- Section title -->
+				<div class="cert-section-wrap">
+					<div class="cert-proven-bg">
+						<img src="../../../img/sub/Proven.png" alt="" class="proven-img" />
+						<h2 class="cert-section-title"><span class="txt-main">Response Technology</span><span class="txt-normal"> Proven by Patents &amp; Certifications</span></h2>
+					</div>
+				</div>
+
+				<!-- Certificate grid -->
+				<div class="cert-grid" id="cert-grid"></div>
+
+				<!-- Pagination -->
+				<nav class="cert-pagination" id="cert-pagination" aria-label="Pagination"></nav>
+			</div>
+		</main>
+
+		<site-footer></site-footer>
+<site-top-btn></site-top-btn>
+
+		<script src="../../../js/main.js"></script>
+		<script>
+			(function () {
+				const certs = [
+					{ img: '../../../img/sub/10-1926501.png', title: 'Firefighting Water Cannon Equipped with\na Water-Pressure Regulating Cartridge' },
+					{ img: '../../../img/sub/10-1926509.png', title: 'Water-Pressure Regulating Cartridge\nCoupled with a Fire Hose Pressure-Reducing Valve' },
+					{ img: '../../../img/sub/10-1926530.png', title: 'Water-Pressure Regulating Knob\nfor a Water-Pressure Regulating Cartridge' },
+					{ img: '../../../img/sub/10-1967838.png', title: '2-Channel Directional Control\nFirefighting Water Cannon Mount' },
+					{ img: '../../../img/sub/10-1967839.png', title: 'One-Touch 2-Channel Directional Control\nFirefighting Water Cannon Mount' },
+					{ img: '../../../img/sub/10-2128802.png', title: 'Firefighting Drone' },
+					{ img: '../../../img/sub/10-2134913.png', title: 'Safety Shutoff Device for a\nFirefighting Water Cannon' },
+					{ img: '../../../img/sub/10-2557842.png', title: 'Firefighting Water Delivery Passage\nfor High-Rise Fire Suppression' },
+					{ img: '../../../img/sub/10-2557843.png', title: 'Hovering Safety Means Using Repulsive\nEnergy Distribution for Firefighting Drones' },
+					{ img: '../../../img/sub/10-2557844.png', title: 'Hovering Safety Means Using Reverse\nThrust for Firefighting Drones' },
+					{ img: '../../../img/sub/10-2641945.png', title: 'Aerial Fire Extinguishing Device\nUsing a Firefighting Helicopter' },
+					{ img: '../../../img/sub/10-2651919.png', title: 'Logistics Warehouse Fire Suppression System\nUsing a Smart Water Cannon' },
+					{ img: '../../../img/sub/10-2779420.png', title: 'Portable Modular\nWater Cannon System' },
+					{ img: '../../../img/sub/10-2806321_02.png', title: 'Integrated Water Cannon Capable of\n2-Channel Axial Rotating Foam Discharge' },
+					{ img: '../../../img/sub/30-1161052.png', title: 'Firefighting Nozzle\n(Design Registration)' },
+					{ img: '../../../img/sub/30-1161053.png', title: 'Firefighting Nozzle\n(Design Registration)' },
+					{ img: '../../../img/sub/30-1161054.png', title: 'Firefighting Nozzle\n(Design Registration)' },
+					{ img: '../../../img/sub/russia.png', title: 'Russian Patent Certificate' },
+					{ img: '../../../img/sub/usa.png', title: 'U.S. Patent Certificate' },
+					{ img: '../../../img/sub/japan.png', title: 'Japanese Patent Certificate' },
+					{ img: '../../../img/sub/china.png', title: 'Chinese Electronic Patent Certificate' },
+				];
+
+				const COLS = 4;
+				const ROWS = 3;
+				const PER_PAGE = COLS * ROWS; /* 12 */
+
+				const grid = document.getElementById('cert-grid');
+				const pagination = document.getElementById('cert-pagination');
+				let currentPage = 1;
+				const totalPages = Math.ceil(certs.length / PER_PAGE);
+
+				function renderPage(page) {
+					const start = (page - 1) * PER_PAGE;
+					const items = certs.slice(start, start + PER_PAGE);
+
+					grid.innerHTML = items
+						.map(function (c) {
+							return (
+								'<div class="cert-card">' +
+								'<div class="cert-card-img-wrap">' +
+								'<div class="cert-img-inner">' +
+								'<img src="' +
+								c.img +
+								'" alt="' +
+								c.title.replace(/\n/g, ' ') +
+								'" loading="lazy" />' +
+								'</div>' +
+								'</div>' +
+								'<p class="cert-card-title">' +
+								c.title.replace(/\n/g, '<br>') +
+								'</p>' +
+								'</div>'
+							);
+						})
+						.join('');
+
+					renderPagination(page);
+					window.scrollTo({ top: grid.offsetTop - 120, behavior: 'smooth' });
+				}
+
+				function renderPagination(page) {
+					pagination.innerHTML = '';
+
+					/* Previous button */
+					var prev = document.createElement('button');
+					prev.className = 'arrow';
+					prev.innerHTML = '&#8249;';
+					prev.setAttribute('aria-label', 'Previous page');
+					prev.disabled = page === 1;
+					prev.addEventListener('click', function () {
+						if (currentPage > 1) {
+							currentPage--;
+							renderPage(currentPage);
+						}
+					});
+					pagination.appendChild(prev);
+
+					/* Number buttons */
+					for (var i = 1; i <= totalPages; i++) {
+						(function (p) {
+							var btn = document.createElement('button');
+							btn.textContent = p;
+							if (p === page) btn.classList.add('active');
+							btn.setAttribute('aria-label', 'Page ' + p);
+							btn.addEventListener('click', function () {
+								currentPage = p;
+								renderPage(currentPage);
+							});
+							pagination.appendChild(btn);
+						})(i);
+					}
+
+					/* Next button */
+					var next = document.createElement('button');
+					next.className = 'arrow';
+					next.innerHTML = '&#8250;';
+					next.setAttribute('aria-label', 'Next page');
+					next.disabled = page === totalPages;
+					next.addEventListener('click', function () {
+						if (currentPage < totalPages) {
+							currentPage++;
+							renderPage(currentPage);
+						}
+					});
+					pagination.appendChild(next);
+				}
+
+				renderPage(1);
+			})();
+		</script>
+	</body>
+</html>

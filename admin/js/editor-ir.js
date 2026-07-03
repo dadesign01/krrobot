@@ -57,6 +57,7 @@ if (id) {
 			quill.root.innerHTML = data.content || ''
 			document.getElementById('is-pinned').checked = data.is_pinned
 			document.getElementById('is-published').checked = data.is_published
+			document.getElementById('lang').value = data.lang || 'ko'
 			setExistingAttachments(data.attachments)
 		})
 }
@@ -77,6 +78,7 @@ async function save(publish) {
 			content,
 			is_pinned: document.getElementById('is-pinned').checked,
 			is_published: publish,
+			lang: document.getElementById('lang').value,
 			attachments: attachList,
 		}
 		const { error } = id

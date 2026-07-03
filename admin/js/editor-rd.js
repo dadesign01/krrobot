@@ -57,6 +57,7 @@ if (id) {
 			quill.root.innerHTML = data.description || ''
 			document.getElementById('is-developing').checked = data.is_developing
 			document.getElementById('is-published').checked = data.is_published
+			document.getElementById('lang').value = data.lang || 'ko'
 			if (data.image_url) {
 				document.getElementById('image-url').value = data.image_url
 				setPreview(data.image_url)
@@ -119,6 +120,7 @@ async function save(publish) {
 			description,
 			is_developing: document.getElementById('is-developing').checked,
 			is_published: publish,
+			lang: document.getElementById('lang').value,
 			image_url: imageUrl || null,
 			attachments: attachList,
 		}

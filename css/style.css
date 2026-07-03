@@ -2690,3 +2690,35 @@ site-footer {
 		transform: none !important;
 	}
 }
+
+/* ── 언어 전환 (KO/EN) ─────────────────────────────────────────── */
+.lang-switch {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-family: 'Wanted Sans', 'Pretendard', sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: -0.4px;
+}
+.lang-switch .lang-link {
+	color: #9a9a9a;
+	padding: 4px 2px;
+	transition: color 0.2s;
+}
+.lang-switch .lang-link:hover {
+	color: #121212;
+}
+.lang-switch .lang-link.active {
+	color: #121212;
+}
+.lang-switch .lang-sep {
+	color: #d5d5d5;
+}
+/* 모바일 메뉴 안의 언어 전환 항목 */
+.m-item.m-lang {
+	padding: 18px 20px;
+}
+.m-item.m-lang .lang-switch {
+	font-size: 16px;
+}

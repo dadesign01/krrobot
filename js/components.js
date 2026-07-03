@@ -1,4 +1,32 @@
 (function () {
+	// ── 언어 전환 경로 계산 ───────────────────────────────────────────
+	function toKo(path) {
+		return path.replace(/^\/en(\/|$)/, '/');
+	}
+	function toEn(path) {
+		if (/^\/en(\/|$)/.test(path)) return path;
+		return '/en' + (path === '/' ? '/' : path);
+	}
+	function buildLangSwitch(current) {
+		const c = id => (current === id ? ' active' : '');
+		return `<div class="lang-switch">
+			<a class="lang-link${c('ko')}" href="#" data-lang="ko">KO</a>
+			<span class="lang-sep">|</span>
+			<a class="lang-link${c('en')}" href="#" data-lang="en">EN</a>
+		</div>`;
+	}
+	function wireLangSwitch(root) {
+		root.querySelectorAll('.lang-link').forEach(function (link) {
+			link.addEventListener('click', function (e) {
+				e.preventDefault();
+				const lang = link.getAttribute('data-lang');
+				const p = location.pathname;
+				const target = lang === 'en' ? toEn(p) : toKo(p);
+				location.href = target + location.hash;
+			});
+		});
+	}
+
 	// ── 헤더 HTML ────────────────────────────────────────────────────
 	function buildHeader(active) {
 		const a = id => (active === id ? ' active' : '');
@@ -55,6 +83,7 @@
 					</li>
 				</ul>
 			</nav>
+			${buildLangSwitch('ko')}
 			<button class="hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
 		</div>
 		<div class="mobile-nav" id="mobileNav">
@@ -118,6 +147,7 @@
 						</ul>
 					</div>
 				</li>
+				<li class="m-item m-lang">${buildLangSwitch('ko')}</li>
 			</ul>
 		</div>`;
 	}
@@ -214,6 +244,7 @@
 				this.id = 'header';
 				this.setAttribute('role', 'banner');
 				this.innerHTML = buildHeader(this.getAttribute('active') || '');
+				wireLangSwitch(this);
 			}
 		}
 	);

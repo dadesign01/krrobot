@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Technology R&D Detail | KRR K Response Robotics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/sub.css" />
+  <link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
+  <script src="../../js/components.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<site-header active="rd"></site-header>
+
+<main class="sub-content">
+  <div class="sub-container">
+    <a class="detail-back" href="future.html">
+      <i class="fa-solid fa-chevron-left"></i> Back to list
+    </a>
+
+    <div id="detail-wrap">
+      <p class="loading-msg">Loading...</p>
+    </div>
+  </div>
+</main>
+
+<site-footer></site-footer>
+<site-top-btn></site-top-btn>
+
+<script src="../../../js/main.js"></script>
+<script src="../../../js/sb.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get('id')
+
+function fmtDate(str) {
+  if (!str) return ''
+  const d = new Date(str)
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`
+}
+
+function esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+}
+
+function fileIcon(name) {
+  const ext = (name.split('.').pop() || '').toLowerCase()
+  if (ext === 'pdf') return '<i class="fa-solid fa-file-pdf"></i>'
+  if (['doc','docx','hwp','hwpx'].includes(ext)) return '<i class="fa-solid fa-file-lines"></i>'
+  if (['xls','xlsx'].includes(ext)) return '<i class="fa-solid fa-file-excel"></i>'
+  if (['ppt','pptx'].includes(ext)) return '<i class="fa-solid fa-file-powerpoint"></i>'
+  if (['zip','7z','rar'].includes(ext)) return '<i class="fa-solid fa-file-zipper"></i>'
+  if (['jpg','jpeg','png','gif','webp'].includes(ext)) return '<i class="fa-solid fa-file-image"></i>'
+  return '<i class="fa-solid fa-paperclip"></i>'
+}
+
+async function downloadFile(e, url, name) {
+  e.preventDefault()
+  try {
+    const res = await fetch(url)
+    const blob = await res.blob()
+    const a = document.createElement('a')
+    a.href = URL.createObjectURL(blob)
+    a.download = name
+    a.click()
+    URL.revokeObjectURL(a.href)
+  } catch { window.open(url, '_blank') }
+}
+
+async function loadDetail() {
+  const wrap = document.getElementById('detail-wrap')
+
+  if (!id) {
+    wrap.innerHTML = '<p class="empty-msg">Invalid access.</p>'
+    return
+  }
+
+  const { data, error } = await sb
+    .from('rd_posts')
+    .select('*')
+    .eq('id', id)
+    .eq('is_published', true)
+    .single()
+
+  if (error || !data) {
+    wrap.innerHTML = '<p class="empty-msg">The post could not be found.</p>'
+    return
+  }
+
+  document.title = `${data.title} | KRR K Response Robotics`
+
+  const devBadge = data.is_developing
+    ? '<span class="rd-dev-badge" style="font-size:14px;padding:4px 14px;">In Development</span>'
+    : ''
+
+  const coverHtml = data.image_url
+    ? `<img class="detail-cover" src="${data.image_url}" alt="${esc(data.title)}" />`
+    : ''
+
+  const attachments = data.attachments || []
+  const attachHtml = attachments.length ? `
+    <div class="detail-attach-wrap">
+      <p class="detail-attach-title"><i class="fa-solid fa-paperclip"></i> Attachments</p>
+      <div class="detail-attach-list">
+        ${attachments.map(a => `
+          <a class="detail-attach-link" href="${a.url}" onclick="downloadFile(event,'${a.url}','${(a.name||'').replace(/'/g,"\\'")}')">
+            ${fileIcon(a.name || '')} ${esc(a.name)}
+          </a>`).join('')}
+      </div>
+    </div>` : ''
+
+  wrap.innerHTML = `
+    <div class="detail-meta">
+      <span class="detail-cat">R&amp;D</span>
+      ${devBadge}
+      <span class="detail-date">${fmtDate(data.created_at)}</span>
+    </div>
+    <h1 class="detail-title">${esc(data.title)}</h1>
+    ${coverHtml}
+    <div class="detail-body">${data.description || ''}</div>
+    ${attachHtml}
+    <div class="detail-bottom-nav">
+      <a class="detail-list-btn" href="future.html">
+        <i class="fa-solid fa-list"></i> Back to list
+      </a>
+    </div>`
+}
+
+loadDetail()
+</script>
+</body>
+</html>

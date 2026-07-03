@@ -99,6 +99,11 @@
 			<!-- 게시판 목록 패널 -->
 			<div class="content" id="board-panel">
 				<div class="toolbar">
+					<!-- 언어 필터 (국문 / 영문 사이트) -->
+					<div class="filter-tabs" id="filter-lang">
+						<button class="tab active" data-lang="ko" onclick="setLang(this, 'ko')">국문</button>
+						<button class="tab" data-lang="en" onclick="setLang(this, 'en')">영문</button>
+					</div>
 					<!-- IR / Press / RD 용 공개 필터 -->
 					<div class="filter-tabs" id="filter-pub">
 						<button class="tab active" data-val="all" onclick="setFilter(this, 'all')">전체</button>

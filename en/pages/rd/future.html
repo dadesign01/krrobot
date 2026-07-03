@@ -1,18 +1,18 @@
 ﻿<!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Future Technology R&D | KRR 케이대응로봇</title>
+  <title>Future Technology R&D | KRR K Response Robotics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/sub.css" />
-  <link rel="icon" href="../../img/main/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/sub.css" />
+  <link rel="icon" href="../../../img/main/favicon.ico" sizes="any" />
   <script src="../../js/components.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -25,7 +25,7 @@
     <div class="sub-header-content">
       <span class="sub-badge">R&amp;D</span>
       <h1 class="sub-title">Future Technology R&amp;D</h1>
-      <p class="sub-desc">케이대응로봇의 끝없는 도전, 프로젝트 진행 현황입니다.</p>
+      <p class="sub-desc">The&nbsp;relentless challenges of K Response Robotics and our ongoing project progress.</p>
     </div>
     <div class="sub-location">
       <div class="sub-nav">
@@ -34,7 +34,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M9 13L13 7L5 7L9 13Z" fill="#121212"/></svg>
         </div>
         <ul class="sub-nav-links">
-          <li><a href="cert.html">특허 및 인증</a></li>
+          <li><a href="cert.html">Patents &amp; Certifications</a></li>
         </ul>
       </div>
     </div>
@@ -45,10 +45,10 @@
   <div class="sub-container">
 
     <div class="content-topbar">
-      <p class="content-count">전체 <strong id="total-count">0</strong> 건</p>
+      <p class="content-count">Total <strong id="total-count">0</strong></p>
       <div class="search-bar">
-        <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
-        <button onclick="doSearch()">검색</button>
+        <input type="text" id="search-input" placeholder="Enter a search term" />
+        <button onclick="doSearch()">Search</button>
       </div>
     </div>
 
@@ -61,8 +61,8 @@
 <site-footer></site-footer>
 <site-top-btn></site-top-btn>
 
-<script src="../../js/main.js"></script>
-<script src="../../js/sb.js"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/sb.js"></script>
 <script>
 const PER_PAGE = 9
 let curPage = 1
@@ -85,9 +85,9 @@ function esc(s) {
 
 async function loadPosts() {
   const grid = document.getElementById('post-list')
-  grid.innerHTML = '<p class="loading-msg" style="grid-column:1/-1">불러오는 중...</p>'
+  grid.innerHTML = '<p class="loading-msg" style="grid-column:1/-1">Loading...</p>'
 
-  let q = sb.from('rd_posts').select('*', { count: 'exact' }).eq('is_published', true).eq('lang', 'ko')
+  let q = sb.from('rd_posts').select('*', { count: 'exact' }).eq('is_published', true).eq('lang', 'en')
   if (searchQ) q = q.ilike('title', `%${searchQ}%`)
 
   const from = (curPage - 1) * PER_PAGE
@@ -95,18 +95,18 @@ async function loadPosts() {
     .order('created_at', { ascending: false })
     .range(from, from + PER_PAGE - 1)
 
-  if (error) { grid.innerHTML = '<p class="empty-msg" style="grid-column:1/-1">데이터를 불러오지 못했습니다.</p>'; return }
+  if (error) { grid.innerHTML = '<p class="empty-msg" style="grid-column:1/-1">Failed to load data.</p>'; return }
 
   totalCount = count || 0
   document.getElementById('total-count').textContent = totalCount
 
-  if (!data.length) { grid.innerHTML = '<p class="empty-msg" style="grid-column:1/-1">등록된 기술이 없습니다.</p>'; renderPagination(); return }
+  if (!data.length) { grid.innerHTML = '<p class="empty-msg" style="grid-column:1/-1">No technologies have been registered.</p>'; renderPagination(); return }
 
   grid.innerHTML = data.map(r => {
     const imgHtml = r.image_url
       ? `<img class="rd-card-img" src="${r.image_url}" alt="${esc(r.title)}" loading="lazy" />`
       : `<div class="rd-card-img rd-card-img-empty"><i class="fa-solid fa-flask"></i></div>`
-    const badge = r.is_developing ? '<span class="rd-dev-badge">개발중</span>' : ''
+    const badge = r.is_developing ? '<span class="rd-dev-badge">In Development</span>' : ''
 
     return `
     <div class="rd-card" onclick="openDetail(${r.id})">
@@ -116,7 +116,7 @@ async function loadPosts() {
       </div>
       <div class="rd-card-footer">
         <span class="rd-card-title">${esc(r.title)}</span>
-        <img class="rd-card-arrow" src="../../img/sub/bg_arrow.png" alt="" />
+        <img class="rd-card-arrow" src="../../../img/sub/bg_arrow.png" alt="" />
       </div>
     </div>`
   }).join('')
