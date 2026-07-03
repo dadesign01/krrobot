@@ -199,12 +199,15 @@ td { padding: 14px 18px; font-size: 13px; }
 /* 액션 버튼 */
 .row-actions { display: flex; gap: 6px; opacity: 0; transition: opacity 0.15s; }
 tbody tr:hover .row-actions { opacity: 1; }
-.btn-edit, .btn-del {
+.btn-edit, .btn-copy, .btn-del {
   padding: 4px 11px; border-radius: 6px; font-size: 11px;
   cursor: pointer; border: 1px solid var(--border); font-family: inherit; transition: all 0.15s;
 }
 .btn-edit { background: var(--surface2); color: var(--text); }
 .btn-edit:hover { border-color: var(--accent); color: var(--accent); }
+.btn-copy { background: transparent; color: var(--muted); }
+.btn-copy:hover { border-color: var(--accent); color: var(--accent); background: rgba(100,160,255,0.07); }
+.btn-copy:disabled { opacity: 0.5; cursor: default; }
 .btn-del { background: transparent; color: var(--muted); }
 .btn-del:hover { border-color: var(--error); color: var(--error); background: rgba(255,95,95,0.07); }
 

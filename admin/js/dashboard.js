@@ -200,6 +200,7 @@ function renderRows(rows) {
         <td>
           <div class="row-actions" onclick="event.stopPropagation()">
             <button class="btn-edit" onclick="location.href='${editUrl}'">수정</button>
+            <button class="btn-copy" onclick="copyPost(${r.id}, this)">복사</button>
             <button class="btn-del" onclick="openDel(${r.id})">삭제</button>
           </div>
         </td>
@@ -241,6 +242,37 @@ async function doDelete() {
 	await sb.from(BOARDS[curBoard].table).delete().eq('id', delId);
 	closeModal();
 	loadPosts();
+	loadCounts();
+}
+
+async function copyPost(id, btn) {
+	if (btn) {
+		btn.disabled = true;
+		btn.textContent = '복사 중...';
+	}
+	const cfg = BOARDS[curBoard];
+	const { data, error } = await sb.from(cfg.table).select('*').eq('id', id).single();
+	if (error || !data) {
+		alert('복사할 게시물을 불러오지 못했습니다.');
+		if (btn) { btn.disabled = false; btn.textContent = '복사'; }
+		return;
+	}
+	// 원본 복제 → id/타임스탬프 제거, 비공개 초안으로 저장
+	const row = { ...data };
+	delete row.id;
+	delete row.created_at;
+	delete row.updated_at;
+	row.title = `${row.title || ''} (사본)`;
+	if ('is_published' in row) row.is_published = false;
+	if ('is_pinned' in row) row.is_pinned = false;
+	const { error: insErr } = await sb.from(cfg.table).insert(row);
+	if (insErr) {
+		alert('복사 실패: ' + insErr.message);
+		if (btn) { btn.disabled = false; btn.textContent = '복사'; }
+		return;
+	}
+	curPage = 1;
+	await loadPosts();
 	loadCounts();
 }
 
