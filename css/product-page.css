@@ -2373,10 +2373,11 @@ html[lang='en'] .prod-main :where(h1, h2, h3, h4, h5, h6, .crow-hero-tagline, .c
 
 #tab4 .sensor-spec-card {
 	width: 100%;
-	height: 87px;
+	min-height: 87px;
+	height: auto;
 	flex-direction: row;
 	align-items: center;
-	padding: 0 24px 0 80px;
+	padding: 16px 24px 16px 80px;
 	background: #f8f8f8;
 	border-radius: 15px;
 	justify-content: flex-start;
